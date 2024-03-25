@@ -1,0 +1,75 @@
+\documentclass[letterpaper,10pt,spanish]{article}
+\usepackage[utf8]{inputenc} % Tipografía
+\usepackage[spanish, es-tabla]{babel} % Idioma
+\usepackage{textcomp,mathrsfs,amsmath,
+            amsthm,amssymb,amsfonts,
+            multicol,indentfirst,float,
+            longtable,xcolor,enumerate,
+            array,multirow,graphicx,
+            tabularx,ragged2e,adjustbox,
+            centernot,booktabs,hyperref,
+            tikz,caption, wrapfig,
+            colortbl,tabu,threeparttable,
+            threeparttablex,makecell}
+% \usepackage{ifthen,intcalc} % Paquetes funcionales
+%\usepackage{media9,comment,moreverb} % Paquetes para contenido multimedia
+% \usepackage[nottoc, notlof, notlot,numbib]{tocbibind}
+% \usepackage[encoding,filenameencoding=utf8]{grffile}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+% \usepackage{titlesec} % Paquete para modificar tamaño de título
+% \usepackage{fancyhdr} % Modificar cabeza y pie de página
+\usepackage{colortbl} % Modificar estilo de las líneas en tabular (la uso para cambia el color)
+\usepackage{setspace} % Espaciado del texto
+% \usepackage[hang]{footmisc} % Espaciado de las notas de pie de pagina
+%\usepackage{titlecaps}
+%\usepackage{sectsty}
+% \author{}
+% \date{}
+% \title{}
+
+% \pagestyle{fancy} % Estilo de pie en encabezado de página
+\decimalpoint % Decimales por defecto con punto
+\hypersetup{hidelinks} % Ocultar color de referencias
+
+\newcommand\dis{\displaystyle}
+% \newcommand{\comment}[1]{}
+%\renewcommand{\baselinestretch}{1.5} % Tambien sirve para modificar el espaciado en el texto.
+% \renewcommand{\footnotelayout}{\setstretch{1}}  % Espaciado de las notas al piede pagina
+% \renewcommand{\arraystretch}{1} % Espaciado de tablas
+% \addto\captionsspanish{% Replace "english" with the language you use
+%   \renewcommand{\listfigurename}{Índice de Figuras} % Titulo de indice de figuras
+%   \renewcommand{\listtablename}{Índice de Tablas} % Titulo de indice de tablas
+% }
+
+
+% \setlength\headheight{26pt} % Tamaño de encabezado
+% \fancyhf{} % sets both header and footer to nothing
+% \renewcommand{\headrulewidth}{0pt}
+
+% \lhead{{\color{blue}\rule{1cm}{1cm}}}
+% \lhead{\includegraphics[width=5cm]{D:/OneDrive/Universidades/UTEM/Logo/DGD_dspe}}
+% Logos de departamentos en encabezado y pie de página
+% \lhead{\begin{picture}(3,3) \put(-7,2){\includegraphics[width=3.5cm]{D:/OneDrive/Universidades/UTEM/Logo/VRAC}} \end{picture}}
+% \rhead{\begin{picture}(3,3) \put(-380,0){\includegraphics[width=19cm]{D:/OneDrive/Universidades/UTEM/Logo/Barra}} \end{picture}}
+% \lfoot{\begin{picture}(3,3) \put(-10,-17){\includegraphics[width=5cm]{D:/OneDrive/Universidades/UTEM/Logo/DGD_dspe}} \end{picture}}
+
+% Formatos especiales de titulos de sección y subsección
+% \titleformat{\section}
+%   {\normalfont\large\bfseries}{\thesection.}{1em}{\MakeUppercase} % Editamos mayúsculas, espacio y terminación con punto
+%   
+% \titleformat{\subsection}
+%   {\normalfont\large\bfseries}{\thesubsection.}{1em}{} % Editamos espacio y terminación con punto
+
+%\titleformat{\section}{\normalfont\fontsize{16}{19}}
+
+\begin{document}
+
+<<echo=FALSE, include=FALSE>>=
+knitr::knit_hooks$set(document = function(x) {sub('\\usepackage[]{color}', '\\usepackage{xcolor}', x, fixed = TRUE)})
+knitr::opts_chunk$set(fig.path = "~/MEGA/Programacion Estadistica/Trabajos en R/Bookdown/Cursos de Estadística/Estadística I/material/talleres/Talleres_de_practica/figures/")
+@
+
+\Sexpr{knit_child(taller)}
+
+\end{document}
+

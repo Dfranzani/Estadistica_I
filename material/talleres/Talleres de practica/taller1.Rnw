@@ -1,0 +1,14 @@
+\begin{center}
+{\bf \Large{Taller de práctica 1}}\\Manejo de datos en R\\(Taller Introductorio)
+\end{center}
+
+La base de datos \texttt{Tipo+de+cambio+extranjero+2022.csv} (\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Tipo%2Bde%2Bcambio%2Bextranjero%2B2022.csv}{link}) contiene los datos del tipo de cambio de moneda extranjera al dólar para distintas localidades.
+
+\begin{enumerate}
+    \item Explore la base de datos indicando los tipos de variables que la componen, para ello, utilice el comando \texttt{str()}.
+    \item Elimine los datos faltantes de una base de datos, para ello, utilice el comando \texttt{na.omit()}. Comente la cantidad de observaciones eliminadas. ¿Cuáles son las  desventajas de este tipo de técnicas?
+    \item Cambie el nombre de las columnas por unas con referencia más simple (por ejemplo: País 1, País 2, etc). Luego, determine las medidas de localización y escala del tipo de dato estudiado para cada país a través del tiempo.
+    \item Filtre la base de datos de para los primeros 3 países (primeras tres columnas con los tipo de cambios de países, manteniendo la columna de fecha de registro).
+    \item Obtenga una nueva tabla a partir de la generada en la pregunta anterior, que refleje el promedio mensual del tipo de cambio en cada país. Considere que debe generar una columna que permita identificar el mes. \textit{Nota}: Se recomienda usar el comando \texttt{ave()} o \texttt{aggregate()}.
+    \item A la tabla obtenida en la pregunta anterior añádale nombres de fila iguales al mes de medición de las observación. Luego elimine la columna que contiene el mes de medición.
+\end{enumerate}

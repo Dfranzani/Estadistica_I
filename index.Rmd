@@ -1,0 +1,104 @@
+---
+title: "Estadística I & Estadística Descriptiva"
+subtitle: ""
+author: "[Daniel Franzani](https://dfranzani.github.io/website/principal/home.html)"
+description: >
+   Curso básico de Estadística para ingeniería.
+date: "Actualizado al `r format(Sys.Date(), '%d-%m-%Y')`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: refs.bib
+csl: apa-annotated-bibliography.csl # Gitbook
+biblio-style: apalike # Latex
+url: 'https://dfranzani.github.io/Estadistica_I/'
+link-citations: yes
+github-repo: "Dfranzani/Estadistica_I"
+fontsize: 11pt
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+options(tinytex.engine_args = '-shell-escape') # Minted indent
+#rmarkdown::find_pandoc(cache = TRUE, dir = "/usr/bin", version = NULL) # Pandoc versión (referencias y tablas)
+library(ggplot2)
+library(kableExtra)
+# library(gridExtra)
+options(kableExtra.html.bsTable = T)
+
+# screenshot HTML widgets
+if (is.null(webshot:::find_phantom())) webshot::install_phantomjs()
+```
+
+# Presentación {.unnumbered}
+
+<a href="https://www.r-project.org/"><img src="logos/Logo3.png" class="logo" width="250" align="right"/></img></a>
+
+La asignatura Estadística I & Estadística Descriptiva, es el primer curso estadístico de la carrera de Ingeniería Comercial e Ingeniería en Control de Gestión respectivamente. Estos son el primero de una serie de dos cursos introductorios de estadística, los cuales tienen un enfoque práctico con un fuerte énfasis en el estudio descriptivo de datos. Este primer documento, se concentra en gráficos descriptivos, medidas de resumen, funciones de probabilidad y distribuciones muestrales, haciendo uso del entorno de software R.
+
+[Enlace al documento del segundo curso de Estadística: Estadística II & Inferencia Estadística](https://dfranzani.github.io/Estadistica_II/).
+
+# Modalidad {.unnumbered}
+
+La modalidad de trabajo consta de los siguientes elementos:
+
+1.  El **documento** web cuenta con el desarrollo de todos los tópicos de curso, además de ejemplificaciones y ejercicios.
+
+2.  En su mayoría, los ejemplos y ejercicios presentes en el documento fueron extraídos de la bibliografía obligatoria, sin embargo, a algunos de estos se ha incorporado el **uso de R** como programa de análisis estadístico. El desarrollo de los ejercicios por parte del estudiante se recomienda que sea en Google Colab R. Esta plataforma cuenta con una opción de configuración interna para R (desde Google Drive: Nuevo -\> Más -\> Google Collaboratory, dentro del archivo: Entorno de ejecución -\> Cambiar tipo de entorno de ejecución -\> Tipo de entorno de ejecución -\> R -\> Guardar). En el siguiente [enlace](https://colab.research.google.com/notebook#create=true&language=r) se puede acceder a un documento con una configuración preestablecida para este lenguaje. El archivo generado se guardará automáticamente en la cuenta de Gmail predeterminada; otra opción en caso de no querer modificar su cuenta predeterminada (si es que debiese hacerlo) es descargar el archivo y cargarlo manualmente en la carpeta de Drive que estime conveniente. Los aspectos relacionados con el uso de R serán abordados en el <a href="material/talleres/Taller introductorio/Taller_Introductorio_a_R.ipynb" download>Taller Introductorio</a>.
+
+3.  Se cuenta con **talleres de práctica**, lo cuales, cuentan con ejercicios propuestos para desarrollar en clases y ejercicios para el trabajo independiente del estudiante.
+
+4.  El curso cuenta con **bibliografía** obligatoria y complementaria:
+
+    -   (Obligatoria) [*"Estadística para Administración y Economía"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Anderson%2C%20Estad%C3%ADstica.pdf) [@anderson]
+
+    -   (Obligatoria,) [*"Probabilidad y Estadística para Ingeniería y Ciencias"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore%2C%20Probabilidad%20y%20Estad%C3%ADstica.pdf) [@Devore]
+
+    -   (Complementaria) [*"R Programming for Data Science"*](https://bookdown.org/rdpeng/rprogdatascience/) [@peng2016r]
+
+    -   (Complementaria) [*"The R Software: Fundamentals of Programming and Statistical Analysis"*](https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux%2C%20Manual%20de%20R.pdf) [@deMicheaux2013]
+
+    -   (Complementaria) [*"ggplot2: Elegant Graphics for Data Analysis"*](https://ggplot2-book.org/) [@wickham_ggplot2_2009]
+
+    Además, se añaden citas que refuerzan el contenido presentando, las cuales se encuentra en detalle al final de cada sección.
+
+5.  Las **bases de datos** a utilizar en el curso se encuentran disponibles en un [repositorio web](https://github.com/Dfranzani/Bases-de-datos-para-cursos) público.
+
+```{r echo = F, results='asis'}
+if (knitr::is_html_output()){
+   cat("# Talleres de práctica {-}", "\n", "A continuación, se muestra una lista de los talleres disponibles:", "\n", "\n")
+   talleres = list.files(path = "material/talleres/Talleres de practica")
+   talleres_pruebas = talleres[grepl(".pdf", talleres) & grepl("prueba", talleres)]
+   taller_examen = talleres[grepl(".pdf", talleres) & grepl("examen", talleres)]
+   talleres = talleres[grepl(".pdf", talleres) & !grepl("examen", talleres) & !grepl("prueba", talleres)]
+   
+   link = function(taller, tipo){
+      if(length(taller) != 0){
+         taller = taller[order(taller)]
+         if(tipo == "Taller de práctica Examen"){
+            taller = paste0("[", tipo, "](material/talleres/Talleres de practica/", taller, ")")
+         } else{
+            taller = paste0("[", tipo, 1:length(taller), "](material/talleres/Talleres de practica/", taller, ")")
+         }
+      }
+      return(taller)
+   }
+   
+   talleres = c(link(talleres, "Taller de práctica "),
+                link(talleres_pruebas, "Taller de práctica Evaluación "),
+                link(taller_examen, "Taller de práctica Examen"))
+   
+   if(length(talleres) != 0){
+      for (i in 1:length(talleres)) {
+         cat(paste(" -", talleres[i]), "\n")
+      }
+   }
+}
+```
+
+```{r, echo=FALSE}
+# Valor para desplegar los código de carga de bases de datos dependiendo de la salida del documento
+if (knitr::is_html_output()){
+  code = TRUE
+} else {
+  code = FALSE
+}
+```

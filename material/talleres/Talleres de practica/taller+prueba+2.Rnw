@@ -1,0 +1,175 @@
+\begin{center}
+{\bf \Large{Taller de práctica Prueba 2}}\\V.A.C: Función de densidad de probabilidad (Sección 2.4.1)\\ V.A.C: Función de distribución acumulada (Sección 2.4.2)\\Distribución exponencial y Distribución normal (Secciones 2.4.3.2 y 2.4.3.3)
+\end{center}
+
+\begin{enumerate}
+
+\item El riesgo real de incumplimiento de un determinado tipo de crédito puede ser considerado como una variable aleatoria continua $X$ con función de densidad de probabilidad
+
+\begin{equation}
+\notag
+f(x)= \left\lbrace
+\begin{array}{cl}
+k[1-(x-3)^2] & 2\leq x \leq 4\\
+0 &  \text{en otro caso}
+\end{array}
+\right.
+\end{equation}
+
+\begin{enumerate}
+    \item Determine el valor de $k$.
+    %\item Trace la gráfica de $f(x)$.
+    \item ¿Cuál es la probabilidad de que el riesgo de incumplimiento sea mayor a 2.7\%?
+    \item ¿Cuál es la probabilidad de que el riesgo de incumplimiento sea menor a 3.2\%?
+    \item ¿Cuál es la probabilidad de que el el riesgo de incumplimiento esté entre 2.3\% y 3.8\%?
+    \item Determine una expresión para $P(X \leq x)$.
+\end{enumerate}
+
+\item Sea X una variable aleatoria continua con función de distribución acumulativa
+
+\begin{equation}
+\notag
+F(x)= \left\lbrace
+\begin{array}{cl}
+0 & x \leq 0\\
+\displaystyle\frac{x}{4}\left[ 1 + \ln\left(\frac{4}{x}\right) \right] & 0 < x \leq 4\\
+1 & x \geq 4
+\end{array}
+\right.
+\end{equation}
+
+Determinar:
+\begin{enumerate}
+    \item $P(X \leq 1)$
+    \item $P(1\leq X \leq 3)$
+    \item La función de densidad de probabilidad de $X$.
+    %\item Grafique $f(x)$ y $F(x)$.
+\end{enumerate}
+
+
+\item Una familia de funciones de densidad de probabilidad que ha sido utilizada para aproximar la distribución del ingreso, el tamaño de la población de una ciudad y el tamaño de firmas es la familia Pareto. La familia tiene dos parámetros, $k$ y $\theta$, ambos $> 0$ y la función de densidad de probabilidad es
+
+\begin{equation}
+\notag
+f(x;k, \theta)= \left\lbrace
+\begin{array}{cl}
+\displaystyle\frac{k\theta^k}{x^{k+1}} & x \geq \theta\\
+0 &  x < \theta
+\end{array}
+\right.
+\end{equation}
+
+Verifique que el área total bajo la curva es igual a 1.
+
+%\begin{enumerate}
+    %\item Trace la gráfica de $f(x)$.
+    %\item Verifique que el área total bajo la curva es igual a 1.
+    %\item Con $b>\theta$, obtenga una expresión para $P(X\leq b)$
+%\end{enumerate}
+
+\item Los dos conjuntos de datos están relacionados con las variantes tinto \href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-2/winequality-red.csv}{(link)} y blanco \href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-2/winequality-white.csv}{(link)} del vino portugués ``Vinho Verde''. Debido a cuestiones de privacidad y logística, sólo están disponibles variables fisicoquímicas (entradas) y sensoriales (salidas) (por ejemplo, no hay datos sobre tipos de uva, marca de vino, precio de venta del vino, etc.).
+
+Las columnas de las bases de datos son las siguientes:
+
+\begin{itemize}
+\item \texttt{fixed.acidity} ($g/L$): cantidad de la mayoría de los ácidos involucrados con el vino o fijos o no volátiles (no se evaporan fácilmente).
+\item \texttt{volatile.acidity} ($g/L$): cantidad de ácido acético en el vino, que en niveles demasiado altos puede provocar un sabor desagradable a vinagre
+\item \texttt{citric.acid} ($g/L$): cantidad de ácido cítrico, que se encuentra en pequeñas cantidades, el cual, puede añadir ``frescura'' y sabor a los vinos.
+\item \texttt{residual.sugar} ($g/L$): cantidad de azúcar que queda después de que se detiene la fermentación. Es raro encontrar vinos con menos de 1 gramo/litro y los vinos con más de 45 gramos/litro se consideran dulces.
+\item \texttt{chlorides} ($g/L$): cantidad de sal en el vino.
+\item \texttt{free.sulfu.dioxide} ($ppm$): cantidad de la forma libre de SO2 existe en equilibrio entre el SO2 molecular (como gas disuelto) y el ion bisulfito; previene el crecimiento microbiano y la oxidación del vino.
+\item \texttt{total.sulfur.dioxide} ($ppm$): cantidad de formas libres y ligadas de S02; En concentraciones bajas, el SO2 es prácticamente indetectable en el vino, pero en concentraciones de SO2 libre superiores a 50 ppm, el SO2 se vuelve evidente en la nariz y el sabor del vino.
+\item \texttt{density} ($g/cm^3$): densidad del agua dependiendo del porcentaje de alcohol y contenido de azúcar.
+\item \texttt{pH}: describe qué tan ácido o básico es un vino en una escala de 0 (muy ácido) a 14 (muy básico); la mayoría de los vinos tienen entre 3 y 4 en la escala de pH.
+\item \texttt{sulphates} ($mg/L$): cantidad de aditivo del vino que puede contribuir a los niveles de dióxido de azufre (S02), que actúa como antimicrobiano y antioxidante.
+\item \texttt{alcohol} (ABV, Alcohol por volumen): el porcentaje de alcohol del vino.
+\item \texttt{quality}: variable de salida (basada en datos sensoriales, puntuación entre 0 y 10), un número cercano a 10 indica un vino de mayor calidad.
+\end{itemize}
+
+A continuación, se utiliza la base de datos asociada a los datos del vino tinto para los enunciados siguientes. Además, en cada uno de los enunciados de probabilidad, especifique la variable aleatoria, la distribución de la variable aleatoria, la probabilidad a calcular y la tabla utilizada.
+
+<<echo=FALSE>>=
+data = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-2/winequality-red.csv", sep = ";")
+@
+
+\begin{enumerate}
+\item Suponiendo que la cantidad de ácido cítrico distribuye normal con media 0.27 y varianza 0.037, calcule lo siguiente.
+\begin{enumerate}[i.]
+  \item La probabilidad de que la cantidad de ácido cítrico de un vino no sea menor a 0.301 $g/L$.
+  \item La probabilidad de que la cantidad de ácido cítrico de un vino esté entre 0.26 y 0.32 (inclusive) $g/L$.
+  \item La probabilidad de que la cantidad de ácido cítrico de un vino no esté entre 0.27 y 0.3 (inclusive ambos) $g/L$.
+\end{enumerate}
+
+\begin{minipage}{5cm}
+\centering
+<<echo = F, message = F>>=
+library(kableExtra)
+q = c(0.301, 1-0.301, 0.26, 0.32, 1-0.26,1-0.32,0.3,1-0.3,0.27,1-0.27)
+q = q[order(q)]
+p = pnorm(q, mean = 0.27, sd = sqrt(0.037))
+df = data.frame("Cuantil" = q, "Prob" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Normal\\\\Media 0.27 y Varianza 0.037") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+\begin{minipage}{6cm}
+\centering
+<<echo = F, message = F>>=
+q = c(0.301, 1-0.301, 0.26, 0.32, 1-0.26,1-0.32,0.3,1-0.3,0.27,1-0.27)
+q = q[order(q)]
+p = pnorm(q, mean = 0.27, sd = 0.037)
+df = data.frame("Cuantil" = q, "Prob" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Normal\\\\Media 0.27 y Desviación estándar 0.037") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+
+\item El porcentaje de alcohol en el vino depende del tiempo de fermentación. En particular, el tiempo de fermentación del vino sigue una distribución exponencial con una tasa promedio de 4 horas. Calcule lo siguiente.
+\begin{enumerate}[i.]
+  \item La probabilidad de que el tiempo de fermentación de un vino sea menor a 3.2 horas.
+  \item La probabilidad de que el tiempo de fermentación de un vino sea no menor a un cuarto de día.
+  \item La probabilidad de que el tiempo de fermentación de un vino esté entre 2.9 (inclusive) y 4.1 horas.
+\end{enumerate}
+
+\begin{minipage}{0.45\textwidth}
+<<echo = F, message = F>>=
+q = seq(from = 2.5, to = 6.1, by = 0.1)
+p = pexp(q, rate = 1/4)
+df = data.frame("Cuantil" = q, "Prob" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Exponencial, lambda = 1/4") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+<<echo = F, message = F>>=
+q = seq(from = 2.5, to = 6.1, by = 0.1)
+p = pexp(q, rate = 1/24)
+df = data.frame("Cuantil" = q, "Prob" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Exponencial, lambda = 1/24") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+
+\end{enumerate}
+
+\end{enumerate}
