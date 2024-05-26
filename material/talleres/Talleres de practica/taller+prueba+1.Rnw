@@ -1,0 +1,252 @@
+\begin{center}
+{\bf \Large{Taller de práctica Prueba 1}}\\Operaciones en R (Taller Introductorio)\\Conceptos básicos de estadística (sección 1.1)\\Medidas de Localización (sección 1.2)\\Medidas de escala (sección 1.3)\\Gráficos descriptivos: Histograma, Caja y Violín (secciones 1.5.1, 1.5.2 y 1.5.3)
+\end{center}
+
+
+\section*{Parte 1: Operaciones en R}
+
+Para los siguientes enunciados, escriba el código asociado.
+
+\begin{enumerate}
+  \item Defina el vector $x = (10, 20, 30, 40, 10, 20, 30, 40, 10, 20, 30, 40)$ de dos formas distintas.
+  \item Asigne los valores 550, 340, 920 y 615 a las variables $V1$, $V2$, $V3$ y $V4$. Luego, calcule el promedio de estas mediante el comando \texttt{mean()}.
+  \item Genere una matriz de 4 filas y 4 columnas que contenga los números pares desde el 2 hasta el 32, sin que se repita alguno.
+\end{enumerate}
+
+\section*{Parte 2: Conceptos básicos de estadística}
+
+\begin{enumerate}
+  \item Observe el siguiente gráfico, y explique conceptualmente, cuál es el dato y cuál sería la información. ¿Qué se necesita para transitar de un concepto a otro (¿y en qué dirección se transita?)?
+  
+  <<echo=F, fig.align = 'center', fig.width=3, fig.height=2>>=
+  library(ggplot2)
+  datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv")
+  ggplot(data = datos[datos$Mes == "Junio",], aes(x = Dia, y = Valor)) + geom_point() +
+    labs(title = "Valor observado del dólar \n en algunos días de Junio",
+         x = "Días", y = "Valor en pesos (CLP)")
+  @
+  
+  \item Realice un esquema o mapa conceptual que relacione los conceptos de población, muestra, parámetro, estadístico, estimador y estimación.
+  \item Suponga, que está interesado en predecir la variación porcentual del IPC para el siguiente mes considerando un rezago a un mes (es decir, respecto al mes anterior), para ello, usted sabe que este valor será similar al promedio de las variaciones porcentuales del IPC a rezago de un mes de los meses anteriores (históricamente), sin embargo, utiliza los últimos doce meses, dando como resultado un 3\%. A continuación, especifique, la población, la muestra, el parámetro, el estadístico, el estimador y la estimación del estudio. ¿Qué sucede si se considerarán para el cálculo los últimos 24 meses o los últimos 36 meses?, explique el concepto estadístico detrás de esta situación.
+  \item ¿Por qué es incorrecto hablar de una muestra representativa? Justifique.
+\end{enumerate}
+
+\newpage
+
+\section*{Parte 3: Medidas de Localización y Escala}
+
+\begin{enumerate}
+  \item ¿Cuál es la desventaja del promedio como medida de resumen? Explique.
+  \item Mencione las ventajas y desventajas de utilizar el rango, la varianza (o desviación estándar) y el coeficiente de variación para comparar la variabilidad de los datos de dos más muestras.
+  \item La siguiente base de datos contiene registros del Índice de Confianza del Consumidor (ICC). Este indicador de confianza del consumidor proporciona una indicación de la evolución futura del consumo y el ahorro de los hogares. Un indicador por encima de 100 señala un aumento en la confianza de los consumidores hacia la situación económica futura, como consecuencia de la cual son menos propensos a ahorrar y más inclinados a gastar dinero en compras importantes en los próximos 12 meses. Los valores por debajo de 100 indican una actitud pesimista hacia la evolución futura de la economía, lo que posiblemente resulte en una tendencia a ahorrar más y consumir menos.
+
+Las variables que contiene la base de datos son las siguientes:
+\begin{itemize}
+  \item Locacion: lugar en donde se mide el ICC (FRA = Francia, POL = Polonia, OECD = OCDE, ESP = España, BEL = Bélgica, ITA = Italia, DEU = Alemania).
+  \item Mes: corresponde al mes en el que se realiza la medición del índice.
+  \item Ano: corresponde al año en el que se realiza la medición del índice.
+  \item ICC: valor del índice de confianza del consumidor.
+\end{itemize}
+
+<<echo=F>>=
+datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%202/consumidor.csv") 
+@
+
+La base de datos al cargarse en R se ha guardado con el nombre de \texttt{datos}.
+  
+  \begin{enumerate}
+    \item Interprete las siguientes salidas de código.
+    
+    <<>>=
+    mean(datos$ICC[datos$Locacion == "ESP"])
+    mean(datos$ICC[datos$Locacion == "DEU"])
+    median(datos$ICC[datos$Ano %in% c(2017:2020) & datos$Mes %in% c(2:5)])
+    median(datos$ICC[datos$Locacion == "OECD" & datos$Mes %in% c(3,6,7)])
+    @
+    
+    \item Interprete las siguientes salidas, y compárelas según sea posible.
+    
+    <<>>=
+    var(datos$ICC[datos$Locacion == "ESP"])
+    var(datos$ICC[datos$Locacion == "DEU"])
+    sd(datos$ICC[datos$Locacion == "ESP"])/abs(mean(datos$ICC[datos$Locacion == "ESP"]))*100
+    sd(datos$ICC[datos$Locacion == "DEU"])/abs(mean(datos$ICC[datos$Locacion == "DEU"]))*100
+    @
+  \end{enumerate}
+  
+\end{enumerate}
+
+\newpage
+
+\section*{Parte 4: Gráficos descriptivos}
+
+La siguiente base contiene datos respecto a los ataques al corazón de distintos pacientes hospitalarios. Algunas de las columnas de la base de datos son las siguientes:
+
+\begin{itemize}
+  \item sex: sexo del paciente (Hombre ``H'' y  Mujer ``M'').
+  \item cp: Tipo de dolor en el pecho, Valor 1: angina típica, Valor 2: angina atípica, Valor 3: dolor no anginoso, Valor 4: asintomático.
+  \item trtbps: presión arterial en reposo (en mm Hg).
+  \item fbs: azúcar en sangre en ayunas $>$ 120 mg/dl (V = verdadero; F = falso).
+  \item thalachh: frecuencia cardíaca máxima alcanzada (en latidos por minuto).
+  \item oldpeak: tiempo de duración del último ataque al corazón (en minutos).
+\end{itemize}
+
+La base de datos al cargarse en R se ha guardado con el nombre de \texttt{datos}.
+
+<<echo=F>>=
+datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Heart+complete.csv")    
+@
+
+<<>>=
+str(datos)
+@
+
+\begin{enumerate}
+  \item Interprete el siguiente histograma haciendo énfasis en las frecuencias más altas.
+  
+  <<echo=F, fig.align = 'center', fig.width=3, fig.height=3>>=
+  ggplot(data = datos, aes(x = trtbps)) + geom_histogram(bins = round(1+log2(dim(datos)[1])), color = "black", fill = "white") +
+    labs(title = "Histograma", x = "presión arterial en reposo (mm Hg)", y = "Frecuencia")
+  @
+  
+  \newpage
+  \item Interprete el siguiente gráfico de caja haciendo énfasis en las medidas de posición.
+  
+  <<echo=F, fig.align = 'center'>>=
+  g = ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comandos estéticos
+    y = thalachh)) + # Eje Y y variable asociada
+  geom_boxplot( # Objeto a graficar: gráfico de caja
+    color = "black", # Color del borde del gráfico
+    fill = "white") + # Color de relleno del gráfico
+  labs( # Títulos 
+    title = "Grafico de caja", # Título del gráfico
+    x = "", # Título del eje X
+    y = "Frecuencia cardíaca máxima \n alcanzada (en latidos por minuto)") + # Título del eje Y
+  theme( # Aspectos visuales del gráfico
+    axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+    axis.text.x = element_blank()) # Elimina los números del eje X
+  info = unlist(ggplot_build(g)[[1]]) # Guardamos los valores del gráfico
+  values = round(as.numeric(info[1:5]), 3) # Extraemos los valores de construcción
+  @
+  
+  <<echo=F, fig.align = 'center', fig.width=3, fig.height=3>>=
+  g + # Creamos un nuevo gráfico a partir del anterior
+    scale_y_continuous( # Modificar el eje Y
+      breaks = values, # Modificamos los puntos a considerar en el eje Y
+      labels = values)
+  @
+  
+
+  
+  \item Interprete cada uno de los gráficos de violín por separado, haciendo énfasis en los siguientes aspectos:
+  
+  \begin{itemize}
+    \item La ubicación de las mayores concentraciones de datos.
+    \item Posición del promedio respecto a la mediana.
+    \item Posibles razones de los ocurrido en \textit{b)}.
+  \end{itemize}
+  
+  En caso de ser un gráfico segregado por una segunda variable, compare los violines respecto a la ubicación del promedio y la longitud vertical del gráfico (interprete esto como dispersión de los datos).
+  
+  \begin{enumerate}
+  
+  \item Gráficos de violín de la presión arterial por sexo.
+  
+  <<echo=F, fig.align = 'center', fig.width=5, fig.height=3>>=
+  g = ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comandos estéticos
+    x = 1, # Se fija el valor horizontal del gráfico (a elección)
+    y = trtbps)) + # Eje Y y variable asociada
+  geom_violin( # Objeto a graficar: violín
+    trim = F, # Modifica las terminaciones visuales superior e inferior
+    fill = "white") + # Color de relleno del gráfico
+  labs( # Títulos
+    title = "Presión arterial en reposo por sexo", # Título del gráfico
+    x = "", # Título del eje X
+    y = "(mm Hg)") + # Título del eje Y
+  theme( # Aspectos visuales del gráfico
+    axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+    axis.text.x = element_blank()) # Elimina los números del eje X
+  g + geom_boxplot( # Objeto a graficar: gráfico de caja
+  width = 0.1, # Anchura proporcional del nuevo gráfico de caja
+  color = "black", # Color de borde del gráfico
+  fill = "white") + # Color de relleno del gráfico
+  stat_summary( # Función para agregar información de resumen
+    fun = mean, # Tipo de información: promedio
+    geom = "point", # Forma visual
+    size = 1, # Tamaño
+    color = "red", # Color
+    orientation = "x") + # Elimina los números del eje X
+  facet_wrap( # Segregación del gráfico
+    vars(sex), # Variable que se utiliza para segregar el gráfico
+    nrow = 1) # Disposición visual: una fila
+  @
+  \newpage
+  \item Gráfico de violín de la frecuencia cardíaca.
+  
+  <<echo=F, fig.align = 'center', fig.width=5, fig.height=2.7>>=
+  g = ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comandos estéticos
+    x = 1, # Se fija el valor horizontal del gráfico (a elección)
+    y = thalachh)) + # Eje Y y variable asociada
+  geom_violin( # Objeto a graficar: violín
+    trim = F, # Modifica las terminaciones visuales superior e inferior
+    fill = "white") + # Color de relleno del gráfico
+  labs( # Títulos
+    title = "Frecuencia cardíaca máxima alcanzada", # Título del gráfico
+    x = "", # Título del eje X
+    y = "Latidos por minuto") + # Título del eje Y
+  theme( # Aspectos visuales del gráfico
+    axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+    axis.text.x = element_blank()) # Elimina los números del eje X
+  g + geom_boxplot( # Objeto a graficar: gráfico de caja
+  width = 0.1, # Anchura proporcional del nuevo gráfico de caja
+  color = "black", # Color de borde del gráfico
+  fill = "white") + # Color de relleno del gráfico
+  stat_summary( # Función para agregar información de resumen
+    fun = mean, # Tipo de información: promedio
+    geom = "point", # Forma visual
+    size = 1, # Tamaño
+    color = "red", # Color
+    orientation = "x") 
+  @
+  
+  \item Gráficos de violín del tiempo de duración del último ataque al corazón, según el tipo de dolor de pecho.
+  
+  <<echo=F, fig.align = 'center', fig.width=6, fig.height=3>>=
+  g = ggplot( # Ambiente gráfico
+  data = datos, # Base de datos a utilizar
+  aes( # Comandos estéticos
+    x = 1, # Se fija el valor horizontal del gráfico (a elección)
+    y = oldpeak)) + # Eje Y y variable asociada
+  geom_violin( # Objeto a graficar: violín
+    trim = F, # Modifica las terminaciones visuales superior e inferior
+    fill = "white") + # Color de relleno del gráfico
+  labs( # Títulos
+    title = "Duración del último ataque al corazón \n según el dolor de pecho", # Título del gráfico
+    x = "", # Título del eje X
+    y = "Minutos") + # Título del eje Y
+  theme( # Aspectos visuales del gráfico
+    axis.ticks.x = element_blank(), # Elimina las regletas del eje X
+    axis.text.x = element_blank()) # Elimina los números del eje X
+  g + geom_boxplot( # Objeto a graficar: gráfico de caja
+  width = 0.1, # Anchura proporcional del nuevo gráfico de caja
+  color = "black", # Color de borde del gráfico
+  fill = "white") + # Color de relleno del gráfico
+  stat_summary( # Función para agregar información de resumen
+    fun = mean, # Tipo de información: promedio
+    geom = "point", # Forma visual
+    size = 1, # Tamaño
+    color = "red", # Color
+    orientation = "x") + # Elimina los números del eje X
+  facet_wrap( # Segregación del gráfico
+    vars(cp), # Variable que se utiliza para segregar el gráfico
+    nrow = 1) # Disposición visual: una fila
+  @
+  
+\end{enumerate}
+\end{enumerate}

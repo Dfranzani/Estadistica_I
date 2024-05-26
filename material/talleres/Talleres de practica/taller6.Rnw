@@ -1,0 +1,68 @@
+\begin{center}
+{\bf \Large{Taller de práctica 6}}\\Valor esperado de variables aleatorias discretas y continuas\\ (secciones 2.5 y 2.6)
+\end{center}
+
+\begin{enumerate}
+
+ \item En una determinada ciudad, se realiza un estudio sobre el ingreso mensual de los residentes. Se sabe que el 15.3\% de la población tiene un ingreso mensual de \$1210 dólares, 43.1\% tiene un ingreso mensual de \$2130 dólares, el 20.9\% tiene un ingreso mensual de \$4702 dólares, y el 20.7\% restante tiene un ingreso mensual de \$5009 dólares.
+
+    Escriba la función de masa de probabilidad. Calcule $E(X)$ y $Var(X)$.
+
+    \item En una fábrica de productos electrónicos, se sabe que la probabilidad de que un artículo sea defectuoso sigue una distribución de probabilidad de masa con los siguientes valores:
+
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+    Número de defectos & Probabilidad \\
+    \hline
+    0 & 0.20 \\
+    1 & 0.40 \\
+    2 & 0.12 \\
+    4 & 0.19 \\
+    5 & 0.09 \\
+    \hline
+    \end{tabular}
+    \end{table}
+    
+
+    Escriba la función de masa de probabilidad. Calcule $E(X^2)$ y $Var(X)$.
+    
+    \item Sea $X$ la cantidad de tiempo durante la cual un libro puesto en reserva durante dos horas en la biblioteca de una universidad es solicitado en préstamo por un estudiante seleccionado. La función de distribución acumulativa del tiempo de préstamo $X$ es
+
+
+    \begin{equation}
+      \notag
+      F(x) = \left\lbrace
+      \begin{matrix}
+        0 & x<0 \\
+        \displaystyle\frac{x^2}{4} & 0\leq x < 2 \\
+        1 & x \geq 2\\
+      \end{matrix} \right.
+    \end{equation}
+
+    Escriba la función de densidad de probabilidad, y calcule $E(X)$ y $Var(X)$. 
+
+    \item Sea $X =$ el intervalo de tiempo (minutos) entre dos autos consecutivos en el flujo de tránsito vial, seleccionados al azar. Suponga que la distribución del intervalo de tiempo tiene la forma
+
+    \begin{equation}
+      \notag
+      f(x) = \left\lbrace
+      \begin{matrix}
+        \displaystyle\frac{3}{x^4} & x > 1 \\
+        0 & x \leq 1\\
+      \end{matrix} \right.
+    \end{equation}
+
+    Calcule $E(X)$ y $Var(X)$. 
+    
+    %\item Supongamos que tenemos una variable aleatoria continua $X$ con una función de densidad de probabilidad dada por:
+    
+    %\begin{equation}
+    %  \notag
+    %  f(x) =\displaystyle\frac{1}{\pi(1+x^2)} \text{ , } -\infty < x < \infty
+    %\end{equation}
+    
+    %Calcule la esperanza de la variable aleatoria.
+    
+\end{enumerate}

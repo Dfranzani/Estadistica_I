@@ -1,0 +1,36 @@
+\begin{center}
+{\bf \Large{Taller de práctica 7}}\\Distribución de la media y TLC\\ (sección 3.1)
+\end{center}
+
+\begin{enumerate}[1)]
+    \item La siguiente base de datos \href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv}{(link)} contiene el valor del dólar observado de algunos de los días de los meses de junio y julio, tomados por el el SII. A continuación:
+        \begin{enumerate}
+          \item Cargue la base de datos usando el comando \texttt{read.csv()}.
+          \item Utilice el comando \texttt{str()} para estudiar los tipos de variable presentes en la base de datos.
+          \item Realice un histograma del valor de dólar por mes. Comente.
+          \item Suponga que el valor del dólar distribuye $N(\mu = 880,\sigma^2 = 50^2)$. Determine probabilidad de que el valor promedio del dólar muestral supere los \$900.
+          %\item Si el valor del dólar $\sim N(880,\sigma^2)$. Determine probabilidad de que el valor promedio del dólar muestral supere los \$900. Compare con lo obtenido en la pregunta anterior, y comente.
+          \item Con los mismos supuestos de la pregunta \textit{d}, determine por separado la probabilidad de que en cada mes, el valor promedio de valor del dólar muestral no supere los \$890. Compare y comente.
+        \end{enumerate}
+        
+    \item El precio de venta de una casa nueva en cierta ciudad se distribuye normal con media 45 (millones de pesos) y una desviación estándar de 6 (millones de pesos) ¿cuál es la probabilidad de que la media muestral de los precios de venta sea menor de 46 (millones de pesos) si:
+
+    \begin{itemize}
+      \item[(a)] ¿$n=100$?
+      \item[(b)] ¿$n=20$?
+    \end{itemize}
+   
+    \item Suponga que el monto de dinero que reciben los contribuyentes que reciben reembolso después de su declaración de impuestos, es una variable aleatoria con desviación estándar $\$20200$. Si se toma una muestra de 40 contribuyentes al azar, ¿cuál es la probabilidad de que la media observada tenga un valor que se encuentre a menos de $\$80000$ de la correspondiente media poblacional?
+    
+    \item Las calificaciones de exámenes para todos los estudiantes de último año de preparatoria en cierto estado tienen media de 60 y varianza de 64. Considerando una muestra aleatoria de $n = 100$, ¿cuál es la probabilidad de que el promedio de las calificaciones sea menor a 58?
+    
+    \item  Una antropóloga desea calcular el promedio de estatura de los hombres de cierta raza. Si se supone que la desviación estándar poblacional es de 2.5 pulgadas y si ella muestrea 100 hombres aleatoriamente, encuentre la probabilidad de que la diferencia entre la media muestral y la verdadera media poblacional no exceda de 0.5 pulgada.
+    
+    \item La cantidad de operaciones bancarias que ocurren durante un día distribuye normal con media 75 (millones) y varianza 144 (millones).
+
+    \begin{enumerate}
+      \item Considerando una muestra de tamaño 22 (días), ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 77.3 millones? Mencione con rigurosidad todos los pasos de su solución.
+      \item Considerando una muestra de tamaño 71 (días), y que los datos del enunciado NO distribuyen normal, ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 73.2 millones? Mencione con rigurosidad todos los pasos de su solución.
+    \end{enumerate}
+\end{enumerate}
+    

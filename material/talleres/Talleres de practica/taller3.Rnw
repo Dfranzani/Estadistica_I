@@ -1,0 +1,31 @@
+\begin{center}
+{\bf \Large{Taller de práctica 3}}\\Gráficos descriptivos \\(sección 1.5)
+\end{center}
+
+
+\begin{enumerate}
+\item La siguiente \href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/afp%2Btaller1.csv}{base de datos} contiene los valores cuotas de marzo hasta abril de las AFP de Capital, Cuprum y Habitat, tomados por el el SP (Superintendencia de Pensiones). A continuación, para cada uno de los siguientes gráficos modifique colores, títulos de los ejes y del gráfico según corresponda.
+
+  \begin{enumerate}
+      \item Realice un histograma de los valores cuota de todas las AFP y uno para cada una de ellas. Compare el comportamiento de los valores cuotas de cada AFP versus el gráfico general.
+      \item Realice un gráfico de violin (+ caja + promedio) del valor cuota para cada AFP. Interprete cada uno de los gráficos en busca de explicar la posición del del promedio respecto a la mediana, para ello analice la presencia de valores extremos, la concentraciones de los datos y la presencia de valores atípicos.  
+      \item Realice un gráfico de dispersión (+líneas) de los valores cuota de las AFP respecto a los días de medición. Ambos gráficos deben estar desplegados en la misma ventana. Compare ambos gráficos.
+      \item Separe el gráfico anterior por mes, y analice el comportamiento del valor cuota en cada uno de los meses. Procure que la separación del gráfico por mes mantenga el orden natural de los meses en el año. \textbf{Nota}: se recomienda usar los comandos \texttt{factor()} y \texttt{facet\_grid()}.
+  \end{enumerate}
+
+\item Las mujeres ocupan aproximadamente la mitad de la población mundial, pero cuando se trata de la fuerza laboral total de un país, el porcentaje de trabajadores masculinos y femeninos rara vez es similar. Esto es aún más prominente para los países en desarrollo y subdesarrollados. Si bien varias razones, como el acceso insuficiente a la educación, las supersticiones religiosas y la falta de infraestructuras adecuadas, son responsables de esta discrepancia, va mucho más allá. Y para mostrar los efectos de múltiples factores socioeconómicos sobre la participación de la mujer en la fuerza laboral total, se ha considerado el porcentaje de empleo femenino en la fuerza laboral total, entre otros.
+
+El conjunto de datos (\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Empleo%2Bfemenino.csv}{link}) se eligió de una encuesta realizada en la población de Bangladesh. La base de datos contiene los siguientes datos:
+
+\begin{itemize}
+    \item \texttt{Year}: Año de medición.
+    \item \texttt{PerFemEmploy}: Relación entre empleo y población (\%) de mujeres de 15 años o más.
+    \item \texttt{Ratio\_MaletoFemale}: Relación entre la tasa de participación de mujeres y hombres en la fuerza laboral. La tasa de participación en la fuerza laboral es la proporción de la población de 15 años o más que es económicamente activa.
+    \item \texttt{Wage.Salaried}: Trabajadores asalariados, mujeres (\% del empleo femenino). Los trabajadores asalariados (empleados) son aquellos trabajadores que ocupan el tipo de trabajos definidos como ``trabajos de empleo remunerado''.
+\end{itemize}
+
+
+\begin{enumerate}
+    \item Elabore e interprete un gráfico de violín con caja y promedio para estudiar cada uno de los factores socioeconómicos por separado. Despliegue los tres gráficos en uno solo. El gráfico debe tener título general, título en los ejes y leyenda que permita diferenciar cada uno de los factores socioeconómicos por colores. 
+\end{enumerate}
+\end{enumerate}
