@@ -81,6 +81,28 @@ f(x;k, \theta)= \left\lbrace
 
 Verifique que el área total bajo la curva es igual a 1.
 
+\item Sea $X$ una variable aleatoria continua con \textit{fdp} $f(x)$ y \textit{fda} $F(x)$. Para un número fijo $x_0$, se define la función
+
+$$
+g(x) = \left\lbrace
+\begin{matrix}
+    f(x)/[1-F(x_0)] & x \geq x_0\\
+    0 & x < x_0
+\end{matrix}
+\right.
+$$
+
+Pruebe que $g(x)$ es una función de densidad de probabilidad (asuma que $F(x_0) < 1$).
+
+\item Para las siguientes \textit{fda} de variables aleatorias continuas, determine la \textit{fdp} asociada. Además, verifique las condiciones de una función de densidad de probabilidad.
+
+\begin{enumerate}
+    \item $F(x) = \displaystyle\frac{x^2}{4}$, $0 \leq x \leq 2$
+    \item $F(x) = \displaystyle\frac{1}{1+e^{-x}}$, $-\infty < x < \infty$
+    \item $F(x) = \displaystyle e^{-e^{-x}}$, $-\infty < x < \infty$
+    \item $F(x) = 1-e^{-x}$, $0 < x < \infty$
+\end{enumerate}
+
 %\begin{enumerate}
     %\item Trace la gráfica de $f(x)$.
     %\item Verifique que el área total bajo la curva es igual a 1.
