@@ -11,7 +11,7 @@
 \begin{enumerate}
     \item ¿Cuál es la probabilidad de que exactamente 8 duren más de 1000 horas?
     \item ¿Cuál es la probabilidad de que cuando mucho 2 duren más de 1000 horas?
-    \item ¿Cuál es la probabilidad de que menos de que 1, 2 o 9 duren más de 1000 horas?
+    \item ¿Cuál es la probabilidad de que 1, 2 o 9 duren más de 1000 horas?
 \end{enumerate}
 
 % Problema con la distribución Poisson
@@ -24,7 +24,7 @@
 \end{enumerate}
 
 
-\item El riesgo real de incumplimiento de un determinado tipo de crédito puede ser considerado como una variable aleatoria continua $X$ con función de densidad de probabilidad
+\item El riesgo porcentual real de incumplimiento de un determinado tipo de crédito puede ser considerado como una variable aleatoria continua $X$ con función de densidad de probabilidad
 
 \begin{equation}
 \notag
