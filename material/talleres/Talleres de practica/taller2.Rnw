@@ -1,0 +1,31 @@
+\begin{center}
+{\bf \Large{Taller de práctica 2}}\\ Medidas de Localización y Escala\\ (secciones 1.1, 1.2 y 1.3)
+\end{center}
+
+\begin{enumerate}[1)]
+    \item La siguiente base de datos \href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/afp%2Btaller1.csv}{(link)} contiene los valores cuotas de marzo hasta abril de las AFP de Capital, Cuprum y Habitat, tomados por el el SP (Superintendencia de Pensiones). A continuación:
+        \begin{enumerate}
+            \item Cargue la base de datos usando el comando \texttt{read.csv()}.
+            \item Utilice el comando \texttt{str()} para estudiar los tipos de variable presentes en la base de datos.
+            \item Utilice el comando \texttt{mean()} para obtener la media del valor cuota para cada una de las AFP. Interprete.
+            \item Utilice el comando \texttt{median()} para obtener la mediana del valor cuota para cada una de las AFP. Interprete.
+            \item Utilice el comando \texttt{sd()} para obtener la desviación estándar del valor cuota para cada una de las AFP. Interprete.
+            \item Calcule el coeficiente de variación del valor cuota para cada una de las AFP.
+            \item Para cada una de las AFP, compare la la mediana versus el promedio obtenidos anteriormente, e interprete en relación a la posible presencia de valores extremos.
+            \item Compare la variabilidad de los valores cuota de cada una de las AFP, a través del coeficiente de variación. Mencione ventajas y desventajas.
+        \end{enumerate}
+    \item Si usted está interesado en estudiar el valor cuota de la AFP Cuprum en los meses de enero a agosto, ¿la base de datos cargada correspondería a la población o muestra del estudio? Comente.
+    \item Suponga que el valor promedio del valor cuota de la AFP Habitat en los últimos 12 meses es de \$60500. Calcule el promedio del valor cuota de dicha AFP con los datos de la base, y responda:
+    \begin{enumerate}
+        \item ¿Cuál es el parámetro?
+        \item ¿Cuál es el estadístico?
+        \item ¿Cuál es el estimador?
+        \item ¿Cuál es la estimación?
+    \end{enumerate}
+    \item Si usted está elaborando un informe respecto a los días de febrero en los que el valor cuota alcanza su mayor alza, para la AFP Capital. Identifique.
+    \begin{enumerate}
+        \item Datos.
+        \item Información.
+        \item ¿Qué se necesita para pasar de datos a información? Comente.
+    \end{enumerate}
+\end{enumerate}

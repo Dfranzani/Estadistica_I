@@ -1,0 +1,104 @@
+\begin{center}
+{\bf \Large{Taller de práctica 5}}\\Modelos discretos y continuos\\ (secciones 2.3.3 y 2.4.3)
+\end{center}
+
+\begin{enumerate}
+%\item El gerente de un restaurante que sólo da servicio mediante reservas sabe, por experiencia, que el 20\% de las personas que reservan una mesa no asistirán. Si el restaurante acepta 25 reservas pero sólo dispone de 20 mesas, ¿cuál es la probabilidad de que a todas las personas que asistan al restaurante se les asigne una mesa?
+
+\item En una tienda, el 75\% de todas las compras se hacen con tarjeta de crédito. Sea $X =$ el número entre diez compras seleccionadas al azar realizadas con tarjetas de crédito. Entonces,
+
+\begin{enumerate}
+  \item Determine la función de masa.
+  \item ¿Cuál es la probabilidad de que al menos 4 compras se realicen con tarjeta de crédito?
+  \item ¿Cuál es la probabilidad de que cuando menos 3 compras se realicen con tarjeta de crédito?
+\end{enumerate}
+
+\item La probabilidad de que cualquier pieza producida por una máquina pase con éxito una prueba de control es de 0.9. Si se controlan 10 piezas y si $X$ es el número de piezas que pasan la prueba de control de las 10 escogidas al azar.
+
+\begin{enumerate}
+  \item Encontrar la función de probabilidad de $X$.
+  \item ¿Qué número de piezas es más probable que pase el control?
+  \item ¿Cuál es la probabilidad de que como mínimo 4 piezas pasen con éxito la prueba de control?
+\end{enumerate}
+
+\item Una empresa electrónica observa que el número de componentes que fallan antes de cumplir 100 horas de funcionamiento es una variable aleatoria de Poisson. Si el número
+promedio de estos fallos es ocho,
+
+\begin{enumerate}
+  \item ¿cuál es la probabilidad de que falle un componente en 25 horas?,
+  \item ¿y de que fallen no más de dos componentes en 50 horas?,
+  \item ¿cuál es la probabilidad de que fallen por lo menos diez en 125 horas?
+\end{enumerate}
+
+\item El número de solicitudes de ayuda recibidas por un servicio de grúas sigue una distribución de Poisson. Si, se reciben 4 llamadas por hora:
+
+\begin{enumerate}
+  \item Calcule la probabilidad de que exactamente 10 solicitudes sean recibidas durante un período particular de 2 horas.
+  \item Si los operadores de servicio de grúas hacen una pausa de 30 minutos para la cena, ¿cuál es la probabilidad de que no dejen de atender las llamadas de auxilio?
+\end{enumerate}
+
+\item La probabilidad de que un estudiante seleccionado al azar apruebe cierto examen de estadística es de 0.2. Sea $X =$ el número de estudiantes que aprueban el examen en una muestra aleatoria de tamaño $n = 8$.
+
+Calcular:
+\begin{enumerate}
+  \item $P(X\leq 1)$.
+  \item $P(X\leq 2)$
+  \item $P(X > 2)$.
+  \item $P(2\leq X \leq 4)$.
+  \item $P(2 < X < 6)$.
+\end{enumerate}
+
+\item La cantidad de gente que asiste mensualmente a las sucursales bancarias para resolver problemas asociados a la clonación de tarjetas sigue una distribución normal con media de 934 y varianza 520. ¿Cuál es la probabilidad de que en un mes determinado asistan entre 135 y 881 personas a las sucursales bancarias para resolver este tipo de problema?
+
+\item El siguiente conjunto de datos (\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv}{link}) proviene originalmente del Instituto Nacional de Diabetes y Enfermedades Digestivas y Renales. El objetivo del conjunto de datos es estudiar de forma diagnóstica si un paciente tiene diabetes, en función de ciertas medidas de diagnóstico incluidas en el conjunto de datos. Se impusieron varias restricciones a la selección de estas instancias de una base de datos más grande. En particular, todos los pacientes aquí son mujeres de al menos 21 años de ascendencia indígena Pima.
+
+\begin{itemize}
+    \item \texttt{Pregnancies}: Para expresar el Número de embarazos.
+    \item \texttt{Glucose}: Para expresar el nivel de Glucosa en sangre.
+    \item \texttt{BloodPressure}: para expresar la medida de la presión arterial.
+    \item \texttt{SkinThickness}: Para expresar el grosor de la piel.
+    \item \texttt{Insulin}: para expresar el nivel de insulina en sangre.
+    \item \texttt{BMI}: Para expresar el índice de masa corporal.
+    \item \texttt{DiabetesPedigreeFunction}: Para expresar el porcentaje de Diabetes.
+    \item \texttt{Age}: Edad en años.
+    \item \texttt{Outcome}: Para expresar el resultado final  de tener diabetes, 1 es Sí y 0 es No.
+\end{itemize}
+
+\begin{enumerate}
+    \item Suponiendo que la edad sigue una distribución normal con media 70 y varianza 830. ¿Cuál es la probabilidad de que una persona de la base de datos tenga más de 73 años?
+   
+   \item Suponiendo que el nivel de glucosa sigue una distribución t-student con 0.01 grados de libertad. ¿Cuál es la probabilidad de que una persona de la base de datos tenga un nivel de glucosa menor a 103?
+   
+   \item Suponiendo que la cantidad embarazos sigue una distribución chi-cuadrado con 4 grados de libertad. ¿Cuál es la número de embarazos a considerar, para que la probabilidad de que una mujer tenga un número menor sea de 0.67?
+   
+   %\item Suponiendo que el grosor de la piel sigue un distribución normal con varianza 414. ¿Cuál es la probabilidad de que la varianza de la muestra sea mayor a 406?
+   
+   %\item Suponiendo que la medida de la presión arterial sigue un distribución normal con media 69 y varianza 880. ¿Cuál es la probabilidad de que el promedio de la medida de la presión arterial sea mayor a 70?
+   
+   %\item Responda la pregunta 6, suponiendo que desconoce la varianza poblacional.
+   
+   %\item Responda la pregunta 6, suponiendo que desconoce la distribución de los datos.
+\end{enumerate}
+
+\item Las mujeres ocupan aproximadamente la mitad de la población mundial, pero cuando se trata de la fuerza laboral total de un país, el porcentaje de trabajadores masculinos y femeninos rara vez es similar. Esto es aún más prominente para los países en desarrollo y subdesarrollados. Si bien varias razones, como el acceso insuficiente a la educación, las supersticiones religiosas y la falta de infraestructuras adecuadas, son responsables de esta discrepancia, va mucho más allá. Y para mostrar los efectos de múltiples factores socioeconómicos sobre la participación de la mujer en la fuerza laboral total, se ha considerado el porcentaje de empleo femenino en la fuerza laboral total, entre otros.\\
+\
+\\
+El conjunto de datos se eligió de una encuesta realizada en la población de Bangladesh. La base de datos contiene los siguientes datos:
+
+\begin{itemize}
+    \item \texttt{Year}: Año de medición.
+    \item \texttt{PerFemEmploy}: Relación entre empleo y población (\%) de mujeres de 15 años o más.
+    \item \texttt{Ratio\_MaletoFemale}: Relación entre la tasa de participación de mujeres y hombres en la fuerza laboral. La tasa de participación en la fuerza laboral es la proporción de la población de 15 años o más que es económicamente activa.
+    \item \texttt{Wage.Salaried}: Trabajadores asalariados, mujeres (\% del empleo femenino). Los trabajadores asalariados (empleados) son aquellos trabajadores que ocupan el tipo de trabajos definidos como ``trabajos de empleo remunerado''.
+\end{itemize}
+
+La base de datos se encuentra en el siguiente (\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Empleo%2Bfemenino.csv}{link}).
+
+\begin{enumerate}
+    \item Suponiendo que los valores del porcentaje de mujeres con empleo (\texttt{PerFemEmploy}) distribuyen $N(\mu = 27.5, \sigma^2 = 8)$. ¿Qué porcentaje de los valores se encuentran entre 26\% y 30\%?
+    \item Suponiendo que la variabilidad (varianza) de la relación de entre la tasa de participación de hombre y mujeres en la fuerza laboral (\texttt{Ratio\_MaletoFemale}) sigue un distribución $\chi^2$ con 25 grados de libertad, calcule la probabilidad de que variabilidad de este factor sea mayor a 22. 
+    
+    \item Suponiendo que la variación mensual del porcentaje de mujeres asalariadas (\texttt{Wage.Salaried}) sigue una distribución \textit{t} - Student con 2 grados de libertad. Calcule la probabilidad de que dicha variación sea menor a 2\%.
+\end{enumerate}
+
+\end{enumerate}

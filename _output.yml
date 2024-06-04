@@ -1,0 +1,43 @@
+bookdown::gitbook:
+  # split_by: section
+  css: style.css
+  toc_depth: 3
+  config:
+    toc:
+      collapse: null
+      after: |
+        <li><a href="https://github.com/rstudio/rmarkdown-cookbook" target="blank">Published with Bookdown</a></li>
+#     before: |
+#       <li class="toc-logo"><a href="https://github.com/rstudio/bookdown"><img src="material/logo/Bookdown.png" class="img-responsive"></a></li>
+#     before: |
+#        <li><a href="https://www.linkedin.com/in/dfranzani" target="blank">Autor</a></li>
+      before: |
+         <li><a href="./">Introducción a la Estadística</a></li>
+#    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
+    download: ["pdf"]
+    fontsettings: no
+      # theme: "white"
+    sharing:
+      facebook: false
+      twitter: false
+      linkedin: false
+      weibo: false
+      instapaper: false
+      vk: false
+      whatsapp: true
+      github: true
+      all: no
+    info: true
+  table_css: false # Los estilos de tabla fuera de css
+bookdown::pdf_book:
+  # pandoc_args: [ "--csl", "apa-annotated-bibliography.csl" ] # Foramto para latex según .csl
+  toc_depth: 4
+  includes:
+    in_header: preamble.tex
+    # after_body:
+  toc_appendix: yes
+  toc_bib: yes
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+# bookdown::epub_book: default

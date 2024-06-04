@@ -1,0 +1,36 @@
+\usepackage{booktabs}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{hyperref}
+\usepackage{minted}
+\fvset{breaklines=true}
+\addto\captionsspanish{\renewcommand{\chaptername}{Unidad}}
+\usepackage{float}
+\floatplacement{figure}{H}
+\decimalpoint
+\newcommand{\gt}{>}
+\newcommand{\lt}{<}
+
+
+% Este bloque es un intento de establecer en latexpdf los cuadros que encierran los ejemplos en Gitbook 
+% El error se genera con el el paquete minted, que parece no ser compatible.
+% Estado: a la fecha no he encontrado solución.
+
+% \usepackage{tcolorbox}
+% \usepackage{tikz}
+% \tcbuselibrary{skins, breakable}
+% 
+% \newtcolorbox{blackbox}{
+%   empty,
+%   before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
+%   breakable,pad at break*=0mm,vfill before first,
+%   overlay unbroken={\draw[black,line width=1pt]
+%     ([yshift=-1pt]frame.north west)--([xshift=-0.5pt,yshift=-1pt]frame.north-|frame.east)
+%     --([xshift=-0.5pt]frame.south east)--(frame.south west); },
+%   overlay first={\draw[black,line width=1pt]
+%     ([yshift=-1pt]frame.north west)--([xshift=-0.5pt,yshift=-1pt]frame.north-|frame.east)
+%     --([xshift=-0.5pt]frame.south east); },
+%   overlay middle={\draw[black,line width=1pt] ([xshift=-0.5pt]frame.north east)
+%     --([xshift=-0.5pt]frame.south east); },
+%   overlay last={\draw[black,line width=1pt] ([xshift=-0.5pt]frame.north east)
+%     --([xshift=-0.5pt]frame.south east)--(frame.south west);}
+% }

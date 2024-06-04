@@ -1,0 +1,182 @@
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/* Aquí comienza la configuración por defecto */
+p.caption {
+  color: #777;
+  margin-top: 10px;
+  text-align: center;
+}
+
+p code {
+  white-space: inherit;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+
+pre code {
+  white-space: inherit;
+}
+/* Aquí termina la configuración por defecto*/
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/* Aquí empieza la configuración extra para los elementos de texto */
+/* El texto en general se mantendrá justificado. Solo aplica
+al texto de primer nivel, es decir, no afecta a las listas*/
+/*p {
+  text-align: justify;
+}
+*/
+
+/* Los elementos de tipo lista estarán justifcados, es decir,
+al crear listas el texto se mantiene justificado*/
+/*
+li {
+  text-align: justify;
+}
+*/
+
+/* Comandos para crear línea debajo de los títulos de sección */
+pre.numberSource code > span > a:first-child::before {
+  left: -0.3em;
+}
+.header-section-number {
+  padding-right: .2em;
+  font-weight: 500;
+}
+.level1 .header-section-number {
+  display: inline-block;
+  border-bottom: 3px solid;
+}
+.level1 h1 {
+  border-bottom: 1px solid;
+}
+
+/* Para los distintos niveles de título se modifica el color y el tipo de fuente, en este caso normal */
+h1,h2,h3,h4,h5 {
+  /*color: #730000;*/
+  color: #000000;
+  font-weight: normal;
+}
+
+/* Esto serviría para modificar el subtítulo de la página principal */
+/*
+#header .subtitle {
+  color: #000000;
+  font-size: 15pt;
+  font-weight: normal;
+}
+*/
+
+/* El nombre del autor lo dejamos en negrita */
+#header .author {
+  font-weight: bold;
+}
+
+/* Esto serviría para modificar el tamaño de la fecha de actualización del documento */
+/*
+#header .date {
+  font-size: 11pt;
+}
+*/
+
+/* Solo modifica el título principal del documento con un formato de negrita*/
+h1.title {
+  font-weight: 700;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal strong {
+  font-weight: 600;
+}
+.book .book-body .page-wrapper .page-inner section.normal pre a {
+  color: inherit;
+}
+/* Aquí termina la configuración extra para los elementos de texto */
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/* Edición del logo (nombre del objeto "toc-logo" del tipo img) en el menú de contenidos.
+El segundo código funciona por si solo en las pruebas, sin embargo, parece ser que funciona mejor
+en complemente con el primer código, ya que el uno es para la clase toc-logo, mientras que el otro 
+especifica los parámetro de las imágenes dentro de este.*/
+
+/*
+.toc-logo {
+  width: 350px !important;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.toc-logo img {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+*/
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/* Aquí comienza la edición del menú de contenidos */
+.book .book-summary {
+  width: 350px;
+  position:absolute;
+  top:0;
+  left:-350px;
+}
+
+.book.with-summary .book-header.fixed {
+    left: 350px;
+}
+
+.book.with-summary .book-body {
+    left: 350px;
+}
+/* Aquí termina la edición del menú de contenidos */
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/* Independiente del archivo .csl para la bibliografía,
+se tuvo que agregar la identación manualmente (aunque viniense dentro del .csl).
+Además, se actualizó pandoc a 3.0.1. En el archivo Index.Rmd* está
+declarada la versión de pandoc a utilizar */
+
+.references {
+    text-indent: -1.5em;
+    padding-left: 1.5em;
+    text-align: justify;
+}
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/* Cuadro de color negro para los ejemplos */
+.blackbox {
+  padding: 1em;
+  margin-bottom: 1em;
+  background: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*Ecuacions de latex con barra de desplazamiento para mejorar su visualización en celulares*/
+.MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+.logo {
+    margin-left: 20px; 
+    display: inline-block;
+    float: right;
+}
+
+/*-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/

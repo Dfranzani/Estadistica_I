@@ -1,0 +1,52 @@
+\begin{center}
+{\bf \Large{Taller de práctica 8}}\\Distribución de muestreo de la varianza, y distribución t-student\\ (secciones 3.2 y 3.3)
+\end{center}
+
+
+\begin{enumerate}
+
+\item Se toma una muestra aleatoria de tamaño 67 proveniente de una población normal con desviación estándar $\sigma =3.05$.
+
+\begin{enumerate}
+\item Calcule la probabilidad de que la varianza muestral $s^{2}$ sea como mínimo 8.21.
+\item Calcule la probabilidad de que la varianza muestral $s^{2}$ esté entre -2.1 y 3.76.
+\item Calcule la probabilidad de que la varianza muestral $s^{2}$ no esté entre -0.34 y 4.86.
+\end{enumerate}
+
+
+\item Los distritos o grupos de bloques son las unidades geográficas más pequeñas para las cuales la Oficina del Censo de EE.UU. publica datos de muestra (un grupo de bloques suele tener una población de 600 a 3000 personas). Hay 20.640 distritos en el conjunto de datos \href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-2/HousePrice.csv}{(link)}. Las columnas de la base son las siguientes:
+\begin{itemize}
+
+\item \texttt{longitude}: valor de longitud para el bloque en California, EE.UU.
+\item \texttt{latitude}: valor de latitud para el bloque en California, EE.UU.
+\item \texttt{housing\_median\_age}: edad (en años) mediana de la casa en el bloque.
+\item \texttt{total\_rooms}: Recuento del número total de habitaciones (excluyendo dormitorios) en todas las casas del bloque.
+\item \texttt{total\_bedrooms}: Recuento del número total de dormitorios en todas las clases del bloque.
+\item \texttt{population}: Recuento del número total de población en el bloque.
+\item \texttt{households}: Recuento del número total de hogares en el bloque.
+\item \texttt{median\_income}: Mediana del ingreso (en miles de dólares mensuales) total de los hogares de todas las casas en el bloque.
+\item \texttt{ocean\_proximity}: Categoría que indica la proximidad al océano [Valores únicos: `NEAR BAY', `$<$1H OCEAN' (a menos de 1 hora), `INLAND', `NEAR OCEAN', `ISLAND'].
+\item \texttt{median\_house\_value}: Mediana de los precios (en dólares) de los hogares de todas las casas del bloque.
+\end{itemize}
+
+\begin{enumerate}
+\item Suponga que la edad mediana de las casas en el bloque distribuye normal  con media $\mu = 28$ y $\sigma^2$ desconocido. 
+
+\begin{enumerate}
+\item Calcule la probabilidad de que el valor promedio muestral de la edad mediana de las casas del bloque se encuentre entre 29 y 32 años.
+\item Calcule la probabilidad de que el valor promedio muestral de la edad mediana de las casas del bloque se encuentre entre 28 y 31 años, según la proximidad al océano (separadamente).
+\end{enumerate}
+
+\item  Si la mediana del ingreso total (en miles de dólares) de los hogares de todas las casas del bloque distribuye normal con media $\mu = 3.54$ y $S^2 = 3.6$, ¿cuál es la probabilidad de que el valor promedio muestral de la mediana del ingreso total de los hogares sea no menor a 3.7 (miles de dólares)?
+
+\item Suponga que el recuento del número total de habitaciones (excluyendo dormitorios) en todas las casas del bloque distribuye normal con $\mu = 2635$ y $S = 2181.6$. 
+
+\begin{enumerate}
+\item Calcule la probabilidad de que el valor promedio muestral del recuento del número total de habitaciones sea como máximo 2540 unidades.
+\item Calcule la probabilidad de que el valor promedio muestral del recuento del número total de habitaciones esté entre 700 y 1900 unidades.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{enumerate}

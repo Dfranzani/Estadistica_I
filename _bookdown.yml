@@ -1,0 +1,12 @@
+delete_merged_file: true
+output_dir: "docs"
+book_filename: "est1+descriptiva.Rmd"
+language:
+  ui:
+    chapter_name: "Unidad "
+  label:
+    fig: "Figura "
+    tab: "Tabla "
+    exr: "Ejercicio "
+    exm: "Ejemplo "
+    solution: "Solución"
