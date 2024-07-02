@@ -4,7 +4,11 @@
 
 \begin{enumerate}
 
-\item Los siguientes gráficos correspondes a los valores de la UF e IVP durante el año 2022. Interprete cada uno de los gráficos, haciendo énfasis en la ubicación del promedio respecto a la mediana, los posibles valores extremos, las concentraciones presentes en el gráfico y los posibles valores atípicos.
+\item Los siguientes gráficos correspondes a los valores de la UF e IVP durante el año 2022. Para interpretar un gráfico de violín con caja y promedio se deben mencionar tres aspectos relevantes:
+
+ - Ubicación de la(s) mayor(es) concentración(es) de datos, utilizando como referencia los cuartiles.
+ - Ubicación del promedio respecto a la mediana.
+ - Posibles razones por las cuales se explica la ubicación anteriormente mencionada del promedio respecto a la mediana.
 
 <<echo=F, fig.width = 6, fig.height = 3>>=
 data = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/UF%2BIVP%2B2022.csv")
@@ -20,7 +24,11 @@ labs(y = "Pesos", x = "") +
 scale_x_continuous(breaks = c(1,2), labels = c("UF", "IVP"))
 @
 
-\item Los siguientes gráficos correspondes a los valores de la población de mujeres y hombres en el país en el periodo 2009 - 2022. Interprete cada uno de los gráficos, haciendo énfasis en la ubicación del promedio respecto a la mediana, los posibles valores extremos, las concentraciones presentens en el gráfico y los posibles valores atípicos.
+\item Los siguientes gráficos correspondes a los valores de la población de mujeres y hombres en el país en el periodo 2009 - 2022.Para interpretar un gráfico de violín con caja y promedio se deben mencionar tres aspectos relevantes:
+
+ - Ubicación de la(s) mayor(es) concentración(es) de datos, utilizando como referencia los cuartiles.
+ - Ubicación del promedio respecto a la mediana.
+ - Posibles razones por las cuales se explica la ubicación anteriormente mencionada del promedio respecto a la mediana.
 
 <<echo=F, fig.width = 6, fig.height = 3>>=
 data = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Poblacion%2Bnacional.csv")
