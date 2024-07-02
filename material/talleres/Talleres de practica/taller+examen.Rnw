@@ -59,6 +59,8 @@ scale_x_continuous(breaks = c(1,2), labels = c("Hombres", "Mujeres"))
   P(A) = 3/8 \text{, } P(B) = 1/2 \text{, } P(A\cap B) = 1/4  
 \end{equation}
 
+Calcule,
+
 \begin{multicols}{3}
 \begin{enumerate}
   \item $P(A \cup B)$
@@ -77,6 +79,8 @@ scale_x_continuous(breaks = c(1,2), labels = c("Hombres", "Mujeres"))
   \notag
   P(A^c) = 2/3 \text{, } P(A \cup B) = 3/4 \text{, } P(A\cap B) = 1/4  
 \end{equation}
+
+Calcule,
 
 \begin{multicols}{2}
 \begin{enumerate}
