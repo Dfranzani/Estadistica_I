@@ -697,48 +697,48 @@ A continuación:
 
 A continuación, se dan a conocer algunas de las distribución de probabilidad discreta más utilizadas. Cabe mencionar, que existen muchas otras distribuciones, por lo que se invita al estudiante a informarse de ellas en caso de que lo requiera.
 
-#### Uniforme
+<!-- #### Uniforme -->
 
-El ejemplo más sencillo de de una distribución de probabilidad discreta dada mediante una fórmula es la **distribución uniforme discreta** [@anderson, página 191]. Su función de masa de probabilidad está definida por 
+<!-- El ejemplo más sencillo de de una distribución de probabilidad discreta dada mediante una fórmula es la **distribución uniforme discreta** [@anderson, página 191]. Su función de masa de probabilidad está definida por  -->
 
-```{=tex}
-\begin{equation}
-P(X=x) = \dfrac{1}{n}
-(\#eq:uniformediscreta)
-\end{equation}
-```
+<!-- ```{=tex} -->
+<!-- \begin{equation} -->
+<!-- P(X=x) = \dfrac{1}{n} -->
+<!-- (\#eq:uniformediscreta) -->
+<!-- \end{equation} -->
+<!-- ``` -->
 
-donde
+<!-- donde -->
 
-$$n = \text{número de valores que puede tomar la variable aleatoria.}$$
+<!-- $$n = \text{número de valores que puede tomar la variable aleatoria.}$$ -->
 
-:::: {.blackbox}
-::: {.example}
-Consideremos el experimento de lanzar un dado de seis caras. Se define la variable aleatoria $X$ como el número de puntos en la cara del dado que cae hacia arriba. En este experimento la variable aleatoria toma 6 valores posibles ($n = 6$). Por lo tanto, la función de masa de probabilidad de esta variable aleatoria uniforme discreta es
+<!-- :::: {.blackbox} -->
+<!-- ::: {.example} -->
+<!-- Consideremos el experimento de lanzar un dado de seis caras. Se define la variable aleatoria $X$ como el número de puntos en la cara del dado que cae hacia arriba. En este experimento la variable aleatoria toma 6 valores posibles ($n = 6$). Por lo tanto, la función de masa de probabilidad de esta variable aleatoria uniforme discreta es -->
 
-$$P(X = x)=1/6 \text{, } x = 1,2,3,4,5,6$$
-:::
-::::
+<!-- $$P(X = x)=1/6 \text{, } x = 1,2,3,4,5,6$$ -->
+<!-- ::: -->
+<!-- :::: -->
 
-La figura \@ref(fig:simUD), muestra una simulación de la función de masa de probabilidad de la distribución uniforme discreta, dependiendo del número de valores que puede tomar la variable aleatoria ($n$).
+<!-- La figura \@ref(fig:simUD), muestra una simulación de la función de masa de probabilidad de la distribución uniforme discreta, dependiendo del número de valores que puede tomar la variable aleatoria ($n$). -->
 
-```{r simUD, fig.align="center", fig.width=7, fig.height=4, fig.cap="Simulación de la distribución Uniforme discreta", echo=FALSE}
-u = function(n, titulo){
-  aux = data.frame("x" = seq(1:n), "y" = 1/n)
-  g = ggplot(data = aux, aes(x = x, y = y)) +
-    geom_point() + 
-    geom_segment(aes(x = x, xend = x, y = 0, yend = y)) + 
-    labs(x = "Observación", y = "Probabilidad", title = titulo) + 
-    scale_y_continuous(limits = c(0,1)) + 
-    scale_x_continuous(breaks = 1:n)
-  return(g)
-}
-grid.arrange(u(2, "2 observaciones"),
-             u(5, "5 observaciones"),
-             u(10, "10 observaciones"),
-             u(20, "20 observaciones"),
-             ncol = 2)
-```
+<!-- ```{r simUD, fig.align="center", fig.width=7, fig.height=4, fig.cap="Simulación de la distribución Uniforme discreta", echo=FALSE} -->
+<!-- u = function(n, titulo){ -->
+<!--   aux = data.frame("x" = seq(1:n), "y" = 1/n) -->
+<!--   g = ggplot(data = aux, aes(x = x, y = y)) + -->
+<!--     geom_point() +  -->
+<!--     geom_segment(aes(x = x, xend = x, y = 0, yend = y)) +  -->
+<!--     labs(x = "Observación", y = "Probabilidad", title = titulo) +  -->
+<!--     scale_y_continuous(limits = c(0,1)) +  -->
+<!--     scale_x_continuous(breaks = 1:n) -->
+<!--   return(g) -->
+<!-- } -->
+<!-- grid.arrange(u(2, "2 observaciones"), -->
+<!--              u(5, "5 observaciones"), -->
+<!--              u(10, "10 observaciones"), -->
+<!--              u(20, "20 observaciones"), -->
+<!--              ncol = 2) -->
+<!-- ``` -->
 
 
 #### Bernoulli
@@ -1554,57 +1554,57 @@ d. Grafique la función de densidad de probabilidad y la función de distribuci�
 
 A continuación, se dan a conocer algunas de las distribución de probabilidad continua más utilizadas. Cabe mencionar, que existen muchas otras distribuciones, por lo que se invita al estudiante a informarse de ellas en caso de que lo requiera.
 
-#### Uniforme
+<!-- #### Uniforme -->
 
-Esta es una versión continua de la ya vista en modelos discretos, la diferencia radica en que la variable es del tipo continua valga la redundancia. La función de probabilidad asociada es:
+<!-- Esta es una versión continua de la ya vista en modelos discretos, la diferencia radica en que la variable es del tipo continua valga la redundancia. La función de probabilidad asociada es: -->
 
-```{=tex}
-\begin{equation}
-\notag
-f(x) = \left\lbrace
-\begin{array}{cl}
-\displaystyle\frac{1}{b-a} & \text{si } x \in (a,b)\\
-0 & \text{si } x \not\in (a,b)
-\end{array}
-\right.
-\end{equation}
-```
+<!-- ```{=tex} -->
+<!-- \begin{equation} -->
+<!-- \notag -->
+<!-- f(x) = \left\lbrace -->
+<!-- \begin{array}{cl} -->
+<!-- \displaystyle\frac{1}{b-a} & \text{si } x \in (a,b)\\ -->
+<!-- 0 & \text{si } x \not\in (a,b) -->
+<!-- \end{array} -->
+<!-- \right. -->
+<!-- \end{equation} -->
+<!-- ``` -->
 
-**Notación**: $U(a,b)$
+<!-- **Notación**: $U(a,b)$ -->
 
-:::: {.blackbox}
-::: {.example}
-Imagine que es un analista financiero encargado de analizar los rendimientos diarios de una acción en particular en el mercado de valores. Los rendimientos diarios de esta acción se distribuyen de manera uniforme continua entre $-2\%$ y $2\%$, es decir, $U(a = -2, b = 2)$.
+<!-- :::: {.blackbox} -->
+<!-- ::: {.example} -->
+<!-- Imagine que es un analista financiero encargado de analizar los rendimientos diarios de una acción en particular en el mercado de valores. Los rendimientos diarios de esta acción se distribuyen de manera uniforme continua entre $-2\%$ y $2\%$, es decir, $U(a = -2, b = 2)$. -->
 
-En este caso, la distribución uniforme continua significa que cada valor dentro del rango dado tiene la misma probabilidad de ocurrir. Por lo tanto, la probabilidad de que el rendimiento diario de la acción sea cualquier valor entre $-2\%$ y $2\%$ es igual.
+<!-- En este caso, la distribución uniforme continua significa que cada valor dentro del rango dado tiene la misma probabilidad de ocurrir. Por lo tanto, la probabilidad de que el rendimiento diario de la acción sea cualquier valor entre $-2\%$ y $2\%$ es igual. -->
 
-Supongamos que estás interesado en calcular la probabilidad de que el rendimiento diario de la acción sea mayor o igual a $1.2\%$. Para hacerlo, primero debemos calcular el ancho del rango en el cual el rendimiento se encuentra dentro o por encima del $1.2\%$. En este caso, el ancho del rango es $2\% - 1.2\% = 0.8\%$.
+<!-- Supongamos que estás interesado en calcular la probabilidad de que el rendimiento diario de la acción sea mayor o igual a $1.2\%$. Para hacerlo, primero debemos calcular el ancho del rango en el cual el rendimiento se encuentra dentro o por encima del $1.2\%$. En este caso, el ancho del rango es $2\% - 1.2\% = 0.8\%$. -->
 
-La probabilidad de que el rendimiento diario sea mayor o igual a $1.2\%$ es igual al ancho del rango ($0.8\%$) dividido por el ancho total de la distribución ($4\%$ en este caso), lo cual resulta en $0.8\%/4\% = 0.2$.
-:::
-::::
+<!-- La probabilidad de que el rendimiento diario sea mayor o igual a $1.2\%$ es igual al ancho del rango ($0.8\%$) dividido por el ancho total de la distribución ($4\%$ en este caso), lo cual resulta en $0.8\%/4\% = 0.2$. -->
+<!-- ::: -->
+<!-- :::: -->
 
-La figura \@ref(fig:simuniformecontinua), muestra una simulación de la función de densidad de probabilidad de la distribución uniforme continua.
+<!-- La figura \@ref(fig:simuniformecontinua), muestra una simulación de la función de densidad de probabilidad de la distribución uniforme continua. -->
 
-```{r simuniformecontinua, fig.align="center", fig.width=8, fig.height=4.5, fig.cap="Simulación de la distribución Uniforme Continua", echo=FALSE}
-u = function(n, titulo){
-  aux = data.frame("x" = seq(1:n),
-                   "y" = dunif(x = seq(1:n), min = 1, max = n))
-  g = ggplot(data = aux, aes(x = x, y = y)) +
-    geom_line() +
-    labs(x = "Valor de x",
-         y = "Densidad", title = titulo) + 
-    # theme_bw() + 
-    scale_y_continuous(limits = c(0,1)) + 
-    scale_x_continuous(breaks = 1:n)
-  return(g)
-}
-grid.arrange(u(3, "a = 1 y b = 3"),
-             u(5, "a = 1 y b = 5"),
-             u(10, "a = 1 y b = 10"),
-             u(20, "a = 1 y b = 20"),
-             ncol = 2)
-```
+<!-- ```{r simuniformecontinua, fig.align="center", fig.width=8, fig.height=4.5, fig.cap="Simulación de la distribución Uniforme Continua", echo=FALSE} -->
+<!-- u = function(n, titulo){ -->
+<!--   aux = data.frame("x" = seq(1:n), -->
+<!--                    "y" = dunif(x = seq(1:n), min = 1, max = n)) -->
+<!--   g = ggplot(data = aux, aes(x = x, y = y)) + -->
+<!--     geom_line() + -->
+<!--     labs(x = "Valor de x", -->
+<!--          y = "Densidad", title = titulo) +  -->
+<!--     # theme_bw() +  -->
+<!--     scale_y_continuous(limits = c(0,1)) +  -->
+<!--     scale_x_continuous(breaks = 1:n) -->
+<!--   return(g) -->
+<!-- } -->
+<!-- grid.arrange(u(3, "a = 1 y b = 3"), -->
+<!--              u(5, "a = 1 y b = 5"), -->
+<!--              u(10, "a = 1 y b = 10"), -->
+<!--              u(20, "a = 1 y b = 20"), -->
+<!--              ncol = 2) -->
+<!-- ``` -->
 
 #### Exponencial 
 

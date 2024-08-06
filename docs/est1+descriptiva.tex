@@ -170,7 +170,7 @@
 
 \title{Estadística I \& Estadística Descriptiva}
 \author{\href{https://dfranzani.github.io/website/principal/home.html}{Daniel Franzani}}
-\date{Actualizado al 05-08-2024}
+\date{Actualizado al 06-08-2024}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -196,47 +196,6 @@
 \setcounter{tocdepth}{3}
 \tableofcontents
 }
-\chapter*{Presentación}\label{presentaciuxf3n}
-\addcontentsline{toc}{chapter}{Presentación}
-
-La asignatura Estadística I \& Estadística Descriptiva, es el primer curso estadístico de la carrera de Ingeniería Comercial e Ingeniería en Control de Gestión respectivamente. Estos son el primero de una serie de dos cursos introductorios de estadística, los cuales tienen un enfoque práctico con un fuerte énfasis en el estudio descriptivo de datos. Este primer documento, se concentra en gráficos descriptivos, medidas de resumen, funciones de probabilidad y distribuciones muestrales, haciendo uso del entorno de software R.
-
-\href{https://dfranzani.github.io/Estadistica_II/}{Enlace al documento del segundo curso de Estadística: Estadística II \& Inferencia Estadística}.
-
-\chapter*{Modalidad}\label{modalidad}
-\addcontentsline{toc}{chapter}{Modalidad}
-
-La modalidad de trabajo consta de los siguientes elementos:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  El \textbf{documento} web cuenta con el desarrollo de todos los tópicos de curso, además de ejemplificaciones y ejercicios.
-\item
-  En su mayoría, los ejemplos y ejercicios presentes en el documento fueron extraídos de la bibliografía obligatoria, sin embargo, a algunos de estos se ha incorporado el \textbf{uso de R} como programa de análisis estadístico. El desarrollo de los ejercicios por parte del estudiante se recomienda que sea en Google Colab R. Esta plataforma cuenta con una opción de configuración interna para R (desde Google Drive: Nuevo -\textgreater{} Más -\textgreater{} Google Collaboratory, dentro del archivo: Entorno de ejecución -\textgreater{} Cambiar tipo de entorno de ejecución -\textgreater{} Tipo de entorno de ejecución -\textgreater{} R -\textgreater{} Guardar). En el siguiente \href{https://colab.research.google.com/notebook\#create=true&language=r}{enlace} se puede acceder a un documento con una configuración preestablecida para este lenguaje. El archivo generado se guardará automáticamente en la cuenta de Gmail predeterminada; otra opción en caso de no querer modificar su cuenta predeterminada (si es que debiese hacerlo) es descargar el archivo y cargarlo manualmente en la carpeta de Drive que estime conveniente. Los aspectos relacionados con el uso de R serán abordados en el Taller Introductorio.
-\item
-  Se cuenta con \textbf{talleres de práctica}, lo cuales, cuentan con ejercicios propuestos para desarrollar en clases y ejercicios para el trabajo independiente del estudiante.
-\item
-  El curso cuenta con \textbf{bibliografía} obligatoria y complementaria:
-
-  \begin{itemize}
-  \item
-    (Obligatoria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Anderson\%2C\%20Estad\%C3\%ADstica.pdf}{\emph{``Estadística para Administración y Economía''}} \citep{anderson}
-  \item
-    (Obligatoria,) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Devore\%2C\%20Probabilidad\%20y\%20Estad\%C3\%ADstica.pdf}{\emph{``Probabilidad y Estadística para Ingeniería y Ciencias''}} \citep{Devore}
-  \item
-    (Complementaria) \href{https://bookdown.org/rdpeng/rprogdatascience/}{\emph{``R Programming for Data Science''}} \citep{peng2016r}
-  \item
-    (Complementaria) \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos/blob/main/Libros/Micheaux\%2C\%20Manual\%20de\%20R.pdf}{\emph{``The R Software: Fundamentals of Programming and Statistical Analysis''}} \citep{deMicheaux2013}
-  \item
-    (Complementaria) \href{https://ggplot2-book.org/}{\emph{``ggplot2: Elegant Graphics for Data Analysis''}} \citep{wickham_ggplot2_2009}
-  \end{itemize}
-
-  Además, se añaden citas que refuerzan el contenido presentando, las cuales se encuentra en detalle al final de cada sección.
-\item
-  Las \textbf{bases de datos} a utilizar en el curso se encuentran disponibles en un \href{https://github.com/Dfranzani/Bases-de-datos-para-cursos}{repositorio web} público.
-\end{enumerate}
-
 \chapter{Tópicos básicos de estadística}\label{unidad1}
 
 Las bases de datos que se trabajarán en esta unidad son las siguientes:
@@ -941,7 +900,7 @@ Para generar un histograma en R a partir de un conjunto de datos, se utiliza el 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-21-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-22-1} \end{center}
 
 Para interpretar un histograma, basta con indicar los siguientes aspectos:
 
@@ -1058,7 +1017,7 @@ Para generar un gráfico de caja en R a partir de un conjunto de datos, se utili
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-23-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-24-1} \end{center}
 
 Para interpretar un gráfico de caja es recomendable utilizar la opción 2 mostrada anteriormente, ya que, se debe mencionar uno de los puntos relevantes del gráfico. En el ejemplo recién dado, se observa que, el primer, segundo y tercer cuartil están en 1.135, 1.233 y 1.335 respectivamente, mientras que el valor mínimo y máximo están en 0.96 y 1.559 respectivamente. Adicionalmente, se puede mencionar que los datos superiores en comparación a los inferiores, se encuentran más alejados de la mediana.
 
@@ -1108,7 +1067,7 @@ Para generar un gráfico de violín en R a partir de un conjunto de datos, se ut
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-24-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-25-1} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1126,7 +1085,7 @@ Para generar un gráfico de violín en R a partir de un conjunto de datos, se ut
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-25-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-26-1} \end{center}
 
 Para interpretar un gráfico de violín con caja y promedio se deben mencionar tres aspectos relevantes:
 
@@ -1183,7 +1142,7 @@ El siguiente código, crea una nueva columna en la base de datos que identifica 
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-26-1} \end{center}
+\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-27-1} \end{center}
 
 Para interpretar este tipo de gráficos, se debe realizar un interpretación uno a uno, siguiendo la recomendación antes dada. También, es posible comprar los gráficos a través de la media y coeficiente de variabilidad. Para este ejemplo, queda como trabajo del estudiante realizar esta comparación.
 \end{example}
@@ -1198,56 +1157,6 @@ Agregue una diferenciación por sexo a lo realizado en el ejercicio \ref{exr:vio
 
 \begin{exercise}
 Utilizando la base de datos de \hyperref[PreciosElectricidad]{Precios de electricidad}, realice un gráfico de violín con caja y promedio para el precio de la electricidad, diferenciado por año. Interprete.
-\end{exercise}
-
-\subsection{Gráfico de Barras}\label{gruxe1fico-de-barras}
-
-Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente \citep[página 29]{anderson}.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  En uno de los ejes de la gráfica (por lo general en el horizontal), se especifican las etiquetas empleadas para las clases (categorías).
-\item
-  Para el otro eje de la gráfica (el vertical) se usa una escala para frecuencia, frecuencia relativa o frecuencia porcentual.
-\item
-  Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente).
-\end{enumerate}
-
-Para generar un gráfico de barras en R a partir de un conjunto de datos, se utiliza el siguiente código (se toma como ejemplo la base de datos \hyperref[TasaEURUSD]{Tasa Euro/Dólar}):
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Nueva variable para dicotomizar la tasa de cierre del EUR/USD}
-\NormalTok{datos}\SpecialCharTok{$}\NormalTok{Close2 }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(datos}\SpecialCharTok{$}\NormalTok{Close }\SpecialCharTok{\textgreater{}} \FloatTok{1.1}\NormalTok{, }\CommentTok{\# Criterio}
-                      \StringTok{"Mayor a 1.1"}\NormalTok{, }\CommentTok{\# Valor asignado si se cumple el criterio}
-                      \StringTok{"Menor a  1.1"}\NormalTok{) }\CommentTok{\# Valor asignado si no se cumple el criterio}
-\FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
-  \AttributeTok{data =}\NormalTok{ datos, }\CommentTok{\# Base de datos a utilizar}
-  \FunctionTok{aes}\NormalTok{( }\CommentTok{\# Comandos estéticos}
-    \AttributeTok{x =}\NormalTok{ Close2)) }\SpecialCharTok{+} \CommentTok{\# Eje Y y variable asociada}
-  \FunctionTok{geom\_bar}\NormalTok{( }\CommentTok{\# Objeto a graficar: gráfico de barras}
-    \AttributeTok{fill =} \StringTok{"white"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Color de relleno y borde}
-  \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Títulos}
-    \AttributeTok{title =} \StringTok{"Barras EUR/USD"}\NormalTok{, }\CommentTok{\# Título del gráfico}
-    \AttributeTok{x =} \StringTok{"Tasa de cierre"}\NormalTok{, }\CommentTok{\# Título del eje X}
-    \AttributeTok{y =} \StringTok{"Frecuencia"}\NormalTok{) }\CommentTok{\# Título del eje Y}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics{est1+descriptiva_files/figure-latex/unnamed-chunk-27-1} \end{center}
-
-La interpretación de este tipo de gráfico (gráfico de barras no apiladas) es bastante intuitiva, ya que consiste en mencionar cuál categoría tiene un mayor frecuencia. En caso de graficar una variable con más de 2 categorías, se debe mencionar a que altura del eje vertical se encuentra la altura de cada una de las barras. Para obtener mayor detalles respecto a las frecuencias por categoría, suele apoyarse con un tabla de frecuencias absolutas o relativas porcentuales.
-
-En el ejemplo, la frecuencia de la cantidad de tasas de cierre que se encuentran por sobre 1.1 es mayor a las que se encuentran por debajo, con una frecuencia sobre 4000 y menor a 1000 respectivamente.
-
-\begin{exercise}
-Utilizando la base de datos \hyperref[Pacientes]{Pacientes}, elabore un gráfico de barras de la variable \emph{fbs}. Interprete, apoyado de una tabla de frecuencias absolutas.
-\end{exercise}
-
-\begin{exercise}
-Utilizando la base de datos \hyperref[Pacientes]{Pacientes}, elabore un gráfico de barras (no apiladas) de la variable \emph{cp}, diferenciado por sexo. Interprete, apoyado de una tabla de frecuencias relativas porcentuales. Haga el contraste visual con el gráfico de barras apiladas.
 \end{exercise}
 
 \subsection{Gráfico de Dispersión}\label{gruxe1fico-de-dispersiuxf3n}
@@ -2203,36 +2112,6 @@ A continuación:
 \subsection{Distribuciones}\label{distribuciones}
 
 A continuación, se dan a conocer algunas de las distribución de probabilidad discreta más utilizadas. Cabe mencionar, que existen muchas otras distribuciones, por lo que se invita al estudiante a informarse de ellas en caso de que lo requiera.
-
-\subsubsection{Uniforme}\label{uniforme}
-
-El ejemplo más sencillo de de una distribución de probabilidad discreta dada mediante una fórmula es la \textbf{distribución uniforme discreta} \citep[página 191]{anderson}. Su función de masa de probabilidad está definida por
-
-\begin{equation}
-P(X=x) = \dfrac{1}{n}
-\label{eq:uniformediscreta}
-\end{equation}
-
-donde
-
-\[n = \text{número de valores que puede tomar la variable aleatoria.}\]
-
-\begin{example}
-Consideremos el experimento de lanzar un dado de seis caras. Se define la variable aleatoria \(X\) como el número de puntos en la cara del dado que cae hacia arriba. En este experimento la variable aleatoria toma 6 valores posibles (\(n = 6\)). Por lo tanto, la función de masa de probabilidad de esta variable aleatoria uniforme discreta es
-
-\[P(X = x)=1/6 \text{, } x = 1,2,3,4,5,6\]
-\end{example}
-
-La figura \ref{fig:simUD}, muestra una simulación de la función de masa de probabilidad de la distribución uniforme discreta, dependiendo del número de valores que puede tomar la variable aleatoria (\(n\)).
-
-\begin{figure}
-
-{\centering \includegraphics{est1+descriptiva_files/figure-latex/simUD-1} 
-
-}
-
-\caption{Simulación de la distribución Uniforme discreta}\label{fig:simUD}
-\end{figure}
 
 \subsubsection{Bernoulli}\label{bernoulli}
 
@@ -3276,43 +3155,6 @@ El ejemplo \ref{exm:intervalotiempo} introdujo el concepto de intervalo de tiemp
 \subsection{Distribuciones}\label{distribuciones-1}
 
 A continuación, se dan a conocer algunas de las distribución de probabilidad continua más utilizadas. Cabe mencionar, que existen muchas otras distribuciones, por lo que se invita al estudiante a informarse de ellas en caso de que lo requiera.
-
-\subsubsection{Uniforme}\label{uniforme-1}
-
-Esta es una versión continua de la ya vista en modelos discretos, la diferencia radica en que la variable es del tipo continua valga la redundancia. La función de probabilidad asociada es:
-
-\begin{equation}
-\notag
-f(x) = \left\lbrace
-\begin{array}{cl}
-\displaystyle\frac{1}{b-a} & \text{si } x \in (a,b)\\
-0 & \text{si } x \not\in (a,b)
-\end{array}
-\right.
-\end{equation}
-
-\textbf{Notación}: \(U(a,b)\)
-
-\begin{example}
-Imagine que es un analista financiero encargado de analizar los rendimientos diarios de una acción en particular en el mercado de valores. Los rendimientos diarios de esta acción se distribuyen de manera uniforme continua entre \(-2\%\) y \(2\%\), es decir, \(U(a = -2, b = 2)\).
-
-En este caso, la distribución uniforme continua significa que cada valor dentro del rango dado tiene la misma probabilidad de ocurrir. Por lo tanto, la probabilidad de que el rendimiento diario de la acción sea cualquier valor entre \(-2\%\) y \(2\%\) es igual.
-
-Supongamos que estás interesado en calcular la probabilidad de que el rendimiento diario de la acción sea mayor o igual a \(1.2\%\). Para hacerlo, primero debemos calcular el ancho del rango en el cual el rendimiento se encuentra dentro o por encima del \(1.2\%\). En este caso, el ancho del rango es \(2\% - 1.2\% = 0.8\%\).
-
-La probabilidad de que el rendimiento diario sea mayor o igual a \(1.2\%\) es igual al ancho del rango (\(0.8\%\)) dividido por el ancho total de la distribución (\(4\%\) en este caso), lo cual resulta en \(0.8\%/4\% = 0.2\).
-\end{example}
-
-La figura \ref{fig:simuniformecontinua}, muestra una simulación de la función de densidad de probabilidad de la distribución uniforme continua.
-
-\begin{figure}
-
-{\centering \includegraphics{est1+descriptiva_files/figure-latex/simuniformecontinua-1} 
-
-}
-
-\caption{Simulación de la distribución Uniforme Continua}\label{fig:simuniformecontinua}
-\end{figure}
 
 \subsubsection{Exponencial}\label{exponencial}
 

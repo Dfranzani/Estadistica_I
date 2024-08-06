@@ -812,44 +812,44 @@ Agregue una diferenciación por sexo a lo realizado en el ejercicio \@ref(exr:vi
 Utilizando la base de datos de [Precios de electricidad](#PreciosElectricidad), realice un gráfico de violín con caja y promedio para el precio de la electricidad, diferenciado por año. Interprete.
 :::
 
-### Gráfico de Barras
+<!-- ### Gráfico de Barras -->
 
-Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente [@anderson, página 29].
+<!-- Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente [@anderson, página 29]. -->
 
-1.  En uno de los ejes de la gráfica (por lo general en el horizontal), se especifican las etiquetas empleadas para las clases (categorías).
-3.  Para el otro eje de la gráfica (el vertical) se usa una escala para frecuencia, frecuencia relativa o frecuencia porcentual.
-4.  Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente).
+<!-- 1.  En uno de los ejes de la gráfica (por lo general en el horizontal), se especifican las etiquetas empleadas para las clases (categorías). -->
+<!-- 3.  Para el otro eje de la gráfica (el vertical) se usa una escala para frecuencia, frecuencia relativa o frecuencia porcentual. -->
+<!-- 4.  Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente). -->
 
-Para generar un gráfico de barras en R a partir de un conjunto de datos, se utiliza el siguiente código (se toma como ejemplo la base de datos [Tasa Euro/Dólar](#TasaEURUSD)):
+<!-- Para generar un gráfico de barras en R a partir de un conjunto de datos, se utiliza el siguiente código (se toma como ejemplo la base de datos [Tasa Euro/Dólar](#TasaEURUSD)): -->
 
-```{r fig.align="center", fig.width=4, fig.height=2}
-# Nueva variable para dicotomizar la tasa de cierre del EUR/USD
-datos$Close2 = ifelse(datos$Close > 1.1, # Criterio
-                      "Mayor a 1.1", # Valor asignado si se cumple el criterio
-                      "Menor a  1.1") # Valor asignado si no se cumple el criterio
-ggplot( # Ambiente gráfico
-  data = datos, # Base de datos a utilizar
-  aes( # Comandos estéticos
-    x = Close2)) + # Eje Y y variable asociada
-  geom_bar( # Objeto a graficar: gráfico de barras
-    fill = "white", color = "black") + # Color de relleno y borde
-  labs( # Títulos
-    title = "Barras EUR/USD", # Título del gráfico
-    x = "Tasa de cierre", # Título del eje X
-    y = "Frecuencia") # Título del eje Y
-```
+<!-- ```{r fig.align="center", fig.width=4, fig.height=2} -->
+<!-- # Nueva variable para dicotomizar la tasa de cierre del EUR/USD -->
+<!-- datos$Close2 = ifelse(datos$Close > 1.1, # Criterio -->
+<!--                       "Mayor a 1.1", # Valor asignado si se cumple el criterio -->
+<!--                       "Menor a  1.1") # Valor asignado si no se cumple el criterio -->
+<!-- ggplot( # Ambiente gráfico -->
+<!--   data = datos, # Base de datos a utilizar -->
+<!--   aes( # Comandos estéticos -->
+<!--     x = Close2)) + # Eje Y y variable asociada -->
+<!--   geom_bar( # Objeto a graficar: gráfico de barras -->
+<!--     fill = "white", color = "black") + # Color de relleno y borde -->
+<!--   labs( # Títulos -->
+<!--     title = "Barras EUR/USD", # Título del gráfico -->
+<!--     x = "Tasa de cierre", # Título del eje X -->
+<!--     y = "Frecuencia") # Título del eje Y -->
+<!-- ``` -->
 
-La interpretación de este tipo de gráfico (gráfico de barras no apiladas) es bastante intuitiva, ya que consiste en mencionar cuál categoría tiene un mayor frecuencia. En caso de graficar una variable con más de 2 categorías, se debe mencionar a que altura del eje vertical se encuentra la altura de cada una de las barras. Para obtener mayor detalles respecto a las frecuencias por categoría, suele apoyarse con un tabla de frecuencias absolutas o relativas porcentuales.
+<!-- La interpretación de este tipo de gráfico (gráfico de barras no apiladas) es bastante intuitiva, ya que consiste en mencionar cuál categoría tiene un mayor frecuencia. En caso de graficar una variable con más de 2 categorías, se debe mencionar a que altura del eje vertical se encuentra la altura de cada una de las barras. Para obtener mayor detalles respecto a las frecuencias por categoría, suele apoyarse con un tabla de frecuencias absolutas o relativas porcentuales. -->
 
-En el ejemplo, la frecuencia de la cantidad de tasas de cierre que se encuentran por sobre 1.1 es mayor a las que se encuentran por debajo, con una frecuencia sobre 4000 y menor a 1000 respectivamente.
+<!-- En el ejemplo, la frecuencia de la cantidad de tasas de cierre que se encuentran por sobre 1.1 es mayor a las que se encuentran por debajo, con una frecuencia sobre 4000 y menor a 1000 respectivamente. -->
 
-::: {.exercise}
-Utilizando la base de datos [Pacientes](#Pacientes), elabore un gráfico de barras de la variable *fbs*. Interprete, apoyado de una tabla de frecuencias absolutas.
-:::
+<!-- ::: {.exercise} -->
+<!-- Utilizando la base de datos [Pacientes](#Pacientes), elabore un gráfico de barras de la variable *fbs*. Interprete, apoyado de una tabla de frecuencias absolutas. -->
+<!-- ::: -->
 
-::: {.exercise}
-Utilizando la base de datos [Pacientes](#Pacientes), elabore un gráfico de barras (no apiladas) de la variable *cp*, diferenciado por sexo. Interprete, apoyado de una tabla de frecuencias relativas porcentuales. Haga el contraste visual con el gráfico de barras apiladas.
-:::
+<!-- ::: {.exercise} -->
+<!-- Utilizando la base de datos [Pacientes](#Pacientes), elabore un gráfico de barras (no apiladas) de la variable *cp*, diferenciado por sexo. Interprete, apoyado de una tabla de frecuencias relativas porcentuales. Haga el contraste visual con el gráfico de barras apiladas. -->
+<!-- ::: -->
 
 ### Gráfico de Dispersión
 
