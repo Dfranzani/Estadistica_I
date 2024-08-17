@@ -2200,7 +2200,7 @@ tabla = kbl(as.matrix(head), align = c('c','c','c','c','c'), booktabs = TRUE, li
 tabla
 ```
 
-Fijémonos que ocurre si graficamos las diferencias entre caras y sellos según la cantidad de veces se lanza la moneda.
+Fijémonos que ocurre si graficamos las diferencias entre caras y sellos según la cantidad de veces que se lanza la moneda.
 
 ```{r echo=FALSE, fig.align='center', fig.width=7, fig.height=3}
 ggplot(data = resultados) + 
