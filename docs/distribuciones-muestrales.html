@@ -166,7 +166,6 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
-<li class="chapter" data-level="" data-path="modalidad.html"><a href="modalidad.html"><i class="fa fa-check"></i>Modalidad</a></li>
 <li class="chapter" data-level="" data-path="talleres-de-práctica.html"><a href="talleres-de-práctica.html"><i class="fa fa-check"></i>Talleres de práctica</a></li>
 <li class="chapter" data-level="1" data-path="unidad1.html"><a href="unidad1.html"><i class="fa fa-check"></i><b>1</b> Tópicos básicos de estadística</a>
 <ul>
@@ -199,8 +198,7 @@ div.csl-indent {
 <li class="chapter" data-level="1.5.1" data-path="unidad1.html"><a href="unidad1.html#histograma"><i class="fa fa-check"></i><b>1.5.1</b> Histograma</a></li>
 <li class="chapter" data-level="1.5.2" data-path="unidad1.html"><a href="unidad1.html#gráfico-de-caja"><i class="fa fa-check"></i><b>1.5.2</b> Gráfico de Caja</a></li>
 <li class="chapter" data-level="1.5.3" data-path="unidad1.html"><a href="unidad1.html#gráfico-de-violín"><i class="fa fa-check"></i><b>1.5.3</b> Gráfico de Violín</a></li>
-<li class="chapter" data-level="1.5.4" data-path="unidad1.html"><a href="unidad1.html#gráfico-de-barras"><i class="fa fa-check"></i><b>1.5.4</b> Gráfico de Barras</a></li>
-<li class="chapter" data-level="1.5.5" data-path="unidad1.html"><a href="unidad1.html#gráfico-de-dispersión"><i class="fa fa-check"></i><b>1.5.5</b> Gráfico de Dispersión</a></li>
+<li class="chapter" data-level="1.5.4" data-path="unidad1.html"><a href="unidad1.html#gráfico-de-dispersión"><i class="fa fa-check"></i><b>1.5.4</b> Gráfico de Dispersión</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="probabilidad-y-variables-aleatorias.html"><a href="probabilidad-y-variables-aleatorias.html"><i class="fa fa-check"></i><b>2</b> Probabilidad y variables aleatorias</a>
@@ -318,16 +316,16 @@ P(\bar{X} &gt; 724) &amp;= P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &gt; \frac
 \end{split}
 \end{equation}\]</span>
 <p>Luego, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="distribuciones-muestrales.html#cb91-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.876</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="distribuciones-muestrales.html#cb90-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.876</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.03032764</code></pre>
 <p>Finalmente, la probabilidad de que el gerente aplique un alza en los precios en el próximo mes es de 0.03.</p>
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-98" class="exercise"><strong>Ejercicio 3.1  </strong></span>La cantidad de operaciones bancarias que ocurren durante un día distribuye normal con media 75 (millones) y varianza 144 (millones). Considerando una muestra de tamaño 22 (días), ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 77.3 millones?</p>
+<p><span id="exr:unlabeled-div-94" class="exercise"><strong>Ejercicio 3.1  </strong></span>La cantidad de operaciones bancarias que ocurren durante un día distribuye normal con media 75 (millones) y varianza 144 (millones). Considerando una muestra de tamaño 22 (días), ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 77.3 millones?</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-99" class="exercise"><strong>Ejercicio 3.2  </strong></span>El tiempo que demoran en hacerse efectivas las transferencias bancarias internacionales, distribuye normal con media 15 (segundos) y desviación estándar de 4 (segundos). Considerando una muestra de tamaño 29, ¿cuál es la probabilidad de que la media muestral de los tiempos de demora de transacción sea menor a 14.1 segundos? Mencione con rigurosidad todos los pasos de su solución.</p>
+<p><span id="exr:unlabeled-div-95" class="exercise"><strong>Ejercicio 3.2  </strong></span>El tiempo que demoran en hacerse efectivas las transferencias bancarias internacionales, distribuye normal con media 15 (segundos) y desviación estándar de 4 (segundos). Considerando una muestra de tamaño 29, ¿cuál es la probabilidad de que la media muestral de los tiempos de demora de transacción sea menor a 14.1 segundos? Mencione con rigurosidad todos los pasos de su solución.</p>
 </div>
 </div>
 <div id="teorema-del-límite-central" class="section level3 hasAnchor" number="3.1.3">
@@ -348,7 +346,7 @@ P(\bar{X} &gt; 724) &amp;= P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &gt; \frac
 </ul>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-100" class="example"><strong>Ejemplo 3.2  </strong></span>Un accionista piensa comprar acciones de una determinada empresa chilena de tecnología. Dado los valores del mercado, se observa que el valor promedio de las acciones (iid) es de $4000 con una desviación estándar de $700. El accionista comprará acciones solo si una muestra aleatoria de 100 valores de acciones resulta en un valor promedio mayor a $4100. ¿Cuál es la probabilidad de que el accionista invierta en la empresa chilena?</p>
+<p><span id="exm:unlabeled-div-96" class="example"><strong>Ejemplo 3.2  </strong></span>Un accionista piensa comprar acciones de una determinada empresa chilena de tecnología. Dado los valores del mercado, se observa que el valor promedio de las acciones (iid) es de $4000 con una desviación estándar de $700. El accionista comprará acciones solo si una muestra aleatoria de 100 valores de acciones resulta en un valor promedio mayor a $4100. ¿Cuál es la probabilidad de que el accionista invierta en la empresa chilena?</p>
 <p>Si bien no se especifica que los valores de la acciones distribuyen normal, es posible usar el TLC para determinar la probabilidad.</p>
 <p>El planteamiento de la probabilidad es el siguiente:</p>
 <span class="math display">\[\begin{equation}
@@ -360,19 +358,19 @@ P(\bar{X} &gt; 4100) &amp;= P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &gt; \fra
 \end{split}
 \end{equation}\]</span>
 <p>El cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="distribuciones-muestrales.html#cb93-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.428</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="distribuciones-muestrales.html#cb92-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.428</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.07664593</code></pre>
 <p>La probabilidad de que el accionista invierta en la empresa chilena es de 0.07</p>
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-101" class="exercise"><strong>Ejercicio 3.3  </strong></span>La cantidad de operaciones bancarias que ocurren durante un día tienen una media de 75 (millones) y varianza 144 (millones). Considerando una muestra de tamaño 71 (días), y que se desconoce la distribución de los datos, ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 73.16 millones? Mencione con rigurosidad todos los pasos de su solución.</p>
+<p><span id="exr:unlabeled-div-97" class="exercise"><strong>Ejercicio 3.3  </strong></span>La cantidad de operaciones bancarias que ocurren durante un día tienen una media de 75 (millones) y varianza 144 (millones). Considerando una muestra de tamaño 71 (días), y que se desconoce la distribución de los datos, ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 73.16 millones? Mencione con rigurosidad todos los pasos de su solución.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-102" class="exercise"><strong>Ejercicio 3.4  </strong></span>El tiempo que demoran en hacerse efectivas las transferencias bancarias internacionales tienen una media de 15 (segundos) y desviación estándar de 4 (segundos). Considerando una muestra de tamaño 56, y que se desconoce la distribución de los datos, ¿cuál es la probabilidad de que la media muestral de los tiempos de demora de transacción sea menor a 15.8 segundos? Mencione con rigurosidad todos los pasos de su solución.</p>
+<p><span id="exr:unlabeled-div-98" class="exercise"><strong>Ejercicio 3.4  </strong></span>El tiempo que demoran en hacerse efectivas las transferencias bancarias internacionales tienen una media de 15 (segundos) y desviación estándar de 4 (segundos). Considerando una muestra de tamaño 56, y que se desconoce la distribución de los datos, ¿cuál es la probabilidad de que la media muestral de los tiempos de demora de transacción sea menor a 15.8 segundos? Mencione con rigurosidad todos los pasos de su solución.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-103" class="exercise"><strong>Ejercicio 3.5  </strong></span>Supóngase que el número de barriles de petróleo crudo que son importados diariamente es una variable aleatoria con una distribución no especificada. Si se observa la cantidad de barriles importados en 64 días, seleccionados en forma aleatoria , y si se sabe que la desviación estándar del número de barriles por día es <span class="math inline">\(\sigma = 60\)</span>, determínese la probabilidad de que la media muestral se encuentre a no más de 700 barriles del verdadero valor de barriles importados.</p>
+<p><span id="exr:unlabeled-div-99" class="exercise"><strong>Ejercicio 3.5  </strong></span>Supóngase que el número de barriles de petróleo crudo que son importados diariamente es una variable aleatoria con una distribución no especificada. Si se observa la cantidad de barriles importados en 64 días, seleccionados en forma aleatoria , y si se sabe que la desviación estándar del número de barriles por día es <span class="math inline">\(\sigma = 60\)</span>, determínese la probabilidad de que la media muestral se encuentre a no más de 700 barriles del verdadero valor de barriles importados.</p>
 </div>
 </div>
 </div>
@@ -391,7 +389,7 @@ Y=\sum_{i=1}^n\frac{(X_i-\mu)^2}{\sigma^2} = \frac{(n-1)S^2}{\sigma^2} \sim \chi
 \end{equation}\]</span>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-104" class="example"><strong>Ejemplo 3.3  </strong></span>Considere una medición del índice de pobreza (porcentual) proporcionada por un instrumento computacional, en donde el interés recae en la variabilidad de la lectura. Supóngase que, con base en la experiencia, la medición es una variable aleatoria normalmente distribuida con media 14.7 y desviación estándar igual a 1.2 unidades. Si se toma una muestra aleatoria procedente del proceso de medición computacional de tamaño 25, ¿cuál es la probabilidad de que el valor de la varianza muestral del índice de pobreza sea mayor a <span class="math inline">\(1.1\)</span> unidades?</p>
+<p><span id="exm:unlabeled-div-100" class="example"><strong>Ejemplo 3.3  </strong></span>Considere una medición del índice de pobreza (porcentual) proporcionada por un instrumento computacional, en donde el interés recae en la variabilidad de la lectura. Supóngase que, con base en la experiencia, la medición es una variable aleatoria normalmente distribuida con media 14.7 y desviación estándar igual a 1.2 unidades. Si se toma una muestra aleatoria procedente del proceso de medición computacional de tamaño 25, ¿cuál es la probabilidad de que el valor de la varianza muestral del índice de pobreza sea mayor a <span class="math inline">\(1.1\)</span> unidades?</p>
 <p>El planteamiento de la probabilidad es el siguiente.</p>
 <span class="math display">\[\begin{equation}
 \notag
@@ -402,13 +400,13 @@ P(S^2 &gt; 1.1) &amp;= P\left(\frac{(n-1)S^2}{\sigma^2} &gt; \frac{(n-1)\cdot 1.
 \end{split}
 \end{equation}\]</span>
 <p>Considerando que esta nueva variable tiene distribución <span class="math inline">\(\chi^2_{n-1} = \chi^2_{25-1} = \chi^2_{24}\)</span>, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="distribuciones-muestrales.html#cb95-1" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">18.333</span>, <span class="at">df =</span> <span class="dv">24</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="distribuciones-muestrales.html#cb94-1" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">18.333</span>, <span class="at">df =</span> <span class="dv">24</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.7865623</code></pre>
 <p>Finalmente, la probabilidad de que el valor de la varianza muestral del índice de pobreza sea mayor a <span class="math inline">\(1.1\)</span> unidades cuadradas es de 0.7865.</p>
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-105" class="exercise"><strong>Ejercicio 3.6  </strong></span>Se toma una muestra aleatoria de tamaño 67 proveniente de una población normal con desviación estándar <span class="math inline">\(\sigma =3.05\)</span>. Calcular la probabilidad de que la varianza muestral <span class="math inline">\(s^{2}\)</span> sea como mínimo 8.21? Utilice solo una de las siguiente tablas.</p>
+<p><span id="exr:unlabeled-div-101" class="exercise"><strong>Ejercicio 3.6  </strong></span>Se toma una muestra aleatoria de tamaño 67 proveniente de una población normal con desviación estándar <span class="math inline">\(\sigma =3.05\)</span>. Calcular la probabilidad de que la varianza muestral <span class="math inline">\(s^{2}\)</span> sea como mínimo 8.21? Utilice solo una de las siguiente tablas.</p>
 <table class="table table-condensed table" style="width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
 <caption>
 <span id="tab:unnamed-chunk-71">Tabla 3.1: </span>Distribución Ji-Cuadrado, df = 66
@@ -541,7 +539,7 @@ T = \frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t_{n-1},
 <p>el cual, es un estadístico <em>t</em>-Student con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-106" class="example"><strong>Ejemplo 3.4  </strong></span>El Departamento de Protección al Medio Ambiente (DPMA) asegura que, para un automóvil compacto en particular, el consumo promedio de gasolina en carretera es de 45 kilómetros por litro. Una organización independiente de consumidores adquiere uno de estos autos y lo somete a prueba con el propósito de verificar la cifra proporcionada por el DPMA. El auto recorrió una distancia de 100 kilómetros en 25 ocasiones. En cada recorrido se anotó el número de litros necesarios para realizar el viaje. Para los 25 ensayos, la desviación estándar tuvo un valor de 2.5 kilómetros por litro. Si se supone que el número de kilómetros que se recorre por litro es una variable aleatoria distribuida normalmente, ¿cuál es la probabilidad de que el promedio de kilómetros recorridos por litro sea menor al 45.2?</p>
+<p><span id="exm:unlabeled-div-102" class="example"><strong>Ejemplo 3.4  </strong></span>El Departamento de Protección al Medio Ambiente (DPMA) asegura que, para un automóvil compacto en particular, el consumo promedio de gasolina en carretera es de 45 kilómetros por litro. Una organización independiente de consumidores adquiere uno de estos autos y lo somete a prueba con el propósito de verificar la cifra proporcionada por el DPMA. El auto recorrió una distancia de 100 kilómetros en 25 ocasiones. En cada recorrido se anotó el número de litros necesarios para realizar el viaje. Para los 25 ensayos, la desviación estándar tuvo un valor de 2.5 kilómetros por litro. Si se supone que el número de kilómetros que se recorre por litro es una variable aleatoria distribuida normalmente, ¿cuál es la probabilidad de que el promedio de kilómetros recorridos por litro sea menor al 45.2?</p>
 <p>A diferencia de los expuesto anteriormente, no se conoce la varianza poblacional de la variable de estudio (los kilómetros por litro que rinde el automóvil), por lo tanto, corresponde utilizar el estadístico <em>t</em>-Student, el cual hace uso de la varianza muestral. El planteamiento de la probabilidad es el siguiente:</p>
 <span class="math display">\[\begin{equation}
 \notag
@@ -552,13 +550,13 @@ P(\bar{X} &lt; 45.2) &amp;= P\left(\frac{\bar{X}-\mu}{S/\sqrt{n}} &lt; \frac{45.
 \end{split}
 \end{equation}\]</span>
 <p>Recordando que esta nueva variable distribuye <span class="math inline">\(t_{n-1}=t_{25-1}=t_{24}\)</span>, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="distribuciones-muestrales.html#cb97-1" tabindex="-1"></a><span class="fu">pt</span>(<span class="at">q =</span> <span class="fl">0.4</span>, <span class="at">df =</span> <span class="dv">24</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="distribuciones-muestrales.html#cb96-1" tabindex="-1"></a><span class="fu">pt</span>(<span class="at">q =</span> <span class="fl">0.4</span>, <span class="at">df =</span> <span class="dv">24</span>)</span></code></pre></div>
 <pre><code>## [1] 0.6536528</code></pre>
 <p>la probabilidad de que el promedio de kilómetros recorridos por litro sea menor al 45.2 es de 0.6536.</p>
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-107" class="exercise"><strong>Ejercicio 3.7  </strong></span>La base de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv"><em>dolar.csv</em></a> contiene el valor del dólar observado de algunos de los días de los meses de junio y julio, tomados por el el SII. A continuación:</p>
+<p><span id="exr:unlabeled-div-103" class="exercise"><strong>Ejercicio 3.7  </strong></span>La base de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv"><em>dolar.csv</em></a> contiene el valor del dólar observado de algunos de los días de los meses de junio y julio, tomados por el el SII. A continuación:</p>
 <ol style="list-style-type: decimal">
 <li>Suponga que el valor del dólar distribuye <span class="math inline">\(N(\mu = 880,\sigma^2 = 50^2)\)</span>. Determine probabilidad de que el valor promedio del dólar muestral supere los $900.</li>
 <li>Considerando los supuestos de la pregunta 2, ¿cuál es la probabilidad de que la varianza muestral no supere los <span class="math inline">\(\$43^2\)</span>? Obtenga el valor de la varianza muestral en R y comente los resultados.</li>
@@ -567,7 +565,7 @@ P(\bar{X} &lt; 45.2) &amp;= P\left(\frac{\bar{X}-\mu}{S/\sqrt{n}} &lt; \frac{45.
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-108" class="exercise"><strong>Ejercicio 3.8  </strong></span>El conjunto de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv"><em>diabetes.csv</em></a> proviene originalmente del Instituto Nacional de Diabetes y Enfermedades Digestivas y Renales. El objetivo del conjunto de datos es estudiar de forma diagnóstica si un paciente tiene diabetes, en función de ciertas medidas de diagnóstico incluidas en el conjunto de datos. Se impusieron varias restricciones a la selección de estas instancias de una base de datos más grande. En particular, todos los pacientes aquí son mujeres de al menos 21 años de ascendencia indígena Pima. Las columnas de la base de datos con las siguientes:</p>
+<p><span id="exr:unlabeled-div-104" class="exercise"><strong>Ejercicio 3.8  </strong></span>El conjunto de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv"><em>diabetes.csv</em></a> proviene originalmente del Instituto Nacional de Diabetes y Enfermedades Digestivas y Renales. El objetivo del conjunto de datos es estudiar de forma diagnóstica si un paciente tiene diabetes, en función de ciertas medidas de diagnóstico incluidas en el conjunto de datos. Se impusieron varias restricciones a la selección de estas instancias de una base de datos más grande. En particular, todos los pacientes aquí son mujeres de al menos 21 años de ascendencia indígena Pima. Las columnas de la base de datos con las siguientes:</p>
 <ul>
 <li>Pregnancies: Para expresar el número de embarazos.</li>
 <li>Glucose: Para expresar el nivel de Glucosa en sangre (mg/dL).</li>

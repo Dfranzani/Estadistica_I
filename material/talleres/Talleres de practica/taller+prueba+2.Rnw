@@ -103,13 +103,6 @@ Pruebe que $g(x)$ es una función de densidad de probabilidad (asuma que $F(x_0)
     \item $F(x) = 1-e^{-x}$, $0 < x < \infty$
 \end{enumerate}
 
-\item Verifique si las siguientes funciones son \textit{fdp} de una variable aleatoria continua.
-
-\begin{enumerate}
-    \item $f(x) = 1.3x^2e^{-1.3x}$, $x \geq 0$
-    \item $f(x) = \displaystyle\frac{1}{x^2}e^{-1/x}$, $x > 0$
-\end{enumerate}
-
 %\begin{enumerate}
     %\item Trace la gráfica de $f(x)$.
     %\item Verifique que el área total bajo la curva es igual a 1.

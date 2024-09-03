@@ -25,7 +25,7 @@
 
 <<echo=FALSE, include=FALSE>>=
 knitr::knit_hooks$set(document = function(x) {sub('\\usepackage[]{color}', '\\usepackage{xcolor}', x, fixed = TRUE)})
-knitr::opts_chunk$set(fig.path="/home/daniel/MEGA/Programación/Trabajos en R/Bookdown/Cursos de Estadística/Estadística II/material/talleres/Talleres de practica/figures")
+knitr::opts_chunk$set(fig.path = "figures/")
 @
 
 \Sexpr{knit_child(taller)}
