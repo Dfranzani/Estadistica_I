@@ -170,7 +170,7 @@
 
 \title{Estadística I \& Estadística Descriptiva}
 \author{\href{https://dfranzani.github.io/website/principal/home.html}{Daniel Franzani}}
-\date{Actualizado al 02-09-2024}
+\date{Actualizado al 27-10-2024}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -1956,34 +1956,29 @@ La siguiente figura muestra la gráfica de \(F(y)\).
                 \StringTok{"p"} \OtherTok{=} \FunctionTok{c}\NormalTok{(}\FloatTok{0.4}\NormalTok{,}\FloatTok{0.7}\NormalTok{,}\FloatTok{0.9}\NormalTok{,}\DecValTok{1}\NormalTok{)) }\CommentTok{\# Probabilidades acumuladas asociadas}
 \FunctionTok{ggplot}\NormalTok{( }\CommentTok{\# Ambiente gráfico}
   \AttributeTok{data =}\NormalTok{ df, }\CommentTok{\# Base de datos}
-  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ y, }\CommentTok{\# NOmbre de la variable a graficar en el eje X}
+  \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ y, }\CommentTok{\# Nombre de la variable a graficar en el eje X}
       \AttributeTok{y =}\NormalTok{ p)) }\SpecialCharTok{+} \CommentTok{\# Nombre de la variable a graficar en el eje Y}
   \FunctionTok{geom\_segment}\NormalTok{( }\CommentTok{\# Generar segmentos}
-    \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\FunctionTok{min}\NormalTok{(y),y[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(y)]), }\CommentTok{\# Coordenada X de puntos de inicio de los segmentos}
-        \AttributeTok{y =} \FunctionTok{c}\NormalTok{(}\FunctionTok{min}\NormalTok{(y),p[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(y)]), }\CommentTok{\# Coordenada Y de puntos de inicio de los segmentos}
-        \AttributeTok{xend =} \FunctionTok{c}\NormalTok{(}\FunctionTok{min}\NormalTok{(y),y[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]), }\CommentTok{\# Coordenada X de puntos finales de los segmentos}
-        \AttributeTok{yend =} \FunctionTok{c}\NormalTok{(}\FunctionTok{min}\NormalTok{(y),p[}\SpecialCharTok{{-}}\FunctionTok{length}\NormalTok{(y)]))) }\SpecialCharTok{+} \CommentTok{\# Coordenada X de puntos finales de los segmentos}
+    \FunctionTok{aes}\NormalTok{(}
+      \AttributeTok{x =}\NormalTok{ y, }\CommentTok{\# Coordenada X de puntos de inicio de los segmentos}
+      \AttributeTok{y =}\NormalTok{ p, }\CommentTok{\# Coordenada Y de puntos de inicio de los segmentos}
+      \AttributeTok{xend =} \FunctionTok{c}\NormalTok{(y[}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{)], y[}\FunctionTok{length}\NormalTok{(y)] }\SpecialCharTok{+} \FunctionTok{mean}\NormalTok{(y)}\SpecialCharTok{/}\DecValTok{3}\NormalTok{), }\CommentTok{\# Coordenada X de puntos finales de los segmentos}
+      \AttributeTok{yend =}\NormalTok{ p }\CommentTok{\# Coordenada X de puntos finales de los segmentos}
+\NormalTok{    )}
+\NormalTok{  ) }\SpecialCharTok{+}
   \FunctionTok{geom\_segment}\NormalTok{( }\CommentTok{\# Código que genera la flecha dentro del gráfico}
-    \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ y[}\FunctionTok{length}\NormalTok{(y)],}
-        \AttributeTok{y =}\NormalTok{ p[}\FunctionTok{length}\NormalTok{(y)],}
-        \AttributeTok{xend =}\NormalTok{ y[}\FunctionTok{length}\NormalTok{(y)] }\SpecialCharTok{+} \FunctionTok{mean}\NormalTok{(y[}\DecValTok{2}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(y)]}\SpecialCharTok{{-}}\NormalTok{ y[}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(y)}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]),}
-        \AttributeTok{yend =}\NormalTok{ p[}\FunctionTok{length}\NormalTok{(y)]),}
+    \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ y[}\FunctionTok{length}\NormalTok{(y)], }\AttributeTok{y =}\NormalTok{ p[}\FunctionTok{length}\NormalTok{(y)],}
+        \AttributeTok{xend =} \FunctionTok{c}\NormalTok{(y[}\FunctionTok{length}\NormalTok{(y)] }\SpecialCharTok{+} \FunctionTok{mean}\NormalTok{(y)}\SpecialCharTok{/}\DecValTok{3}\NormalTok{), }\AttributeTok{yend =}\NormalTok{ p[}\FunctionTok{length}\NormalTok{(p)]),}
     \AttributeTok{arrow =} \FunctionTok{arrow}\NormalTok{(}\AttributeTok{length =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\StringTok{"cm"}\NormalTok{)), }\CommentTok{\# Argumento que permite dar la forma de flecha al último segmento}
     \AttributeTok{alpha =} \FloatTok{0.4}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{col =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Punto de incio de los segmentos}
-  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \CommentTok{\# Edición de los límites del eje Y}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{col =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Punto de inicio de los segmentos}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, df}\SpecialCharTok{$}\NormalTok{p)) }\SpecialCharTok{+} \CommentTok{\# Edición de los límites del eje Y}
   \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Edición de títulos}
     \AttributeTok{title =} \StringTok{"Probabilidad acumulada"}\NormalTok{, }\CommentTok{\# Título del gráfico}
     \AttributeTok{x =} \StringTok{"Valores de y"}\NormalTok{, }\CommentTok{\# Título del eje X}
     \AttributeTok{y =} \StringTok{"F(y)"}\NormalTok{) }\CommentTok{\# Título del eje Y}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## Warning in geom_segment(aes(x = y[length(y)], y = p[length(y)], xend = y[length(y)] + : All aesthetics have length 1, but the data has 4 rows.
-## i Please consider using `annotate()` or provide this layer with data containing
-##   a single row.
-\end{verbatim}
 
 \begin{figure}
 

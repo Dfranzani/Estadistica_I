@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Unidad 3 Distribuciones muestrales | Estadística I &amp; Estadística Descriptiva</title>
   <meta name="description" content="Curso básico de Estadística para ingeniería." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Unidad 3 Distribuciones muestrales | Estadística I &amp; Estadística Descriptiva" />
   <meta property="og:type" content="book" />
@@ -316,7 +316,7 @@ P(\bar{X} &gt; 724) &amp;= P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &gt; \frac
 \end{split}
 \end{equation}\]</span>
 <p>Luego, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="distribuciones-muestrales.html#cb90-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.876</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="distribuciones-muestrales.html#cb89-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.876</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.03032764</code></pre>
 <p>Finalmente, la probabilidad de que el gerente aplique un alza en los precios en el próximo mes es de 0.03.</p>
 </div>
@@ -358,7 +358,7 @@ P(\bar{X} &gt; 4100) &amp;= P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &gt; \fra
 \end{split}
 \end{equation}\]</span>
 <p>El cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="distribuciones-muestrales.html#cb92-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.428</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="distribuciones-muestrales.html#cb91-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.428</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.07664593</code></pre>
 <p>La probabilidad de que el accionista invierta en la empresa chilena es de 0.07</p>
 </div>
@@ -400,7 +400,7 @@ P(S^2 &gt; 1.1) &amp;= P\left(\frac{(n-1)S^2}{\sigma^2} &gt; \frac{(n-1)\cdot 1.
 \end{split}
 \end{equation}\]</span>
 <p>Considerando que esta nueva variable tiene distribución <span class="math inline">\(\chi^2_{n-1} = \chi^2_{25-1} = \chi^2_{24}\)</span>, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="distribuciones-muestrales.html#cb94-1" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">18.333</span>, <span class="at">df =</span> <span class="dv">24</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="distribuciones-muestrales.html#cb93-1" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">18.333</span>, <span class="at">df =</span> <span class="dv">24</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.7865623</code></pre>
 <p>Finalmente, la probabilidad de que el valor de la varianza muestral del índice de pobreza sea mayor a <span class="math inline">\(1.1\)</span> unidades cuadradas es de 0.7865.</p>
 </div>
@@ -550,7 +550,7 @@ P(\bar{X} &lt; 45.2) &amp;= P\left(\frac{\bar{X}-\mu}{S/\sqrt{n}} &lt; \frac{45.
 \end{split}
 \end{equation}\]</span>
 <p>Recordando que esta nueva variable distribuye <span class="math inline">\(t_{n-1}=t_{25-1}=t_{24}\)</span>, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="distribuciones-muestrales.html#cb96-1" tabindex="-1"></a><span class="fu">pt</span>(<span class="at">q =</span> <span class="fl">0.4</span>, <span class="at">df =</span> <span class="dv">24</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="distribuciones-muestrales.html#cb95-1" tabindex="-1"></a><span class="fu">pt</span>(<span class="at">q =</span> <span class="fl">0.4</span>, <span class="at">df =</span> <span class="dv">24</span>)</span></code></pre></div>
 <pre><code>## [1] 0.6536528</code></pre>
 <p>la probabilidad de que el promedio de kilómetros recorridos por litro sea menor al 45.2 es de 0.6536.</p>
 </div>
