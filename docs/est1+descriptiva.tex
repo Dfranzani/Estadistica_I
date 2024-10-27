@@ -1778,6 +1778,8 @@ La figura \ref{fig:plotmasa} está reproducida mediante R, con la finalidad de v
         \AttributeTok{y =} \FunctionTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FunctionTok{length}\NormalTok{(x)), }\CommentTok{\# Coordenada Y de los puntos de inicio}
         \AttributeTok{xend =}\NormalTok{ x, }\CommentTok{\# Coordenada X de los puntos de llegada}
         \AttributeTok{yend =}\NormalTok{ p)) }\SpecialCharTok{+} \CommentTok{\# Coordenada Y de los puntos de llegada}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{breaks =}\NormalTok{ df}\SpecialCharTok{$}\NormalTok{p) }\SpecialCharTok{+} \CommentTok{\# Puntos visualizados del eje Y}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =}\NormalTok{ df}\SpecialCharTok{$}\NormalTok{x) }\SpecialCharTok{+} \CommentTok{\# Puntos visualizados del eje Y}
   \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Edición de títulos}
     \AttributeTok{title =} \StringTok{"Probabilidades de cada valor"}\NormalTok{, }\CommentTok{\# Título del gráfico}
     \AttributeTok{x =} \StringTok{"Valores del experimento (x)"}\NormalTok{, }\CommentTok{\# Título de eje X}
@@ -1972,7 +1974,8 @@ La siguiente figura muestra la gráfica de \(F(y)\).
     \AttributeTok{arrow =} \FunctionTok{arrow}\NormalTok{(}\AttributeTok{length =} \FunctionTok{unit}\NormalTok{(}\FloatTok{0.2}\NormalTok{, }\StringTok{"cm"}\NormalTok{)), }\CommentTok{\# Argumento que permite dar la forma de flecha al último segmento}
     \AttributeTok{alpha =} \FloatTok{0.4}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{col =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# Punto de inicio de los segmentos}
-  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, df}\SpecialCharTok{$}\NormalTok{p)) }\SpecialCharTok{+} \CommentTok{\# Edición de los límites del eje Y}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, df}\SpecialCharTok{$}\NormalTok{p)) }\SpecialCharTok{+} \CommentTok{\# Edición de los límites y puntos del eje Y}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =}\NormalTok{ df}\SpecialCharTok{$}\NormalTok{y) }\SpecialCharTok{+} \CommentTok{\# Puntos visualizados en el eje X}
   \FunctionTok{labs}\NormalTok{( }\CommentTok{\# Edición de títulos}
     \AttributeTok{title =} \StringTok{"Probabilidad acumulada"}\NormalTok{, }\CommentTok{\# Título del gráfico}
     \AttributeTok{x =} \StringTok{"Valores de y"}\NormalTok{, }\CommentTok{\# Título del eje X}

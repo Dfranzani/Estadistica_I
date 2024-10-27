@@ -445,6 +445,8 @@ ggplot( # Ambiente gráfico
         y = rep(0,length(x)), # Coordenada Y de los puntos de inicio
         xend = x, # Coordenada X de los puntos de llegada
         yend = p)) + # Coordenada Y de los puntos de llegada
+  scale_y_continuous(breaks = df$p) + # Puntos visualizados del eje Y
+  scale_x_continuous(breaks = df$x) + # Puntos visualizados del eje Y
   labs( # Edición de títulos
     title = "Probabilidades de cada valor", # Título del gráfico
     x = "Valores del experimento (x)", # Título de eje X
@@ -604,7 +606,8 @@ ggplot( # Ambiente gráfico
     arrow = arrow(length = unit(0.2, "cm")), # Argumento que permite dar la forma de flecha al último segmento
     alpha = 0.4) +
   geom_point(col = "darkred") + # Punto de inicio de los segmentos
-  scale_y_continuous(limits = c(0,1), breaks = c(0, df$p)) + # Edición de los límites del eje Y
+  scale_y_continuous(limits = c(0,1), breaks = c(0, df$p)) + # Edición de los límites y puntos del eje Y
+  scale_x_continuous(breaks = df$y) + # Puntos visualizados en el eje X
   labs( # Edición de títulos
     title = "Probabilidad acumulada", # Título del gráfico
     x = "Valores de y", # Título del eje X
