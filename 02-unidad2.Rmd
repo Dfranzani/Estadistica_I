@@ -445,7 +445,7 @@ ggplot( # Ambiente gráfico
         y = rep(0,length(x)), # Coordenada Y de los puntos de inicio
         xend = x, # Coordenada X de los puntos de llegada
         yend = p)) + # Coordenada Y de los puntos de llegada
-  scale_y_continuous(breaks = df$p) + # Puntos visualizados del eje Y
+  scale_y_continuous(breaks = c(0, df$p)) + # Puntos visualizados del eje Y
   scale_x_continuous(breaks = df$x) + # Puntos visualizados del eje Y
   labs( # Edición de títulos
     title = "Probabilidades de cada valor", # Título del gráfico
@@ -851,13 +851,13 @@ La figura \@ref(fig:simBinomial), muestra una simulación de la función de masa
 
 ```{r simBinomial, fig.align="center", fig.width=7, fig.height=4, fig.cap="Simulación de la distribución Binomial", echo=FALSE}
 bin = function(p, titulo){
-  aux = data.frame("x" = seq(1,10), "y" = dbinom(1:10,10,p))
+  aux = data.frame("x" = seq(0,10), "y" = dbinom(0:10,10,p))
   g = ggplot(data = aux, aes(x = x, y = y)) +
     geom_point() + 
     geom_segment(aes(x = x, xend = x, y = 0, yend = y)) + 
     labs(x = "Observación", y = "Probabilidad", title = titulo) + 
     scale_y_continuous(limits = c(0,1)) + 
-    scale_x_continuous(breaks = 1:10)
+    scale_x_continuous(breaks = aux$x)
   return(g)
 }
 grid.arrange(bin(0.1, "Binomial, n = 10, p = 0.1"),
@@ -1079,13 +1079,13 @@ La figura \@ref(fig:simPois), muestra una simulación de la función de masa de 
 
 ```{r simPois, fig.align="center", fig.width=7, fig.height=4, fig.cap="Simulación de la distribución Poisson", echo=FALSE}
 poi = function(lambda, titulo){
-  aux = data.frame("x" = seq(1,8), "y" = dpois(1:8,lambda))
+  aux = data.frame("x" = 0:8, "y" = dpois(0:8,lambda))
   g = ggplot(data = aux, aes(x = x, y = y)) +
     geom_point() + 
     geom_segment(aes(x = x, xend = x, y = 0, yend = y)) + 
     labs(x = "Observación", y = "Probabilidad", title = titulo) + 
     scale_y_continuous(limits = c(0,1)) + 
-    scale_x_continuous(breaks = 1:10)
+    scale_x_continuous(breaks = aux$x)
   return(g)
 }
 grid.arrange(poi(0.9, "Poisson, n = 8, lambda = 0.9"),
