@@ -445,6 +445,8 @@ ggplot( # Ambiente gráfico
         y = rep(0,length(x)), # Coordenada Y de los puntos de inicio
         xend = x, # Coordenada X de los puntos de llegada
         yend = p)) + # Coordenada Y de los puntos de llegada
+  scale_y_continuous(breaks = c(0, df$p)) + # Puntos visualizados del eje Y
+  scale_x_continuous(breaks = df$x) + # Puntos visualizados del eje Y
   labs( # Edición de títulos
     title = "Probabilidades de cada valor", # Título del gráfico
     x = "Valores del experimento (x)", # Título de eje X
@@ -583,27 +585,29 @@ F(y) = \left\lbrace
 
 La siguiente figura muestra la gráfica de $F(y)$.
 
-```{r fig.align="center", fig.width=5, fig.height=2.5, fig.cap="Función de distribución acumulada"}
+```{r fig.align="center", fig.width=5, fig.height=2.5, fig.cap="Función de distribución acumulada", warning=FALSE}
 df = data.frame("y" = 1:4, # Valores de Y
                 "p" = c(0.4,0.7,0.9,1)) # Probabilidades acumuladas asociadas
 ggplot( # Ambiente gráfico
   data = df, # Base de datos
-  aes(x = y, # NOmbre de la variable a graficar en el eje X
+  aes(x = y, # Nombre de la variable a graficar en el eje X
       y = p)) + # Nombre de la variable a graficar en el eje Y
   geom_segment( # Generar segmentos
-    aes(x = c(min(y),y[-length(y)]), # Coordenada X de puntos de inicio de los segmentos
-        y = c(min(y),p[-length(y)]), # Coordenada Y de puntos de inicio de los segmentos
-        xend = c(min(y),y[-1]), # Coordenada X de puntos finales de los segmentos
-        yend = c(min(y),p[-length(y)]))) + # Coordenada X de puntos finales de los segmentos
+    aes(
+      x = y, # Coordenada X de puntos de inicio de los segmentos
+      y = p, # Coordenada Y de puntos de inicio de los segmentos
+      xend = c(y[-c(1)], y[length(y)] + mean(y)/3), # Coordenada X de puntos finales de los segmentos
+      yend = p # Coordenada X de puntos finales de los segmentos
+    )
+  ) +
   geom_segment( # Código que genera la flecha dentro del gráfico
-    aes(x = y[length(y)],
-        y = p[length(y)],
-        xend = y[length(y)] + mean(y[2:length(y)]- y[1:length(y)-1]),
-        yend = p[length(y)]),
+    aes(x = y[length(y)], y = p[length(y)],
+        xend = c(y[length(y)] + mean(y)/3), yend = p[length(p)]),
     arrow = arrow(length = unit(0.2, "cm")), # Argumento que permite dar la forma de flecha al último segmento
     alpha = 0.4) +
-  geom_point(col = "darkred") + # Punto de incio de los segmentos
-  scale_y_continuous(limits = c(0,1)) + # Edición de los límites del eje Y
+  geom_point(col = "darkred") + # Punto de inicio de los segmentos
+  scale_y_continuous(limits = c(0,1), breaks = c(0, df$p)) + # Edición de los límites y puntos del eje Y
+  scale_x_continuous(breaks = df$y) + # Puntos visualizados en el eje X
   labs( # Edición de títulos
     title = "Probabilidad acumulada", # Título del gráfico
     x = "Valores de y", # Título del eje X
@@ -847,13 +851,13 @@ La figura \@ref(fig:simBinomial), muestra una simulación de la función de masa
 
 ```{r simBinomial, fig.align="center", fig.width=7, fig.height=4, fig.cap="Simulación de la distribución Binomial", echo=FALSE}
 bin = function(p, titulo){
-  aux = data.frame("x" = seq(1,10), "y" = dbinom(1:10,10,p))
+  aux = data.frame("x" = seq(0,10), "y" = dbinom(0:10,10,p))
   g = ggplot(data = aux, aes(x = x, y = y)) +
     geom_point() + 
     geom_segment(aes(x = x, xend = x, y = 0, yend = y)) + 
     labs(x = "Observación", y = "Probabilidad", title = titulo) + 
     scale_y_continuous(limits = c(0,1)) + 
-    scale_x_continuous(breaks = 1:10)
+    scale_x_continuous(breaks = aux$x)
   return(g)
 }
 grid.arrange(bin(0.1, "Binomial, n = 10, p = 0.1"),
@@ -1075,13 +1079,13 @@ La figura \@ref(fig:simPois), muestra una simulación de la función de masa de 
 
 ```{r simPois, fig.align="center", fig.width=7, fig.height=4, fig.cap="Simulación de la distribución Poisson", echo=FALSE}
 poi = function(lambda, titulo){
-  aux = data.frame("x" = seq(1,8), "y" = dpois(1:8,lambda))
+  aux = data.frame("x" = 0:8, "y" = dpois(0:8,lambda))
   g = ggplot(data = aux, aes(x = x, y = y)) +
     geom_point() + 
     geom_segment(aes(x = x, xend = x, y = 0, yend = y)) + 
     labs(x = "Observación", y = "Probabilidad", title = titulo) + 
     scale_y_continuous(limits = c(0,1)) + 
-    scale_x_continuous(breaks = 1:10)
+    scale_x_continuous(breaks = aux$x)
   return(g)
 }
 grid.arrange(poi(0.9, "Poisson, n = 8, lambda = 0.9"),

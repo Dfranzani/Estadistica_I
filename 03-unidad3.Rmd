@@ -126,6 +126,13 @@ Considerando el ejemplo \@ref(exm:media1), **¿qué sucede cuándo la variable a
   - (Condición) La cantidad de datos debe ser grande. Por regla general se utiliza un tamaño mayor a 30, sin embargo, no hay investigaciones o fuentes que lo confirmen [@johnson1994sample].
   - (Resultado) Al estandarizar el promedio, este se transforma en una variable aleatoria normal con media 0 y varianza 1.
 
+```{r echo=FALSE}
+if (knitr::is_html_output()){
+  knitr::include_app("https://dfranzani.github.io/App_Estadistica/", height = "600px")
+}
+```
+
+
 :::: {.blackbox}
 ::: {.example}
 Un accionista piensa comprar acciones de una determinada empresa chilena de tecnología. Dado los valores del mercado, se observa que el valor promedio de las acciones (iid) es de \$4000 con una desviación estándar de \$700. El accionista comprará acciones solo si una muestra aleatoria de 100 valores de acciones resulta en un valor promedio mayor a \$4100. ¿Cuál es la probabilidad de que el accionista invierta en la empresa chilena?
