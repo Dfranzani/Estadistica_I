@@ -29,7 +29,7 @@
 dir_proj = getwd()
 dir_files = paste0(dir_proj, "/material/talleres/Talleres de practica")
 # dir_figures = paste0(dir_proj, "/material/talleres/Talleres de practica/figures/")
-setwd(dir_files)
+if (!grepl("/material/talleres/Talleres de practica", dir_proj)) setwd(dir_files)
 
 # Ejecutar archivos .Rnw que generar los talleres en PDF Latex
 generar.talleres = function(){

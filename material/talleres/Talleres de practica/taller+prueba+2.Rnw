@@ -1,5 +1,5 @@
 \begin{center}
-{\bf \Large{Taller de práctica Prueba 2}} \\Distribución Binomial y Poisson (Secciones 2.3.3.3 y 2.3.3.4)\\V.A.C: Función de densidad de probabilidad (Sección 2.4.1)\\ V.A.C: Función de distribución acumulada (Sección 2.4.2)
+{\bf \Large{Taller de práctica Prueba 2}} \\Distribución Binomial y Poisson (Secciones 2.3.3.3 y 2.3.3.4)\\V.A.C: Función de densidad de probabilidad (Sección 2.4.1)\\ % V.A.C: Función de distribución acumulada (Sección 2.4.2)
 
 % \\Distribución exponencial y Distribución normal (Secciones 2.4.3.2 y 2.4.3.3)
 \end{center}
@@ -45,26 +45,26 @@ k[1-(x-3)^2] & 2\leq x \leq 4\\
     \item Determine una expresión para $P(X \leq x)$.
 \end{enumerate}
 
-\item Sea X una variable aleatoria continua con función de distribución acumulativa
-
-\begin{equation}
-\notag
-F(x)= \left\lbrace
-\begin{array}{cl}
-0 & x \leq 0\\
-\displaystyle\frac{x}{4}\left[ 1 + \ln\left(\frac{4}{x}\right) \right] & 0 < x \leq 4\\
-1 & x \geq 4
-\end{array}
-\right.
-\end{equation}
-
-Determinar:
-\begin{enumerate}
-    \item $P(X \leq 1)$
-    \item $P(1\leq X \leq 3)$
-    \item La función de densidad de probabilidad de $X$.
-    %\item Grafique $f(x)$ y $F(x)$.
-\end{enumerate}
+% \item Sea X una variable aleatoria continua con función de distribución acumulativa
+% 
+% \begin{equation}
+% \notag
+% F(x)= \left\lbrace
+% \begin{array}{cl}
+% 0 & x \leq 0\\
+% \displaystyle\frac{x}{4}\left[ 1 + \ln\left(\frac{4}{x}\right) \right] & 0 < x \leq 4\\
+% 1 & x \geq 4
+% \end{array}
+% \right.
+% \end{equation}
+% 
+% Determinar:
+% \begin{enumerate}
+%     \item $P(X \leq 1)$
+%     \item $P(1\leq X \leq 3)$
+%     \item La función de densidad de probabilidad de $X$.
+%     %\item Grafique $f(x)$ y $F(x)$.
+% \end{enumerate}
 
 
 \item Una familia de funciones de densidad de probabilidad que ha sido utilizada para aproximar la distribución del ingreso, el tamaño de la población de una ciudad y el tamaño de firmas es la familia Pareto. La familia tiene dos parámetros, $k$ y $\theta$, ambos $> 0$ y la función de densidad de probabilidad es
@@ -81,20 +81,22 @@ f(x;k, \theta)= \left\lbrace
 
 Verifique que el área total bajo la curva es igual a 1.
 
-\item Sea $X$ una variable aleatoria continua con \textit{fdp} $f(x)$ y \textit{fda} $F(x)$. Para un número fijo $x_0$, se define la función
+% \item Sea $X$ una variable aleatoria continua con \textit{fdp} $f(x)$ y \textit{fda} $F(x)$. Para un número fijo $x_0$, se define la función
+% 
+% $$
+% g(x) = \left\lbrace
+% \begin{matrix}
+%     f(x)/[1-F(x_0)] & x \geq x_0\\
+%     0 & x < x_0
+% \end{matrix}
+% \right.
+% $$
+% 
+% Pruebe que $g(x)$ es una función de densidad de probabilidad (asuma que $F(x_0) < 1$).
 
-$$
-g(x) = \left\lbrace
-\begin{matrix}
-    f(x)/[1-F(x_0)] & x \geq x_0\\
-    0 & x < x_0
-\end{matrix}
-\right.
-$$
+% \item Para las siguientes \textit{fda} de variables aleatorias continuas, determine la \textit{fdp} asociada. Además, verifique las condiciones de una función de densidad de probabilidad.
 
-Pruebe que $g(x)$ es una función de densidad de probabilidad (asuma que $F(x_0) < 1$).
-
-\item Para las siguientes \textit{fda} de variables aleatorias continuas, determine la \textit{fdp} asociada. Además, verifique las condiciones de una función de densidad de probabilidad.
+\item Al derivar las siguiente funciones obtendrá un función de densidad de probabilidad; obtenga dicha función y verifique las condiciones de una \textit{fdp} en cada caso.
 
 \begin{enumerate}
     \item $F(x) = \displaystyle\frac{x^2}{4}$, $0 \leq x \leq 2$
