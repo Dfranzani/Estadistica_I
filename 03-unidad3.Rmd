@@ -126,7 +126,7 @@ Considerando el ejemplo \@ref(exm:media1), **¿qué sucede cuándo la variable a
   - (Condición) La cantidad de datos debe ser grande. Por regla general se utiliza un tamaño mayor a 30, sin embargo, no hay investigaciones o fuentes que lo confirmen [@johnson1994sample].
   - (Resultado) Al estandarizar el promedio, este se transforma en una variable aleatoria normal con media 0 y varianza 1.
   
-Consulte el [siguiente link](https://dfranzani.github.io/App_Estadistica/) para acceder a una aplicación interactiva que permite visualizar el TLC.
+Consulte el [siguiente enlace](https://dfranzani.github.io/App_Estadistica/) para acceder a una aplicación interactiva que permite visualizar el TLC.
 
 :::: {.blackbox}
 ::: {.example}
