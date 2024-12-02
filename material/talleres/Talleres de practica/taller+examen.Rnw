@@ -2,6 +2,8 @@
 {\bf \Large{Taller de práctica Examen}}
 \end{center}
 
+\section*{Parte 1}
+
 \begin{enumerate}
 
 \item Los siguientes gráficos correspondes a los valores de la UF e IVP durante el año 2022. Para interpretar un gráfico de violín con caja y promedio se deben mencionar tres aspectos relevantes: Ubicación de la(s) mayor(es) concentración(es) de datos, utilizando como referencia los cuartiles. Ubicación del promedio respecto a la mediana. Posibles razones por las cuales se explica la ubicación anteriormente mencionada del promedio respecto a la mediana.
@@ -36,6 +38,14 @@ stat_summary(aes(x = 2, y = Mujeres), geom = "point", fun = mean, color = "red")
 labs(y = "Población", x = "") +
 scale_x_continuous(breaks = c(1,2), labels = c("Hombres", "Mujeres"))
 @
+
+\end{enumerate}
+
+\section*{Parte 2}
+
+\textbf{Esta parte es solo para el curso de Estadística Descriptiva de ICG}
+
+\begin{enumerate}
 
 \item Suponga que la edad (en años) de las personas de una determinada ciudad distribuye $N(\mu = 28, \sigma^2 = \text{Desconocida})$. Si para una muestra de 120 personas, la varianza de la edad es de 28 años, calcule la probabilidad de que el valor promedio muestral de la edad se encuentre entre 27 y 29 años. Escriba todo el procedimiento de cálculo y las propiedades utilizadas. Utilice la tabla adecuada de las que se presentan a continuación.
 
@@ -144,7 +154,7 @@ kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = co
 @
 \end{minipage}
 
-\item Considerando los datos de la pregunta 1, calcule la probabilidad de que la varianza muestral sea cuando menos 2.77. Utilice la tabla adecuada de las que se presentan a continuación (7 o 8).
+\item Considerando los datos de la pregunta anterior, calcule la probabilidad de que la varianza muestral sea cuando menos 2.77. Utilice la tabla adecuada de las que se presentan a continuación (7 o 8).
 
 \begin{minipage}{0.45\textwidth}
 \centering
@@ -180,40 +190,47 @@ kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = co
 @
 \end{minipage}
 
-\item Los datos que a continuación se dan son las edades de 19 estudiantes de una determinada universidad: 19, 20, 21, 21, 24, 21, 20, 25, 17, 23, 28, 29, 27, 25, 25, 28, 20, 25, 31; con una desviación estándar muestral de 3.8472. Las edad de los estudiantes de dicha universidad es una variable aleatoria normal. 
+\item Los datos que a continuación se dan son las edades de 19 estudiantes de una determinada universidad: 19, 20, 21, 21, 24, 21, 20, 25, 17, 23, 28, 29, 27, 25, 25, 28, 20, 25, 31; con una desviación estándar muestral de 3.8472. Las edad de los estudiantes de dicha universidad es una variable aleatoria normal con media de 22 años. 
 
 \begin{enumerate}
-    \item Estudie si la media de la edades de los estudiantes es mayor a 16 años. Utilice una confianza del 95\%. Especifique, la variable de estudio, la media poblacional, la confianza, la significancia, el tipo de intervalo (añadiendo si la la varianza es conocida o desconocida), la probabilidad del intervalo, fórmula del intervalo, datos del enunciado y tabla utilizada (9 o 10).
+    \item Calcule la probabilidad de que la media muestral de las edades de los estudiantes sea mayor a 20.3 años. Utilice la tabla 9 o 10 para calcular las probabilidades.
     
-    \item Estudie si la media de la edades de los estudiantes es cuando mucho 22 años. Utilice una confianza del 97\%. Especifique, la variable de estudio, la media poblacional, la confianza, la significancia, el tipo de intervalo, la probabilidad del intervalo, fórmula del intervalo, datos del enunciado y tabla utilizada (9 o 10).
+    \item Calcule la probabilidad de que la media muestral de las edades de los estudiantes sea cuando mucho 23.41 años, considerando que la desviación estñandar poblacional es de 3.922 años. Utilice la tabla 9 o 10 para calcular las probabilidades.
     
-    \begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}{0.45\textwidth}
 \centering
 <<echo = F, message = F>>=
 library(kableExtra)
-p = seq(0.95,0.99, by = 0.01)
-q = round(qt(p, df = 18),4)
-df = data.frame("Probabilidad" = p, "Cuantil" = q)
+ep1 = (20.3-22)/(3.8472/sqrt(19))
+ep2 = (24.1-22)/(3.922/sqrt(19))
+q = c( -2.0701, ep1,-ep1,ep2,-ep2, -1.0770)
+q = q[order(q)]
+p = round(pt(q, df = 18), 4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
 df = as.matrix(df)
 @
+
 <<echo=FALSE>>=
 kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
           caption = "Distribución t-student, df = 18") |>
     kable_styling(latex_options = c("striped","HOLD_position"))
 @
 \end{minipage}
-\begin{minipage}[t]{0.45\textwidth}
+\begin{minipage}{0.45\textwidth}
 \centering
 <<echo = F, message = F>>=
-library(kableExtra)
-p = seq(0.95,0.99, by = 0.01)
-q = round(qnorm(p),4)
-df = data.frame("Probabilidad" = p, "Cuantil" = q)
+ep1 = (20.3-22)/(3.8472/sqrt(19))
+ep2 = (24.1-22)/(3.922/sqrt(19))
+q = round(c( -2.0701, ep1,-ep1,ep2,-ep2, -1.0770),5)
+q = q[order(q)]
+p = round(pnorm(q),4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
 df = as.matrix(df)
 @
-<<results='asis', echo = F>>=
-kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df),
-      caption = "Distribución Z") |>
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Normal (0,1)") |>
     kable_styling(latex_options = c("striped","HOLD_position"))
 @
 \end{minipage}
@@ -375,38 +392,11 @@ kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = co
     
     \end{enumerate}
     
-    \item El Servicio de Impuesto Internos (SII), en el 2022, anuncia que en promedio la retención poblacional histórica de dinero en boletas de honorarios emitidas ha sido de 104201 pesos. La desviación estándar poblacional histórica que se considera conocida es de 22600. ¿Cuál es el intervalo de 96 por ciento de confianza para la estimación de la media poblacional histórica de las retenciones de las boletas de honorarios emitidas, si en un muestra de 630 boletas emitidas la media muestral es de 99126 pesos?, interprete Especifique, la variable de estudio, la media poblacional, la confianza, la significancia, el tipo de intervalo, la probabilidad del intervalo, fórmula del intervalo, datos del enunciado y tabla utilizada (11 o 12).
+\end{enumerate}
 
-\begin{minipage}[t]{0.45\textwidth}
-\centering
-<<echo = F, message = F>>=
-library(kableExtra)
-p = seq(0.95,0.99, by = 0.01)
-q = round(qt(p, df = 629),4)
-df = data.frame("Probabilidad" = p, "Cuantil" = q)
-df = as.matrix(df)
-@
-<<echo=FALSE>>=
-kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
-          caption = "Distribución t-student, df = 629") |>
-    kable_styling(latex_options = c("striped","HOLD_position"))
-@
-\end{minipage}
-\begin{minipage}[t]{0.45\textwidth}
-\centering
-<<echo = F, message = F>>=
-library(kableExtra)
-p = seq(0.95,0.99, by = 0.01)
-q = round(qnorm(p),4)
-df = data.frame("Probabilidad" = p, "Cuantil" = q)
-df = as.matrix(df)
-@
-<<results='asis', echo = F>>=
-kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df),
-      caption = "Distribución Z") |>
-    kable_styling(latex_options = c("striped","HOLD_position"))
-@
-\end{minipage}
+\section*{Parte 3}
+
+\begin{enumerate}
     
     \item El error de medición de un proceso de control de gestión en la peligrosidad de residuos está dado por la siguiente función de distribución acumulada.
 
@@ -428,7 +418,14 @@ $$
 f(x) = k\left( 1- [x-3]^2 \right),  2\leq x \leq 4 
 $$
 
-Determine el valor de $k$, y calcule la $Var(X)$.
+Determine el valor de $k$, y calcule $E(X)$ y $Var(X)$.
+
+\end{enumerate}
+\section*{Parte 4}
+
+\textbf{Esta parte es solo para el curso de Estadística I de ICO}
+
+\begin{enumerate}
 
 \item Considere la siguiente función de densidad de probabilidad.
 
@@ -449,9 +446,14 @@ A continuación,
     \item Utilizando la fdp, calcule $P(X > 1)$.
     \item Utilizando la fdp, calcule $P(0.5 < X < 1.5)$.
     \item Determine una expresión para $P(X \leq x)$.
-    \item Utilizando la fdp, calcule $E(X)$.
-    \item Utilizando la fdp, calcule $Var(X)$.
+    % \item Utilizando la fdp, calcule $E(X)$.
+    % \item Utilizando la fdp, calcule $Var(X)$.
 \end{enumerate}
+
+\end{enumerate}
+
+
+\begin{enumerate}
 
 \item Sea $X$ un variable aleatoria continua con función de densidad de probabilidad
 
@@ -484,6 +486,8 @@ A continuación,
         P(1<X<3) - P([X > 5]^c) + P(X \leq 2)
         $$
     \end{enumerate}
+    
+  \end{enumerate}
     
     % \item En una fábrica de productos electrónicos, se sabe que la probabilidad de que un artículo sea defectuoso sigue una distribución de probabilidad de masa con los siguientes valores:
     % 
@@ -710,7 +714,7 @@ A continuación,
 % \end{minipage}
 
 
-\end{enumerate}
+% \end{enumerate}
 
 % \newpage
 
