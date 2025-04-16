@@ -1,83 +1,84 @@
 \begin{center}
-{\bf \Large{Taller de práctica Prueba 1}}\\Operaciones en R (Taller Introductorio)\\Conceptos básicos de estadística (sección 1.1)\\Medidas de Localización (sección 1.2)\\Medidas de escala (sección 1.3)\\% Gráficos descriptivos: Histograma, Caja y Violín (secciones 1.5.1, 1.5.2 y 1.5.3)
+{\bf \Large{Taller de práctica Prueba 1}}
+% \\Operaciones en R (Taller Introductorio)\\Conceptos básicos de estadística (sección 1.1)\\Medidas de Localización (sección 1.2)\\Medidas de escala (sección 1.3)\\% Gráficos descriptivos: Histograma, Caja y Violín (secciones 1.5.1, 1.5.2 y 1.5.3)
 \end{center}
 
 
-\section*{Parte 1: Operaciones en R}
+% \section*{Parte 1: Operaciones en R}
+% 
+% El conjunto de datos \href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv}{diabetes.csv} (copie el link para cargar la base en Colab) proviene originalmente del Instituto Nacional de Diabetes y Enfermedades Digestivas y Renales. El objetivo del conjunto de datos es estudiar de forma diagnóstica si un paciente tiene diabetes, en función de ciertas medidas de diagnóstico incluidas en el conjunto de datos. Se impusieron varias restricciones a la selección de estas instancias de una base de datos más grande. En particular, todos los pacientes aquí son mujeres de al menos 21 años de ascendencia indígena Pima. Las columnas de la base de datos con las siguientes:
+% 
+% \begin{itemize}
+%     \item Pregnancies: Para expresar el número de embarazos.
+% \item Glucose: Para expresar el nivel de Glucosa en sangre (mg/dL).
+% \item BloodPressure: para expresar la medida de la presión arterial distólica (mm Hg).
+% \item SkinThickness: Para expresar el grosor de la piel (mm).
+% \item Insulin: para expresar el nivel de insulina en sangre (mg/dL).
+% \item BMI: Para expresar el índice de masa corporal.
+% \item DiabetesPedigreeFunction: Para expresar el porcentaje de Diabetes.
+% \item Age: Para expresar la edad en años.
+% \item Outcome: Para expresar el resultado final de tener diabetes, 1 es Sí y 0 es No.
+% \end{itemize}
+% 
+% A continuación, haciendo uso de la base de datos mencionada, explique cada uno de los siguientes códigos asociados a la base de datos. Considere que las variables se muestran en el mismo orden en el que están ordenadas.
+% 
+% \begin{enumerate}
+%   \item 
+%   <<eval=F>>=
+%   # Considere que la base de datos se cargo con el nombre "datos"
+%   datos = datos[,c(8,4,9)]
+%   @
+%   
+%   \item 
+%   <<eval=F>>=
+%   datos = datos[datos$Age < 41 | datos$SkinThickness <= 30,] 
+%   @
+%   
+%   \item 
+%   <<eval=F>>=
+%   datos = datos[datos$SkinThickness %in% 40:50 & datos$Age > 36, c(1,3)]
+%   @
+%         
+%   \item 
+%   <<eval=F>>=
+%   datos = datos[1:365,]
+%   @
+%   
+%   \item 
+%   <<eval=F>>=
+%   datos = datos[datos$Age > 55 & datos$Glucose < 120,]
+%   @
+%   
+%   \item 
+%   <<eval=F>>=
+%   datos = datos[datos$Age %in% 20:45 | datos$BMI >= 30.1, c(1,2)]
+%   @
+% \end{enumerate}
 
-El conjunto de datos \href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv}{diabetes.csv} (copie el link para cargar la base en Colab) proviene originalmente del Instituto Nacional de Diabetes y Enfermedades Digestivas y Renales. El objetivo del conjunto de datos es estudiar de forma diagnóstica si un paciente tiene diabetes, en función de ciertas medidas de diagnóstico incluidas en el conjunto de datos. Se impusieron varias restricciones a la selección de estas instancias de una base de datos más grande. En particular, todos los pacientes aquí son mujeres de al menos 21 años de ascendencia indígena Pima. Las columnas de la base de datos con las siguientes:
+% \section*{Parte 1: Conceptos básicos de estadística}
+% 
+% \begin{enumerate}
+%   \item Observe el siguiente gráfico, y explique conceptualmente, cuál es el dato y cuál sería la información. ¿Qué se necesita para transitar de un concepto a otro (¿y en qué dirección se transita?)?
+%   
+%   <<echo=F, fig.align = 'center', fig.width=3, fig.height=2>>=
+%   library(ggplot2)
+%   datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv")
+%   ggplot(data = datos[datos$Mes == "Junio",], aes(x = Dia, y = Valor)) + geom_point() +
+%     labs(title = "Valor observado del dólar \n en algunos días de Junio",
+%          x = "Días", y = "Valor en pesos (CLP)")
+%   @
+%   
+%   \item Realice un esquema o mapa conceptual que relacione los conceptos de población, muestra, parámetro, estadístico, estimador y estimación.
+%   \item Suponga, que está interesado en predecir la variación porcentual del IPC para el siguiente mes considerando un rezago a un mes (es decir, respecto al mes anterior), para ello, usted sabe que este valor será similar al promedio de las variaciones porcentuales del IPC a rezago de un mes de los meses anteriores (históricamente), sin embargo, utiliza los últimos doce meses, dando como resultado un 3\%. A continuación, especifique, la población, la muestra, el parámetro, el estadístico, el estimador y la estimación del estudio. ¿Qué sucede si se considerarán para el cálculo los últimos 24 meses o los últimos 36 meses?, explique el concepto estadístico detrás de esta situación.
+%   
+%   \item  Suponga, que está interesado en estudiar el promedio anual histórico del porcentaje de empleo femenino poblacional, para ello, usted aproxima este valor mediante el cuadrado del promedio del empleo femenino poblacional anual del periodo 2001 - 2012, obteniendo un resultado del 37.2\%. A continuación, elabore un listado o mapa conceptual para especificar la población, la muestra, el parámetro, el estimador y la estimación del estudio. ¿Este valor es una buena aproximación?, explique.
+%   
+%   \item ¿Por qué es incorrecto hablar de una muestra representativa? Justifique.
+% \end{enumerate}
+% 
+% \newpage
 
-\begin{itemize}
-    \item Pregnancies: Para expresar el número de embarazos.
-\item Glucose: Para expresar el nivel de Glucosa en sangre (mg/dL).
-\item BloodPressure: para expresar la medida de la presión arterial distólica (mm Hg).
-\item SkinThickness: Para expresar el grosor de la piel (mm).
-\item Insulin: para expresar el nivel de insulina en sangre (mg/dL).
-\item BMI: Para expresar el índice de masa corporal.
-\item DiabetesPedigreeFunction: Para expresar el porcentaje de Diabetes.
-\item Age: Para expresar la edad en años.
-\item Outcome: Para expresar el resultado final de tener diabetes, 1 es Sí y 0 es No.
-\end{itemize}
-
-A continuación, haciendo uso de la base de datos mencionada, explique cada uno de los siguientes códigos asociados a la base de datos. Considere que las variables se muestran en el mismo orden en el que están ordenadas.
-
-\begin{enumerate}
-  \item 
-  <<eval=F>>=
-  # Considere que la base de datos se cargo con el nombre "datos"
-  datos = datos[,c(8,4,9)]
-  @
-  
-  \item 
-  <<eval=F>>=
-  datos = datos[datos$Age < 41 | datos$SkinThickness <= 30,] 
-  @
-  
-  \item 
-  <<eval=F>>=
-  datos = datos[datos$SkinThickness %in% 40:50 & datos$Age > 36, c(1,3)]
-  @
-        
-  \item 
-  <<eval=F>>=
-  datos = datos[1:365,]
-  @
-  
-  \item 
-  <<eval=F>>=
-  datos = datos[datos$Age > 55 & datos$Glucose < 120,]
-  @
-  
-  \item 
-  <<eval=F>>=
-  datos = datos[datos$Age %in% 20:45 | datos$BMI >= 30.1, c(1,2)]
-  @
-\end{enumerate}
-
-\section*{Parte 2: Conceptos básicos de estadística}
-
-\begin{enumerate}
-  \item Observe el siguiente gráfico, y explique conceptualmente, cuál es el dato y cuál sería la información. ¿Qué se necesita para transitar de un concepto a otro (¿y en qué dirección se transita?)?
-  
-  <<echo=F, fig.align = 'center', fig.width=3, fig.height=2>>=
-  library(ggplot2)
-  datos = read.csv("https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv")
-  ggplot(data = datos[datos$Mes == "Junio",], aes(x = Dia, y = Valor)) + geom_point() +
-    labs(title = "Valor observado del dólar \n en algunos días de Junio",
-         x = "Días", y = "Valor en pesos (CLP)")
-  @
-  
-  \item Realice un esquema o mapa conceptual que relacione los conceptos de población, muestra, parámetro, estadístico, estimador y estimación.
-  \item Suponga, que está interesado en predecir la variación porcentual del IPC para el siguiente mes considerando un rezago a un mes (es decir, respecto al mes anterior), para ello, usted sabe que este valor será similar al promedio de las variaciones porcentuales del IPC a rezago de un mes de los meses anteriores (históricamente), sin embargo, utiliza los últimos doce meses, dando como resultado un 3\%. A continuación, especifique, la población, la muestra, el parámetro, el estadístico, el estimador y la estimación del estudio. ¿Qué sucede si se considerarán para el cálculo los últimos 24 meses o los últimos 36 meses?, explique el concepto estadístico detrás de esta situación.
-  
-  \item  Suponga, que está interesado en estudiar el promedio anual histórico del porcentaje de empleo femenino poblacional, para ello, usted aproxima este valor mediante el cuadrado del promedio del empleo femenino poblacional anual del periodo 2001 - 2012, obteniendo un resultado del 37.2\%. A continuación, elabore un listado o mapa conceptual para especificar la población, la muestra, el parámetro, el estimador y la estimación del estudio. ¿Este valor es una buena aproximación?, explique.
-  
-  \item ¿Por qué es incorrecto hablar de una muestra representativa? Justifique.
-\end{enumerate}
-
-\newpage
-
-\section*{Parte 3: Medidas de Localización y Escala}
+\section*{Parte 1: Medidas de Localización y Escala}
 
 \begin{enumerate}
   \item ¿Cuál es la desventaja del promedio como medida de resumen? Explique.
@@ -120,7 +121,23 @@ La base de datos al cargarse en R se ha guardado con el nombre de \texttt{datos}
   
 \end{enumerate}
 
-\newpage
+\section*{Parte 2: Probabilidades}
+
+\begin{enumerate}
+  \item Experimento: seleccionar un carta de un baraja inglesa de 52 cartas. Evento: seleccionar un carta con un número que no sea divisible por 3. Determine el espacio muestral, el evento y la probabilidad del evento.
+  \item Experimento: seleccionar un estudiante de un grupo de 20. Evento: seleccionar un estudiante con un peso inferior o igual a 72.3 Kg. Determine el espacio muestral, el evento.
+  \item Experimento: seleccionar un carta de un baraja inglesa de 52 cartas. Evento: seleccionar un carta con un número primo. Determine el espacio muestral, el evento y la probabilidad del evento.
+  \item En una encuesta realizada a 200 personas sobre el uso de tecnología, se encontró que 120 afirmaron utilizar redes sociales y 90 dijeron usar servicios de mensajería instantánea. Además, 50 personas indicaron que usaban ambos servicios. Si se elige una persona al azar del grupo encuestado, ¿cuál es la probabilidad de que utilice al menos uno de los dos servicios? ¿Y cuál es la probabilidad de que no use ninguno?
+  \item En un instituto de idiomas, se ofrece enseñanza en inglés, francés y alemán. Actualmente, hay 40 estudiantes inscritos en inglés, 35 en francés y 25 en alemán. Cada estudiante está inscrito en un solo idioma. Si se elige al azar a un estudiante del instituto, ¿cuál es la probabilidad de que estudie francés o alemán? ¿Se trata de eventos mutuamente excluyentes?
+  \item Se extrae una carta al azar de un mazo estándar de 52 cartas inglesas. Definimos el evento A como obtener una carta de diamantes y el evento B como obtener una figura (es decir, una J, Q o K de cualquier pinta). Consideremos también el evento C como obtener una figura que sea específicamente de diamante. Con esta información, ¿cuál es la probabilidad de que ocurra A? ¿Y B? ¿Cuál es la probabilidad de que ocurra A o B? ¿Qué representa la intersección de A y B en este caso y cuál es su probabilidad? ¿Podría decir que los eventos A y B son mutuamente excluyentes?
+  \item En un grupo de estudiantes, el 55\% participa en actividades deportivas, mientras que el 40\% pertenece a algún club académico. Se sabe que el 20\% de los estudiantes realiza ambas actividades. Si se elige al azar a un estudiante del grupo, ¿cuál es la probabilidad de que participe en al menos una de estas dos actividades? ¿Cuál es la probabilidad de que no participe en ninguna? ¿Y cuál es la probabilidad de que practique deporte pero no pertenezca a un club académico?
+  \item En una clase de 200 estudiantes, 120 aprobaron matemáticas (evento $A$) y 90 aprobaron física (evento $B$). Se sabe que 60 aprobaron ambas asignaturas.  
+\begin{enumerate}
+    \item ¿Cuál es la probabilidad de que un estudiante haya aprobado matemáticas pero no física?
+    \item ¿Cuál es la probabilidad de que haya aprobado física pero no matemáticas?
+\end{enumerate}
+\end{enumerate}
+% \begin{enumerate}
 
 % \section*{Parte 4: Gráficos descriptivos}
 % 

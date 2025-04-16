@@ -1,4 +1,4 @@
-# Tópicos básicos de estadística {#unidad1}
+# Tópicos básicos de estadística {#unidad1} 
 
 
 Las bases de datos que se trabajarán en esta unidad son las siguientes:

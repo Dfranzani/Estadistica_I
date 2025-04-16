@@ -2,6 +2,8 @@
 {\bf \Large{Taller de práctica Examen}}
 \end{center}
 
+\section*{Parte 1}
+
 \begin{enumerate}
 
 \item Los siguientes gráficos correspondes a los valores de la UF e IVP durante el año 2022. Para interpretar un gráfico de violín con caja y promedio se deben mencionar tres aspectos relevantes: Ubicación de la(s) mayor(es) concentración(es) de datos, utilizando como referencia los cuartiles. Ubicación del promedio respecto a la mediana. Posibles razones por las cuales se explica la ubicación anteriormente mencionada del promedio respecto a la mediana.
@@ -37,6 +39,204 @@ labs(y = "Población", x = "") +
 scale_x_continuous(breaks = c(1,2), labels = c("Hombres", "Mujeres"))
 @
 
+\end{enumerate}
+
+\section*{Parte 2}
+
+\textbf{Esta parte es solo para el curso de Estadística Descriptiva de ICG}
+
+\begin{enumerate}
+
+\item Suponga que la edad (en años) de las personas de una determinada ciudad distribuye $N(\mu = 28, \sigma^2 = \text{Desconocida})$. Si para una muestra de 120 personas, la varianza de la edad es de 28 años, calcule la probabilidad de que el valor promedio muestral de la edad se encuentre entre 27 y 29 años. Escriba todo el procedimiento de cálculo y las propiedades utilizadas. Utilice la tabla adecuada de las que se presentan a continuación.
+
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+library(kableExtra)
+q = c( -2.070197, -2.828427, 0, 2.728427, 5.566854,1.828427, 4.656854,1.828427, 2.070197)
+q = q[order(q)]
+p = round(pt(q, df = 28), 4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución t-student, df = 28") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+q = c( -2.070197, -2.828427, 0, 2.728427, 5.566854,1.828427, 4.656854,1.828427, 2.070197)
+q = q[order(q)]
+p = round(pt(q, df = 119),4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución t-student, df = 119") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+  \item Se toma una muestra aleatoria de tamaño 67 proveniente de una población normal con desviación estándar $\sigma =3.05$. Calcular la probabilidad de que la varianza muestral $s^{2}$ sea como mínimo 8.21? Utilice la tabla adecuada de las que se presentan a continuación.
+
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+library(kableExtra)
+q = c(58.24886, 58.54886,55.24886,56.24816,59.24886)
+q = q[order(q)]
+p = round(pchisq(q, df = 66), 4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Ji-Cuadrado, df = 66") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+q = c(58.24886, 58.54886,55.24886,56.24816,59.24886)
+q = q[order(q)]
+p = round(pchisq(q, df = 65),4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Ji-Cuadrado, df = 65") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+
+\item Suponga, que el porcentaje de desempleo anual sigue una distribución normal con media 8.19\% y varianza 2.43. Si se toma una muestra de 87 registros anuales, calcule la probabilidad de que el promedio muestral del porcentaje de desempleo anual sea a lo sumo de 8.01\%. Especifique, la variable estudio, propiedad utilizada (y sus condiciones), datos del enunciado, la tabla a utilizar (5 o 6) y la probabilidad a calcular. 
+
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+library(kableExtra)
+q = c( -2.0701, -1.4042, 1.4042, 2.1701, -1.0770)
+q = q[order(q)]
+p = round(pt(q, df = 86), 4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución t-student, df = 86") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+q = c( -2.0701, -1.4042, 1.4042, 2.1701, -1.0770)
+q = q[order(q)]
+p = round(pnorm(q),4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Normal (0,1)") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+
+\item Considerando los datos de la pregunta anterior, calcule la probabilidad de que la varianza muestral sea cuando menos 2.77. Utilice la tabla adecuada de las que se presentan a continuación (7 o 8).
+
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+library(kableExtra)
+q = c(97.0329, 102.7152,98.0329,101.0152,101.9152)
+q = q[order(q)]
+p = round(pchisq(q, df = 86), 4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Ji-Cuadrado, df = 86") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+q = c(97.0329, 102.7152,98.0329,101.0152,101.9152)
+q = q[order(q)]
+p = round(pchisq(q, df = 88),4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Ji-Cuadrado, df = 88") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+
+\item Los datos que a continuación se dan son las edades de 19 estudiantes de una determinada universidad: 19, 20, 21, 21, 24, 21, 20, 25, 17, 23, 28, 29, 27, 25, 25, 28, 20, 25, 31; con una desviación estándar muestral de 3.8472. Las edad de los estudiantes de dicha universidad es una variable aleatoria normal con media de 22 años. 
+
+\begin{enumerate}
+    \item Calcule la probabilidad de que la media muestral de las edades de los estudiantes sea mayor a 20.3 años. Utilice la tabla 9 o 10 para calcular las probabilidades.
+    
+    \item Calcule la probabilidad de que la media muestral de las edades de los estudiantes sea cuando mucho 23.41 años, considerando que la desviación estñandar poblacional es de 3.922 años. Utilice la tabla 9 o 10 para calcular las probabilidades.
+    
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+library(kableExtra)
+ep1 = (20.3-22)/(3.8472/sqrt(19))
+ep2 = (24.1-22)/(3.922/sqrt(19))
+q = c( -2.0701, ep1,-ep1,ep2,-ep2, -1.0770)
+q = q[order(q)]
+p = round(pt(q, df = 18), 4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución t-student, df = 18") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\centering
+<<echo = F, message = F>>=
+ep1 = (20.3-22)/(3.8472/sqrt(19))
+ep2 = (24.1-22)/(3.922/sqrt(19))
+q = round(c( -2.0701, ep1,-ep1,ep2,-ep2, -1.0770),5)
+q = q[order(q)]
+p = round(pnorm(q),4)
+df = data.frame("Cuantil" = q, "Probabilidad" = p)
+df = as.matrix(df)
+@
+
+<<echo=FALSE>>=
+kable(df, booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df), format = "latex",
+          caption = "Distribución Normal (0,1)") |>
+    kable_styling(latex_options = c("striped","HOLD_position"))
+@
+\end{minipage}
+
+
+
 % \item Los siguientes gráficos correspondes a los valores de los puntajes NEM y los puntajes de la prueba de Lenguaje (LEN) en la PTU de un determinado grupos de estudiantes universitarios. Interprete cada uno de los gráficos, haciendo énfasis en la ubicación del promedio respecto a la mediana, los posibles valores extremos, las concentraciones presentens en el gráfico y los posibles valores atípicos.
 % 
 % <<echo=F, fig.width = 6, fig.height = 3>>=
@@ -53,77 +253,77 @@ scale_x_continuous(breaks = c(1,2), labels = c("Hombres", "Mujeres"))
 % scale_x_continuous(breaks = c(1,2), labels = c("NEM", "LEN"))
 % @
 
-\item Sean $A$ y $B$ dos eventos aleatorios con
-
-\begin{equation}
-  \notag
-  P(A) = 3/8 \text{, } P(B) = 1/2 \text{, } P(A\cap B) = 1/4  
-\end{equation}
-
-Calcule,
-
-\begin{multicols}{3}
-\begin{enumerate}
-  \item $P(A \cup B)$
-  \item $P(A^c)$
-  \item $P(B^c)$
-  \item $P(A^c \cap B^c)$
-  \item $P(A \cap B^c)$
-  \item $P(A^c \cup B^c)$
-  \item $P(B \cap A^c)$
-\end{enumerate}
-\end{multicols}
-
-\item Sean $A$ y $B$ dos eventos aleatorios con
-
-\begin{equation}
-  \notag
-  P(A^c) = 2/3 \text{, } P(A \cup B) = 3/4 \text{, } P(A\cap B) = 1/4  
-\end{equation}
-
-Calcule,
-
-\begin{multicols}{2}
-\begin{enumerate}
-  \item $P(A)$
-  \item $P(B)$
-  \item $P(A \cap B^c)$
-  \item $P(B \cap A^c)$
-\end{enumerate}
-\end{multicols}
-
-    \item El error implicado al hacer una medición geográfica computarizada es una variable aleatoria continua $X$ con función de densidad de probabilidad
-
-    $$f(x) = 0.09375(4-x^2) \text{, } -2\leq x \leq 2$$
-    
-    \begin{enumerate}
-      \item Calcule $P(X > 1.3)$. 
-      \item Calcule $P(-1 < X \leq 0.7)$.
-      % \item Calcule $E(X)$
-    \end{enumerate}
-
-    % Calcule $E(X^2)$ y $Var(X)$.
-    
-    \item Sea $X =$ el intervalo de tiempo (minutos) entre dos autos consecutivos en el flujo de tránsito vial, seleccionados al azar. Suponga que la distribución del intervalo de tiempo tiene la forma
-
-    \begin{equation}
-      \notag
-      f(x) = \left\lbrace
-      \begin{matrix}
-        \displaystyle\frac{3}{x^4} & x > 1 \\
-        0 & x \leq 1\\
-      \end{matrix} \right.
-    \end{equation}
-
-    \begin{enumerate}
-      \item Calcule $P(X < 3.5)$. 
-      \item Calcule $P(X \geq 1.64)$.
-      % \item Calcule $E(X)$
-    \end{enumerate}
-    
-    \item En una determinada ciudad, se realiza un estudio sobre el ingreso mensual de los residentes. Se sabe que el 15.3\% de la población tiene un ingreso mensual de \$1210 dólares, 43.1\% tiene un ingreso mensual de \$2130 dólares, el 20.9\% tiene un ingreso mensual de \$4702 dólares, y el 20.7\% restante tiene un ingreso mensual de \$5009 dólares.
-
-    Escriba la función de masa de probabilidad. Calcule $E(X)$
+% \item Sean $A$ y $B$ dos eventos aleatorios con
+% 
+% \begin{equation}
+%   \notag
+%   P(A) = 3/8 \text{, } P(B) = 1/2 \text{, } P(A\cap B) = 1/4  
+% \end{equation}
+% 
+% Calcule,
+% 
+% \begin{multicols}{3}
+% \begin{enumerate}
+%   \item $P(A \cup B)$
+%   \item $P(A^c)$
+%   \item $P(B^c)$
+%   \item $P(A^c \cap B^c)$
+%   \item $P(A \cap B^c)$
+%   \item $P(A^c \cup B^c)$
+%   \item $P(B \cap A^c)$
+% \end{enumerate}
+% \end{multicols}
+% 
+% \item Sean $A$ y $B$ dos eventos aleatorios con
+% 
+% \begin{equation}
+%   \notag
+%   P(A^c) = 2/3 \text{, } P(A \cup B) = 3/4 \text{, } P(A\cap B) = 1/4  
+% \end{equation}
+% 
+% Calcule,
+% 
+% \begin{multicols}{2}
+% \begin{enumerate}
+%   \item $P(A)$
+%   \item $P(B)$
+%   \item $P(A \cap B^c)$
+%   \item $P(B \cap A^c)$
+% \end{enumerate}
+% \end{multicols}
+% 
+%     \item El error implicado al hacer una medición geográfica computarizada es una variable aleatoria continua $X$ con función de densidad de probabilidad
+% 
+%     $$f(x) = 0.09375(4-x^2) \text{, } -2\leq x \leq 2$$
+%     
+%     \begin{enumerate}
+%       \item Calcule $P(X > 1.3)$. 
+%       \item Calcule $P(-1 < X \leq 0.7)$.
+%       % \item Calcule $E(X)$
+%     \end{enumerate}
+% 
+%     % Calcule $E(X^2)$ y $Var(X)$.
+%     
+%     \item Sea $X =$ el intervalo de tiempo (minutos) entre dos autos consecutivos en el flujo de tránsito vial, seleccionados al azar. Suponga que la distribución del intervalo de tiempo tiene la forma
+% 
+%     \begin{equation}
+%       \notag
+%       f(x) = \left\lbrace
+%       \begin{matrix}
+%         \displaystyle\frac{3}{x^4} & x > 1 \\
+%         0 & x \leq 1\\
+%       \end{matrix} \right.
+%     \end{equation}
+% 
+%     \begin{enumerate}
+%       \item Calcule $P(X < 3.5)$. 
+%       \item Calcule $P(X \geq 1.64)$.
+%       % \item Calcule $E(X)$
+%     \end{enumerate}
+%     
+%     \item En una determinada ciudad, se realiza un estudio sobre el ingreso mensual de los residentes. Se sabe que el 15.3\% de la población tiene un ingreso mensual de \$1210 dólares, 43.1\% tiene un ingreso mensual de \$2130 dólares, el 20.9\% tiene un ingreso mensual de \$4702 dólares, y el 20.7\% restante tiene un ingreso mensual de \$5009 dólares.
+% 
+%     Escriba la función de masa de probabilidad. Calcule $E(X)$
     % y $Var(X)$.
 
     % \item \textbf{(Trabajo personal)} En una fábrica de productos electrónicos, se sabe que la probabilidad de que un artículo sea defectuoso sigue una distribución de probabilidad de masa con los siguientes valores:
@@ -189,19 +389,105 @@ Calcule,
 
     % Escriba la función de masa de probabilidad, y calcule $E(X^2)$ y $Var(X)$.
 
-    % \item El error de medición de un proceso de control de gestión en la peligrosidad de residuos está dado por la siguiente función de distribución acumulada.
-    % 
-    % \begin{equation}
-    %   \notag
-    %   F(x) = \left\lbrace
-    %   \begin{matrix}
-    %     0 & x < -2 \\
-    %     \displaystyle\frac{1}{2} + \displaystyle\frac{3}{32}\left(4x-\displaystyle\frac{x^3}{3}\right) & -2\leq x < 2 \\
-    %     1 & x \geq 2\\
-    %   \end{matrix} \right.
-    % \end{equation}
-    % 
-    % Escriba la función de densidad de probabilidad, y calcule $E(X)$ y $Var(X)$. 
+    
+    \end{enumerate}
+    
+\end{enumerate}
+
+\section*{Parte 3}
+
+\begin{enumerate}
+    
+    \item El error de medición de un proceso de control de gestión en la peligrosidad de residuos está dado por la siguiente función de distribución acumulada.
+
+    \begin{equation}
+      \notag
+      F(x) = \left\lbrace
+      \begin{matrix}
+        0 & x < -2 \\
+        \displaystyle\frac{1}{2} + \displaystyle\frac{3}{32}\left(4x-\displaystyle\frac{x^3}{3}\right) & -2\leq x < 2 \\
+        1 & x \geq 2\\
+      \end{matrix} \right.
+    \end{equation}
+
+    Escriba la función de densidad de probabilidad, y calcule $E(X)$ y $Var(X)$.
+    
+    \item Considere una variable aleatoria $X$ con la siguiente función de densidad de probabilidad:
+
+$$
+f(x) = k\left( 1- [x-3]^2 \right),  2\leq x \leq 4 
+$$
+
+Determine el valor de $k$, y calcule $E(X)$ y $Var(X)$.
+
+\end{enumerate}
+\section*{Parte 4}
+
+\textbf{Esta parte es solo para el curso de Estadística I de ICO}
+
+\begin{enumerate}
+
+\item Considere la siguiente función de densidad de probabilidad.
+
+\begin{equation}
+\notag
+f(x)= \left\lbrace
+\begin{array}{cl}
+\displaystyle\frac{k}{x^2}e^{-1/x} & x > 0\\
+0 &  \text{en otro caso}
+\end{array}
+\right.
+\end{equation}
+
+A continuación,
+
+\begin{enumerate}
+    \item Determine el valor de $k$.
+    \item Utilizando la fdp, calcule $P(X > 1)$.
+    \item Utilizando la fdp, calcule $P(0.5 < X < 1.5)$.
+    \item Determine una expresión para $P(X \leq x)$.
+    % \item Utilizando la fdp, calcule $E(X)$.
+    % \item Utilizando la fdp, calcule $Var(X)$.
+\end{enumerate}
+
+\end{enumerate}
+
+
+\begin{enumerate}
+
+\item Sea $X$ un variable aleatoria continua con función de densidad de probabilidad
+
+    $$
+    f(x) = k(\theta + 1)x^{\theta} \text{ , } 0 \leq x \leq k
+    $$
+
+    con $\theta \geq 0$ una constante. A continuación,
+
+    \begin{enumerate}
+        \item Determine el valor de $k$.
+        \item Utilizando la \textit{fdp} calcule $P(0.3 < X < 1)$, considerando un valor de $\theta = 0.2$.
+        
+    \end{enumerate}
+    
+    \item Sea $X$ una variable aleatoria continua con \textit{fda} $F(x)$.
+    
+    $$
+    F(x) = \frac{1}{2}\left( -2x^2e^{-2x} -2xe^{-2x} -e^{-2x} + 1 \right) \text{ , } x \geq 0
+    $$
+    
+    A continuación,
+
+    \begin{enumerate}
+        \item Determine la \textit{fdp}.
+        \item Verifique si se cumple la propiedad de que $f(x) \geq 0$.
+        \item Utilizando la función de distribución acumulada, resuelva la siguiente operación.
+        
+        $$
+        P(1<X<3) - P([X > 5]^c) + P(X \leq 2)
+        $$
+    \end{enumerate}
+    
+  \end{enumerate}
     
     % \item En una fábrica de productos electrónicos, se sabe que la probabilidad de que un artículo sea defectuoso sigue una distribución de probabilidad de masa con los siguientes valores:
     % 
@@ -257,85 +543,85 @@ Calcule,
     % 
     % Escriba la función de masa de probabilidad, y calcule $E(X^2)$ y $Var(X)$.
 
-\item Está analizando las cuotas morosas de los clientes de un banco que solicitan un crédito de consumo. La variable aleatoria discreta representa la cantidad de cuotas morosas. En la siguiente tabla se encuentran los posibles valores de la variable aleatoria y sus respectivas probabilidades.
-
-    \begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|}
-    \hline
-    Cantidad de cuotas morosas & Probabilidad \\
-    \hline
-    0 & 0.10 \\
-    1 & 0.19 \\
-    2 & 0.13 \\
-    4 & 0.25 \\
-    5 & 0.12 \\
-    8 & 0.21 \\
-    \hline
-    \end{tabular}
-    \end{table}
-    
-    
-    A continuación:
-    
-    \begin{enumerate}
-        \item Determine la función de masa de probabilidad.
-        
-        % \item Determine la función de distribución acumulada. 
-        
-        % \item Si se selecciona un cliente del banco al azar. Utilizando la función de distribución acumulada responda:
-        \item Si se selecciona un cliente del banco al azar. Utilizando la función de masa de probabilidad responda:
-            \begin{enumerate}
-                \item ¿Cuál es la probabilidad de tenga menos de 4 cuotas morosas? 
-                
-                \item ¿Cuál es la probabilidad de que tenga entre 1.2 y 6.3 cuotas morosas (inclusive ambos)?
-                
-                \item ¿Cuál es la probabilidad de de que no tenga 5 cuotas morosas?
-
-                \item ¿Cuál es la probabilidad de no tenga entre 2.1 y 5.3 (inclusive) cuotas morsas?
-                
-            \end{enumerate}
-        \item Determine la cantidad de cuotas morosas promedio de los clientes.
-    \end{enumerate}
-
-\item Está analizando el tiempo de espera de los clientes en una cola de un banco. La variable aleatoria discreta representa el tiempo de espera en minutos.
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|}
-\hline
-Tiempo de espera (min) & Probabilidad \\
-\hline
-0 & 0.10 \\
-1 & 0.25 \\
-2 & 0.20 \\
-3 & 0.15 \\
-4 & 0.25 \\
-5 & 0.03 \\
-6 & 0.02 \\
-\hline
-\end{tabular}
-\end{table}
-
-
-A continuación:
-
-\begin{enumerate}
-    \item Determine la función de masa de probabilidad. 
-    % \item Determine la función de distribución acumulada. 
-    % \item Si se selecciona un cliente al azar. Utilizando la función de distribución acumulada calcule:
-    \item Si se selecciona un cliente al azar. Utilizando la función de masa de probabilidad calcule:
-        \begin{enumerate}
-            \item La probabilidad de que un cliente espere menos de 3.3 minutos. 
-            \item La probabilidad de que un cliente espere cuando menos 4 minutos. 
-            \item La probabilidad de que un un cliente espere entre 1 (inclusive) y 6 minutos. 
-            \item La probabilidad de que un cliente no espere entre 2.3 y 4.1 minutos
-            \item La probabilidad de que un cliente espere cuando mucho 1.94 minutos. 
-            \item La probabilidad de que un cliente no espere más de 4 minutos.
-            \item La probabilidad de que un cliente no espere entre 2.1 y 4.01 minutos.
-        \end{enumerate}
-    \item Determine el tiempo de espera promedio de los clientes.
-\end{enumerate}
+% \item Está analizando las cuotas morosas de los clientes de un banco que solicitan un crédito de consumo. La variable aleatoria discreta representa la cantidad de cuotas morosas. En la siguiente tabla se encuentran los posibles valores de la variable aleatoria y sus respectivas probabilidades.
+% 
+%     \begin{table}[H]
+%     \centering
+%     \begin{tabular}{|c|c|}
+%     \hline
+%     Cantidad de cuotas morosas & Probabilidad \\
+%     \hline
+%     0 & 0.10 \\
+%     1 & 0.19 \\
+%     2 & 0.13 \\
+%     4 & 0.25 \\
+%     5 & 0.12 \\
+%     8 & 0.21 \\
+%     \hline
+%     \end{tabular}
+%     \end{table}
+%     
+%     
+%     A continuación:
+%     
+%     \begin{enumerate}
+%         \item Determine la función de masa de probabilidad.
+%         
+%         % \item Determine la función de distribución acumulada. 
+%         
+%         % \item Si se selecciona un cliente del banco al azar. Utilizando la función de distribución acumulada responda:
+%         \item Si se selecciona un cliente del banco al azar. Utilizando la función de masa de probabilidad responda:
+%             \begin{enumerate}
+%                 \item ¿Cuál es la probabilidad de tenga menos de 4 cuotas morosas? 
+%                 
+%                 \item ¿Cuál es la probabilidad de que tenga entre 1.2 y 6.3 cuotas morosas (inclusive ambos)?
+%                 
+%                 \item ¿Cuál es la probabilidad de de que no tenga 5 cuotas morosas?
+% 
+%                 \item ¿Cuál es la probabilidad de no tenga entre 2.1 y 5.3 (inclusive) cuotas morsas?
+%                 
+%             \end{enumerate}
+%         \item Determine la cantidad de cuotas morosas promedio de los clientes.
+%     \end{enumerate}
+% 
+% \item Está analizando el tiempo de espera de los clientes en una cola de un banco. La variable aleatoria discreta representa el tiempo de espera en minutos.
+% 
+% \begin{table}[H]
+% \centering
+% \begin{tabular}{|c|c|}
+% \hline
+% Tiempo de espera (min) & Probabilidad \\
+% \hline
+% 0 & 0.10 \\
+% 1 & 0.25 \\
+% 2 & 0.20 \\
+% 3 & 0.15 \\
+% 4 & 0.25 \\
+% 5 & 0.03 \\
+% 6 & 0.02 \\
+% \hline
+% \end{tabular}
+% \end{table}
+% 
+% 
+% A continuación:
+% 
+% \begin{enumerate}
+%     \item Determine la función de masa de probabilidad. 
+%     % \item Determine la función de distribución acumulada. 
+%     % \item Si se selecciona un cliente al azar. Utilizando la función de distribución acumulada calcule:
+%     \item Si se selecciona un cliente al azar. Utilizando la función de masa de probabilidad calcule:
+%         \begin{enumerate}
+%             \item La probabilidad de que un cliente espere menos de 3.3 minutos. 
+%             \item La probabilidad de que un cliente espere cuando menos 4 minutos. 
+%             \item La probabilidad de que un un cliente espere entre 1 (inclusive) y 6 minutos. 
+%             \item La probabilidad de que un cliente no espere entre 2.3 y 4.1 minutos
+%             \item La probabilidad de que un cliente espere cuando mucho 1.94 minutos. 
+%             \item La probabilidad de que un cliente no espere más de 4 minutos.
+%             \item La probabilidad de que un cliente no espere entre 2.1 y 4.01 minutos.
+%         \end{enumerate}
+%     \item Determine el tiempo de espera promedio de los clientes.
+% \end{enumerate}
 
 % \item Suponga que las alturas de un grupo de estudiantes tiene una distribución normal con media $\mu=176$ y $\sigma =12$. Calcular la probabilidad de que la desviación estándar muestral sea cuando mucho 10 para una muestra de tamaño 8.
 % 
@@ -428,13 +714,13 @@ A continuación:
 % \end{minipage}
 
 
-\end{enumerate}
+% \end{enumerate}
 
-\newpage
+% \newpage
 
 % \subsection*{Tabla de probabilidades de una Distribución Normal(0,1)}
 
-<<echo = F, message = F, eval=FALSE>>=
+<<echo = F, message = F, eval=FALSE, include=F>>=
 library(kableExtra)
 q = seq(-2,2, by = 0.01)
 p = pnorm(q)
@@ -443,7 +729,7 @@ library(dplyr)
 df = as.matrix(df)
 @
 
-<<results='asis', echo = F, eval=FALSE>>=
+<<results='asis', echo = F, eval=FALSE, include=F>>=
 df = df[c(1:120),]
 n = ceiling(dim(df)[1]/3)
 k33 = kable(df[1:n,], booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df))%>% 
@@ -476,7 +762,7 @@ cat(c("\\begin{table}[H]
 
 % \newpage
 
-<<echo = F, message = F, eval=FALSE>>=
+<<echo = F, message = F, eval=FALSE, include=F>>=
 library(kableExtra)
 q = seq(-2,2, by = 0.01)
 p = pnorm(q)
@@ -485,7 +771,7 @@ library(dplyr)
 df = as.matrix(df)
 @
 
-<<results='asis', echo = F, eval=FALSE>>=
+<<results='asis', echo = F, eval=FALSE, include=F>>=
 df = df[c(121:243),]
 n = ceiling(dim(df)[1]/3)
 k33 = kable(df[1:n,], booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df))%>% 
@@ -518,7 +804,7 @@ cat(c("\\begin{table}[H]
 
 % \newpage
 
-<<echo = F, message = F, eval=FALSE>>=
+<<echo = F, message = F, eval=FALSE, include=F>>=
 library(kableExtra)
 q = seq(-2,2, by = 0.01)
 p = pnorm(q)
@@ -527,7 +813,7 @@ library(dplyr)
 df = as.matrix(df)
 @
 
-<<results='asis', echo = F, eval=FALSE>>=
+<<results='asis', echo = F, eval=FALSE, include=F>>=
 df = df[c(244:366),]
 n = ceiling(dim(df)[1]/3)
 
@@ -561,7 +847,7 @@ cat(c("\\begin{table}[H]
 
 % \newpage
 
-<<echo = F, message = F, eval=FALSE>>=
+<<echo = F, message = F, eval=FALSE, include=F>>=
 library(kableExtra)
 q = seq(-2,2, by = 0.01)
 p = pnorm(q)
@@ -570,7 +856,7 @@ library(dplyr)
 df = as.matrix(df)
 @
 
-<<results='asis', echo = F, eval=FALSE>>=
+<<results='asis', echo = F, eval=FALSE, include=F>>=
 df = df[c(367:401),]
 n = ceiling(dim(df)[1]/3)
 k33 = kable(df[1:n,], booktabs = TRUE, align = "c", linesep = "", escape = F, col.names = colnames(df))%>% 
