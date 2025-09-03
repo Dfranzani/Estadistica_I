@@ -169,7 +169,7 @@
 
 \title{Estadística I \& Estadística Descriptiva}
 \author{\href{https://dfranzani.github.io/website/principal/home.html}{Daniel Franzani}}
-\date{Actualizado al 21-08-2025}
+\date{Actualizado al 03-09-2025}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -382,6 +382,57 @@ Respecto a lo anterior:
 
 \caption{Estimador y estimación}\label{fig:parametro2}
 \end{figure}
+
+\begin{example}
+
+Suponga que está interesado en estudiar el promedio anual del porcentaje de desempleo en Chile en el periodo 2010-2065. Para aproximar este valor, se hará uso de los registros anuales de desempleo de los últimos 16 años, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la diferencia entre el valor máximo y mínimo y, el logaritmo natural de la suma de los registros, dando como resultado un valor de 15\%. A continuación, determine la población, muestra, parámetro, estadístico, estimador y estimación.
+
+\begin{itemize}
+\item
+  Población: Todos los registros anuales de desempleo en Chile entre 2010 y 2065.
+\item
+  Muestra: Los últimos 16 registros anuales de desempleo en Chile.
+\item
+  Parámetro: El promedio anual del porcentaje de desempleo en Chile entre 2010 y 2065.
+\item
+  Estadístico: El promedio anual del porcentaje de los últimos 16 registros de desempleo en Chile.
+\item
+  Estimador: Sean \(V_i\) con \(i=1,\ldots,16\) los últimos 16 registros anuales de desempleo en Chile. Luego el estimador es el siguiente:
+
+  \[
+  \frac{\max(V_i) - \min(V_i)}{\ln\left(\displaystyle\sum_{i=1}^{16} V_i\right)}
+  \]
+\item
+  Estimación: El valor de 15\% obtenido al aplicar el estimador a la muestra.
+\end{itemize}
+
+\textbf{Algunas consideraciones importantes son:}
+
+\begin{itemize}
+\tightlist
+\item
+  El estadístico siempre es la misma característica de la población pero aplicada a la muestra. Sin embargo, puede cambiar la fórmula matemática (estimador) que se utiliza para poder ser calculada (en la muestra). Esto cobra más sentido cuando la característica que se estudia es más compleja, por ejemplo, crecimiento económico, ya que no tiene una forma estándar de ser calculada (depende de las condiciones de la problemática).
+\item
+  El estimador siempre es la fórmula matemática que se debe ser aplicada para poder cuantificar el estadístico.
+\end{itemize}
+
+\end{example}
+
+\begin{exercise}
+
+Para los siguientes enunciados determine: población, muestra, parámetro, estadístico, estimador y estimación.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Suponga que esté interesado en determinar el promedio anual de la esperanza de vida de los hombres en el periodo 20025-2027, sin embargo no cuenta con todos los datos. Para aproximar este valor, se hará uso de los registros anuales de esperanza de vida de los hombres en Chile entre 2010 y 2017, para luego calcular el promedio muestral. La fórmula para poder determinar el promedio muestral es obtener el cuociente entre el promedio aritmético de los datos, y la raíz cuadrada de la suma de los datos, dado como resultado 79.12 años
+\item
+  Suponga que está interesado en estudiar el promedio histórico del monto de las deudas comerciales (considere la deuda comercial como la suma de la deuda comercial de hombres y mujeres), para ello, usted aproxima este valor mediante el uso de los registros anuales de deuda comercial de hombres y mujeres entre 2010 y 2022, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la diferencia entre la suma de los valores cúbicos de los registros y, el logaritmo natural de la suma de los registros al cuadrado, dando como resultado un valor de 15.12 billones de pesos.
+\item
+  Desea determinar la mediana histórica de la edad de los distintas especies de árbol que habitan la región de la Araucanía, para ello, usted aproxima este valor mediante el uso de los registros de edad de los árboles en la región entre 2010 y 2022, para luego calcular la mediana muestral, haciendo uso de la mediana Hodges-Lehmann. La fórmula para calcular dicha medida, es el promedio de todas las medianas de pares de observaciones. El resultado final es un valor de 76.4 años.
+\end{enumerate}
+
+\end{exercise}
 
 \subsection{Variabilidad muestral}\label{variabilidad-muestral}
 

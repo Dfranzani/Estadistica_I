@@ -375,6 +375,35 @@ Figura 1.1: Parámetro y estadístico
 Figura 1.2: Estimador y estimación
 </p>
 </div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Ejemplo 1.1  </strong></span>Suponga que está interesado en estudiar el promedio anual del porcentaje de desempleo en Chile en el periodo 2010-2065. Para aproximar este valor, se hará uso de los registros anuales de desempleo de los últimos 16 años, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la diferencia entre el valor máximo y mínimo y, el logaritmo natural de la suma de los registros, dando como resultado un valor de 15%. A continuación, determine la población, muestra, parámetro, estadístico, estimador y estimación.</p>
+<ul>
+<li><p>Población: Todos los registros anuales de desempleo en Chile entre 2010 y 2065.</p></li>
+<li><p>Muestra: Los últimos 16 registros anuales de desempleo en Chile.</p></li>
+<li><p>Parámetro: El promedio anual del porcentaje de desempleo en Chile entre 2010 y 2065.</p></li>
+<li><p>Estadístico: El promedio anual del porcentaje de los últimos 16 registros de desempleo en Chile.</p></li>
+<li><p>Estimador: Sean <span class="math inline">\(V_i\)</span> con <span class="math inline">\(i=1,\ldots,16\)</span> los últimos 16 registros anuales de desempleo en Chile. Luego el estimador es el siguiente:</p>
+<p><span class="math display">\[
+\frac{\max(V_i) - \min(V_i)}{\ln\left(\displaystyle\sum_{i=1}^{16} V_i\right)}
+\]</span></p></li>
+<li><p>Estimación: El valor de 15% obtenido al aplicar el estimador a la muestra.</p></li>
+</ul>
+<p><strong>Algunas consideraciones importantes son:</strong></p>
+<ul>
+<li>El estadístico siempre es la misma característica de la población pero aplicada a la muestra. Sin embargo, puede cambiar la fórmula matemática (estimador) que se utiliza para poder ser calculada (en la muestra). Esto cobra más sentido cuando la característica que se estudia es más compleja, por ejemplo, crecimiento económico, ya que no tiene una forma estándar de ser calculada (depende de las condiciones de la problemática).</li>
+<li>El estimador siempre es la fórmula matemática que se debe ser aplicada para poder cuantificar el estadístico.</li>
+</ul>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Ejercicio 1.3  </strong></span>Para los siguientes enunciados determine: población, muestra, parámetro, estadístico, estimador y estimación.</p>
+<ol style="list-style-type: decimal">
+<li><p>Suponga que esté interesado en determinar el promedio anual de la esperanza de vida de los hombres en el periodo 20025-2027, sin embargo no cuenta con todos los datos. Para aproximar este valor, se hará uso de los registros anuales de esperanza de vida de los hombres en Chile entre 2010 y 2017, para luego calcular el promedio muestral. La fórmula para poder determinar el promedio muestral es obtener el cuociente entre el promedio aritmético de los datos, y la raíz cuadrada de la suma de los datos, dado como resultado 79.12 años</p></li>
+<li><p>Suponga que está interesado en estudiar el promedio histórico del monto de las deudas comerciales (considere la deuda comercial como la suma de la deuda comercial de hombres y mujeres), para ello, usted aproxima este valor mediante el uso de los registros anuales de deuda comercial de hombres y mujeres entre 2010 y 2022, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la diferencia entre la suma de los valores cúbicos de los registros y, el logaritmo natural de la suma de los registros al cuadrado, dando como resultado un valor de 15.12 billones de pesos.</p></li>
+<li><p>Desea determinar la mediana histórica de la edad de los distintas especies de árbol que habitan la región de la Araucanía, para ello, usted aproxima este valor mediante el uso de los registros de edad de los árboles en la región entre 2010 y 2022, para luego calcular la mediana muestral, haciendo uso de la mediana Hodges-Lehmann. La fórmula para calcular dicha medida, es el promedio de todas las medianas de pares de observaciones. El resultado final es un valor de 76.4 años.</p></li>
+</ol>
+</div>
 </div>
 <div id="variabilidad-muestral" class="section level3 hasAnchor" number="1.1.7">
 <h3><span class="header-section-number">1.1.7</span> Variabilidad muestral<a href="unidad1.html#variabilidad-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -440,13 +469,13 @@ Figura 1.5: Muestra 2
 <p>El promedio (<span class="math inline">\(\bar{x}\)</span>) representa el valor central de las observaciones incluidas en una muestra. Sin embargo, esta medida puede llegar a ser inapropiada en algunas circunstancias, específicamente cuando existen valores extremos. Un ejemplo de esto, es el promedio de los ingresos (<a href="https://www.ine.gob.cl/prensa/detalle-prensa/2022/07/21/el-ingreso-laboral-promedio-mensual-en-chile-fue-de-$681.039-en-2021#:~:text=El%20ingreso%20laboral%20promedio%20mensual%20en%20Chile%20fue%20de%20%24681.039%20en%202021,-21%2F07%2F2022&amp;text=El%2050%25%20de%20las%20personas,ingreso%20de%20hasta%20%24457.690%20mensuales.">el caso de Chile</a>), ya que, es común que unos cuantos afortunados ganen cantidades astronómicas, por lo que el uso del ingreso promedio como medida de resumen puede ser engañoso (otro ejemplo, <a href="https://www.google.com/finance/quote/BTC-USD?sa=X&amp;ved=2ahUKEwi3po-_m9n8AhWUL7kGHTNFCfYQ-fUHegQIFhAe&amp;window=MAX">es la valorización de BitCoin al dólar estadounidense</a>).</p>
 <p>A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: <a href="https://www.google.com/finance/quote/EUR-CLP?window=MAX&amp;comparison=USD-CLP">tipo de cambio del dólar y el euro</a>).</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-3" class="exercise"><strong>Ejercicio 1.3  </strong></span>Respecto a la base <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>, utilice el comando <code>colMeans()</code> para obtener la media de todas las variables asociadas a la tasa de conversión (ignore la columna asociada a la variable fecha). Interprete.</p>
+<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Ejercicio 1.4  </strong></span>Respecto a la base <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>, utilice el comando <code>colMeans()</code> para obtener la media de todas las variables asociadas a la tasa de conversión (ignore la columna asociada a la variable fecha). Interprete.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Ejercicio 1.4  </strong></span>Obtenga de la media del precio por hora de la electricidad, en la base <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>. Utilice el comando <code>na.omit()</code> para no considerar los valores faltantes. Interprete.</p>
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Ejercicio 1.5  </strong></span>Obtenga de la media del precio por hora de la electricidad, en la base <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>. Utilice el comando <code>na.omit()</code> para no considerar los valores faltantes. Interprete.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Ejercicio 1.5  </strong></span>Considerando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine la media del nivel de colesterol por sexo. Interprete.</p>
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Ejercicio 1.6  </strong></span>Considerando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine la media del nivel de colesterol por sexo. Interprete.</p>
 </div>
 </div>
 <div id="topicos-medidas-localizacion-mediana" class="section level3 hasAnchor" number="1.2.2">
@@ -470,7 +499,7 @@ Figura 1.5: Muestra 2
 <pre><code>## [1] 3.5</code></pre>
 <p>En ambos casos, se entiende que, ordenando los datos de menor a mayor (en una recta real), tanto a la derecha como izquierda de la mediana se encuentra la misma cantidad de datos.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Ejercicio 1.6  </strong></span>Obtenga la mediana de las distintas variables (cuando corresponda) de la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>. Interprete.</p>
+<p><span id="exr:unlabeled-div-8" class="exercise"><strong>Ejercicio 1.7  </strong></span>Obtenga la mediana de las distintas variables (cuando corresponda) de la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>. Interprete.</p>
 </div>
 </div>
 <div id="topicos-medidas-localizacion-moda" class="section level3 hasAnchor" number="1.2.3">
@@ -488,7 +517,7 @@ Figura 1.5: Muestra 2
 <p>Como resultado se aprecia que la cantidad de hermanos que más se repita dentro del grupo de personas es de 5.</p>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-7" class="example"><strong>Ejemplo 1.1  </strong></span></p>
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Ejemplo 1.2  </strong></span></p>
 <ol style="list-style-type: decimal">
 <li><p>Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a> (sin imprimir la tabla).</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="unidad1.html#cb12-1" tabindex="-1"></a>tabla <span class="ot">=</span> <span class="fu">table</span>(datos<span class="sc">$</span>Open)</span></code></pre></div></li>
@@ -506,7 +535,7 @@ Figura 1.5: Muestra 2
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-8" class="exercise"><strong>Ejercicio 1.7  </strong></span>Considerando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine la moda de las variables cualitativas. Interprete.</p>
+<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Ejercicio 1.8  </strong></span>Considerando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine la moda de las variables cualitativas. Interprete.</p>
 </div>
 <p><strong>Nota</strong>: En el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la medida de localización muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).</p>
 </div>
@@ -596,7 +625,7 @@ Curso 3
 <p>La medida más simple de variabilidad en una muestra es el <strong>rango</strong>, el cual es la diferencia entre los valores muestrales más grande y más pequeño <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 32)</span>. El rango de las notas del curso 1 en la tabla <a href="unidad1.html#tab:variabilidad">1.1</a> es más grande que el del curso 2, lo que refleja más variabilidad en la primer muestra que en la segunda. Un defecto del rango, no obstante, es que depende de solo las dos observaciones más extremas y hace caso omiso de las posiciones de los valores restantes. Los cursos 1 y 3 tienen rangos idénticos, aunque cuando se toman en cuenta las observaciones entre los dos extremos, existe mucho menos variabilidad o dispersión en la tercera muestra que en la primera.</p>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-9" class="example"><strong>Ejemplo 1.2  </strong></span>Obtener el rango de la tasa de apertura histórica del EUR/USD de la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>.</p>
+<p><span id="exm:unlabeled-div-11" class="example"><strong>Ejemplo 1.3  </strong></span>Obtener el rango de la tasa de apertura histórica del EUR/USD de la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="unidad1.html#cb17-1" tabindex="-1"></a><span class="co"># Utilizando el comando range() se obtienen los valores mínimo y máximo</span></span>
 <span id="cb17-2"><a href="unidad1.html#cb17-2" tabindex="-1"></a><span class="co"># de la variable en cuestión</span></span>
 <span id="cb17-3"><a href="unidad1.html#cb17-3" tabindex="-1"></a>(<span class="at">rango =</span> <span class="fu">range</span>(datos<span class="sc">$</span>Open))</span></code></pre></div>
@@ -608,10 +637,10 @@ Curso 3
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Ejercicio 1.8  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine el rango de las variables cuantitativas. Interprete.</p>
+<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Ejercicio 1.9  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine el rango de las variables cuantitativas. Interprete.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-11" class="exercise"><strong>Ejercicio 1.9  </strong></span>Determine el rango de la fechas de medición en los precios de electricidad en la base <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>. Interprete.</p>
+<p><span id="exr:unlabeled-div-13" class="exercise"><strong>Ejercicio 1.10  </strong></span>Determine el rango de la fechas de medición en los precios de electricidad en la base <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>. Interprete.</p>
 </div>
 </div>
 <div id="topicos-medidas-escala-varianza-desviacion" class="section level3 hasAnchor" number="1.3.2">
@@ -651,7 +680,7 @@ S = \sqrt{S^2}
 <p>No seguir estas recomendaciones puede generar un falsa sensación en la comunicación de resultados.</p>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:EUR-USD-varianza" class="example"><strong>Ejemplo 1.3  </strong></span>Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD presentes en la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>, para ello:</p>
+<p><span id="exm:EUR-USD-varianza" class="example"><strong>Ejemplo 1.4  </strong></span>Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD presentes en la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>, para ello:</p>
 <ol style="list-style-type: decimal">
 <li><p>Verifique la media de ambas variables la misma</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="unidad1.html#cb21-1" tabindex="-1"></a><span class="fu">mean</span>(datos<span class="sc">$</span>Open) <span class="co"># Promedio de la tasa de apertura</span></span></code></pre></div>
@@ -670,10 +699,10 @@ S = \sqrt{S^2}
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Ejercicio 1.10  </strong></span>Utilice la varianza directamente para comparar la variabilidad de la variables <em>chol</em>, <em>age</em>, <em>trtbps</em> y <em>oldpeak</em> entre hombres y mujeres, en la base <a href="unidad1.html#Pacientes">Pacientes</a>. Interprete.</p>
+<p><span id="exr:unlabeled-div-14" class="exercise"><strong>Ejercicio 1.11  </strong></span>Utilice la varianza directamente para comparar la variabilidad de la variables <em>chol</em>, <em>age</em>, <em>trtbps</em> y <em>oldpeak</em> entre hombres y mujeres, en la base <a href="unidad1.html#Pacientes">Pacientes</a>. Interprete.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-13" class="exercise"><strong>Ejercicio 1.11  </strong></span>Utilice la varianza directamente para comprar la variabilidad de los precios de la electricidad entre las primeras y últimas 1000 mediciones, en la base <a href="unidad1.html#PreciosElectricidad">Precios</a>. Interprete.</p>
+<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Ejercicio 1.12  </strong></span>Utilice la varianza directamente para comprar la variabilidad de los precios de la electricidad entre las primeras y últimas 1000 mediciones, en la base <a href="unidad1.html#PreciosElectricidad">Precios</a>. Interprete.</p>
 </div>
 </div>
 <div id="topicos-medidas-escala-coeficiente-variacion" class="section level3 hasAnchor" number="1.3.3">
@@ -686,7 +715,7 @@ CV = \left(\frac{S}{|\bar{x}|}\right)\cdot 100\%
 <p>Cuando el valor del coeficiente de variación es cercano a 100% se habla de mayor dispersión (heterogéneo), mientras que un valor cercano a 0% indica menor dispersión (homogéneo), además, se debe considerar que el porcentaje calculado corresponde a la variabilidad respecto a la media de los datos. Sin embargo, no es recomendable usar esta medida cuando el valor de la media es cercano a cero, ya que el CV pierde su significado al tomar valores muy grandes, lo que daría una falsa sensación de dispersión de los datos <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 95)</span>.</p>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-14" class="example"><strong>Ejemplo 1.4  </strong></span>En el ejemplo <a href="unidad1.html#exm:EUR-USD-varianza">1.3</a>, se utilizó la varianza para comprar directamente la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD. Sin embargo, si calculamos las medias de ambas variables se puede verificar que son distintas. Utilice el CV para comprar la variabilidad de ambas variables.</p>
+<p><span id="exm:unlabeled-div-16" class="example"><strong>Ejemplo 1.5  </strong></span>En el ejemplo <a href="unidad1.html#exm:EUR-USD-varianza">1.4</a>, se utilizó la varianza para comprar directamente la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD. Sin embargo, si calculamos las medias de ambas variables se puede verificar que son distintas. Utilice el CV para comprar la variabilidad de ambas variables.</p>
 <p>Claramente la media de la tasa más alta es mayor a la media de la tasa de apertura.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="unidad1.html#cb29-1" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">mean</span>(datos<span class="sc">$</span>Open), <span class="fu">mean</span>(datos<span class="sc">$</span>High))</span></code></pre></div>
 <pre><code>## [1] 1.244338 1.249022</code></pre>
@@ -699,10 +728,10 @@ CV = \left(\frac{S}{|\bar{x}|}\right)\cdot 100\%
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Ejercicio 1.12  </strong></span>Compare la variabilidad de la presión arterial en reposo y el nivel de colesterol de los pacientes registrados en la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>. Repita el estudio diferenciado por sexo. Interprete.</p>
+<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Ejercicio 1.13  </strong></span>Compare la variabilidad de la presión arterial en reposo y el nivel de colesterol de los pacientes registrados en la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>. Repita el estudio diferenciado por sexo. Interprete.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-16" class="exercise"><strong>Ejercicio 1.13  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, compare la variabilidad de la edad de los paciente, según el tipo de dolor de pecho que presentan. Interprete.</p>
+<p><span id="exr:unlabeled-div-18" class="exercise"><strong>Ejercicio 1.14  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, compare la variabilidad de la edad de los paciente, según el tipo de dolor de pecho que presentan. Interprete.</p>
 </div>
 <p><strong>Nota</strong>: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).</p>
 </div>
@@ -822,7 +851,7 @@ Desviación estándar
 ## 12  1.50  1.55 1.525        38        0.8 4882  98.3
 ## 13  1.55  1.60 1.575        84        1.7 4966 100.0</code></pre>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Ejercicio 1.14  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un histograma de los precios de la electricidad. Interprete.</p>
+<p><span id="exr:unlabeled-div-19" class="exercise"><strong>Ejercicio 1.15  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un histograma de los precios de la electricidad. Interprete.</p>
 </div>
 </div>
 <div id="topicos-graficos-caja" class="section level3 hasAnchor" number="1.5.2">
@@ -872,7 +901,7 @@ Desviación estándar
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-24-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Para interpretar un gráfico de caja es recomendable utilizar la opción 2 mostrada anteriormente, ya que, se debe mencionar uno de los puntos relevantes del gráfico. En el ejemplo recién dado, se observa que, el primer, segundo y tercer cuartil están en 1.135, 1.233 y 1.335 respectivamente, mientras que el valor mínimo y máximo están en 0.96 y 1.559 respectivamente. Adicionalmente, se puede mencionar que los datos superiores en comparación a los inferiores, se encuentran más alejados de la mediana.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-18" class="exercise"><strong>Ejercicio 1.15  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de caja de los precios de la electricidad. Interprete.</p>
+<p><span id="exr:unlabeled-div-20" class="exercise"><strong>Ejercicio 1.16  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de caja de los precios de la electricidad. Interprete.</p>
 </div>
 </div>
 <div id="topicos-graficos-violin" class="section level3 hasAnchor" number="1.5.3">
@@ -924,11 +953,11 @@ Desviación estándar
 </ul>
 <p>En el ejemplo anterior, la principal concentración se encuentra por debajo del primer cuartil, aunque destacan otras dos concentraciones que están por debajo del segundo cuartil y alrededor del tercer cuartil respectivamente. El promedio se encuentra sutilmente por encima de la mediana, esto se puede explicar debido a que los datos superiores del gráfico se encuentra más lejos de la mediana en comparación a los datos inferiores.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-19" class="exercise"><strong>Ejercicio 1.16  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de violín con caja y promedio de los precios de la electricidad. Interprete.</p>
+<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Ejercicio 1.17  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de violín con caja y promedio de los precios de la electricidad. Interprete.</p>
 </div>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-20" class="example"><strong>Ejemplo 1.5  </strong></span>El siguiente código, crea una nueva columna en la base de datos que identifica el año en el que se realizó la medición de las tasas. A continuación, elabore un gráfico de violín (más gráfico de caja y promedio) de la variable <strong>Close</strong> en el periodo de años 2006-2010, diferenciando por año.</p>
+<p><span id="exm:unlabeled-div-22" class="example"><strong>Ejemplo 1.6  </strong></span>El siguiente código, crea una nueva columna en la base de datos que identifica el año en el que se realizó la medición de las tasas. A continuación, elabore un gráfico de violín (más gráfico de caja y promedio) de la variable <strong>Close</strong> en el periodo de años 2006-2010, diferenciando por año.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="unidad1.html#cb39-1" tabindex="-1"></a><span class="co"># Extraemos el año de la variable Date, y la guardamos en un nueva columna</span></span>
 <span id="cb39-2"><a href="unidad1.html#cb39-2" tabindex="-1"></a>datos<span class="sc">$</span>Ano <span class="ot">=</span> <span class="fu">substr</span>(datos<span class="sc">$</span>Date, <span class="dv">1</span>, <span class="dv">4</span>)</span>
 <span id="cb39-3"><a href="unidad1.html#cb39-3" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
@@ -963,13 +992,13 @@ Desviación estándar
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:violin-colesterol-azucar" class="exercise"><strong>Ejercicio 1.17  </strong></span>Utilizando la base de datos de <a href="unidad1.html#Pacientes">Paciente</a> Realice un gráfico de violín con caja y promedio del nivel de colesterol de los paciente, diferenciando por el nivel de azúcar en sangre en ayunas. Interprete.</p>
+<p><span id="exr:violin-colesterol-azucar" class="exercise"><strong>Ejercicio 1.18  </strong></span>Utilizando la base de datos de <a href="unidad1.html#Pacientes">Paciente</a> Realice un gráfico de violín con caja y promedio del nivel de colesterol de los paciente, diferenciando por el nivel de azúcar en sangre en ayunas. Interprete.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Ejercicio 1.18  </strong></span>Agregue una diferenciación por sexo a lo realizado en el ejercicio <a href="unidad1.html#exr:violin-colesterol-azucar">1.17</a>. Entienda que para cada nivel de azúcar en sangre se debe ver un desglose por sexo. Interprete.</p>
+<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Ejercicio 1.19  </strong></span>Agregue una diferenciación por sexo a lo realizado en el ejercicio <a href="unidad1.html#exr:violin-colesterol-azucar">1.18</a>. Entienda que para cada nivel de azúcar en sangre se debe ver un desglose por sexo. Interprete.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Ejercicio 1.19  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, realice un gráfico de violín con caja y promedio para el precio de la electricidad, diferenciado por año. Interprete.</p>
+<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Ejercicio 1.20  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, realice un gráfico de violín con caja y promedio para el precio de la electricidad, diferenciado por año. Interprete.</p>
 </div>
 <!-- ### Gráfico de Barras -->
 <!-- Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente [@anderson, página 29]. -->
@@ -1027,11 +1056,11 @@ Desviación estándar
 <p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-28-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Tal como se menciona al inicio, la interpretación de este tipo de gráficos radica en describir la tendencia de los puntos. En el ejemplo anterior, el gráfico muestra una tendencia al alza, es decir, que cuando la tasa de apertura del EUR/USD aumenta, entonces, la tasa de cierre tiende a aumentar.</p>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Ejercicio 1.20  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, realice un gráfico de dispersión entre la variable <em>age</em> (eje X) y la variable <em>thalachh</em> (eje Y). Interprete.</p>
+<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Ejercicio 1.21  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, realice un gráfico de dispersión entre la variable <em>age</em> (eje X) y la variable <em>thalachh</em> (eje Y). Interprete.</p>
 </div>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-24" class="example"><strong>Ejemplo 1.6  </strong></span>En los siguiente gráficos se toma como ejemplo la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>.</p>
+<p><span id="exm:unlabeled-div-26" class="example"><strong>Ejemplo 1.7  </strong></span>En los siguiente gráficos se toma como ejemplo la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>.</p>
 <ol style="list-style-type: decimal">
 <li><p>Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD (guarde el gráfico en una variable).</p>
 <div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="unidad1.html#cb41-1" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
@@ -1107,7 +1136,7 @@ Desviación estándar
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Ejercicio 1.21  </strong></span>Utilizando la base de datos de la <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>:</p>
+<p><span id="exr:unlabeled-div-27" class="exercise"><strong>Ejercicio 1.22  </strong></span>Utilizando la base de datos de la <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>:</p>
 <ol style="list-style-type: decimal">
 <li>Elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de cierre del EUR/USD (guarde el gráfico en una variable).</li>
 <li>Añadir al gráfico un formato de líneas entre los puntos. Interprete.</li>
@@ -1116,10 +1145,10 @@ Desviación estándar
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-26" class="exercise"><strong>Ejercicio 1.22  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de dispersión del precio de la electricidad a través del tiempo (considere año, mes y día). Interprete.</p>
+<p><span id="exr:unlabeled-div-28" class="exercise"><strong>Ejercicio 1.23  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de dispersión del precio de la electricidad a través del tiempo (considere año, mes y día). Interprete.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-27" class="exercise"><strong>Ejercicio 1.23  </strong></span>Utilizando la base de datos de <a href="unidad1.html#Pacientes">Pacientes</a>:</p>
+<p><span id="exr:unlabeled-div-29" class="exercise"><strong>Ejercicio 1.24  </strong></span>Utilizando la base de datos de <a href="unidad1.html#Pacientes">Pacientes</a>:</p>
 <ol style="list-style-type: decimal">
 <li>Elabore un histograma del nivel de colesterol de los pacientes. Interprete.</li>
 <li>Elabore un gráfico de caja del nivel de colesterol de los pacientes, diferenciando por sexo. Interprete y compare.</li>
