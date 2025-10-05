@@ -1,0 +1,2944 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 2 Probabilidad y variables aleatorias | Estadística I &amp; Estadística Descriptiva</title>
+  <meta name="description" content="Curso básico de Estadística para ingeniería." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 2 Probabilidad y variables aleatorias | Estadística I &amp; Estadística Descriptiva" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Curso básico de Estadística para ingeniería." />
+  <meta name="github-repo" content="Dfranzani/Estadistica_I" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 2 Probabilidad y variables aleatorias | Estadística I &amp; Estadística Descriptiva" />
+  
+  <meta name="twitter:description" content="Curso básico de Estadística para ingeniería." />
+  
+
+<meta name="author" content="Daniel Franzani" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="unidad1.html"/>
+<link rel="next" href="distribucionesmuestrales.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introducción a la Estadística</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="" data-path="talleres.html"><a href="talleres.html"><i class="fa fa-check"></i>Talleres de práctica</a></li>
+<li class="chapter" data-level="1" data-path="unidad1.html"><a href="unidad1.html"><i class="fa fa-check"></i><b>1</b> Tópicos básicos de estadística</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos"><i class="fa fa-check"></i><b>1.1</b> Conceptos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-datos"><i class="fa fa-check"></i><b>1.1.1</b> Datos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-informacion"><i class="fa fa-check"></i><b>1.1.2</b> Información</a></li>
+<li class="chapter" data-level="1.1.3" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-tipos-variables"><i class="fa fa-check"></i><b>1.1.3</b> Tipos de variables</a></li>
+<li class="chapter" data-level="1.1.4" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-poblacion-muestra"><i class="fa fa-check"></i><b>1.1.4</b> Población y Muestra</a></li>
+<li class="chapter" data-level="1.1.5" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-parametros-estadisticos"><i class="fa fa-check"></i><b>1.1.5</b> Parámetros y Estadísticos</a></li>
+<li class="chapter" data-level="1.1.6" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-estimador-estimacion"><i class="fa fa-check"></i><b>1.1.6</b> Estimador y Estimación</a></li>
+<li class="chapter" data-level="1.1.7" data-path="unidad1.html"><a href="unidad1.html#variabilidad-muestral"><i class="fa fa-check"></i><b>1.1.7</b> Variabilidad muestral</a></li>
+<li class="chapter" data-level="1.1.8" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-representatividad-sesgo"><i class="fa fa-check"></i><b>1.1.8</b> Representatividad y sesgo de la muestra</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion"><i class="fa fa-check"></i><b>1.2</b> Medidas de localización</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-media"><i class="fa fa-check"></i><b>1.2.1</b> Media</a></li>
+<li class="chapter" data-level="1.2.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-mediana"><i class="fa fa-check"></i><b>1.2.2</b> Mediana</a></li>
+<li class="chapter" data-level="1.2.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-moda"><i class="fa fa-check"></i><b>1.2.3</b> Moda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala"><i class="fa fa-check"></i><b>1.3</b> Medidas de escala</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-rango"><i class="fa fa-check"></i><b>1.3.1</b> Rango</a></li>
+<li class="chapter" data-level="1.3.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-varianza-desviacion"><i class="fa fa-check"></i><b>1.3.2</b> Varianza y desviación estándar</a></li>
+<li class="chapter" data-level="1.3.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-coeficiente-variacion"><i class="fa fa-check"></i><b>1.3.3</b> Coeficiente de variación</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="unidad1.html"><a href="unidad1.html#topicos-notacion"><i class="fa fa-check"></i><b>1.4</b> Notación poblacional y muestral</a></li>
+<li class="chapter" data-level="1.5" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos"><i class="fa fa-check"></i><b>1.5</b> Gráficos descriptivos</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-histograma"><i class="fa fa-check"></i><b>1.5.1</b> Histograma</a></li>
+<li class="chapter" data-level="1.5.2" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-caja"><i class="fa fa-check"></i><b>1.5.2</b> Gráfico de Caja</a></li>
+<li class="chapter" data-level="1.5.3" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-violin"><i class="fa fa-check"></i><b>1.5.3</b> Gráfico de Violín</a></li>
+<li class="chapter" data-level="1.5.4" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-dispersion"><i class="fa fa-check"></i><b>1.5.4</b> Gráfico de Dispersión</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html"><i class="fa fa-check"></i><b>2</b> Probabilidad y variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos"><i class="fa fa-check"></i><b>2.1</b> Elementos de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-experimento"><i class="fa fa-check"></i><b>2.1.1</b> Experimento y Espacio muestral</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-eventos"><i class="fa fa-check"></i><b>2.1.2</b> Eventos aleatorios</a></li>
+<li class="chapter" data-level="2.1.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-evento"><i class="fa fa-check"></i><b>2.1.3</b> Probabilidad de un evento</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria"><i class="fa fa-check"></i><b>2.2</b> Variable aleatoria</a></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.3</b> Variables aleatorias discretas (v.a.d)</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fmp"><i class="fa fa-check"></i><b>2.3.1</b> Función de masa de probabilidad</a></li>
+<li class="chapter" data-level="2.3.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fda"><i class="fa fa-check"></i><b>2.3.2</b> Función de distribución acumulada</a></li>
+<li class="chapter" data-level="2.3.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-distribuciones"><i class="fa fa-check"></i><b>2.3.3</b> Distribuciones</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua"><i class="fa fa-check"></i><b>2.4</b> Variables aleatorias continuas (v.a.c)</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fdp"><i class="fa fa-check"></i><b>2.4.1</b> Función de densidad de probabilidad</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fda"><i class="fa fa-check"></i><b>2.4.2</b> Función de distribución acumulada</a></li>
+<li class="chapter" data-level="2.4.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-distribuciones"><i class="fa fa-check"></i><b>2.4.3</b> Distribuciones</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-esperanza"><i class="fa fa-check"></i><b>2.5</b> Esperanza</a></li>
+<li class="chapter" data-level="2.6" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-varianza"><i class="fa fa-check"></i><b>2.6</b> Varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html"><i class="fa fa-check"></i><b>3</b> Distribuciones muestrales</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media"><i class="fa fa-check"></i><b>3.1</b> Distribución de muestreo de la media</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-estandarizacion"><i class="fa fa-check"></i><b>3.1.1</b> Estandarización</a></li>
+<li class="chapter" data-level="3.1.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-distribucionmedia"><i class="fa fa-check"></i><b>3.1.2</b> Distribución de la media</a></li>
+<li class="chapter" data-level="3.1.3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-tlc"><i class="fa fa-check"></i><b>3.1.3</b> Teorema del Límite Central</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-varianza"><i class="fa fa-check"></i><b>3.2</b> Distribución de muestreo de la varianza</a></li>
+<li class="chapter" data-level="3.3" data-path="02-unidad2.html"><a href="#la-distribuci%C3%B3n-t-student"><i class="fa fa-check"></i><b>3.3</b> La distribución T-Student</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/rmarkdown-cookbook" target="blank">Published with Bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística I &amp; Estadística Descriptiva</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="probabilidad-variables" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Unidad 2</span> Probabilidad y variables aleatorias<a href="probabilidad-variables.html#probabilidad-variables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="probabilidad-variables-elementos" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Elementos de probabilidad<a href="probabilidad-variables.html#probabilidad-variables-elementos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los elementos de probabilidad son los conceptos fundamentales que se utilizan en la teoría de la probabilidad para describir y analizar eventos aleatorios. Algunos de ellos son: espacio muestral, eventos, función de probabilidad, variable aleatoria, distribución de probabilidad, entre otros.</p>
+<p>Estos elementos son esenciales para el estudio de la probabilidad y su aplicación en la estadística y en muchas áreas de la ciencia, incluyendo la economía, la biología, la física, entre otras.</p>
+<div id="probabilidad-variables-elementos-experimento" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Experimento y Espacio muestral<a href="probabilidad-variables.html#probabilidad-variables-elementos-experimento" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el contexto de la probabilidad, un <strong>experimento</strong> es definido como un proceso que genera resultados definidos. Y en cada una de las repeticiones del experimento, habrá uno y solo uno de los posibles resultados experimentales <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 143)</span>.</p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-30" class="example"><strong>Ejemplo 2.1  </strong></span></p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:experimentos">Tabla 2.1: </span>Experimentos y resultados
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Experimento
+</th>
+<th style="text-align:left;">
+Resultado experimental
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Lanzar una moneda
+</td>
+<td style="text-align:left;">
+Cara, cruz
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tomar una pieza para inspeccionarla
+</td>
+<td style="text-align:left;">
+Con defecto, sin defecto
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Realizar una llamada de ventas
+</td>
+<td style="text-align:left;">
+Hay compra, no hay compra
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lanzar un dado
+</td>
+<td style="text-align:left;">
+1, 2, 3, 4, 5, 6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jugar un partido de fútbol
+</td>
+<td style="text-align:left;">
+Ganar, perder, empatar
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Al especificar todos los resultados experimentales posibles, se está definiendo el <strong>espacio muestral</strong> de un experimento. En otras palabras, el espacio muestral de un experimentos es el conjunto de todos los resultados experimentales. Se usa la letra omega mayúscula (<span class="math inline">\(\Omega\)</span>) para referirnos a este conjunto. Un elemento genérico de <span class="math inline">\(\Omega\)</span> se denota como <span class="math inline">\(\omega\)</span>.</p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-31" class="example"><strong>Ejemplo 2.2  </strong></span>Conduciendo hacia su trabajo, una persona debe pasar por tres semáforos. En cada cruce la persona puede detenerse (D) o continuar (C), de acuerdo con el color de la luz. ¿Cuál es el espacio muestral del experimento?</p>
+<p><span class="math display">\[\Omega = \lbrace CCC, DDD, CCD, CDD, CDC, DCD, DDC, DCC \rbrace\]</span></p>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-32" class="exercise"><strong>Ejercicio 2.1  </strong></span>Un fabricante de ropa deportiva produce pantalones deportivos en dos colores (azul y gris) y en cuatro tamaños diferentes (pequeño, mediano, grande y extra grande). ¿Cuál es el espacio muestral del experimento de elegir al azar un pantalón deportivo de la línea de producción de la empresa?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-33" class="exercise"><strong>Ejercicio 2.2  </strong></span>Un restaurante ofrece tres opciones de menú para el almuerzo: menú A, menú B y menú C. Además, cada menú se puede pedir con carne o con pescado. ¿Cuál es el espacio muestral del experimento de elegir al azar un menú para el almuerzo en este restaurante?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-34" class="exercise"><strong>Ejercicio 2.3  </strong></span>Una compañía de seguros de autos ofrece pólizas de seguro con dos niveles de cobertura (básico y completo) y dos tipos de franquicia (alta y baja). ¿Cuál es el espacio muestral del experimento de elegir al azar una póliza de seguro de auto de la compañía?</p>
+</div>
+</div>
+<div id="probabilidad-variables-elementos-eventos" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Eventos aleatorios<a href="probabilidad-variables.html#probabilidad-variables-elementos-eventos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En principio, un <strong>evento aleatorio</strong> (o simplemente evento) es algún subconjunto del espacio muestral <span class="math inline">\(\Omega\)</span>. Los eventos se anotan con una letra mayúscula a elección <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 153)</span>.</p>
+<p>A modo de ejemplo, consideren el experimento de lanzar un dado de 6 caras.</p>
+<p><span class="math inline">\(\Omega = \lbrace 1,2,3,4,5,6 \rbrace\)</span></p>
+<p>Luego, el evento correspondiente a obtener un número par está dado por:</p>
+<p>A: obtener un número par <span class="math inline">\(\rightarrow A = \lbrace 2,4,6 \rbrace\)</span></p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-35" class="exercise"><strong>Ejercicio 2.4  </strong></span>Experimento aleatorio: Lanzamiento de un dado. Evento aleatorio: Obtener un número impar. ¿Cuál es el conjunto correspondiente al evento aleatorio?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-36" class="exercise"><strong>Ejercicio 2.5  </strong></span>Experimento aleatorio: Elegir una carta al azar de una baraja inglesa de 52 cartas. Evento aleatorio: Obtener una carta roja. ¿Cuál es el conjunto correspondiente al evento aleatorio?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-37" class="exercise"><strong>Ejercicio 2.6  </strong></span>Experimento aleatorio: Lanzar dos monedas. Evento aleatorio: Obtener dos caras. ¿Cuál es el conjunto correspondiente al evento aleatorio?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-38" class="exercise"><strong>Ejercicio 2.7  </strong></span>Experimento aleatorio: Elegir un estudiante al azar de una clase de 30 estudiantes. Evento aleatorio: Elegir a un estudiante que tenga una altura superior a 1,75 metros. ¿Cuál es el conjunto correspondiente al evento aleatorio?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-39" class="exercise"><strong>Ejercicio 2.8  </strong></span>Experimento aleatorio: Lanzar un dardo a una diana circular (el centro y 6 sectores circulares). Evento aleatorio: Obtener un lanzamiento dentro del círculo exterior de la diana. ¿Cuál es el conjunto correspondiente al evento aleatorio?</p>
+</div>
+</div>
+<div id="probabilidad-evento" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Probabilidad de un evento<a href="probabilidad-variables.html#probabilidad-evento" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El concepto de probabilidad está asociado a la ocurrencia de un evento Sin embargo, el número que determina que tan factible es que dicho evento ocurra puede ser difícil de calcular. En este aspecto, como introducción, se hará uso de la definición clásica de probabilidad:</p>
+<center>
+<em>Probabilidad de que ocurra un evento</em> <span class="math inline">\(= \displaystyle\frac{\text{Casos favorables}}{\text{Casos totales}}\)</span>
+</center>
+<p>Por ejemplo, la probabilidad de obtener un número par al lanzar un dado una vez es:</p>
+<p>A: obtener un número par. <span class="math inline">\(\rightarrow A = \lbrace 2,4,6 \rbrace\)</span></p>
+<p><span class="math display">\[P(A) = \frac{\text{Casos favorables}}{\text{Casos totales}} = \frac{\lbrace 2,4,6 \rbrace}{\lbrace 1,2,3,4,5,6 \rbrace} = \frac{3}{6}= \frac{1}{2}\]</span>
+<strong>Nota:</strong> La probabilidad de cualquier evento siempre estará entre 0 y 1. Los casos extremos suceden cuando los casos favorables son inexistentes o son la totalidad de casos posibles respectivamente.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-40" class="exercise"><strong>Ejercicio 2.9  </strong></span>En una tienda de ropa hay 10 camisas rojas, 15 camisas azules y 20 camisas verdes. ¿Cuál es la probabilidad de que al escoger una camisa al azar, sea de color verde?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-41" class="exercise"><strong>Ejercicio 2.10  </strong></span>En un mercado hay 200 vendedores, de los cuales el 70% son hombres y el 30% son mujeres. Si se elige al azar un vendedor, ¿cuál es la probabilidad de que sea mujer?</p>
+</div>
+<div id="probabilidad-variables-elementos-eventos-propiedades" class="section level4 hasAnchor" number="2.1.3.1">
+<h4><span class="header-section-number">2.1.3.1</span> Propiedades<a href="probabilidad-variables.html#probabilidad-variables-elementos-eventos-propiedades" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A continuación se mencionan algunas propiedades relacionadas con probabilidades <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 157)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Complemento de un evento:</strong> Dado un evento <span class="math inline">\(A\)</span>, el complemento de <span class="math inline">\(A\)</span> se define como el evento que consta de todos los casos muestrales que <strong>no</strong> están en <span class="math inline">\(A\)</span>, y se denota por <span class="math inline">\(A^c\)</span>. Por ejemplo, si consideramos el experimento de lanzar el dado, y el evento de obtener un número par (<span class="math inline">\(A\)</span>), entonces, el complemento corresponde a obtener un número que no sea par (<span class="math inline">\(A^c\)</span>). De lo anterior se tiene que</p>
+<span class="math display" id="eq:complemento">\[\begin{equation}
+P(A) + P(A^c) = 1
+\tag{2.1}
+\end{equation}\]</span>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-42" class="example"><strong>Ejemplo 2.3  </strong></span>Considere el caso de un administrador de ventas que, después de revisar los informes de ventas, encuentra que el 80% de los contactos con clientes nuevos no producen ninguna venta. Si <span class="math inline">\(A\)</span> denota el evento <strong>hubo venta</strong>, entonces <span class="math inline">\(A^c\)</span> corresponde al evento de <strong>no hubo venta</strong>. Si el administrador tiene que <span class="math inline">\(P(A^c) = 0.8\)</span>, mediante la ecuación <a href="probabilidad-variables.html#eq:complemento">(2.1)</a> se ve que</p>
+<p><span class="math display">\[P(A) = 1 - P(A^c) = 1 - 0.8 = 0.2\]</span>
+La conclusión es que la probabilidad de una venta en el contacto con un cliente nuevo es de 0.2.</p>
+</div>
+</div></li>
+<li><p><strong>Unión de dos eventos:</strong> La unión de dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es el evento que contiene todos los casos muestrales que pertenecen a <span class="math inline">\(A\)</span> o <span class="math inline">\(B\)</span> o ambos. La unión se denota <span class="math inline">\(A \cup B\)</span>.</p></li>
+<li><p><strong>Intersección de dos eventos:</strong> Dados dos eventos <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, la intersección de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> es el evento que contiene los casos muestrales que pertenecen tanto a <span class="math inline">\(A\)</span> como a <span class="math inline">\(B\)</span>. La intersección se denota <span class="math inline">\(A \cap B\)</span>.</p></li>
+<li><p><strong>Ley de la adición:</strong> La ley de la adición proporciona una manera de calcular la probabilidad de que ocurra el evento <span class="math inline">\(A\)</span> o el evento <span class="math inline">\(B\)</span> o ambos. En otras palabras, esta ley se emplea para calcular la probabilidad de la unión de dos eventos. La ley de la adición se expresa de la siguiente manera.</p>
+<span class="math display" id="eq:leyadicion">\[\begin{equation}
+P(A\cup B) = P(A) + P(B) - P(A\cap B)
+\tag{2.2}
+\end{equation}\]</span>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Ejemplo 2.4  </strong></span>Considere el caso de una pequeña empresa de ensamble en la que hay 50 empleados. Se espera que todos los trabajadores terminen su trabajo a tiempo y que pase la inspección final. A veces, alguno de los empleados no satisface el estándar de desempeño, ya sea porque no termina a tiempo su trabajo o porque no ensambla bien una pieza. Al final del periodo de evaluación del desempeño, el jefe de producción encuentra que 5 de los 50 trabajadores no terminaron su trabajo a tiempo, 6 de los 50 trabajadores ensamblaron mal una pieza y 2 de los 50 trabajadores no terminaron su trabajo a tiempo y armaron mal una pieza.</p>
+<p>Sea</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+L &amp;: \text{No se termino el trabajo a tiempo}\\
+D &amp;: \text{Se armó mal la pieza}\\
+\end{split}
+\end{equation}\]</span>
+<p>La información de las frecuencias relativas lleva a las probabilidades siguientes.</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+P(L) &amp;= \frac{5}{50} = 0.1\\
+P(D) &amp;= \frac{6}{50} = 0.12\\
+P(L\cap D) &amp;= \frac{2}{50} = 0.04\\
+\end{split}
+\end{equation}\]</span>
+<p>Después de analizar los datos del desempeño, el jefe de producción decide dar una calificación baja al desempeño de los trabajadores que no terminaron a tiempo su trabajo o que armaron mal alguna pieza; por tanto, el evento de interés es <span class="math inline">\(L \cup D\)</span>. ¿Cuál es la probabilidad de que el jefe de producción de a un trabajador una calificación baja de desempeño?</p>
+<p>Esta pregunta se refiere a la unión de dos eventos. En concreto, se desea hallar <span class="math inline">\(P(L\cup D)\)</span>, usando la ecuación <a href="probabilidad-variables.html#eq:leyadicion">(2.2)</a> se tiene</p>
+<p><span class="math display">\[P(L\cup D) = P(L) + P(D) - P(L\cap D)\]</span>
+Como conoce las tres posibilidades del lado derecho de la expresión, se tiene</p>
+<p><span class="math display">\[P(L\cup D) = 0.1 + 0.12 - 0.04 = 0.18\]</span>
+Estos cálculos indican que la probabilidad de que un empleado elegido al azar obtenga una calificación baja por su desempeño es 0.18.</p>
+</div>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-44" class="example"><strong>Ejemplo 2.5  </strong></span>Considere un estudio reciente efectuado por el director de personal de una empresa de software. En el estudio encontró que el 30% de los empleados que se van de la empresa antes de dos años, lo hacen por estar insatisfechos con el salario, 20% se van de la empresa por estar descontentos con el trabajo y 12% por estar insatisfechos con las dos cosas, el salio y el trabajo. ¿Cuál es la probabilidad de que un empleado que se vaya de la empresa en menos de dos años lo haga por estar insatisfecho con el salario, con el trabajo o con las dos cosas?</p>
+<p>Sea</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+S &amp;: \text{El empleado se va de la empresa por insatisfacción con el salario}\\
+W &amp;: \text{El empleado se va de la empresa por insatisfacción con el trabajo}\\
+\end{split}
+\end{equation}\]</span>
+<p>Se tiene <span class="math inline">\(P(S) = 0.3\)</span>, <span class="math inline">\(P(W) = 0.2\)</span> y <span class="math inline">\(P(S\cap W) = 0.12\)</span>. Al aplicar la ecuación <a href="probabilidad-variables.html#eq:leyadicion">(2.2)</a>, de la ley de la adición, se tiene</p>
+<p><span class="math display">\[P(S\cup W) = P(S) + P(W) - P(S\cap W) = 0.3+0.2-0.12 = 0.38\]</span>
+Así, la probabilidad de que un empleado se vaya de la empresa por el salario o por el trabajo es 0.38.</p>
+</div>
+</div></li>
+<li><p><strong>Eventos mutuamente excluyentes:</strong> Se dice que dos eventos son mutuamente excluyentes si, cuando un evento ocurre, el otro no puede ocurrir. Por lo tanto, para que A y B sean mutuamente excluyentes, se requiere que su intersección sea nula, es decir,</p>
+<span class="math display" id="eq:excluyentes">\[\begin{equation}
+\text{Si } A \cap B = \emptyset \text{, entonces, } P(A \cap B) = 0.
+\tag{2.3}
+\end{equation}\]</span></li>
+<li><p><strong>Ley de la adición para eventos mutuamente excluyentes:</strong> En caso de que se cumplan las condiciones mencionadas en la ecuación <a href="probabilidad-variables.html#eq:excluyentes">(2.3)</a>, se tiene el siguiente resultado para la ecuación <a href="probabilidad-variables.html#eq:leyadicion">(2.2)</a>.</p>
+<span class="math display" id="eq:leyadicion2">\[\begin{equation}
+\begin{split}
+P(A\cup B) &amp;= P(A) + P(B) - P(A\cap B)\\
+&amp;= P(A) + P(B) - 0\\
+P(A\cup B) &amp;= P(A) + P(B)\\
+\end{split}
+\tag{2.4}
+\end{equation}\]</span>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-45" class="exercise"><strong>Ejercicio 2.11  </strong></span>Suponga que tiene un espacio muestral con cinco resultados experimentales que son igualmente posibles: <span class="math inline">\(E_1,E_2,E_3,E_4\)</span> y <span class="math inline">\(E_5\)</span>. Sean</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+A &amp;= \lbrace E_1, E_2 \rbrace\\
+B &amp;= \lbrace E_3, E_4 \rbrace\\
+C &amp;= \lbrace E_2, E_3, E_5 \rbrace\\
+\end{split}
+\end{equation}\]</span>
+<ol style="list-style-type: lower-alpha">
+<li>Calcular <span class="math inline">\(P(A)\)</span>, <span class="math inline">\(P(B)\)</span> y <span class="math inline">\(P(C)\)</span>.</li>
+<li>Calcular <span class="math inline">\(P(A \cup B)\)</span>. ¿<span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son mutuamente excluyentes?</li>
+<li>Determinar <span class="math inline">\(A^c\)</span>, <span class="math inline">\(C^c\)</span>, y calcular <span class="math inline">\(P(A^c)\)</span>, <span class="math inline">\(P(C^c)\)</span>.</li>
+<li>Determinar <span class="math inline">\(A\cup B^c\)</span>, y calcular <span class="math inline">\(P(A\cup B^c)\)</span>.</li>
+<li>Calcular <span class="math inline">\(P(B\cup C)\)</span>.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-46" class="exercise"><strong>Ejercicio 2.12  </strong></span>Datos sobre las 30 principales acciones y fondos balanceados proporcionan los rendimientos porcentuales anuales y a 5 años para el periodo que termina el 31 de marzo de 2000 (<em>The Wall Street Journal</em>, 10 de abril de 2000). Suponga que considera altos un rendimiento anual arriba de 50% y un rendimiento a cinco años arriba de 300%. Nueve de los fondos tienen un rendimiento anual arriba de 50%, siete de los fondos a cinco años lo tienen arriba de 300%, y cinco de los fondos tienen tanto un rendimiento anual arriba de 50% como un rendimiento a cinco años arriba de 300%.</p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de un rendimiento anual alto y cuál es la probabilidad de un rendimiento a cinco años alto?</li>
+<li>¿Cuál es la probabilidad de ambos, un rendimiento anual alto y un rendimiento a cinco años alto?</li>
+<li>¿Cuál es la probabilidad de que no haya un rendimiento anual alto ni un rendimiento a cinco años alto?</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-47" class="exercise"><strong>Ejercicio 2.13  </strong></span>La oficina de Censos de Estados Unidos cuenta con datos sobre la cantidad de adultos jóvenes entre 18 y 24 años, que viven en casa de sus padres. Sea</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+M &amp;= \text{Aldulto joven que vive en casa de sus padres}\\
+F &amp;= \text{Aldulta joven que vive en casa de sus padres}\\
+\end{split}
+\end{equation}\]</span>
+<p>Si toma al azar un adulto joven y una adulta joven, los datos de dicha oficina permiten concluir que <span class="math inline">\(P(M) = 0.56\)</span> y <span class="math inline">\(P(F) = 0.42\)</span>. La probabilidad de que ambos vivan encasa de sus padres es <span class="math inline">\(0.24\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li>¿Cuál es la probabilidad de que al menos uno de dos adultos jóvenes seleccionados viva en casa de sus padres?</li>
+<li>¿Cuál es la probabilidad de que los dos adultos jóvenes seleccionados vivan en casa de sus padres?</li>
+</ol>
+</div></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Variable aleatoria<a href="probabilidad-variables.html#probabilidad-variable-aleatoria" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una variable aleatoria proporciona un medio para describir los resultados experimentales utilizando valores numéricos, es decir, una variable aleatoria asocia un valor numérico a cada uno de los resultados experimentales. Una variable aleatoria puede ser <em>discreta</em> o <em>continua</em>, depende del tipo de valores numéricos que asuma. <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 187)</span></p>
+<ul>
+<li>Una variable aleatoria se denomina <strong>discreta</strong> si asume un número finito de valores o una sucesión infinita de valores tales como <span class="math inline">\(0,1,2,\ldots\)</span>. Consideremos el siguiente experimento como ejemplo: un contador presenta el examen para certificarse como contador público. El examen tiene cuatro partes. Defina una variable aleatoria <span class="math inline">\(X\)</span> como <span class="math inline">\(X =\)</span> <em>número de partes del examen aprobadas</em>. Esta es una variable aleatoria discreta porque puede tomar el número finito de valores <span class="math inline">\(0,1,2,3\)</span> o <span class="math inline">\(4\)</span>. Otros ejemplos se pueden apreciar en la tabla <a href="probabilidad-variables.html#tab:variablesdiscretas">2.2</a>.</li>
+</ul>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:variablesdiscretas">Tabla 2.2: </span>Ejemplos de variables aleatorias discretas
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Experimento
+</th>
+<th style="text-align:left;">
+Variable aleatoria (X)
+</th>
+<th style="text-align:center;">
+Valores posibles para la variable aleatoria
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Llamar a cinco clientes
+</td>
+<td style="text-align:left;">
+Número de clientes que hacen un pedido
+</td>
+<td style="text-align:center;">
+0,1,2,3,4,5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Inspeccionar un envío de 50 radios
+</td>
+<td style="text-align:left;">
+Número de radios que tienen algún defecto
+</td>
+<td style="text-align:center;">
+0,1,2,…,49,50
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hacerse cargo de un restaurante durante el día
+</td>
+<td style="text-align:left;">
+Número de clientes
+</td>
+<td style="text-align:center;">
+0,1,2,3,…
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vender un automóvil
+</td>
+<td style="text-align:left;">
+Sexo del cliente
+</td>
+<td style="text-align:center;">
+0 si el hombre, 1 si es mujer
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Una variable aleatoria se denomina <strong>continua</strong> si puede tomar cualquier valor numéricos dentro de un intervalo. Los resultados experimentales basados en escalas de medición tales como tiempo, peso, distancia y temperatura puede ser descritos por variables aleatorias continuas. Consideremos el siguiente experimento como ejemplo: observar las llamadas telefónicas que llegan a la oficina de atención de una importante empresa de seguros. La variable aleatoria que interesa es <span class="math inline">\(X =\)</span> <em>tiempo en minutos entre dos llamadas consecutivas</em>. Esta variable aleatoria puede tomar cualquier valor en el intervalo <span class="math inline">\([0, \infty)\)</span>. En efecto, <span class="math inline">\(x\)</span> puede tomar un número infinito de valores, entre los cuales se encuentra valores como 1.25 minutos 3.4562 minutos, 4.33333 minutos, etc. En la tabla <a href="probabilidad-variables.html#tab:variablescontinuas">2.3</a> aparecen otros ejemplos de variables aleatorias continuas.</li>
+</ul>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:variablescontinuas">Tabla 2.3: </span>Ejemplos de variables aleatorias continuas
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Experimento
+</th>
+<th style="text-align:left;">
+Variable aleatoria (X)
+</th>
+<th style="text-align:center;">
+Valores posibles para la variable aleatoria
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Operar un banco
+</td>
+<td style="text-align:left;">
+Tiempo en minutos entre la llegada de los clientes
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(x\geq 0\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Llenar una lata de bebida (máximo 12.1 onzas)
+</td>
+<td style="text-align:left;">
+Cantidad de onzas
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(0\leq x \leq 12.1\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Construir una biblioteca
+</td>
+<td style="text-align:left;">
+Porcentaje del proyecto terminado en seis meses
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(0\leq x \leq 100\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Probar un proceso químico nuevo
+</td>
+<td style="text-align:left;">
+Temperatura a la que tiene lugar la reacción deseada (mín. 150 grados F, máx. 212 grados F)
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(150\leq x \leq 212\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-48" class="exercise"><strong>Ejercicio 2.14  </strong></span>A continuación se da una serie de experimentos y su variable aleatoria correspondiente. En cada caso determine qué valores toma la variable aleatoria y diga si se trata de una variable aleatoria discreta o continua.</p>
+</div>
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Experimento
+</th>
+<th style="text-align:left;">
+Variable aleatoria (X)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<ol style="list-style-type: lower-alpha">
+<li></td>
+<td style="text-align:left;">
+Hacer un examen con 20 preguntas
+</td>
+<td style="text-align:left;">
+Número de preguntas contestadas correctamente
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: lower-alpha">
+<li></td>
+<td style="text-align:left;">
+Obervar los automóviles que llegan a una caseta de peaje en 1 hora
+</td>
+<td style="text-align:left;">
+Número de automóviles que llegan a la caseta de peaje
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: lower-alpha">
+<li></td>
+<td style="text-align:left;">
+Revisar 50 declaraciones de impuestos
+</td>
+<td style="text-align:left;">
+Número de declaraciones que tienen algún error
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: lower-alpha">
+<li></td>
+<td style="text-align:left;">
+Observar trabajar a un empleado
+</td>
+<td style="text-align:left;">
+Número de horas no productivas en una jornada de 8 horas
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: lower-alpha">
+<li></td>
+<td style="text-align:left;">
+Pesar un envío
+</td>
+<td style="text-align:left;">
+Número de libras
+</td>
+</tr>
+</tbody>
+</table></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+<div id="probabilidad-variable-aleatoria-discreta" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Variables aleatorias discretas (v.a.d)<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La distribución de probabilidad de una variable aleatoria discreta describe como se distribuyen las probabilidades entre los valores de la variable aleatoria. En el caso de una variable aleatoria discreta <span class="math inline">\(x\)</span>, la distribución de probabilidad está definida por una función de probabilidad o también llamada <strong>función de masa de probabilidad</strong> (fmp) <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 90)</span>.</p>
+<div id="probabilidad-variable-aleatoria-discreta-fmp" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Función de masa de probabilidad<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fmp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consideremos el siguiente ejemplo, una empresa acaba de adquirir cuatro impresoras láser y sea <span class="math inline">\(X\)</span> el número entre estas que requieren servicio durante el periodo de garantía. Los posibles valores de <span class="math inline">\(X\)</span> son entonces 0, 1, 2, 3 y 4. La distribución de probabilidad diría cómo está subdividida la probabilidad de uno entre los cinco posibles valores: ¿cuánta probabilidad está asociada con el valor 0 de <span class="math inline">\(X\)</span>, cuánta está adjudicada con 1 de <span class="math inline">\(X\)</span> y así sucesivamente?. Se utiliza la siguiente notación para las probabilidades:</p>
+<p><span class="math display">\[p(0) = \text{la probabilidad del valor 0 de } X = P(X = 0)\]</span></p>
+<p><span class="math display">\[p(1) = \text{la probabilidad del valor 1 de } X = P(X = 1)\]</span></p>
+<p>y así sucesivamente. En general, <span class="math inline">\(p(x)\)</span> denotará la probabilidad asignada al valor de <span class="math inline">\(x\)</span>.</p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-49" class="example"><strong>Ejemplo 2.6  </strong></span>Una cierta gasolinera tiene seis bombas. Sea <span class="math inline">\(X\)</span> el número de bombas que están bajo servicio a una hora particular del día. Suponga que la distribución de probabilidad de <span class="math inline">\(X\)</span> es como se detalla en la siguiente tabla; la primera fila de la tabla contiene los posibles valores de <span class="math inline">\(X\)</span> y la segunda la probabilidad de dicho valor.</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(p(x)\)</span>
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+<td style="text-align:center;">
+0.15
+</td>
+<td style="text-align:center;">
+0.25
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.15
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ahora, utilizando propiedades de probabilidad elemental (revisar las propiedades mencionadas en la sección <a href="probabilidad-variables.html#probabilidad-evento">2.1.3</a>) es posible calcular otras probabilidades de interés. Por ejemplo, la probabilidad de que a lo más dos bombas estén en servicio es</p>
+<span class="math display">\[\begin{equation}
+  \notag
+  \begin{split}
+    P(X\leq 2) &amp;= P(X = 0 \text{ o } 1 \text{ o } 2) \\
+    &amp; = p(0) + p(1) + p(2) \\
+    &amp; = 0.05 + 0.1 + 0.15 = 0.3
+  \end{split}
+\end{equation}\]</span>
+<p>Por otro lado, la probabilidad de que entre 2 y 4 bombas (inclusive ambas) estén en servicio es</p>
+<span class="math display">\[\begin{equation}
+  \notag
+  \begin{split}
+    P(2\leq X\leq 4) &amp;= P(X = 2 \text{ o } 3 \text{ o } 4)\\
+    &amp; = p(2) + p(3) + p(4) \\
+    &amp; = 0.15 + 0.25 + 0.2 = 0.6
+  \end{split}
+\end{equation}\]</span>
+</div>
+</div>
+<p>La figura <a href="probabilidad-variables.html#fig:plotmasa">2.1</a> está reproducida mediante R, con la finalidad de visualizar la función de masa asociada al ejemplo anterior.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="probabilidad-variables.html#cb45-1" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">6</span>, <span class="co"># Valores de X</span></span>
+<span id="cb45-2"><a href="probabilidad-variables.html#cb45-2" tabindex="-1"></a>                <span class="st">&quot;p&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.05</span>,<span class="fl">0.10</span>,<span class="fl">0.15</span>,<span class="fl">0.25</span>,<span class="fl">0.20</span>,<span class="fl">0.15</span>,<span class="fl">0.10</span>)) <span class="co"># Probabilidades asociadas</span></span>
+<span id="cb45-3"><a href="probabilidad-variables.html#cb45-3" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb45-4"><a href="probabilidad-variables.html#cb45-4" tabindex="-1"></a>  <span class="at">data =</span> df, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb45-5"><a href="probabilidad-variables.html#cb45-5" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="co"># Variable del eje X</span></span>
+<span id="cb45-6"><a href="probabilidad-variables.html#cb45-6" tabindex="-1"></a>      <span class="at">y =</span> p)) <span class="sc">+</span> <span class="co"># Variable del eje Y</span></span>
+<span id="cb45-7"><a href="probabilidad-variables.html#cb45-7" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co"># Tipo de gráfico</span></span>
+<span id="cb45-8"><a href="probabilidad-variables.html#cb45-8" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="co"># Añadimos segmentos</span></span>
+<span id="cb45-9"><a href="probabilidad-variables.html#cb45-9" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="co"># Coordenada X de los puntos de inicio</span></span>
+<span id="cb45-10"><a href="probabilidad-variables.html#cb45-10" tabindex="-1"></a>        <span class="at">y =</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="fu">length</span>(x)), <span class="co"># Coordenada Y de los puntos de inicio</span></span>
+<span id="cb45-11"><a href="probabilidad-variables.html#cb45-11" tabindex="-1"></a>        <span class="at">xend =</span> x, <span class="co"># Coordenada X de los puntos de llegada</span></span>
+<span id="cb45-12"><a href="probabilidad-variables.html#cb45-12" tabindex="-1"></a>        <span class="at">yend =</span> p)) <span class="sc">+</span> <span class="co"># Coordenada Y de los puntos de llegada</span></span>
+<span id="cb45-13"><a href="probabilidad-variables.html#cb45-13" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, df<span class="sc">$</span>p)) <span class="sc">+</span> <span class="co"># Puntos visualizados del eje Y</span></span>
+<span id="cb45-14"><a href="probabilidad-variables.html#cb45-14" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> df<span class="sc">$</span>x) <span class="sc">+</span> <span class="co"># Puntos visualizados del eje Y</span></span>
+<span id="cb45-15"><a href="probabilidad-variables.html#cb45-15" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Edición de títulos</span></span>
+<span id="cb45-16"><a href="probabilidad-variables.html#cb45-16" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Probabilidades de cada valor&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb45-17"><a href="probabilidad-variables.html#cb45-17" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Valores del experimento (x)&quot;</span>, <span class="co"># Título de eje X</span></span>
+<span id="cb45-18"><a href="probabilidad-variables.html#cb45-18" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Probabilidades&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:plotmasa"></span>
+<img src="est1+descriptiva_files/figure-html/plotmasa-1.png" alt="Función de masa" width="384" />
+<p class="caption">
+Figura 2.1: Función de masa
+</p>
+</div>
+<p>Cabe mencionar que cualquier función de masa de probabilidad requiere cumplir las siguientes condiciones</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(p(x) &gt; 0, \forall x \in X\)</span></li>
+<li><span class="math inline">\(\displaystyle\sum_{\text{todas las x posibles}} p(x) = 1\)</span></li>
+</ol>
+<p>para que se válida.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-50" class="exercise"><strong>Ejercicio 2.15  </strong></span>Seis lotes de componentes están listos para ser enviados por un proveedor. El número de componentes defectuosos en cada lote es como sigue:</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Lote
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:left;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Número de defectuosos
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:left;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Uno de estos lotes tiene que ser seleccionado al azar para ser enviado a un cliente particular. Sea <span class="math inline">\(X\)</span> el número de componentes defectuosos en el lote seleccionado. Los tres posibles valores de <span class="math inline">\(X\)</span> son 0, 1 y 2.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Determine los la probabilidad para cada uno de los valores de <span class="math inline">\(X\)</span>. Interprete.</li>
+<li>Verifique las condiciones de la función de masa de probabilidad asociada al experimento.</li>
+<li>Grafique la función de masa asociada.</li>
+</ol>
+<div class="exercise">
+<p><span id="exr:telefonica" class="exercise"><strong>Ejercicio 2.16  </strong></span>Una empresa de ventas en línea dispone de seis líneas telefónicas. Sea <span class="math inline">\(X\)</span> el número de líneas en uso en un tiempo especificado. Suponga que la función de masa de probabilidad de <span class="math inline">\(X\)</span> es la que se da en la tabla adjunta.</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(p(x)\)</span>
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+<td style="text-align:center;">
+0.15
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.25
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.06
+</td>
+<td style="text-align:center;">
+0.04
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Grafique la función de masa asociada, y luego calcule la probabilidad de cada uno de los siguientes eventos.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Cuando mucho tres líneas están en uso.</li>
+<li>Menos de tres líneas están en uso.</li>
+<li>Por lo menos tres líneas están en uso.</li>
+<li>Entre dos y cinco líneas, inclusive, están en uso.</li>
+<li>Entre dos y cuatro líneas, inclusive, no está en uso.</li>
+<li>Por lo menos cuatro líneas no están en uso.</li>
+</ol>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-discreta-fda" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Función de distribución acumulada<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para algún valor fijo de <span class="math inline">\(x\)</span>, a menudo se desea calcular la probabilidad de que el valor observado de <span class="math inline">\(X\)</span> sea cuando mucho <span class="math inline">\(x\)</span> (<span class="math inline">\(X \leq x\)</span>). Por ejemplo, consideremos la siguiente función de masa.</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+P(X = x) = p(x) = \left\lbrace
+\begin{matrix}
+0.5 &amp; x = 0\\
+0.167 &amp; x = 1\\
+0.333 &amp; x = 2\\
+0 &amp; \text{en otro caso}\\
+\end{matrix}
+\right.
+\end{split}
+\end{equation}\]</span>
+<p>La probabilidad de que <span class="math inline">\(X\)</span> sea cuando mucho de 1 es entonces</p>
+<p><span class="math display">\[P(X \leq 1) = p(0) + p(1) = 0.5 + 0.167 = 0.667\]</span>
+Asimismo,</p>
+<p><span class="math display">\[P(X \leq 0) = P(X = 0) = 0.5.\]</span></p>
+<p>La <strong>función de distribución acumulada</strong> (fda) <span class="math inline">\(F(x)\)</span> de una variable aleatoria discreta <span class="math inline">\(X\)</span> con función de masa de probabilidad <span class="math inline">\(P(X=x)\)</span> se define como</p>
+<span class="math display" id="eq:fdadiscreta">\[\begin{equation}
+F(x) = P(X\leq x) =\displaystyle\sum_{y\leq x}P(X=y)
+\tag{2.5}
+\end{equation}\]</span>
+<p>Para cualquier número <span class="math inline">\(x\)</span>, <span class="math inline">\(F(X)\)</span> es la probabilidad de que el valor observado de <span class="math inline">\(X\)</span> será cuando mucho (como máximo) <span class="math inline">\(x\)</span>. <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 95)</span></p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-51" class="example"><strong>Ejemplo 2.7  </strong></span>Consideremos un grupo de cinco donadores de sangre potenciales, <span class="math inline">\(a, b, c, d\)</span> y <span class="math inline">\(e\)</span>, de los cuales solo <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> tienen sangre tipo O+. Se determinará en orden aleatorio el tipo de sangre con cinco muestras, una de cada individuo hasta que se identifique un individuo O+. Sea la variable aleatoria <span class="math inline">\(Y =\)</span> <em>el número de exámenes de sangre para identificar un individuo O+</em>. Entonces la función de masa de probabilidad de <span class="math inline">\(Y\)</span> es</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(y\)</span>
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(p(y)\)</span>
+</td>
+<td style="text-align:center;">
+0.4
+</td>
+<td style="text-align:center;">
+0.3
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para determinar la función de distribución acumulada <span class="math inline">\(F(Y)\)</span>, lo primero es determinar el valor de <span class="math inline">\(F(Y)\)</span> para cada uno de los valores posibles del conjunto (<span class="math inline">\(1,2,3,4\)</span>):</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+F(1) &amp;= P(Y\leq 1) = P(Y = 1) = p(1) = 0.4\\
+F(2) &amp;= P(Y\leq 2) = P(Y = 1 \text{ o } 2) = p(1) + p(2) = 0.7\\
+F(3) &amp;= P(Y\leq 3) = P(Y = 1 \text{ o } 2 \text{ o } 3) = p(1) + p(2) + p(3) = 0.9\\
+F(4) &amp;= P(Y\leq 4) = P(Y = 1 \text{ o } 2 \text{ o } 3 \text{ o } 4) = p(1) + p(2) + p(3) + p(4) = 1\\
+\end{split}
+\end{equation}\]</span>
+<p>Ahora con cualquier otro número <span class="math inline">\(y\)</span>, <span class="math inline">\(F(Y)\)</span> será igual al valor de <span class="math inline">\(F\)</span> con el valor más próximo posible de <span class="math inline">\(Y\)</span> a la izquierda de <span class="math inline">\(y\)</span>. Por ejemplo, <span class="math inline">\(F(2.7) = P(Y\leq 2.7) = p(Y\leq 2) = 0.7\)</span> y <span class="math inline">\(F(3.9999) = F(3) = 0.9\)</span>. La función de distribución acumulativa es por lo tanto</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+F(y) = \left\lbrace
+\begin{matrix}
+0 &amp; \text{si } &amp; y &lt; 1\\
+0.4 &amp; \text{si } &amp; 1\leq y &lt; 2\\
+0.7 &amp; \text{si } &amp; 2\leq y &lt; 3\\
+0.9 &amp; \text{si } &amp; 3\leq y &lt; 4\\
+1 &amp; \text{si } &amp; y\geq 4\\
+\end{matrix}
+\right.
+\end{split}
+\end{equation}\]</span>
+<p>La siguiente figura muestra la gráfica de <span class="math inline">\(F(y)\)</span>.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="probabilidad-variables.html#cb46-1" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">&quot;y&quot;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="co"># Valores de Y</span></span>
+<span id="cb46-2"><a href="probabilidad-variables.html#cb46-2" tabindex="-1"></a>                <span class="st">&quot;p&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">0.4</span>,<span class="fl">0.7</span>,<span class="fl">0.9</span>,<span class="dv">1</span>)) <span class="co"># Probabilidades acumuladas asociadas</span></span>
+<span id="cb46-3"><a href="probabilidad-variables.html#cb46-3" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb46-4"><a href="probabilidad-variables.html#cb46-4" tabindex="-1"></a>  <span class="at">data =</span> df, <span class="co"># Base de datos</span></span>
+<span id="cb46-5"><a href="probabilidad-variables.html#cb46-5" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> y, <span class="co"># Nombre de la variable a graficar en el eje X</span></span>
+<span id="cb46-6"><a href="probabilidad-variables.html#cb46-6" tabindex="-1"></a>      <span class="at">y =</span> p)) <span class="sc">+</span> <span class="co"># Nombre de la variable a graficar en el eje Y</span></span>
+<span id="cb46-7"><a href="probabilidad-variables.html#cb46-7" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="co"># Generar segmentos</span></span>
+<span id="cb46-8"><a href="probabilidad-variables.html#cb46-8" tabindex="-1"></a>    <span class="fu">aes</span>(</span>
+<span id="cb46-9"><a href="probabilidad-variables.html#cb46-9" tabindex="-1"></a>      <span class="at">x =</span> y, <span class="co"># Coordenada X de puntos de inicio de los segmentos</span></span>
+<span id="cb46-10"><a href="probabilidad-variables.html#cb46-10" tabindex="-1"></a>      <span class="at">y =</span> p, <span class="co"># Coordenada Y de puntos de inicio de los segmentos</span></span>
+<span id="cb46-11"><a href="probabilidad-variables.html#cb46-11" tabindex="-1"></a>      <span class="at">xend =</span> <span class="fu">c</span>(y[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>)], y[<span class="fu">length</span>(y)] <span class="sc">+</span> <span class="fu">mean</span>(y)<span class="sc">/</span><span class="dv">3</span>), <span class="co"># Coordenada X de puntos finales de los segmentos</span></span>
+<span id="cb46-12"><a href="probabilidad-variables.html#cb46-12" tabindex="-1"></a>      <span class="at">yend =</span> p <span class="co"># Coordenada X de puntos finales de los segmentos</span></span>
+<span id="cb46-13"><a href="probabilidad-variables.html#cb46-13" tabindex="-1"></a>    )</span>
+<span id="cb46-14"><a href="probabilidad-variables.html#cb46-14" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb46-15"><a href="probabilidad-variables.html#cb46-15" tabindex="-1"></a>  <span class="fu">geom_segment</span>( <span class="co"># Código que genera la flecha dentro del gráfico</span></span>
+<span id="cb46-16"><a href="probabilidad-variables.html#cb46-16" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> y[<span class="fu">length</span>(y)], <span class="at">y =</span> p[<span class="fu">length</span>(y)],</span>
+<span id="cb46-17"><a href="probabilidad-variables.html#cb46-17" tabindex="-1"></a>        <span class="at">xend =</span> <span class="fu">c</span>(y[<span class="fu">length</span>(y)] <span class="sc">+</span> <span class="fu">mean</span>(y)<span class="sc">/</span><span class="dv">3</span>), <span class="at">yend =</span> p[<span class="fu">length</span>(p)]),</span>
+<span id="cb46-18"><a href="probabilidad-variables.html#cb46-18" tabindex="-1"></a>    <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">&quot;cm&quot;</span>)), <span class="co"># Argumento que permite dar la forma de flecha al último segmento</span></span>
+<span id="cb46-19"><a href="probabilidad-variables.html#cb46-19" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb46-20"><a href="probabilidad-variables.html#cb46-20" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span> <span class="co"># Punto de inicio de los segmentos</span></span>
+<span id="cb46-21"><a href="probabilidad-variables.html#cb46-21" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, df<span class="sc">$</span>p)) <span class="sc">+</span> <span class="co"># Edición de los límites y puntos del eje Y</span></span>
+<span id="cb46-22"><a href="probabilidad-variables.html#cb46-22" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> df<span class="sc">$</span>y) <span class="sc">+</span> <span class="co"># Puntos visualizados en el eje X</span></span>
+<span id="cb46-23"><a href="probabilidad-variables.html#cb46-23" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Edición de títulos</span></span>
+<span id="cb46-24"><a href="probabilidad-variables.html#cb46-24" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Probabilidad acumulada&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb46-25"><a href="probabilidad-variables.html#cb46-25" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Valores de y&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb46-26"><a href="probabilidad-variables.html#cb46-26" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;F(y)&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-37"></span>
+<img src="est1+descriptiva_files/figure-html/unnamed-chunk-37-1.png" alt="Función de distribución acumulada" width="480" />
+<p class="caption">
+Figura 2.2: Función de distribución acumulada
+</p>
+</div>
+<p>Para una variable aleatorio discreta <span class="math inline">\(X\)</span>, la gráfica de <span class="math inline">\(F(X)\)</span> mostrará un saltó con cada valor posible de <span class="math inline">\(X\)</span> y será plana entre los valores posibles. Tal gráfica se conoce como función escalonada.</p>
+</div>
+</div>
+<p>Una propiedad que surge de la función de distribución acumulada es que, para dos números cualesquiera <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> con <span class="math inline">\(a\leq b\)</span>.</p>
+<span class="math display" id="eq:fda2">\[\begin{equation}
+P(a\leq X \leq b) = P(X \leq b) - P(X &lt; a)
+\tag{2.6}
+\end{equation}\]</span>
+<p>En caso de que se desee calcular <span class="math inline">\(P(a &lt; X \leq b)\)</span>, la propiedad sería</p>
+<span class="math display" id="eq:fda3">\[\begin{equation}
+P(a &lt; X \leq b) = P(X \leq b) - P(X \leq a) = F(a) - F(b)
+\tag{2.7}
+\end{equation}\]</span>
+<p>De lo anterior se deduce, que dependiendo de los signos de desigualdad, cambiará la forma en la se escribe la propiedad.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-52" class="exercise"><strong>Ejercicio 2.17  </strong></span>Remítase al ejercicio <a href="probabilidad-variables.html#exr:telefonica">2.16</a> y calcule y trace la gráfica de la función de distribución acumulada <span class="math inline">\(F(X)\)</span>. Luego, utilícela para calcular las probabilidades de los eventos dados en los ítem a. y d. de dicho problema. Además, grafique la función de distribución acumulada.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-53" class="exercise"><strong>Ejercicio 2.18  </strong></span>Una organización de protección al consumidor que habitualmente evalúa automóviles nuevos reporta el número de defectos importantes encontrados en un carro seleccionado al azar de cierto tipo. La función de distribución acumulativa de <span class="math inline">\(Y\)</span> es la siguiente.</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+F(y) = \left\lbrace
+\begin{matrix}
+0 &amp; \text{si } &amp; y &lt; 0\\
+0.06 &amp; \text{si } &amp; 0\leq y &lt; 1\\
+0.19 &amp; \text{si } &amp;  1\leq y &lt; 2\\
+0.39 &amp; \text{si } &amp; 2\leq y &lt; 3\\
+0.67 &amp; \text{si } &amp; 3\leq y &lt; 4\\
+0.92 &amp; \text{si } &amp; 4\leq y &lt; 5\\
+0.97 &amp; \text{si } &amp; 5\leq y &lt; 6\\
+1 &amp; \text{si } &amp; y\geq 6\\
+\end{matrix}
+\right.
+\end{split}
+\end{equation}\]</span>
+<ol style="list-style-type: decimal">
+<li><p>Calcule las siguientes probabilidades directamente con la función de distribución acumulada:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(p(2)\)</span>, es decir, <span class="math inline">\(P(Y=2)\)</span></li>
+<li><span class="math inline">\(P(Y&gt;3)\)</span></li>
+<li><span class="math inline">\(P(2\leq Y\leq 5)\)</span></li>
+<li><span class="math inline">\(P(2 &lt; Y &lt; 5)\)</span></li>
+</ol></li>
+<li><p>¿Cuál es la función de masa de probabilidad de <span class="math inline">\(X\)</span>? Grafique la función de masa de probabilidad, y la función de distribución acumulada.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-54" class="exercise"><strong>Ejercicio 2.19  </strong></span>En una fábrica de productos electrónicos, se sabe que la probabilidad de que un artículo sea defectuoso sigue una distribución de probabilidad de masa con los siguientes valores:</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Número de defectos
+</th>
+<th style="text-align:center;">
+Probabilidad
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0.50
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0.30
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+0.08
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+0.10
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A continuación:</p>
+<ol style="list-style-type: decimal">
+<li>Determine la función de masa de probabilidad.</li>
+<li>Determine la función de distribución acumulada.</li>
+<li>Si se selecciona un artículo al azar. Utilizando la función de distribución acumulada calcule:
+<ol style="list-style-type: lower-alpha">
+<li>La probabilidad de que tenga cuando mucho de 2 defectos.</li>
+<li>La probabilidad de que tenga más de 0.4 defectos.</li>
+<li>La probabilidad de que tenga entre 1 y 4 defectos.</li>
+<li>La probabilidad de que tenga cuando menos 2.7 defectos.</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-discreta-distribuciones" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Distribuciones<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-distribuciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, se dan a conocer algunas de las distribución de probabilidad discreta más utilizadas. Cabe mencionar, que existen muchas otras distribuciones, por lo que se invita al estudiante a informarse de ellas en caso de que lo requiera.</p>
+<!-- #### Uniforme -->
+<!-- El ejemplo más sencillo de de una distribución de probabilidad discreta dada mediante una fórmula es la **distribución uniforme discreta** [@anderson, página 191]. Su función de masa de probabilidad está definida por  -->
+<!-- ```{=tex} -->
+<!-- \begin{equation} -->
+<!-- P(X=x) = \dfrac{1}{n} -->
+<!-- (\#eq:uniformediscreta) -->
+<!-- \end{equation} -->
+<!-- ``` -->
+<!-- donde -->
+<!-- $$n = \text{número de valores que puede tomar la variable aleatoria.}$$ -->
+<!-- :::: {.blackbox} -->
+<!-- ::: {.example} -->
+<!-- Consideremos el experimento de lanzar un dado de seis caras. Se define la variable aleatoria $X$ como el número de puntos en la cara del dado que cae hacia arriba. En este experimento la variable aleatoria toma 6 valores posibles ($n = 6$). Por lo tanto, la función de masa de probabilidad de esta variable aleatoria uniforme discreta es -->
+<!-- $$P(X = x)=1/6 \text{, } x = 1,2,3,4,5,6$$ -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- La figura \@ref(fig:simUD), muestra una simulación de la función de masa de probabilidad de la distribución uniforme discreta, dependiendo del número de valores que puede tomar la variable aleatoria ($n$). -->
+<!-- ```{r simUD, fig.align="center", fig.width=7, fig.height=4, fig.cap="Simulación de la distribución Uniforme discreta", echo=FALSE} -->
+<!-- u = function(n, titulo){ -->
+<!--   aux = data.frame("x" = seq(1:n), "y" = 1/n) -->
+<!--   g = ggplot(data = aux, aes(x = x, y = y)) + -->
+<!--     geom_point() +  -->
+<!--     geom_segment(aes(x = x, xend = x, y = 0, yend = y)) +  -->
+<!--     labs(x = "Observación", y = "Probabilidad", title = titulo) +  -->
+<!--     scale_y_continuous(limits = c(0,1)) +  -->
+<!--     scale_x_continuous(breaks = 1:n) -->
+<!--   return(g) -->
+<!-- } -->
+<!-- grid.arrange(u(2, "2 observaciones"), -->
+<!--              u(5, "5 observaciones"), -->
+<!--              u(10, "10 observaciones"), -->
+<!--              u(20, "20 observaciones"), -->
+<!--              ncol = 2) -->
+<!-- ``` -->
+<div id="probabilidad-variable-aleatoria-discreta-distribucion-bernoulli" class="section level4 hasAnchor" number="2.3.3.1">
+<h4><span class="header-section-number">2.3.3.1</span> Bernoulli<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-distribucion-bernoulli" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La distribución Bernoulli es una distribución de probabilidad discreta que describe el resultado de un experimento de ensayo único que puede tener dos posibles resultados, a menudo etiquetados como éxito y fracaso, con una probabilidad de éxito de <span class="math inline">\(p\)</span> y una probabilidad de fracaso de <span class="math inline">\(q = 1 - p\)</span>. La función de masa de probabilidad de la distribución Bernoulli está dada por:</p>
+<span class="math display" id="eq:bernoulli">\[\begin{equation}
+P(X = x) = p^x(1-p)^{1-x}
+\tag{2.8}
+\end{equation}\]</span>
+<p>donde <span class="math inline">\(x\)</span> puede tomar únicamente los valores de 0 y 1 <span class="citation">(<a href="#ref-larsen">Larsen &amp; Marx, 2017</a>, página 105)</span>.</p>
+<p>La figura <a href="probabilidad-variables.html#fig:simBer">2.3</a>, muestra una simulación de la función de masa de probabilidad de la distribución Bernoulli, dependiendo de la probabilidad de éxito (<span class="math inline">\(p\)</span>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simBer"></span>
+<img src="est1+descriptiva_files/figure-html/simBer-1.png" alt="Simulación de la distribución Binomial" width="672" />
+<p class="caption">
+Figura 2.3: Simulación de la distribución Binomial
+</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-55" class="example"><strong>Ejemplo 2.8  </strong></span>En un experimento de lanzamiento de moneda, se puede modelar la probabilidad de obtener cara como una distribución Bernoulli. En este caso, si se define “éxito” como obtener cara y “fracaso” como obtener sello, entonces la probabilidad de éxito es <span class="math inline">\(p = 0.5\)</span> y la probabilidad de fracaso es <span class="math inline">\(q = 1 - p = 0.5\)</span>. Entonces, la distribución Bernoulli para este experimento estaría dada por:</p>
+<ul>
+<li><span class="math inline">\(P(\text{Obtener cara}) = p = 0.5\)</span></li>
+<li><span class="math inline">\(P(\text{Obtener sello}) = q = 0.5\)</span></li>
+</ul>
+</div>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-56" class="example"><strong>Ejemplo 2.9  </strong></span>En una campaña publicitaria en línea, se puede modelar la probabilidad de que un usuario haga clic en un anuncio como una distribución Bernoulli. En este caso, si se define “éxito” como un usuario que hace clic en el anuncio y “fracaso” como un usuario que no hace clic, entonces la probabilidad de éxito es p y la probabilidad de fracaso es <span class="math inline">\(q = 1 - p\)</span>. Supongamos que la probabilidad de que un usuario haga clic en el anuncio es del 10%, es decir, <span class="math inline">\(p = 0.1\)</span>. Entonces, la distribución Bernoulli para este experimento estaría dada por:</p>
+<ul>
+<li><span class="math inline">\(P(\text{Hacer clic en el anuncio}) = p = 0.1\)</span></li>
+<li><span class="math inline">\(P(\text{No hacer clic en el anuncio}) = q = 0.9\)</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-discreta-distribucion-binomial" class="section level4 hasAnchor" number="2.3.3.2">
+<h4><span class="header-section-number">2.3.3.2</span> Binomial<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-distribucion-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La distribución de probabilidad binomial es una distribución de probabilidad que tiene muchas aplicaciones. Está relacionada con un experimento de pasos múltiples al que se llama experimento binomial <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, paǵina 200)</span>.</p>
+<p>Un experimento binomial tiene las siguientes cuatro propiedades.</p>
+<ol style="list-style-type: decimal">
+<li>El experimento consiste en una serie de n ensayos idénticos.</li>
+<li>En cada ensayo hay dos resultados posibles. A uno de estos resultados se le llama éxito y al otro se le llama fracaso.</li>
+<li>La probabilidad de éxito, que se denota <span class="math inline">\(p\)</span>, no cambia de un ensayo a otro. Por ende, la probabilidad de fracaso, que se denota <span class="math inline">\(1 - p\)</span>, tampoco cambia de un ensayo a otro.</li>
+<li>Los ensayos son independientes.</li>
+</ol>
+<p>Si se presentan las propiedades <span class="math inline">\(2, 3\)</span> y <span class="math inline">\(4\)</span>, se dice que los ensayos son generados por un proceso de Bernoulli. Si, además, se presenta la propiedad 1, se trata de un experimento binomial.</p>
+<p>En un experimento binomial lo que interesa es el número de éxitos en n ensayos. Si <span class="math inline">\(X\)</span> denota el número de éxitos en <span class="math inline">\(n\)</span> ensayos, es claro que <span class="math inline">\(x\)</span> tomará los valores <span class="math inline">\(0, 1, 2, 3, \ldots, n\)</span>. Dado que el número de estos valores es finito, <span class="math inline">\(X\)</span> es una variable aleatoria discreta. A la distribución de probabilidad correspondiente a esta variable aleatoria se le llama <strong>distribución de probabilidad binomial</strong>.</p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-57" class="example"><strong>Ejemplo 2.10  </strong></span>Considere el experimento que consiste en lanzar una moneda cinco veces y observar si la cara de la moneda que cae hacia arriba es cara o cruz. Suponga que se desea contar el número de caras que aparecen en los cinco lanzamientos. ¿Presenta este experimento las propiedades de un experimento binomial? ¿Cuál es la variable aleatoria que interesa? Observe que:</p>
+<ol style="list-style-type: decimal">
+<li>El experimento consiste en cinco ensayos idénticos; cada ensayo consiste en lanzar una moneda.</li>
+<li>En cada ensayo hay dos resultados posibles: cara o cruz. Se puede considerar cara como éxito y cruz como fracaso.</li>
+<li>La probabilidad de éxito y la probabilidad de fracaso son iguales en todos los ensayos, siendo <span class="math inline">\(p = 0.5\)</span> y <span class="math inline">\(1 - p = 0.5\)</span>.</li>
+<li>Los ensayos o lanzamientos son independientes porque al resultado de un ensayo no afecta a lo que pase en los otros ensayos o lanzamientos.</li>
+</ol>
+<p>Por tanto, se satisfacen las propiedades de un experimento binomial. La variable aleatoria que interesa es <span class="math inline">\(X =\)</span> número de caras que aparecen en cinco ensayos. En este caso, X puede tomar los valores <span class="math inline">\(0, 1, 2, 3, 4\)</span> o <span class="math inline">\(5\)</span>.</p>
+</div>
+</div>
+<p>La función de masa de probabilidad de la distribución Binomial está dada por:</p>
+<span class="math display" id="eq:binomial">\[\begin{equation}
+P(X = x) = \binom{n}{x}p^x(1-p)^{n-x}
+\tag{2.9}
+\end{equation}\]</span>
+<p>donde</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+P(X = x) &amp;= \text{probabilidad de } x \text{ éxitos en } n \text{ ensayos}\\
+n &amp;= \text{ número de ensayos}\\
+\binom{n}{x} &amp;= \dfrac{n!}{x!(n-x)!}\\
+p &amp;= \text{probabilidad de un éxito en cualquiera de los ensayos}\\
+1 - p &amp;= \text{probabilidad de un fracaso en cualquiera de los ensayos}\\
+\end{split}
+\end{equation}\]</span>
+<p>La figura <a href="probabilidad-variables.html#fig:simBinomial">2.4</a>, muestra una simulación de la función de masa de probabilidad de la distribución Binomial, dependiendo del número de ensayos (<span class="math inline">\(n\)</span>) y de la probabilidad de éxito (<span class="math inline">\(p\)</span>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simBinomial"></span>
+<img src="est1+descriptiva_files/figure-html/simBinomial-1.png" alt="Simulación de la distribución Binomial" width="672" />
+<p class="caption">
+Figura 2.4: Simulación de la distribución Binomial
+</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:ejcomandosbin" class="example"><strong>Ejemplo 2.11  </strong></span>Considere una distribución Binomial con <span class="math inline">\(n = 7\)</span> y <span class="math inline">\(p = 0.2\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Escriba la función de masa de probabilidad asociada.</p>
+<span class="math display">\[\begin{equation}
+\notag
+P(X=x) = \binom{7}{x}0.2^x(1-0.2)^{7-x}
+\end{equation}\]</span></li>
+<li><p>Calcule <span class="math inline">\(p(4)\)</span>.</p>
+<p>Recordemos que <span class="math inline">\(p(4) = P(X = 4)\)</span>. Para poder calcular probabilidades en un punto exacto (igual a 4) en R, se debe usar el prefijo <em>d</em> seguido de la abreviatura de la distribución discreta, en este caso la abreviatura de la distribución Binomial es <em>binom</em>.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="probabilidad-variables.html#cb47-1" tabindex="-1"></a><span class="fu">dbinom</span>(</span>
+<span id="cb47-2"><a href="probabilidad-variables.html#cb47-2" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">4</span>, <span class="co"># Valor de X para el cual se desea calcular la probabilidad</span></span>
+<span id="cb47-3"><a href="probabilidad-variables.html#cb47-3" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">7</span>, <span class="co"># Cantidad de ensayos</span></span>
+<span id="cb47-4"><a href="probabilidad-variables.html#cb47-4" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.2</span>, <span class="co"># Probabilidad de éxito</span></span>
+<span id="cb47-5"><a href="probabilidad-variables.html#cb47-5" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 0.028672</code></pre>
+<p>Por lo tanto, la probabilidad de obtener 4 resultados exitosos de 7 ensayos es de 0.028672.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X\leq 2)\)</span>.</p>
+<p>En R para poder calcular probabilidades acumuladas es posible usar el prefijo <em>p</em> seguido de la abreviatura de la distribución discreta, en este caso la abreviatura de la distribución Binomial es <em>binom</em>.</p>
+<p>Por defecto, R considera que las probabilidades acumuladas son del tipo <span class="math inline">\(P(X \leq x)\)</span>, tal como se presenta en este enunciado.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="probabilidad-variables.html#cb49-1" tabindex="-1"></a><span class="fu">pbinom</span>(</span>
+<span id="cb49-2"><a href="probabilidad-variables.html#cb49-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">2</span>, <span class="co"># Se consideran valores MENORES o iguales a 2</span></span>
+<span id="cb49-3"><a href="probabilidad-variables.html#cb49-3" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">7</span>, <span class="co"># Cantidad de ensayos</span></span>
+<span id="cb49-4"><a href="probabilidad-variables.html#cb49-4" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.2</span>, <span class="co"># Probabilidad de éxito</span></span>
+<span id="cb49-5"><a href="probabilidad-variables.html#cb49-5" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 0.851968</code></pre>
+<p>Por lo tanto, la probabilidad de obtener 2 o menos resultados exitosos de 7 ensayos es de 0.85.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X &lt; 5)\)</span>.</p>
+<p>En este caso antes de calcular en la probabilidad en R, se debe transformar la expresión a la forma <span class="math inline">\(P(X \leq x)\)</span>. Ya que estamos trabajando con eventos discretos, tenemos que</p>
+<p><span class="math display">\[P(X &lt; 5) = P(X \leq 4)\]</span></p>
+<p>Luego, esta probabilidad la podemos calcular en R de la siguiente manera.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="probabilidad-variables.html#cb51-1" tabindex="-1"></a><span class="fu">pbinom</span>(</span>
+<span id="cb51-2"><a href="probabilidad-variables.html#cb51-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">4</span>, <span class="co"># Se consideran valores MENORES o iguales a 4</span></span>
+<span id="cb51-3"><a href="probabilidad-variables.html#cb51-3" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">7</span>, <span class="co"># Cantidad de ensayos</span></span>
+<span id="cb51-4"><a href="probabilidad-variables.html#cb51-4" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.2</span>, <span class="co"># Probabilidad de éxito</span></span>
+<span id="cb51-5"><a href="probabilidad-variables.html#cb51-5" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 0.995328</code></pre>
+<p>Por lo tanto, la probabilidad de obtener menos de 5 resultados exitosos de 7 ensayos es de 0.99.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X &gt; 1)\)</span>.</p>
+<p>R incluye un comando para aquellos casos en los que el signo de desigualdad estricto es del tipo mayor.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="probabilidad-variables.html#cb53-1" tabindex="-1"></a><span class="fu">pbinom</span>(</span>
+<span id="cb53-2"><a href="probabilidad-variables.html#cb53-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">1</span>, <span class="co"># Se consideran valores MAYORES o iguales a 1</span></span>
+<span id="cb53-3"><a href="probabilidad-variables.html#cb53-3" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">7</span>, <span class="co"># Cantidad de ensayos</span></span>
+<span id="cb53-4"><a href="probabilidad-variables.html#cb53-4" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.2</span>, <span class="co"># Probabilidad de éxito</span></span>
+<span id="cb53-5"><a href="probabilidad-variables.html#cb53-5" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span> <span class="co"># En caso de que se tenga el signo mayor estricto</span></span>
+<span id="cb53-6"><a href="probabilidad-variables.html#cb53-6" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 0.4232832</code></pre>
+<p>Por lo tanto, la probabilidad de obtener más de 1 resultado exitoso de 7 ensayos es de 0.42.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X \geq 1)\)</span>.</p>
+<p>Para aquellos casos en que se tenga el signo de mayor igual (<span class="math inline">\(\geq\)</span>), lo más más recomendable es transformar la expresión a estricto (<span class="math inline">\(&gt;\)</span>) para así utilizar un código similar al del ejemplo <em>d.</em>. Ya que estamos trabajando con eventos discretos, tenemos que</p>
+<p><span class="math display">\[P(X \geq 1) = P(X &gt; 0)\]</span></p>
+<p>Luego, esta probabilidad la podemos calcular en R de la siguiente manera.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="probabilidad-variables.html#cb55-1" tabindex="-1"></a><span class="fu">pbinom</span>(</span>
+<span id="cb55-2"><a href="probabilidad-variables.html#cb55-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">0</span>, <span class="co"># Se consideran valores MAYORES a 0</span></span>
+<span id="cb55-3"><a href="probabilidad-variables.html#cb55-3" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">7</span>, <span class="co"># Cantidad de ensayos</span></span>
+<span id="cb55-4"><a href="probabilidad-variables.html#cb55-4" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.2</span>, <span class="co"># Probabilidad de éxito</span></span>
+<span id="cb55-5"><a href="probabilidad-variables.html#cb55-5" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span> <span class="co"># En caso de que se tenga el signo mayor estricto</span></span>
+<span id="cb55-6"><a href="probabilidad-variables.html#cb55-6" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## [1] 0.7902848</code></pre>
+<p>Por lo tanto, la probabilidad de obtener al menos 1 resultado exitoso de 7 ensayos es de 0.79.</p></li>
+<li><p>¿Para que valor de <span class="math inline">\(x\)</span>, <span class="math inline">\(P(X \leq x) = 0.6\)</span>?</p>
+<p>Despejar esta ecuación puede llegar a ser engorroso. Sin embargo, R posee un argumento para determinar estos valores. Para el calculo se debe usar el prefijo <em>q</em> seguido de la abreviatura de la distribución discreta, en este caso la abreviatura de la distribución Binomial es <em>binom</em>.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="probabilidad-variables.html#cb57-1" tabindex="-1"></a><span class="fu">qbinom</span>(</span>
+<span id="cb57-2"><a href="probabilidad-variables.html#cb57-2" tabindex="-1"></a>  <span class="at">p =</span> <span class="fl">0.6</span>, <span class="co"># Valor resultante de la probabilidad</span></span>
+<span id="cb57-3"><a href="probabilidad-variables.html#cb57-3" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">7</span>, <span class="co"># Cantidad de ensayos</span></span>
+<span id="cb57-4"><a href="probabilidad-variables.html#cb57-4" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.2</span>, <span class="co"># Probabilidad de éxito</span></span>
+<span id="cb57-5"><a href="probabilidad-variables.html#cb57-5" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Por lo tanto, para <span class="math inline">\(x = 2\)</span>, la probabilidad de obtener a lo más <span class="math inline">\(x\)</span> resultados exitosos es de 0.6.</p></li>
+</ol>
+</div>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-58" class="example"><strong>Ejemplo 2.12  </strong></span>Un acusado va a ser declarado inocente o culpable por un jurado popular. Para ser condenado es necesario que al menos 7 personas de las 10 del jurado voten culpable. Dado que en los programas de televisión ya han dado muchos detalles del caso, los miembros del jurado están atendiendo o leyendo el diario en vez de escuchar al fiscal y al abogado, porque van a decidir tirando una moneda al aire. ¿Cuál es la probabilidad de que el acusado sea declarado inocente?</p>
+<p>La probabilidad de éxito (inocencia) es de <span class="math inline">\(p = 0.5\)</span>. Sea <span class="math inline">\(X\)</span> el número éxitos (votos de inocencia) en 10 ensayos (votos del jurado). Entonces, la probabilidad de ser declarado inocente esta dada por la siguiente expresión.</p>
+<p><span class="math display">\[
+P(X \geq 4) = \sum_{k=4}^{10} \binom{10}{k} 0.5^{k}(1-0.5)^{10-k} = 0.82,\text{ o}
+\]</span></p>
+<p>Antes de realizar el cálculo en R lo recomendable es transformar la expresión para utilizar el comando adecuado. En este caso, la expresión es:</p>
+<p><span class="math display">\[P(X\geq 4) = P(X &gt; 3)\]</span>
+Luego, en R.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="probabilidad-variables.html#cb59-1" tabindex="-1"></a><span class="fu">pbinom</span>(</span>
+<span id="cb59-2"><a href="probabilidad-variables.html#cb59-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">3</span>, <span class="co"># Se consideran valores MAYORES o iguales a 3 (es decir, mayor o igual a 4)</span></span>
+<span id="cb59-3"><a href="probabilidad-variables.html#cb59-3" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">10</span>, <span class="co"># Cantidad de ensayos</span></span>
+<span id="cb59-4"><a href="probabilidad-variables.html#cb59-4" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.5</span>, <span class="co"># Probabilidad de éxito</span></span>
+<span id="cb59-5"><a href="probabilidad-variables.html#cb59-5" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span> <span class="co"># TRUE: menor igual, FALSE: mayor estricto</span></span>
+<span id="cb59-6"><a href="probabilidad-variables.html#cb59-6" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 0.828125</code></pre>
+<p>Por otro lado, la probabilidad <span class="math inline">\(P(X\geq 4)\)</span> puede ser escrita como <span class="math inline">\(1 - P(X \leq 3)\)</span>.</p>
+<p><span class="math display">\[
+1 - P(X \leq 3) = \sum_{k=0}^{3} \binom{10}{k} 0.5^{k}(1-0.5)^{10-k} = 0.82
+\]</span></p>
+<p>Es posible calcular esta expresión en R de la siguiente manera.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="probabilidad-variables.html#cb61-1" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(</span>
+<span id="cb61-2"><a href="probabilidad-variables.html#cb61-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">3</span>, <span class="co"># Se consideran valores MENORES o iguales a 3</span></span>
+<span id="cb61-3"><a href="probabilidad-variables.html#cb61-3" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">10</span>, <span class="co"># Cantidad de ensayos</span></span>
+<span id="cb61-4"><a href="probabilidad-variables.html#cb61-4" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.5</span> <span class="co"># Probabilidad de éxito</span></span>
+<span id="cb61-5"><a href="probabilidad-variables.html#cb61-5" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 0.828125</code></pre>
+<p>Por lo tanto, la probabilidad de que el acusado sea declarado inocente es de 0.82.</p>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-59" class="exercise"><strong>Ejercicio 2.20  </strong></span>En una planta de revisión técnica, resulta rechazado el <span class="math inline">\(42 \%\)</span> de los vehículos livianos. En la primera media hora de un día cualquiera se alcanzan a revisar 9 vehículos.</p>
+<ol style="list-style-type: decimal">
+<li>¿cuál es la probabilidad de que más de 3 sean rechazados?</li>
+<li>¿cuál es la probabilidad de que a lo más 5 sean rechazados?</li>
+<li>¿cuál es la probabilidad de que menos de 2 sean rechazados?</li>
+<li>¿cuál es la probabilidad de no se rechacen todos los vehículos?</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-60" class="exercise"><strong>Ejercicio 2.21  </strong></span>Se sabe que la probabilidad de que una empresa no pase la revisión de fraude fiscal es de 0.21. De las siguientes 345 empresas que se revisan en búsqueda de fraude fiscal, calcule la probabilidad de que cuando mucho 85 empresas no aprueben la revisión.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-61" class="exercise"><strong>Ejercicio 2.22  </strong></span>Un banco sabe que el 8% de sus clientes no pagan a tiempo sus tarjetas de crédito. Si el banco emite 2500 tarjetas de crédito,</p>
+<ol style="list-style-type: decimal">
+<li>¿Cuál es la probabilidad de que al menos 200 de ellas pertenezcan a clientes que no pagan a tiempo?</li>
+<li>¿Qué pasaría con la probabilidad de que al menos 200 de las tarjetas de crédito pertenezcan a clientes que no pagan a tiempo si la tasa de incumplimiento del banco aumenta al 9.2%?</li>
+<li>¿Cuál es la probabilidad de que exactamente 250 de las tarjetas de crédito pertenezcan a clientes que no pagan a tiempo?</li>
+<li>¿Cuál es la probabilidad de que cuando mucho 210 de ellas pertenezcan a clientes que no pagan a tiempo?</li>
+</ol>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-discreta-distribucion-poisson" class="section level4 hasAnchor" number="2.3.3.3">
+<h4><span class="header-section-number">2.3.3.3</span> Poisson<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-distribucion-poisson" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Una variable aleatoria discreta que se suele usar para estimar el número de veces que sucede un hecho determinado (ocurrencias) en un intervalo de tiempo o de espacio. Por ejemplo, el número de reparaciones en un autopista o número de fugas en un tubería. Si se satisfacen las siguientes condiciones, el número de ocurrencias es una variable aleatoria discreta definida por la distribución de probabilidad de Poisson <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 211)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>La probabilidad de ocurrencia es la misma para cualesquiera dos intervalos de la misma magnitud.</li>
+<li>La ocurrencia o no-ocurrencia en cualquier intervalo es independiente de la ocurrencia o no-ocurrencia en cualquier otro intervalo.</li>
+</ol>
+<p>La función de masa de probabilidad de Poisson se define mediante la ecuación</p>
+<span class="math display" id="eq:poisson">\[\begin{equation}
+P(X = x) = \dfrac{\lambda^xe^{-\lambda}}{x!}
+\tag{2.10}
+\end{equation}\]</span>
+<p>en donde</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+P(X = x) &amp;= \text{probabilidad de } x \text{ ocurrencias en un intervalo de tiempo}\\
+\lambda &amp;= \text{ tasa de ocurrencias en un intervalo}\\
+e &amp;\approx 2.71828\\
+\end{split}
+\end{equation}\]</span>
+<p>Es importante observar, que el número de ocurrencias de <span class="math inline">\(x\)</span>, no tiene límite superior. Esta es un variable aleatoria discreta que toma los valores de una sucesión infinita de números (<span class="math inline">\(x = 0,1,2,3,4,\ldots\)</span>).</p>
+<p>La figura <a href="probabilidad-variables.html#fig:simPois">2.5</a>, muestra una simulación de la función de masa de probabilidad de la distribución Poisson, dependiendo de la tasa en función del tiempo (<span class="math inline">\(\lambda\)</span>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simPois"></span>
+<img src="est1+descriptiva_files/figure-html/simPois-1.png" alt="Simulación de la distribución Poisson" width="672" />
+<p class="caption">
+Figura 2.5: Simulación de la distribución Poisson
+</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-62" class="example"><strong>Ejemplo 2.13  </strong></span>Considere una distribución Poisson con <span class="math inline">\(\lambda = 3\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Escriba la función de probabilidad asociada.</p>
+<span class="math display">\[\begin{equation}
+\notag
+P(X=x) = \dfrac{3^xe^{-3}}{x!}
+\end{equation}\]</span></li>
+<li><p>Calcule <span class="math inline">\(p(2)\)</span>.</p>
+<p>Considerando los comandos explicados en el ejemplo <a href="probabilidad-variables.html#exm:ejcomandosbin">2.11</a>, solo es necesario modificar la abreviatura de la distribución de probabilidad, la cual, en este caso, corresponde a <em>pois</em>.</p>
+<p>Recordemos que <span class="math inline">\(p(2) = P(X = 2)\)</span>.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="probabilidad-variables.html#cb63-1" tabindex="-1"></a><span class="fu">dpois</span>(</span>
+<span id="cb63-2"><a href="probabilidad-variables.html#cb63-2" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">2</span>, <span class="co"># Valor de X para el cual se desea calcular la probabilidad</span></span>
+<span id="cb63-3"><a href="probabilidad-variables.html#cb63-3" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span> <span class="co"># Tasa de ocurrencia por unidad de tiempo o espacio</span></span>
+<span id="cb63-4"><a href="probabilidad-variables.html#cb63-4" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## [1] 0.2240418</code></pre>
+<p>Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran dos sucesos es de 0.22.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X\leq 3)\)</span>.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="probabilidad-variables.html#cb65-1" tabindex="-1"></a><span class="fu">ppois</span>(</span>
+<span id="cb65-2"><a href="probabilidad-variables.html#cb65-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">3</span>, <span class="co"># Valor de X para el cual se desea calcular la probabilidad</span></span>
+<span id="cb65-3"><a href="probabilidad-variables.html#cb65-3" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span> <span class="co"># Tasa de ocurrencia por unidad de tiempo o espacio</span></span>
+<span id="cb65-4"><a href="probabilidad-variables.html#cb65-4" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## [1] 0.6472319</code></pre>
+<p>Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran a lo más tres sucesos es de 0.64.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X &lt; 2)\)</span>.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="probabilidad-variables.html#cb67-1" tabindex="-1"></a><span class="fu">ppois</span>(</span>
+<span id="cb67-2"><a href="probabilidad-variables.html#cb67-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">1</span>, <span class="co"># Valor de X para el cual se desea calcular la probabilidad</span></span>
+<span id="cb67-3"><a href="probabilidad-variables.html#cb67-3" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span> <span class="co"># Tasa de ocurrencia por unidad de tiempo o espacio</span></span>
+<span id="cb67-4"><a href="probabilidad-variables.html#cb67-4" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## [1] 0.1991483</code></pre>
+<p>Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran menos de dos sucesos es de 0.19.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X &gt; 2)\)</span>.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="probabilidad-variables.html#cb69-1" tabindex="-1"></a><span class="fu">ppois</span>(</span>
+<span id="cb69-2"><a href="probabilidad-variables.html#cb69-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">2</span>, <span class="co"># Valor de X para el cual se desea calcular la probabilidad</span></span>
+<span id="cb69-3"><a href="probabilidad-variables.html#cb69-3" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span>, <span class="co"># Tasa de ocurrencia por unidad de tiempo o espacio</span></span>
+<span id="cb69-4"><a href="probabilidad-variables.html#cb69-4" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span> <span class="co"># En caso de que se tenga el signo mayor estricto</span></span>
+<span id="cb69-5"><a href="probabilidad-variables.html#cb69-5" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## [1] 0.5768099</code></pre>
+<p>Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran más de dos sucesos es de 0.35.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X\geq 5)\)</span>.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="probabilidad-variables.html#cb71-1" tabindex="-1"></a><span class="fu">ppois</span>(</span>
+<span id="cb71-2"><a href="probabilidad-variables.html#cb71-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">4</span>, <span class="co"># Valor de X para el cual se desea calcular la probabilidad</span></span>
+<span id="cb71-3"><a href="probabilidad-variables.html#cb71-3" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span>, <span class="co"># Tasa de ocurrencia por unidad de tiempo o espacio</span></span>
+<span id="cb71-4"><a href="probabilidad-variables.html#cb71-4" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span> <span class="co"># En caso de que se tenga el signo mayor estricto</span></span>
+<span id="cb71-5"><a href="probabilidad-variables.html#cb71-5" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## [1] 0.1847368</code></pre>
+<p>Por lo tanto, teniendo una tasa de 3 por unidad de tiempo, la probabilidad de que ocurran al menos cinco sucesos es de 0.18.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X\leq x) = 0.1\)</span>.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="probabilidad-variables.html#cb73-1" tabindex="-1"></a><span class="fu">qpois</span>(</span>
+<span id="cb73-2"><a href="probabilidad-variables.html#cb73-2" tabindex="-1"></a>  <span class="at">p =</span> <span class="fl">0.1</span>, <span class="co"># Valor resultante de la probabilidad</span></span>
+<span id="cb73-3"><a href="probabilidad-variables.html#cb73-3" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span> <span class="co"># Tasa de ocurrencia por unidad de tiempo o espacio</span></span>
+<span id="cb73-4"><a href="probabilidad-variables.html#cb73-4" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Por lo tanto, para <span class="math inline">\(x=1\)</span>, la probabilidad de que ocurran a los más <span class="math inline">\(x\)</span> sucesos es de 0.1, considerando una tasa de 3 por unidad de tiempo.</p></li>
+</ol>
+</div>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-63" class="example"><strong>Ejemplo 2.14  </strong></span>Por un paradero pasan los buses de la línea <span class="math inline">\(A\)</span> a una razón de 12 por hora y en forma independiente pasan los buses de la línea <span class="math inline">\(B\)</span> a razón de 10 por hora. Un inspector observa la pasada de buses por el paradero.</p>
+<ol style="list-style-type: decimal">
+<li><p>¿Cuál es la probabilidad de que en los primeros 10 minutos no pasen buses de la línea <span class="math inline">\(A\)</span>?</p>
+<p>La tasa de llegada de buses de la línea <span class="math inline">\(A\)</span> es de 12 por hora, por lo tanto, la tasa de llegada en 10 minutos es de 2 buses (<span class="math inline">\(12/60\cdot 10=2\)</span>). La probabilidad de que no pase ningún bus en esos 10 minutos esta dada por <span class="math inline">\(P(X = 0)\)</span>. En R:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="probabilidad-variables.html#cb75-1" tabindex="-1"></a><span class="fu">dpois</span>(</span>
+<span id="cb75-2"><a href="probabilidad-variables.html#cb75-2" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">0</span>, <span class="co"># Valor de X para el cual se desea calcular la probabilidad</span></span>
+<span id="cb75-3"><a href="probabilidad-variables.html#cb75-3" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">2</span> <span class="co"># Tasa de ocurrencia por unidad de tiempo o espacio</span></span>
+<span id="cb75-4"><a href="probabilidad-variables.html#cb75-4" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 0.1353353</code></pre>
+<p>Por lo tanto, la probabilidad de que en los primeros 10 minutos no pase ningún bus de la línea <span class="math inline">\(A\)</span> es de aproximadamente 0.13.</p></li>
+<li><p>¿Cuál es la probabilidad de que en los primeros 8 minutos pasen menos de 3 buses de la línea <span class="math inline">\(B\)</span>?</p>
+<p>La tasa de llegada en 8 minutos es de aproximadamente 1.333 buses <span class="math inline">\((10/60\cdot 8=1.333)\)</span>. Entonces, la probabilidad de que pasen menos de 3 buses de la línea <span class="math inline">\(B\)</span> en esos 8 minutos esta dada por <span class="math inline">\(P(X &lt; 3) = P(X\leq 2)\)</span>. En R:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="probabilidad-variables.html#cb77-1" tabindex="-1"></a><span class="fu">ppois</span>(</span>
+<span id="cb77-2"><a href="probabilidad-variables.html#cb77-2" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">2</span>, <span class="co"># Valor de X para el cual se desea calcular la probabilidad</span></span>
+<span id="cb77-3"><a href="probabilidad-variables.html#cb77-3" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="fl">1.333</span> <span class="co"># Tasa de ocurrencia por unidad de tiempo o espacio</span></span>
+<span id="cb77-4"><a href="probabilidad-variables.html#cb77-4" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] 0.8494467</code></pre>
+<p>La probabilidad de que en los primeros 8 minutos pasen menos de 3 buses de la línea <span class="math inline">\(B\)</span> es de aproximadamente 0.84.</p></li>
+</ol>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-64" class="exercise"><strong>Ejercicio 2.23  </strong></span>Una compañía de seguros tiene un promedio de 4 reclamaciones de seguros de automóviles por día.</p>
+<ol style="list-style-type: decimal">
+<li>¿Cuál es la probabilidad de que la compañía de seguros reciba menos de 3 reclamaciones en un día?</li>
+<li>¿Cuál es la probabilidad de que la compañía de seguros reciba como máximo 7 reclamaciones en un día?</li>
+<li>¿Cuál es la probabilidad de que la compañía de seguros reciba cuando menos 2 reclamaciones en un día?</li>
+<li>¿Cuál es la probabilidad de que la compañía de seguros reciba entre 2 y 5 reclamaciones en un día?</li>
+<li>¿Cuál es la probabilidad de que la compañía de seguros reciba de 1 a 3 reclamaciones en un día?</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-65" class="exercise"><strong>Ejercicio 2.24  </strong></span>Un banco recibe en promedio 2 solicitudes de préstamos hipotecarios por hora.</p>
+<ol style="list-style-type: decimal">
+<li>¿Cuál es la probabilidad de que el banco reciba exactamente 3 solicitudes de préstamo hipotecario en un periodo de 90 minutos?</li>
+<li>¿Cuál es la probabilidad de que el banco reciba más de 4 solicitudes de préstamo hipotecario en un periodo de 80 minutos?</li>
+<li>¿Cuál es la probabilidad de que el banco reciba cuando mucho 5 solicitudes de préstamo hipotecario en un periodo de dos horas?</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-66" class="exercise"><strong>Ejercicio 2.25  </strong></span>Un laboratorio farmacéutico encarga una encuesta para estimar el consumo de cierto medicamento que, elabora con el fin de controlar su producción. Se sabe que, a lo largo de un año la tasa de enfermos que necesitan este medicamento es de 5 personas en promedio.</p>
+<ol style="list-style-type: decimal">
+<li>¿Cuál es la probabilidad de que el número de enfermos no exceda 4 por año?</li>
+<li>¿Cuál es la probabilidad de que el número de enfermos sea más de 2 por año?</li>
+<li>¿Cuál es la probabilidad de que el número de enfermos sea de 3 a 6 por año?</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-continua" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Variables aleatorias continuas (v.a.c)<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una diferencia fundamental entre las variables aleatorias discretas y las variables aleatorias continuas es cómo se calculan las probabilidades. En las variables aleatorias discretas la función de masa de probabilidad <span class="math inline">\(P(X=x)\)</span> da la probabilidad de que la variable aleatoria tome un valor determinado. En las variables aleatorias continuas, la contraparte de la función de probabilidad es la <strong>función de densidad de probabilidad</strong>, que se denota <span class="math inline">\(f(x)\)</span>. La diferencia está en que la función de densidad de probabilidad no da probabilidades directamente. Si no que el área bajo la curva de <span class="math inline">\(f(x)\)</span> que corresponde a un intervalo determinado proporciona la probabilidad de que la variable aleatoria tome uno de los valores de ese intervalo. De manera que cuando se calculan probabilidades de variables aleatorias continuas se calcula la probabilidad de que la variable aleatoria tome alguno de los valores dentro de un intervalo.</p>
+<p>Como en cualquier punto determinado el área bajo la gráfica de <span class="math inline">\(f(x)\)</span> es cero, una de las consecuencias de la definición de la probabilidad de una variable aleatoria continua es que la probabilidad de cualquier valor determinado de la variable aleatoria es cero. <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 227)</span></p>
+<div id="probabilidad-variable-aleatoria-continua-fdp" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Función de densidad de probabilidad<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fdp" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consideremos el siguiente ejemplo, supóngase que la variable <span class="math inline">\(X\)</span> de interés es la profundidad de un lago en un punto sobre la superficie seleccionado al azar. Sea <span class="math inline">\(M =\)</span> la profundidad máxima (en metros), así que cualquier número en el intervalo <span class="math inline">\([0, M]\)</span> es un valor posible de <span class="math inline">\(X\)</span>. Si se “discretiza” <span class="math inline">\(X\)</span> midiéndola profundidad al metro más cercano, entonces los valores posibles son enteros no negativos menores que o iguales a <span class="math inline">\(M\)</span>. La distribución discreta resultante de profundidad se ilustra con un histograma de probabilidad. Si se traza el histograma de modo que el área del rectángulo sobre cualquier entero posible <span class="math inline">\(k\)</span> sea la proporción del lago cuya profundidad es (al metro más cercano) <span class="math inline">\(k\)</span>, entonces el área total de todos los rectángulos es 1. En la figura <a href="probabilidad-variables.html#fig:densidad">2.6</a>a) aparece un posible histograma.</p>
+<p>Si se mide la profundidad con mucho más precisión y se utiliza el mismo eje de medición de la figura <a href="probabilidad-variables.html#fig:densidad">2.6</a>a), cada rectángulo en el histograma de probabilidad resultante es mucho más angosto, aun cuando el área total de todos los rectángulos sigue siendo 1. En la figura <a href="probabilidad-variables.html#fig:densidad">2.6</a>b) se ilustra un posible histograma; tiene una apariencia mucho más regular que el histograma de la figura <a href="probabilidad-variables.html#fig:densidad">2.6</a>a). Si se continúa de esta manera midiendo la profundidad más y más finamente, la secuencia resultante de histogramas se aproxima a una curva más regular, tal como la ilustrada en la figura <a href="probabilidad-variables.html#fig:densidad">2.6</a>c). Como en cada histograma el área total de todos los rectángulos es igual a 1, el área total bajo la curva regular también es 1. La probabilidad de que la profundidad en un punto seleccionado al azar se encuentre entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> es simplemente el área bajo la curva regular entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>. Es de manera exacta una curva regular del tipo ilustrado en la figura <a href="probabilidad-variables.html#fig:densidad">2.6</a>c) la que especifica un distribución de probabilidad continua.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:densidad"></span>
+<img src="material/img/densidad.png" alt="Histogramas de profundidad." width="100%" />
+<p class="caption">
+Figura 2.6: Histogramas de profundidad.
+</p>
+</div>
+<p>En este sentido, se obtiene la siguiente definición. Sea <span class="math inline">\(X\)</span> una variable aleatoria continua. Entonces, una <strong>función de densidad de probabilidad</strong> (fdp) de <span class="math inline">\(X\)</span> es una función <span class="math inline">\(f(x)\)</span> tal que para dos números cualesquiera <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> con <span class="math inline">\(a \leq b\)</span>,</p>
+<p><span class="math display">\[
+P(a\leq X\leq b) = \int_a^b f(x)dx
+\]</span>
+Es decir, la probabilidad de que <span class="math inline">\(X\)</span> asuma un valor en el intervalo <span class="math inline">\([a, b]\)</span> es el área sobre este intervalo y bajo la gráfica de la función de densidad, como se ilustra en la figura <a href="probabilidad-variables.html#fig:densidad2">2.7</a>. La gráfica de <span class="math inline">\(f(x)\)</span> a menudo se conoce como curva de densidad.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:densidad2"></span>
+<img src="material/img/densidad2.png" alt="Área debajo de la curva de densidad." width="70%" />
+<p class="caption">
+Figura 2.7: Área debajo de la curva de densidad.
+</p>
+</div>
+<p>Al igual que una distribución de masa de probabilidad, se deben cumplir condiciones para que la función de densidad de probabilidad sea legítima. Las condiciones son:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(f(x) \geq 0, \forall x\)</span></li>
+<li><span class="math inline">\(\displaystyle\int_{-\infty}^{\infty} f(x)dx = 1\)</span></li>
+</ol>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:intervalotiempo" class="example"><strong>Ejemplo 2.15  </strong></span>“Intervalo de tiempo” en el flujo de tránsito es el tiempo transcurrido entre el tiempo en que un carro termina de pasar por un punto fijo y el instante en que el siguiente carro comienza a pasar por ese punto. Sea <span class="math inline">\(X =\)</span> el intervalo de tiempo de dos carros consecutivos seleccionados al azar en una autopista durante un periodo de tráfico intenso. La siguiente función de densidad de probabilidad de X es en esencia el sugerido en “The Statistical Properties of Freeway Traffic” (<em>Transp. Res</em>. vol. 11: 221-228):</p>
+<p><span class="math display">\[f(x) = 0.15e^{-0.15(x-0.5)} \text{, } x \geq 0.5\]</span>
+La gráfica de <span class="math inline">\(f(x)\)</span> se da en la figura <a href="probabilidad-variables.html#fig:ejemplo1">2.8</a>; no hay ninguna densidad asociada con intervalos de tiempo de menos de 0.5 y la densidad del intervalo decrece con rapidez (exponencial) a medida que <span class="math inline">\(x\)</span> se incrementa a partir de 0.5. Claramente, <span class="math inline">\(f(x) \geq 0\)</span>; para demostrar que la integral en todo el dominio de la función es igual a 1, se utiliza el siguiente resultado.</p>
+<p><span class="math display">\[
+\int_a^{\infty}e^{-kx}dx = \frac{1}{k}e^{-ka}
+\]</span></p>
+<p>Entonces,</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+\int_{-\infty}^{\infty} f(x)dx &amp;= \int_{0.5}^{\infty} 0.15e^{-0.15(x-0.5)}dx = 0.15e^{0.075}\int_{0.5}^{\infty} e^{-0.15x}dx\\
+&amp;= 0.15e^{0.075}\frac{1}{0.15}e^{-0.075} = 1
+\end{split}
+\end{equation}\]</span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ejemplo1"></span>
+<img src="material/img/ejemplo1.png" alt="Curva de densidad del intervalo de tiempo del ejemplo 2.17." width="70%" />
+<p class="caption">
+Figura 2.8: Curva de densidad del intervalo de tiempo del ejemplo 2.17.
+</p>
+</div>
+<p>En R, la gráfica de está función de densidad puede replicarse de la siguiente manera.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="probabilidad-variables.html#cb79-1" tabindex="-1"></a>fdp <span class="ot">=</span> <span class="cf">function</span>(x){</span>
+<span id="cb79-2"><a href="probabilidad-variables.html#cb79-2" tabindex="-1"></a>  f <span class="ot">=</span> <span class="fl">0.15</span><span class="sc">*</span><span class="fu">exp</span>(<span class="sc">-</span><span class="fl">0.15</span><span class="sc">*</span>(x<span class="fl">-0.5</span>)) <span class="co"># Expresión de la función de densidad</span></span>
+<span id="cb79-3"><a href="probabilidad-variables.html#cb79-3" tabindex="-1"></a>  <span class="fu">return</span>(f)</span>
+<span id="cb79-4"><a href="probabilidad-variables.html#cb79-4" tabindex="-1"></a>}</span>
+<span id="cb79-5"><a href="probabilidad-variables.html#cb79-5" tabindex="-1"></a></span>
+<span id="cb79-6"><a href="probabilidad-variables.html#cb79-6" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">seq</span>(<span class="fl">0.5</span>, <span class="dv">10</span>, <span class="at">by =</span> <span class="fl">0.01</span>) <span class="co"># Valores del dominio</span></span>
+<span id="cb79-7"><a href="probabilidad-variables.html#cb79-7" tabindex="-1"></a>f <span class="ot">=</span> <span class="fu">fdp</span>(x) <span class="co"># Valores del recorrido</span></span>
+<span id="cb79-8"><a href="probabilidad-variables.html#cb79-8" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> x, <span class="st">&quot;f&quot;</span> <span class="ot">=</span> f) <span class="co"># Data frame para poder usar ggplot</span></span>
+<span id="cb79-9"><a href="probabilidad-variables.html#cb79-9" tabindex="-1"></a></span>
+<span id="cb79-10"><a href="probabilidad-variables.html#cb79-10" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> f)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb79-11"><a href="probabilidad-variables.html#cb79-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Función de densidad&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Valores de X&quot;</span>, <span class="at">y =</span> <span class="st">&quot;f(x)&quot;</span>)</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-55-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Así, la probabilidad de que el intervalo de tiempo sea cuando mucho de 5 segundos es</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+P(X\leq 5) &amp;= \int_{-\infty}^{5} f(x)dx = \int_{0.5}^{5} 0.15e^{-0.15(x-0.5)}dx\\
+&amp;= 0.15e^{0.075}\int_{0.5}^{5} e^{-0.15x}dx = \left. 0.15e^{0.075}\frac{-1}{0.15}e^{-0.15x}\right|_{x = 0.5}^{x = 5}\\
+&amp;= e^{0.075}\left(e^{-0.75} + e^{-0.075} \right) = 1.078(-0.472 + 0.928) = 0.491\\
+\end{split}
+\end{equation}\]</span>
+<p>En R para hacer el cálculo de la integral es posible utilizar el comando <strong>integrate</strong>:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="probabilidad-variables.html#cb80-1" tabindex="-1"></a><span class="co"># Haciendo uso de la función utilizada para el gráfico</span></span>
+<span id="cb80-2"><a href="probabilidad-variables.html#cb80-2" tabindex="-1"></a><span class="fu">integrate</span>(fdp, <span class="at">lower =</span> <span class="fl">0.5</span>, <span class="at">upper =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## 0.4908436 with absolute error &lt; 5.4e-15</code></pre>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-67" class="exercise"><strong>Ejercicio 2.26  </strong></span>Sea <span class="math inline">\(X\)</span> la cantidad de tiempo durante la cual un libro puesto en reserva durante dos horas en la biblioteca de una universidad es solicitado en préstamo por un estudiante seleccionado y suponga que <span class="math inline">\(X\)</span> tiene la función de densidad</p>
+<p><span class="math display">\[f(x) = 0.5x \text{, } 0\leq x \leq 2\]</span>
+Calcule las siguientes probabilidades (manualmente y en R):</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(P(X \leq 1)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(0.5 \leq X \leq 1.5)\)</span>.</p></li>
+<li><p><span class="math inline">\(P(1.5 &lt; X)\)</span>.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-68" class="exercise"><strong>Ejercicio 2.27  </strong></span>El error implicado al hacer una medición geográfica computarizada es una variable aleatoria continua <span class="math inline">\(X\)</span> con función de densidad de probabilidad</p>
+<p><span class="math display">\[f(x) = 0.09375(4-x^2) \text{, } -2\leq x \leq 2\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Bosqueje la gráfica de <span class="math inline">\(f(x)\)</span>.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X &gt; 0)\)</span>.</p></li>
+<li><p>Calcule <span class="math inline">\(P(-1 &lt; X &lt; 1)\)</span>.</p></li>
+<li><p>Calcule <span class="math inline">\(P(X &lt; 0.5 \text{ o } X &gt; 0.5)\)</span>.</p></li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-69" class="exercise"><strong>Ejercicio 2.28  </strong></span>Un profesor universitario nunca termina su disertación antes del final de la hora y siempre termina dentro de 2 minutos después de la hora. Sea <span class="math inline">\(X =\)</span> el tiempo que transcurre entre el final de la hora y el final de la disertación y suponga que la función de densidad de probabilidad de <span class="math inline">\(X\)</span> es</p>
+<p><span class="math display">\[f(x) = kx^2 \text{, } 0\leq x \leq 2\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Determine el valor de <span class="math inline">\(k\)</span> y trace en R la curva de densidad correspondiente.</p></li>
+<li><p>¿Cuál es la probabilidad de que la disertación termine dentro de un minuto del final de la hora?</p></li>
+<li><p>¿Cuál es la probabilidad de que la disertación continúe después de la hora durante entre 60 y 90 segundos.</p></li>
+<li><p>¿Cuál es la probabilidad de que la disertación continúe durante por lo menos 90 segundos después del final de la hora?</p></li>
+</ol>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-continua-fda" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Función de distribución acumulada<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La función de distribución acumulada <span class="math inline">\(F(x)\)</span> de una variable aleatoria discreta <span class="math inline">\(X\)</span> da, con cualquier número especificado <span class="math inline">\(x\)</span>, la probabilidad <span class="math inline">\(P(X \leq x)\)</span>. Se obtiene sumando la función masa de probabilidad <span class="math inline">\(p(y)\)</span> a lo largo de todos los valores posibles y que satisfacen <span class="math inline">\(y \leq x\)</span>. La función de distribución acumulada de una variable aleatoria continua da las mismas probabilidades <span class="math inline">\(P(X \leq x)\)</span> y se obtiene integrando la función de densidad de probabilidad <span class="math inline">\(f(y)\)</span> entre los límites <span class="math inline">\(-\infty\)</span> y <span class="math inline">\(x\)</span>.</p>
+<p>La función de distribución acumulada <span class="math inline">\(F(x)\)</span> de una variable aleatoria continua <span class="math inline">\(X\)</span> se define para todo número <span class="math inline">\(x\)</span> como</p>
+<p><span class="math display">\[
+F(x) =P(X\leq x) = \int_{-\infty}^xf(y)dy
+\]</span></p>
+<p>Con cada <span class="math inline">\(x\)</span>, <span class="math inline">\(F(x)\)</span> es el área bajo la curva de densidad a la izquierda de <span class="math inline">\(x\)</span>. Esto se ilustra en la figura <a href="probabilidad-variables.html#fig:acumulada">2.9</a>, donde <span class="math inline">\(F(x)\)</span> se incrementa con regularidad a medida que <span class="math inline">\(x\)</span> se incrementa.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:acumulada"></span>
+<img src="material/img/acumulada.png" alt="Función de densidad de probabilidad y distribución acumulada asociada" width="70%" />
+<p class="caption">
+Figura 2.9: Función de densidad de probabilidad y distribución acumulada asociada
+</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:densidad1" class="example"><strong>Ejemplo 2.16  </strong></span>Suponga que la función de densidad de probabilidad de la magnitud <span class="math inline">\(X\)</span> de una carga dinámica sobre un puente (en newtons) está dada por</p>
+<span class="math display">\[\begin{equation}
+  \notag
+  f(x) = \left\lbrace
+  \begin{matrix}
+    \displaystyle\frac{1}{8} + \displaystyle\frac{3}{8}x &amp; 0\leq x \leq 2 \\
+    0 &amp; \text{en otro caso}
+  \end{matrix} \right.
+\end{equation}\]</span>
+<p>Para cualquier número <span class="math inline">\(x\)</span> entre 0 y 2,</p>
+<span class="math display">\[\begin{equation}
+  \notag
+  F(x) = \int_{-\infty}^xf(y)dy = \int_{0}^x \left(\frac{1}{8} + \frac{3}{8}y\right) dy = \frac{x}{8} + \frac{3}{16}x^2
+\end{equation}\]</span>
+<p>Por lo tanto</p>
+<span class="math display">\[\begin{equation}
+  \notag
+  F(x) = \left\lbrace
+  \begin{matrix}
+    0 &amp; x&lt;0 \\
+    \displaystyle\frac{x}{8} + \displaystyle\frac{3}{16}x^2 &amp; 0\leq x \leq 2 \\
+    1 &amp; x &gt; 2\\
+  \end{matrix} \right.
+\end{equation}\]</span>
+</div>
+</div>
+<p>La importancia de la función de distribución acumulada en este caso, lo mismo que para variables aleatorias discretas, es que las probabilidades de varios intervalos pueden ser calculadas con una fórmula o una tabla de <span class="math inline">\(F(x)\)</span>. En el caso de una variable aleatoria continua <span class="math inline">\(X\)</span> con función de densidad de probabilidad <span class="math inline">\(f(x)\)</span> y función de distribución acumulada <span class="math inline">\(F(x)\)</span>, se tiene que con cualquier número <span class="math inline">\(a\)</span>,</p>
+<p><span class="math display">\[
+P(X&gt;a) = 1 - F(a)
+\]</span></p>
+<p>y para dos números cualesquiera <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> con <span class="math inline">\(a&lt;b\)</span>.</p>
+<p><span class="math display">\[
+P(a\leq X \leq b) = F(b) - F(a)
+\]</span>
+La figura <a href="probabilidad-variables.html#fig:densidad3">2.10</a> ilustra la probabilidad deseada es el área sombreada bajo la curva de densidad entre <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, que es igual a la diferencia entre las dos áreas sombreadas acumulativas. Esto es diferente de lo que es apropiado para una variable aleatoria discreta de valor entero.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:densidad3"></span>
+<img src="material/img/densidad3.png" alt="Cálculo de probabilidades acumulativas." width="80%" />
+<p class="caption">
+Figura 2.10: Cálculo de probabilidades acumulativas.
+</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-70" class="example"><strong>Ejemplo 2.17  </strong></span>Continuando con el ejemplo <a href="probabilidad-variables.html#exm:densidad1">2.16</a>. Las gráficas de <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(F(x)\)</span> son</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="probabilidad-variables.html#cb82-1" tabindex="-1"></a>densidad <span class="ot">=</span> <span class="cf">function</span>(x){ <span class="co"># Función de densidad</span></span>
+<span id="cb82-2"><a href="probabilidad-variables.html#cb82-2" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">8</span><span class="sc">+</span><span class="dv">3</span><span class="sc">/</span><span class="dv">8</span><span class="sc">*</span>x)</span>
+<span id="cb82-3"><a href="probabilidad-variables.html#cb82-3" tabindex="-1"></a>}</span>
+<span id="cb82-4"><a href="probabilidad-variables.html#cb82-4" tabindex="-1"></a>acumulada <span class="ot">=</span> <span class="cf">function</span>(x){ <span class="co"># Función de distribución acumulada</span></span>
+<span id="cb82-5"><a href="probabilidad-variables.html#cb82-5" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">/</span><span class="dv">8</span><span class="sc">+</span><span class="dv">3</span><span class="sc">/</span><span class="dv">16</span><span class="sc">*</span>x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb82-6"><a href="probabilidad-variables.html#cb82-6" tabindex="-1"></a>}</span>
+<span id="cb82-7"><a href="probabilidad-variables.html#cb82-7" tabindex="-1"></a></span>
+<span id="cb82-8"><a href="probabilidad-variables.html#cb82-8" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="fl">0.01</span>), <span class="co"># Valores de X</span></span>
+<span id="cb82-9"><a href="probabilidad-variables.html#cb82-9" tabindex="-1"></a>                <span class="st">&quot;fx&quot;</span> <span class="ot">=</span> <span class="fu">densidad</span>(<span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="fl">0.01</span>)), <span class="co"># Valores de la densidad</span></span>
+<span id="cb82-10"><a href="probabilidad-variables.html#cb82-10" tabindex="-1"></a>                <span class="st">&quot;Fx&quot;</span> <span class="ot">=</span> <span class="fu">acumulada</span>(<span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="fl">0.01</span>))) <span class="co"># Valores acumulados</span></span>
+<span id="cb82-11"><a href="probabilidad-variables.html#cb82-11" tabindex="-1"></a></span>
+<span id="cb82-12"><a href="probabilidad-variables.html#cb82-12" tabindex="-1"></a><span class="co"># Gráfico de línes de ambas funciones</span></span>
+<span id="cb82-13"><a href="probabilidad-variables.html#cb82-13" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df) <span class="sc">+</span></span>
+<span id="cb82-14"><a href="probabilidad-variables.html#cb82-14" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> fx, <span class="at">color =</span> <span class="st">&quot;Densidad&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb82-15"><a href="probabilidad-variables.html#cb82-15" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> Fx, <span class="at">color =</span> <span class="st">&quot;Acumulada&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb82-16"><a href="probabilidad-variables.html#cb82-16" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">&quot;Función&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Valores de X&quot;</span>, <span class="at">y =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-57-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>La probabilidad de que la carga esté entre 1 y 1.5 es</p>
+<p><span class="math display">\[P(1 \leq X \leq 1.5) = F(1.5) - F(1)\]</span>
+Utilizando la función del gráfico para la función de distribución acumulada, el resultado es</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="probabilidad-variables.html#cb83-1" tabindex="-1"></a><span class="fu">acumulada</span>(<span class="fl">1.5</span>) <span class="sc">-</span> <span class="fu">acumulada</span>(<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 0.296875</code></pre>
+<p>Una vez que se obtiene la función de distribución acumulada, cualquier probabilidad que implique <span class="math inline">\(X\)</span> es fácil de calcular sin cualquier integración adicional.</p>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-71" class="exercise"><strong>Ejercicio 2.29  </strong></span>Sea <span class="math inline">\(X\)</span> la cantidad de tiempo durante la cual un libro puesto en reserva durante dos horas en la biblioteca de una universidad es solicitado en préstamo por un estudiante seleccionado. La función de distribución acumulativa del tiempo de préstamo <span class="math inline">\(X\)</span> es</p>
+<span class="math display">\[\begin{equation}
+  \notag
+  F(x) = \left\lbrace
+  \begin{matrix}
+    0 &amp; x&lt;0 \\
+    \displaystyle\frac{x^2}{4} &amp; 0\leq x &lt; 2 \\
+    1 &amp; x \geq 2\\
+  \end{matrix} \right.
+\end{equation}\]</span>
+<p>Use esta para calcular lo siguiente:</p>
+<ol style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \leq 1)\)</span></li>
+<li><span class="math inline">\(P(0.5 \leq X \leq 1)\)</span></li>
+<li><span class="math inline">\(P(X &gt; 0.5)\)</span></li>
+<li><span class="math inline">\(f(x)\)</span></li>
+<li>Grafique <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(F(x)\)</span>.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-72" class="exercise"><strong>Ejercicio 2.30  </strong></span>El error de medición de un proceso de control de gestión en la peligrosidad de residuos está dado por la siguiente función de distribución acumulada.</p>
+<span class="math display">\[\begin{equation}
+  \notag
+  F(x) = \left\lbrace
+  \begin{matrix}
+    0 &amp; x &lt; -2 \\
+    \displaystyle\frac{1}{2} + \displaystyle\frac{3}{32}\left(4x-\displaystyle\frac{x^3}{3}\right) &amp; -2\leq x &lt; 2 \\
+    1 &amp; x \geq 2\\
+  \end{matrix} \right.
+\end{equation}\]</span>
+<ol style="list-style-type: lower-alpha">
+<li>Calcule <span class="math inline">\(P(X &lt; 0)\)</span>.</li>
+<li>Calcule <span class="math inline">\(P(-1 &lt; X &lt; 1)\)</span>.</li>
+<li>Calcule <span class="math inline">\(P(0.5 &lt; X)\)</span>.</li>
+<li>Calcule <span class="math inline">\(f(x)\)</span>.</li>
+<li>Grafique <span class="math inline">\(f(x)\)</span> y <span class="math inline">\(F(x)\)</span>.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-73" class="exercise"><strong>Ejercicio 2.31  </strong></span>El ejemplo <a href="probabilidad-variables.html#exm:intervalotiempo">2.15</a> introdujo el concepto de intervalo de tiempo en el flujo de tránsito y propuso una distribución particular para <span class="math inline">\(X =\)</span> el intervalo de tiempo entre dos carros consecutivos seleccionados al azar (s). Suponga que en un entorno de tránsito diferente, la distribución del intervalo de tiempo tiene la forma</p>
+<span class="math display">\[\begin{equation}
+  \notag
+  f(x) = \left\lbrace
+  \begin{matrix}
+    \displaystyle\frac{k}{x^4} &amp; x &gt; 1 \\
+    0 &amp; x \leq 1\\
+  \end{matrix} \right.
+\end{equation}\]</span>
+<ol style="list-style-type: lower-alpha">
+<li>Determine el valor de <span class="math inline">\(k\)</span> con el cual <span class="math inline">\(f(x)\)</span> es una función de densidad de probabilidad legítima.</li>
+<li>Obtenga la función de distribución acumulada.</li>
+<li>Use la función de distribución acumulada de <span class="math inline">\((b)\)</span> para determinar la probabilidad de que el intervalo de tiempo exceda de 2 segundos y también la probabilidad de que el intervalo esté entre 2 y 3 segundos.</li>
+<li>Grafique la función de densidad de probabilidad y la función de distribución acumulada.</li>
+</ol>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-continua-distribuciones" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Distribuciones<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-distribuciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A continuación, se dan a conocer algunas de las distribución de probabilidad continua más utilizadas. Cabe mencionar, que existen muchas otras distribuciones, por lo que se invita al estudiante a informarse de ellas en caso de que lo requiera.</p>
+<!-- #### Uniforme -->
+<!-- Esta es una versión continua de la ya vista en modelos discretos, la diferencia radica en que la variable es del tipo continua valga la redundancia. La función de probabilidad asociada es: -->
+<!-- ```{=tex} -->
+<!-- \begin{equation} -->
+<!-- \notag -->
+<!-- f(x) = \left\lbrace -->
+<!-- \begin{array}{cl} -->
+<!-- \displaystyle\frac{1}{b-a} & \text{si } x \in (a,b)\\ -->
+<!-- 0 & \text{si } x \not\in (a,b) -->
+<!-- \end{array} -->
+<!-- \right. -->
+<!-- \end{equation} -->
+<!-- ``` -->
+<!-- **Notación**: $U(a,b)$ -->
+<!-- :::: {.blackbox} -->
+<!-- ::: {.example} -->
+<!-- Imagine que es un analista financiero encargado de analizar los rendimientos diarios de una acción en particular en el mercado de valores. Los rendimientos diarios de esta acción se distribuyen de manera uniforme continua entre $-2\%$ y $2\%$, es decir, $U(a = -2, b = 2)$. -->
+<!-- En este caso, la distribución uniforme continua significa que cada valor dentro del rango dado tiene la misma probabilidad de ocurrir. Por lo tanto, la probabilidad de que el rendimiento diario de la acción sea cualquier valor entre $-2\%$ y $2\%$ es igual. -->
+<!-- Supongamos que estás interesado en calcular la probabilidad de que el rendimiento diario de la acción sea mayor o igual a $1.2\%$. Para hacerlo, primero debemos calcular el ancho del rango en el cual el rendimiento se encuentra dentro o por encima del $1.2\%$. En este caso, el ancho del rango es $2\% - 1.2\% = 0.8\%$. -->
+<!-- La probabilidad de que el rendimiento diario sea mayor o igual a $1.2\%$ es igual al ancho del rango ($0.8\%$) dividido por el ancho total de la distribución ($4\%$ en este caso), lo cual resulta en $0.8\%/4\% = 0.2$. -->
+<!-- ::: -->
+<!-- :::: -->
+<!-- La figura \@ref(fig:simuniformecontinua), muestra una simulación de la función de densidad de probabilidad de la distribución uniforme continua. -->
+<!-- ```{r simuniformecontinua, fig.align="center", fig.width=8, fig.height=4.5, fig.cap="Simulación de la distribución Uniforme Continua", echo=FALSE} -->
+<!-- u = function(n, titulo){ -->
+<!--   aux = data.frame("x" = seq(1:n), -->
+<!--                    "y" = dunif(x = seq(1:n), min = 1, max = n)) -->
+<!--   g = ggplot(data = aux, aes(x = x, y = y)) + -->
+<!--     geom_line() + -->
+<!--     labs(x = "Valor de x", -->
+<!--          y = "Densidad", title = titulo) +  -->
+<!--     # theme_bw() +  -->
+<!--     scale_y_continuous(limits = c(0,1)) +  -->
+<!--     scale_x_continuous(breaks = 1:n) -->
+<!--   return(g) -->
+<!-- } -->
+<!-- grid.arrange(u(3, "a = 1 y b = 3"), -->
+<!--              u(5, "a = 1 y b = 5"), -->
+<!--              u(10, "a = 1 y b = 10"), -->
+<!--              u(20, "a = 1 y b = 20"), -->
+<!--              ncol = 2) -->
+<!-- ``` -->
+<div id="probabilidad-variable-aleatoria-continua-distribuciones-exponencial" class="section level4 hasAnchor" number="2.4.3.1">
+<h4><span class="header-section-number">2.4.3.1</span> Exponencial<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-distribuciones-exponencial" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Esta es una de las pocas variables aleatorias continuas que se aplica a un contexto de determinado. Se utiliza para modelar tiempos de espera para la ocurrencia de un determinado evento (éxito). <strong>¿Qué similitudes y diferencias tiene con la variable discreta Poisson?</strong>.</p>
+<p>La función de densidad asociada es:</p>
+<span class="math display">\[\begin{equation}
+\notag
+f(x)= \left\lbrace
+\begin{array}{cl}
+\lambda e^{ -\lambda x} &amp; \text{si } x \geq 0\\
+0 &amp; \text{si } x &lt; 0
+\end{array}
+\right.
+\end{equation}\]</span>
+<p>con <span class="math inline">\(\lambda &gt; 0\)</span>. ¿Qué interpretación tiene lambda?</p>
+<p><strong>Notación</strong>: <span class="math inline">\(\text{Exp}(\lambda)\)</span></p>
+<p>La figura <a href="probabilidad-variables.html#fig:simexponencial">2.11</a>, muestra una simulación de la función de densidad de probabilidad de la distribución exponencial.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simexponencial"></span>
+<img src="est1+descriptiva_files/figure-html/simexponencial-1.png" alt="Simulación de la distribución Exponencial" width="768" />
+<p class="caption">
+Figura 2.11: Simulación de la distribución Exponencial
+</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-74" class="example"><strong>Ejemplo 2.18  </strong></span>Se está analizando el tiempo de espera de los clientes en una tienda y se desea calcular la probabilidad de que un cliente tenga que esperar más de 15 minutos antes de ser atendido. Suponiendo que el tiempo promedio de espera es de 10 minutos, es posible utilizar la distribución exponencial para calcular esta probabilidad.</p>
+<p>Lambda se calcula como el el recíproco del tiempo promedio, es decir, <span class="math inline">\(\lambda = \frac{1}{10}\)</span>. Luego, se desea calcular</p>
+<p><span class="math display">\[
+P(X &gt; 15)
+\]</span></p>
+<p>En R:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="probabilidad-variables.html#cb85-1" tabindex="-1"></a><span class="fu">pexp</span>(<span class="dv">15</span>,</span>
+<span id="cb85-2"><a href="probabilidad-variables.html#cb85-2" tabindex="-1"></a>     <span class="at">rate =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>, <span class="co"># Lambda</span></span>
+<span id="cb85-3"><a href="probabilidad-variables.html#cb85-3" tabindex="-1"></a>     <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<pre><code>## [1] 0.2231302</code></pre>
+</div>
+</div>
+<p>En la tabla <a href="probabilidad-variables.html#tab:continuaRexponencial">2.4</a> se muestran los comandos para calcular probabilidades asociadas a esta distribución.</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:continuaRexponencial">Tabla 2.4: </span>Cálculo de probabilidades de la distribución exponencial en R.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Probabilidad
+</th>
+<th style="text-align:left;">
+Comando
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \leq x)\)</span> o <span class="math inline">\(P(X \lt x)\)</span>
+</td>
+<td style="text-align:left;">
+pexp(q = , rate = )
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \geq x)\)</span> o <span class="math inline">\(P(X \gt x)\)</span>
+</td>
+<td style="text-align:left;">
+pexp(q = , rate = , lower.tail = F)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \leq q) = p\)</span>
+</td>
+<td style="text-align:left;">
+qexp(p = , rate = )
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-75" class="exercise"><strong>Ejercicio 2.32  </strong></span>Un componente eléctrico tiene una vida útil media de 8 años. Si su vida útil se distribuye en forma exponencial. ¿Cuál debe ser el tiempo <span class="math inline">\(x\)</span> de garantía que se debe otorgar, si se desea reemplazar a lo más el <span class="math inline">\(15\%\)</span> de los componentes que fallen dentro de este período?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-76" class="exercise"><strong>Ejercicio 2.33  </strong></span>Las personas que solicitan créditos en un banco son sometidas a un estudio de morosidad. En general, el tiempo promedio de una persona para volverse morosa es de 4 años después de solicitar un crédito. Si el momento en que una persona se vuelve morosa distribuye de forma exponencial con <span class="math inline">\(x\)</span> en años, ¿cuál es la probabilidad de que una persona se vuelva morosa posterior al quinto año después de solicitar un crédito?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-77" class="exercise"><strong>Ejercicio 2.34  </strong></span>Las rutas de reparto de pedidos de Amazon en Chile son modificadas en promedio cada año. Si el tiempo de actualización de las rutas distribuye de forma exponencial con <span class="math inline">\(x\)</span> en años, ¿cuál es la probabilidad de que las rutas de reparto se actualicen al cabo de 13 meses?</p>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-continua-distribuciones-normal" class="section level4 hasAnchor" number="2.4.3.2">
+<h4><span class="header-section-number">2.4.3.2</span> Normal<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-distribuciones-normal" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Esta es una de la variables continuas más usadas. Lamentablemente, no existe un característica fenomenológica que permita deducir cuando es adecuado utilizar esta variable. La función de desindad de probabilidad asociada es la siguiente.</p>
+<span class="math display">\[\begin{equation}
+\notag
+f(x)= (2\pi \sigma^2)^{-1/2}e^{\left( -\displaystyle\frac{(x-\mu)^2}{2\sigma^2} \right)} ,x \in R
+\end{equation}\]</span>
+<p><strong>Notación</strong>: <span class="math inline">\(N(\mu, \sigma^2)\)</span></p>
+<p>La figura <a href="probabilidad-variables.html#fig:simnormal">2.12</a>, muestra una simulación de la función de densidad de probabilidad de la distribución normal.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simnormal"></span>
+<img src="est1+descriptiva_files/figure-html/simnormal-1.png" alt="Simulación de la distribución Normal" width="768" />
+<p class="caption">
+Figura 2.12: Simulación de la distribución Normal
+</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-78" class="example"><strong>Ejemplo 2.19  </strong></span>Se está analizando los ingresos mensuales de una empresa y se desea calcular la probabilidad de que los ingresos estén por debajo de <span class="math inline">\(\$6000\)</span> miles de dólares. Además, se sabe que los ingresos mensuales siguen una distribución normal con una media de <span class="math inline">\(\$5000\)</span> (miles de dólares )y una desviación estándar de <span class="math inline">\(\$1000\)</span> (miles de dólares).</p>
+<p>La probabilidad a calcular es <span class="math inline">\(P(X &lt; 6000)\)</span>. En R:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="probabilidad-variables.html#cb87-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="dv">6000</span>, <span class="at">mean =</span> <span class="dv">5000</span>, <span class="at">sd =</span> <span class="dv">1000</span>)</span></code></pre></div>
+<pre><code>## [1] 0.8413447</code></pre>
+</div>
+</div>
+<p>En la tabla <a href="probabilidad-variables.html#tab:continuaRnormal">2.5</a> se muestran los comandos para calcular probabilidades asociadas a esta distribución.</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:continuaRnormal">Tabla 2.5: </span>Cálculo de probabilidades de la distribución normal en R.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Probabilidad
+</th>
+<th style="text-align:left;">
+Comando
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \leq x)\)</span> o <span class="math inline">\(P(X \lt x)\)</span>
+</td>
+<td style="text-align:left;">
+pnorm(q = , mean = , sd = )
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \geq x)\)</span> o <span class="math inline">\(P(X \gt x)\)</span>
+</td>
+<td style="text-align:left;">
+pnorm(q = , mean = , sd = , lower.tail = F)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \leq q) = p\)</span>
+</td>
+<td style="text-align:left;">
+qnorm(p = , mean = , sd = )
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-79" class="exercise"><strong>Ejercicio 2.35  </strong></span>En un bar se ha instalado una máquina automática para la venta de cerveza. La máquina puede regularse de modo que la cantidad media de cerveza por vaso sea la que se desea. Además, se sabe que el proceso de llenado sigue una distribución normal, y que independiente de la cantidad a llenar la desviación estándar es 5.9 <span class="math inline">\(ml\)</span>. Si el nivel medio se ajusta a 304.6 <span class="math inline">\(ml\)</span> determine qué porcentaje de los vasos contendrá menos de 295.7 <span class="math inline">\(ml\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-80" class="exercise"><strong>Ejercicio 2.36  </strong></span>Cada cierto periodo de tiempo, el Banco Central de Chile realiza una inyección de capital al mercado chileno, con el fin de mermar el efecto de la inflación. El dinero que destina el banco, sigue un distribución normal con media 15 (miles de millones) y una varianza de 4 (miles de millones). ¿Cuál es probabilidad el banco inyecte más de 15.6 miles de millones de pesos?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-81" class="exercise"><strong>Ejercicio 2.37  </strong></span>La mayoría de las transacciones electrónicas en Chile están a cargo de la empresa Transbank. Además, se sabe que la cantidad de transacciones realizadas por Transbank sigue un distribución normal con una media de 20 millones.</p>
+<ul>
+<li><p>Si la varianza de las transacciones es de 25 millones, ¿cuál es la probabilidad de que Transbank esté a cargo de más de 30 millones de transacciones?</p></li>
+<li><p>Si la varianza de las transacciones es de 16 millones, ¿cuántas deben ser las transacciones para que la probabilidad de que Transbank se haga cargo de un número mayor sea de un 34%?</p></li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-82" class="exercise"><strong>Ejercicio 2.38  </strong></span>El tipo de cambio del euro ha fluctuado de manera similar al dólar en los últimos 4 años. Si valor observado del euro sigue un distribución normal con media $912 y varianza $144.</p>
+<ul>
+<li><p>¿Cuál es la probabilidad de que el tipo de cambio del euro supere los $920?</p></li>
+<li><p>¿A cuánto debe estar el tipo de cambio para que la probabilidad de que el euro supere ese valor sea de un 21.9%?</p></li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-83" class="exercise"><strong>Ejercicio 2.39  </strong></span>Los residuos de vuelo de una determinad aerolínea son recolectados al final de cada semana, generando en promedio 48 toneladas de residuos. Además, la cantidad de residuos generados por los vuelos sigue una distribución normal.</p>
+<ul>
+<li><p>Si la varianza de los residuos generados es de 100, ¿cuál es la probabilidad de que la aerolínea genere más de 50 toneladas de residuos?</p></li>
+<li><p>Si la varianza de los residuos generados es de 120, ¿cuántos deben ser los residuos para que la probabilidad de que la aerolínea genere menos sea de un 87%?</p></li>
+</ul>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-84" class="exercise"><strong>Ejercicio 2.40  </strong></span>El sistema logístico de lavado de autos de una determinada empresa ha optado por instalar una máquina automática para la atención de clientes. Se sabe que la cantidad de clientes que son atendidos por la máquina sigue una distribución normal con una varianza de 90 personas.</p>
+<ul>
+<li><p>Si el promedio de personas atendidas por la máquina es de 390, ¿cuál es la probabilidad de que la máquina atienda a menos de 385 personas?</p></li>
+<li><p>Si el promedio de personas atendidas por la máquina son de 360, ¿cuántas personas como mínimo que deben ir a la máquina para que la posibilidad de que sean atendidas sea de un 70%?</p></li>
+</ul>
+</div>
+</div>
+<div id="probabilidad-variable-aleatoria-continua-distribuciones-tstudent-chicuadrado" class="section level4 hasAnchor" number="2.4.3.3">
+<h4><span class="header-section-number">2.4.3.3</span> T - Student y Ji - Cuadrado<a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-distribuciones-tstudent-chicuadrado" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Estas dos variables, al igual que la Normal son muy utilizadas. Sin embargo, la función de densidad de cada una de ellas es más compleja y engorrosa.</p>
+<p>Los parámetros de cada una de ellas son lo siguientes:</p>
+<ul>
+<li><em>t</em> - Student: <span class="math inline">\(t(v)\)</span>, donde <span class="math inline">\(v\)</span> son los denominados grados de libertad.</li>
+<li><span class="math inline">\(\chi^2\)</span>: <span class="math inline">\(\chi^2(v)\)</span>, donde <span class="math inline">\(v\)</span> son los denominados grados de libertad.</li>
+</ul>
+<p>La distribución <em>t</em> - Student y la Normal son muy parecidas cuando el tamaño de la muestra es grande. Además, en R se tiene que, la distribución <em>t</em> - Student siempre tiene media 0 y varianza fija <span class="math inline">\(&gt; 1\)</span> (una especie de parámetros fijos).</p>
+<p>La figura <a href="probabilidad-variables.html#fig:simstudent">2.13</a>, muestra una simulación de la función de densidad de probabilidad de la distribución <em>t</em> - Student</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simstudent"></span>
+<img src="est1+descriptiva_files/figure-html/simstudent-1.png" alt="Simulación de la distribución t-Student" width="768" />
+<p class="caption">
+Figura 2.13: Simulación de la distribución t-Student
+</p>
+</div>
+<p>La figura <a href="probabilidad-variables.html#fig:simchi">2.14</a>, muestra una simulación de la función de densidad de probabilidad de la distribución Ji-Cuadrado</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simchi"></span>
+<img src="est1+descriptiva_files/figure-html/simchi-1.png" alt="Simulación de la distribución Ji-Cuadrado" width="768" />
+<p class="caption">
+Figura 2.14: Simulación de la distribución Ji-Cuadrado
+</p>
+</div>
+<p>En la tabla <a href="probabilidad-variables.html#tab:continuaRtchisq">2.6</a> se muestran los comandos para calcular probabilidades asociadas a estas distribuciones.</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:continuaRtchisq">Tabla 2.6: </span>Cálculo de probabilidades de la distribución t-student y Ji-Cuadrado en R.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Probabilidad
+</th>
+<th style="text-align:left;">
+T-Student
+</th>
+<th style="text-align:left;">
+Ji-Cuadrado
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \leq x)\)</span> o <span class="math inline">\(P(X \lt x)\)</span>
+</td>
+<td style="text-align:left;">
+pt(q = , df = )
+</td>
+<td style="text-align:left;">
+pchisq(q = , df = )
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \geq x)\)</span> o <span class="math inline">\(P(X \gt x)\)</span>
+</td>
+<td style="text-align:left;">
+pt(q = , df = , lower.tail = F)
+</td>
+<td style="text-align:left;">
+pchisq(q = , df = , lower.tail = F)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(P(X \leq q) = p\)</span>
+</td>
+<td style="text-align:left;">
+qt(p = , df = )
+</td>
+<td style="text-align:left;">
+qchisq(p = , df = )
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-85" class="exercise"><strong>Ejercicio 2.41  </strong></span>Durante los últimos años, la cantidad de de personas que han solicitado avances en efectivo en cajeros automáticos ha ido en aumento. Si la cantidad de solicitudes de avances (en miles) siguen un distribución <span class="math inline">\(\chi^2\)</span> con 34 grados de libertad, ¿cuál es probabilidad de que para este año la cantidad de avances realizados en cajero sea menor a 45 mil?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-86" class="exercise"><strong>Ejercicio 2.42  </strong></span>La cantidad de fraudes financieros han ido en aumento a medida que la tecnología avanza. Si la cantidad de fraudes (en miles) sigue una distribución <em>t</em> - Student con 51 grados de libertad, ¿cuál es probabilidad de que para este año la cantidad de fraudes sea mayor a 0.7 mil?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-87" class="exercise"><strong>Ejercicio 2.43  </strong></span>La empresa ROSEN tiene un sistema automático para el relleno de almohadas con plumas. Si el volumen de relleno de plumas de las almohadas sigue un distribución <em>t</em> - Student con 200 grados de libertad, ¿cuál es la probabilidad de que una almohada sea rellenada con menos de 0.5 mil plumas?</p>
+</div>
+<p>Por otro lado, la tabla <a href="probabilidad-variables.html#tab:densidadcontinuasR">2.7</a> muestra un resumen de los comandos en R para los distintos casos de cálculo de valores en la función de densidad con distribuciones continuas.</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:densidadcontinuasR">Tabla 2.7: </span>Cálculo de densidades de distribuciones continuas en R.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Densidad
+</th>
+<th style="text-align:left;">
+Normal
+</th>
+<th style="text-align:left;">
+Exponencial
+</th>
+<th style="text-align:left;">
+T-Student
+</th>
+<th style="text-align:left;">
+Ji-Cuadrado
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<span class="math inline">\(f(x)\)</span>
+</td>
+<td style="text-align:left;">
+dnorm(x = , mean = , sd = )
+</td>
+<td style="text-align:left;">
+dexp(x = , rate =)
+</td>
+<td style="text-align:left;">
+dt(x = , df =)
+</td>
+<td style="text-align:left;">
+dchisq(x = , df =)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="probabilidad-esperanza" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Esperanza<a href="probabilidad-variables.html#probabilidad-esperanza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La esperanza, esperanza matemática o valor medio, es un concepto que se aplica cuando un experimento es realizado muchas veces. Consideremos un dado honesto, es decir, la probabilidad de que cada una de las caras salga seleccionada en cada tiro es de 1/6. Si registramos cada uno de los resultados y luego los promediamos, ese resultado es el resultado final promedio. Sin embargo, nosotros podemos estar interesados en conocer ese valor sin la necesidad de tener que tirar el dado muchas veces, para ello, existen fórmulas que permiten calcular el valor promedio de los resultados al realizar el experimento muchas veces.</p>
+<p>Si se trabaja con una variable aleatoria discreta, la esperanza matemática está dada por la siguiente expresión</p>
+<span class="math display" id="eq:esperanzadiscreta">\[\begin{equation}
+\notag
+\mu = E(X) = \sum_{i=1}^n x_iP(X = x_i)
+\end{equation}
+\tag{2.11}\]</span>
+<p>Por otro lado, para una variable aleatoria continua la expresión es</p>
+<span class="math display" id="eq:esperanazacontinua">\[\begin{equation}
+\notag
+\mu = E(X) = \int_{-\infty}^{\infty} xf(x)dx
+\tag{2.12}
+\end{equation}\]</span>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-88" class="example"><strong>Ejemplo 2.20  </strong></span>Consideremos el lanzamiento del dado, del cual se habló anteriormente. La siguiente tabla, refleja la probabilidad de cada uno de los eventos</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+<span class="math inline">\(X\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(P(X = x_i)\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Haciendo uso de la fórmula de esperanza agregamos los valores de la expresión <span class="math inline">\(x_if(x_i)\)</span>.</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+<span class="math inline">\(X\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(P(X = x_i)\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(x_iP(X=x_i)\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+<td style="text-align:center;">
+2/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+<td style="text-align:center;">
+3/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+<td style="text-align:center;">
+4/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+<td style="text-align:center;">
+5/6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:center;">
+1/6
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Finalmente, se deben sumar los valores de la tercera columna, obteniéndose como resultado</p>
+<span class="math display">\[\begin{equation}
+\notag
+E(X) = \sum_{i=1}^n x_iP(X=x_i) = 1/6 + 2/6 +3/6 + 4/6 + 5/6 + 6/6 = 21/6 = 3.5
+\end{equation}\]</span>
+<p>En base a este resultado, si una persona cobra 3 mil pesos por cada lanzamiento del dado, y devuelve 4 mil cada vez que el jugador obtiene un numero mayor a 2, ¿es rentable jugar?, ¿por qué?</p>
+</div>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-89" class="example"><strong>Ejemplo 2.21  </strong></span>Sea <span class="math inline">\(X\)</span> una variable aleatoria con distribución</p>
+<span class="math display">\[\begin{equation}
+\notag
+P(X=x) = p(1-p)^{x-1}, x = 1,2,\ldots
+\end{equation}\]</span>
+<p>Determine <span class="math inline">\(E(X)\)</span>.</p>
+<span class="math display">\[\begin{equation}
+\notag
+\begin{split}
+E(X) &amp;= \sum_{i=1}^{\infty}x_iP(X=x_i) = \sum_{x=1}^{\infty}xP(X=x)  = \sum_{x=1}^{\infty}xp(1-p)^{x-1}\\
+&amp;= p\sum_{x=1}^{\infty}x(1-p)^{x-1}  = p\sum_{x=1}^{\infty}\frac{\partial}{\partial p}\left(-(1-p)^{x}\right)\\
+&amp;= -p\frac{\partial}{\partial p}\left(\sum_{x=1}^{\infty}(1-p)^{x}\right)  = -p\frac{\partial}{\partial p}\left(\sum_{x=0}^{\infty}(1-p)^{x}-1\right)\\
+&amp;= -p\frac{\partial}{\partial p}\left(\frac{1}{1-(1-p)}-1\right) =  -p\frac{\partial}{\partial p}\left(\frac{1-p}{p}\right)\\
+&amp;= -p\frac{-p - (1-p)}{p^2} = \frac{1}{p}
+\end{split}
+\end{equation}\]</span>
+</div>
+</div>
+<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria y <span class="math inline">\(a,b\)</span> y <span class="math inline">\(c\)</span> son valores reales constantes, entonces, se tiene las siguientes propiedades de la espranza:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(E(k) = k\)</span> si <span class="math inline">\(k\)</span> es una constante.</li>
+<li><span class="math inline">\(E(kX) = kE(X)\)</span>.</li>
+<li><span class="math inline">\(E(aX+b) = aE(X) + b\)</span>.</li>
+<li>Sea <span class="math inline">\(X\)</span> una v.a.d, entonces, <span class="math inline">\(E(h(X)) = \displaystyle\sum_{i=1}^n h(x_i)P(X = x_i)\)</span>.</li>
+<li>Sea <span class="math inline">\(X\)</span> una v.a.c, entonces, <span class="math inline">\(E(h(X)) = \displaystyle\int_{-\infty}^{\infty} h(x)f(x)dx\)</span>.</li>
+</ol>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-90" class="exercise"><strong>Ejercicio 2.44  </strong></span>Un juego de azar consiste en lanzar dos dados y ganar tantos miles de pesos como valga la suma de las puntuaciones de los dados. ¿Cual es la cantidad media ganada cada vez que juego? Si me cobran 5 mil pesos por cada juego, ¿es interesante participar en este juego?</p>
+</div>
+<div class="exercise">
+<p><span id="exr:exesperanza1" class="exercise"><strong>Ejercicio 2.45  </strong></span>Para una variable aleatoria discreta <span class="math inline">\(X\)</span> la distribución de probabilidad viene dada por</p>
+<span class="math display">\[\begin{equation}
+\notag
+P(X = x) = \left\lbrace
+\begin{matrix}
+kx &amp; x = 1,2,3,4,5\\
+k(10-x) &amp; x = 6,7,8,9
+\end{matrix}
+\right.
+\end{equation}\]</span>
+<p>Hallar el valor de la constante <span class="math inline">\(k\)</span> y <span class="math inline">\(E(X)\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-91" class="exercise"><strong>Ejercicio 2.46  </strong></span>(Verificación con R) Considere la variable aleatoria que representa el número que pudiese salir en una ruleta (del 1 al 36). Determine el valor medio del experimento asociado a jugar en la ruleta. Verifique su resultado generando 10, 20, 30, 100, 200, 500, 1000, 2000 y 5000 números aleatorios enteros (entre 1 y 36, inclusive ambos) en R, realice un gráfico de puntos con líneas entre la cantidad de números aleatorios generados y el promedio de ellos. Comente lo observado.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:exesperanza2" class="exercise"><strong>Ejercicio 2.47  </strong></span>Un distribuidor de enseres para el hogar vende tres modelos de congeladores verticales de 13.5, 15.9 y 19.1 pies cúbicos de espacio de almacenamiento, respectivamente. Sea
+<span class="math inline">\(X =\)</span> la cantidad de espacio de almacenamiento adquirido por el siguiente cliente que compre un congelador. Suponga que <span class="math inline">\(X\)</span> tiene la función masa de probabilidad</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="text-align:center;">
+13.5
+</td>
+<td style="text-align:center;">
+15.9
+</td>
+<td style="text-align:center;">
+19.2
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(p(x)\)</span>
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+0.5
+</td>
+<td style="text-align:center;">
+0.3
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol style="list-style-type: decimal">
+<li>Calcule <span class="math inline">\(E(X)\)</span>.</li>
+<li>Calcule <span class="math inline">\(E(X^2)\)</span>.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:exesperanza3" class="exercise"><strong>Ejercicio 2.48  </strong></span>Se selecciona al azar un individuo que tiene asegurado su automóvil con una compañía. Sea <span class="math inline">\(Y\)</span> el número de infracciones de tránsito por las que el individuo fue citado durante los últimos 3 años. La función masa de probabilidad de <span class="math inline">\(Y\)</span> es</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(y\)</span>
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+<span class="math inline">\(p(y)\)</span>
+</td>
+<td style="text-align:center;">
+0.6
+</td>
+<td style="text-align:center;">
+0.25
+</td>
+<td style="text-align:center;">
+0.1
+</td>
+<td style="text-align:center;">
+0.05
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol style="list-style-type: decimal">
+<li>Calcule <span class="math inline">\(E(Y)\)</span>.</li>
+<li>Suponga que un individuo con <span class="math inline">\(Y\)</span> infracciones incurre en un recargo de <span class="math inline">\(\$100Y^2\)</span>. Calcule la cantidad esperada del recargo.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:exesperanza4" class="exercise"><strong>Ejercicio 2.49  </strong></span>Una barra de 12 pulgadas que está sujeta por ambos extremos se somete a una cantidad creciente de esfuerzo hasta que se rompe. Sea <span class="math inline">\(Y =\)</span> la distancia del extremo izquierdo al punto donde ocurre la ruptura. Suponga que <span class="math inline">\(Y\)</span> tiene la función de densidad de probabilidad</p>
+<span class="math display">\[\begin{equation}
+\notag
+f(y) = \left\lbrace
+\begin{matrix}
+\displaystyle\frac{y}{24}\left( 1 -\displaystyle\frac{y}{12}  \right) &amp; 0\leq y \leq 12\\
+0 &amp; \text{en otro caso}
+\end{matrix}
+\right.
+\end{equation}\]</span>
+<p>Calcule <span class="math inline">\(E(Y)\)</span> y <span class="math inline">\(E(Y^2)\)</span>.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:exesperanza5" class="exercise"><strong>Ejercicio 2.50  </strong></span>El tiempo <span class="math inline">\(X\)</span> para la terminación de cierta tarea tiene una función de distribución acumulativa <span class="math inline">\(F(x)\)</span> dada por</p>
+<span class="math display">\[\begin{equation}
+\notag
+F(x) = \left\lbrace
+\begin{matrix}
+0 &amp; x &lt; 0\\
+\displaystyle\frac{x^3}{3} &amp; 0 \leq x &lt; 1\\
+1-\displaystyle\frac{1}{2}\left(\displaystyle\frac{7}{3}-x \right)\left(\displaystyle\frac{7}{4}-\displaystyle\frac{3x}{4}\right) &amp; 1\leq x \leq \displaystyle\frac{7}{3}\\
+1 &amp; x \geq \displaystyle\frac{7}{3}
+\end{matrix}
+\right.
+\end{equation}\]</span>
+<p>Calcule <span class="math inline">\(E(X)\)</span> y <span class="math inline">\(E(X^2)\)</span>.</p>
+</div>
+</div>
+<div id="probabilidad-varianza" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Varianza<a href="probabilidad-variables.html#probabilidad-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Al igual como se abordó en la unidad 1, la varianza mide la dispersión cuadrática de una variable respecto al promedio. Sin embargo la expresión que permite calcular la varianza de cualquier tipo de variable aleatoria es</p>
+<span class="math display" id="eq:varianzaVA">\[\begin{equation}
+\sigma^2 = Var(X) = E[(X-\mu)^2]
+\tag{2.13}
+\end{equation}\]</span>
+<p>Utilizando las propiedades de la esperanza, es posible reducir la expresión <a href="probabilidad-variables.html#eq:varianzaVA">(2.13)</a> a una más sencilla.</p>
+<span class="math display" id="eq:varianzaSimplificada">\[\begin{equation}
+\begin{split}
+\sigma^2 = Var(X) &amp;= E[(X-\mu)^2]\\
+&amp;= E[X^2-2X\mu + \mu^2]\\
+&amp;= E[X^2]-E[2X\mu] + E[\mu^2]\\
+&amp;= E[X^2]-2\mu E[X] + \mu^2\\
+&amp;= E[X^2]-2\mu \cdot \mu + \mu^2\\
+&amp;= E[X^2]-2\mu^2 + \mu^2\\
+&amp;= E[X^2]-(E[X])^2\\
+\sigma^2 = Var(X) &amp;= E[X^2]-(E[X])^2\\
+\end{split}
+\tag{2.14}
+\end{equation}\]</span>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-92" class="example"><strong>Ejemplo 2.22  </strong></span>Suponga que se tiene una variable aleatoria continua <span class="math inline">\(X\)</span> con función de densidad de probabilidad <span class="math inline">\(f(x)\)</span> dada por:</p>
+<span class="math display">\[\begin{equation}
+\notag
+f(x) = 2x \text{, } 0 \leq x \leq 1 \\
+\end{equation}\]</span>
+<p>La media de <span class="math inline">\(X\)</span>, se calcula como:</p>
+<p><span class="math display">\[\mu = \int_{0}^{1} x \cdot f(x) \, dx = \int_{0}^{1} 2x^2 \, dx = \left[ \frac{2}{3} x^3 \right] \bigg|_{0}^{1} = \frac{2}{3}\]</span>
+La varianza de <span class="math inline">\(X\)</span> se calcula como:</p>
+<p><span class="math display">\[\sigma^2 = \int_{0}^{1} (x - \mu)^2 \cdot f(x) \, dx\]</span>
+Sustituyendo <span class="math inline">\(\mu= 2/3\)</span>, la fórmula se simplifica a:</p>
+<p><span class="math display">\[\sigma^2 = \int_{0}^{1} \left( x - \frac{2}{3} \right)^2 \cdot 2x \, dx\]</span>
+La solución de la integral para obtener la varianza es <span class="math inline">\(1/18\)</span>.</p>
+</div>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:falaciadeljugador" class="example"><strong>Ejemplo 2.23  </strong></span>(<em>La falacia del jugador</em>) La siguiente tabla muestra el registro de distintos experimentos asociados a tirar una moneda. En cada uno de ellos, se registra la cantidad de lanzamiento de la moneda, la cantidad de caras, la cantidad de sellos, la diferencia (número de caras - número de sellos) y la proporción (número de caras/número de sellos).</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-65">Tabla 2.8: </span>Primeros 10 de 1000 instancias de lanzamientos de una moneda.
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Lanzamientos
+</th>
+<th style="text-align:center;">
+Caras
+</th>
+<th style="text-align:center;">
+Sellos
+</th>
+<th style="text-align:center;">
+Diferencia
+</th>
+<th style="text-align:center;">
+Proporción
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+-3
+</td>
+<td style="text-align:center;">
+0.5714286
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+-3
+</td>
+<td style="text-align:center;">
+0.6250000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1.3333333
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+-7
+</td>
+<td style="text-align:center;">
+0.3636364
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1.6666667
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+-1
+</td>
+<td style="text-align:center;">
+0.8888889
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+-2
+</td>
+<td style="text-align:center;">
+0.8000000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+-5
+</td>
+<td style="text-align:center;">
+0.5833333
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fijémonos que ocurre si graficamos las diferencias entre caras y sellos según la cantidad de veces que se lanza la moneda.</p>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-66-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Por lo que se puede observar, la diferencia (amplitud vertical, variabilidad) aumenta a medida que también lo hace la cantidad de lanzamientos. Este resultado puede parecer extraño, ya que cuantas más veces se lanza la moneda, el números de caras y el de sellos debería tender a acercarse puesto que la cara y el sello son igual de probables. Sin embargo, para apreciar lo que realmente ocurre, se debe graficar las proporciones y no las diferencias.</p>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-67-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Como se observa, la proporción de caras y sellos tiene a ser 1 cuántas más veces se arroje la moneda <strong>(la diferencia no tenderá a cero)</strong>.</p>
+<p>La conocida como falacia del jugador consiste en creer que, porque hayan salido de forma continuada un número de caras relativamente grande, en la siguiente jugada deberá salir sello puesto que los resultados deberán compensarse. Así, en una ruleta, si han salido 3 o 4 veces seguidas números de color rojo, pensar que en el siguiente movimiento de la ruleta es más probable que salga negro es una falacia. Cada jugada es independiente de la anterior.</p>
+<p>Otros planteamientos (incorrectos) equivalentes son: “Un resultado aleatorio tiene más probabilidades de ocurrir, si no ha ocurrido durante cierto periodo de tiempo”; o “Un resultado tiene menos probabilidades de ocurrir, si no ha ocurrido durante cierto periodo de tiempo”.</p>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-93" class="exercise"><strong>Ejercicio 2.51  </strong></span>Calcule la varianza de los siguientes ejercicios <a href="probabilidad-variables.html#exr:exesperanza1">2.45</a>, <a href="probabilidad-variables.html#exr:exesperanza2">2.47</a>, <a href="probabilidad-variables.html#exr:exesperanza3">2.48</a>, <a href="probabilidad-variables.html#exr:exesperanza4">2.49</a> y <a href="probabilidad-variables.html#exr:exesperanza5">2.50</a>. Realice el cálculo manualmente y confirme el resultado mediante R.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-94" class="exercise"><strong>Ejercicio 2.52  </strong></span>Los ingresos de la empresa TechSolid están definidos por una variable aleatoria <span class="math inline">\(X\)</span> (en miles de millones de dólares). Se sabe que la la función de densidad de probabilidad está dada por:</p>
+<span class="math display">\[\begin{equation}
+\notag
+f(x) = \frac{1}{4} e^{-x/4},  x \geq 0
+\end{equation}\]</span>
+<ol style="list-style-type: decimal">
+<li>Determine el ingreso medio de la empresa.</li>
+<li>Determine la varianza del ingreso de la empresa. Utilice expresamente <span class="math inline">\(E[(X-\mu)^2]\)</span>.</li>
+<li>Si los costos de la empresa se relacionan con los ingresos de la siguiente manera: <span class="math inline">\(0.02X^2\)</span>. Determine los costos promedio de la empresa.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-95" class="exercise"><strong>Ejercicio 2.53  </strong></span>Dada la siguiente función de densidad de probabilidad, determine la <span class="math inline">\(Var(X)\)</span>.</p>
+<span class="math display">\[\begin{equation}
+\notag
+f(x) = 4.5 e^{-4.5x} \text{ , } x \geq 0
+\end{equation}\]</span>
+</div>
+
+</div>
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div id="ref-anderson" class="csl-entry">
+Anderson, D. R., Sweeney, D. J., &amp; Williams, T. A. (2008). <em>Estadística para administración y economía</em> (10a ed). Cengage Learning.
+</div>
+<div id="ref-Devore" class="csl-entry">
+Devore, J. L. (2008). <em>Probability and statistics for engineering and the sciences</em> (7th ed). Thomson/Brooks/Cole.
+</div>
+<div id="ref-larsen" class="csl-entry">
+Larsen, R. J., &amp; Marx, M. L. (2017). <em>An <span>Introduction</span> to <span>Mathematical</span> <span>Statistics</span> and <span>Its</span> <span>Applications</span></em> (6th ed.). Pearson.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="unidad1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="distribucionesmuestrales.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": true,
+    "facebook": false,
+    "twitter": true,
+    "linkedin": true,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": true,
+    "all": false
+  },
+  "fontsettings": false,
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["est1+descriptiva.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": null
+  },
+  "info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Unidad 1 Tópicos básicos de estadística | Estadística I &amp; Estadística Descriptiva</title>
+  <meta name="description" content="Curso básico de Estadística para ingeniería." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Unidad 1 Tópicos básicos de estadística | Estadística I &amp; Estadística Descriptiva" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Curso básico de Estadística para ingeniería." />
+  <meta name="github-repo" content="Dfranzani/Estadistica_I" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unidad 1 Tópicos básicos de estadística | Estadística I &amp; Estadística Descriptiva" />
+  
+  <meta name="twitter:description" content="Curso básico de Estadística para ingeniería." />
+  
+
+<meta name="author" content="Daniel Franzani" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="talleres.html"/>
+<link rel="next" href="probabilidad-variables.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introducción a la Estadística</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="" data-path="talleres.html"><a href="talleres.html"><i class="fa fa-check"></i>Talleres de práctica</a></li>
+<li class="chapter" data-level="1" data-path="unidad1.html"><a href="unidad1.html"><i class="fa fa-check"></i><b>1</b> Tópicos básicos de estadística</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos"><i class="fa fa-check"></i><b>1.1</b> Conceptos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-datos"><i class="fa fa-check"></i><b>1.1.1</b> Datos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-informacion"><i class="fa fa-check"></i><b>1.1.2</b> Información</a></li>
+<li class="chapter" data-level="1.1.3" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-tipos-variables"><i class="fa fa-check"></i><b>1.1.3</b> Tipos de variables</a></li>
+<li class="chapter" data-level="1.1.4" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-poblacion-muestra"><i class="fa fa-check"></i><b>1.1.4</b> Población y Muestra</a></li>
+<li class="chapter" data-level="1.1.5" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-parametros-estadisticos"><i class="fa fa-check"></i><b>1.1.5</b> Parámetros y Estadísticos</a></li>
+<li class="chapter" data-level="1.1.6" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-estimador-estimacion"><i class="fa fa-check"></i><b>1.1.6</b> Estimador y Estimación</a></li>
+<li class="chapter" data-level="1.1.7" data-path="unidad1.html"><a href="unidad1.html#variabilidad-muestral"><i class="fa fa-check"></i><b>1.1.7</b> Variabilidad muestral</a></li>
+<li class="chapter" data-level="1.1.8" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-representatividad-sesgo"><i class="fa fa-check"></i><b>1.1.8</b> Representatividad y sesgo de la muestra</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion"><i class="fa fa-check"></i><b>1.2</b> Medidas de localización</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-media"><i class="fa fa-check"></i><b>1.2.1</b> Media</a></li>
+<li class="chapter" data-level="1.2.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-mediana"><i class="fa fa-check"></i><b>1.2.2</b> Mediana</a></li>
+<li class="chapter" data-level="1.2.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-moda"><i class="fa fa-check"></i><b>1.2.3</b> Moda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala"><i class="fa fa-check"></i><b>1.3</b> Medidas de escala</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-rango"><i class="fa fa-check"></i><b>1.3.1</b> Rango</a></li>
+<li class="chapter" data-level="1.3.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-varianza-desviacion"><i class="fa fa-check"></i><b>1.3.2</b> Varianza y desviación estándar</a></li>
+<li class="chapter" data-level="1.3.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-coeficiente-variacion"><i class="fa fa-check"></i><b>1.3.3</b> Coeficiente de variación</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="unidad1.html"><a href="unidad1.html#topicos-notacion"><i class="fa fa-check"></i><b>1.4</b> Notación poblacional y muestral</a></li>
+<li class="chapter" data-level="1.5" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos"><i class="fa fa-check"></i><b>1.5</b> Gráficos descriptivos</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-histograma"><i class="fa fa-check"></i><b>1.5.1</b> Histograma</a></li>
+<li class="chapter" data-level="1.5.2" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-caja"><i class="fa fa-check"></i><b>1.5.2</b> Gráfico de Caja</a></li>
+<li class="chapter" data-level="1.5.3" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-violin"><i class="fa fa-check"></i><b>1.5.3</b> Gráfico de Violín</a></li>
+<li class="chapter" data-level="1.5.4" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-dispersion"><i class="fa fa-check"></i><b>1.5.4</b> Gráfico de Dispersión</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html"><i class="fa fa-check"></i><b>2</b> Probabilidad y variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos"><i class="fa fa-check"></i><b>2.1</b> Elementos de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-experimento"><i class="fa fa-check"></i><b>2.1.1</b> Experimento y Espacio muestral</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-eventos"><i class="fa fa-check"></i><b>2.1.2</b> Eventos aleatorios</a></li>
+<li class="chapter" data-level="2.1.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-evento"><i class="fa fa-check"></i><b>2.1.3</b> Probabilidad de un evento</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria"><i class="fa fa-check"></i><b>2.2</b> Variable aleatoria</a></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.3</b> Variables aleatorias discretas (v.a.d)</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fmp"><i class="fa fa-check"></i><b>2.3.1</b> Función de masa de probabilidad</a></li>
+<li class="chapter" data-level="2.3.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fda"><i class="fa fa-check"></i><b>2.3.2</b> Función de distribución acumulada</a></li>
+<li class="chapter" data-level="2.3.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-distribuciones"><i class="fa fa-check"></i><b>2.3.3</b> Distribuciones</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua"><i class="fa fa-check"></i><b>2.4</b> Variables aleatorias continuas (v.a.c)</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fdp"><i class="fa fa-check"></i><b>2.4.1</b> Función de densidad de probabilidad</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fda"><i class="fa fa-check"></i><b>2.4.2</b> Función de distribución acumulada</a></li>
+<li class="chapter" data-level="2.4.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-distribuciones"><i class="fa fa-check"></i><b>2.4.3</b> Distribuciones</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-esperanza"><i class="fa fa-check"></i><b>2.5</b> Esperanza</a></li>
+<li class="chapter" data-level="2.6" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-varianza"><i class="fa fa-check"></i><b>2.6</b> Varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html"><i class="fa fa-check"></i><b>3</b> Distribuciones muestrales</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media"><i class="fa fa-check"></i><b>3.1</b> Distribución de muestreo de la media</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-estandarizacion"><i class="fa fa-check"></i><b>3.1.1</b> Estandarización</a></li>
+<li class="chapter" data-level="3.1.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-distribucionmedia"><i class="fa fa-check"></i><b>3.1.2</b> Distribución de la media</a></li>
+<li class="chapter" data-level="3.1.3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-tlc"><i class="fa fa-check"></i><b>3.1.3</b> Teorema del Límite Central</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-varianza"><i class="fa fa-check"></i><b>3.2</b> Distribución de muestreo de la varianza</a></li>
+<li class="chapter" data-level="3.3" data-path="01-unidad1.html"><a href="#la-distribuci%C3%B3n-t-student"><i class="fa fa-check"></i><b>3.3</b> La distribución T-Student</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/rmarkdown-cookbook" target="blank">Published with Bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística I &amp; Estadística Descriptiva</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="unidad1" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Unidad 1</span> Tópicos básicos de estadística<a href="unidad1.html#unidad1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Las bases de datos que se trabajarán en esta unidad son las siguientes:</p>
+<ul>
+<li><p><a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Tasa%2Beuro%2Bdolar%2Bhistorica2023.csv" id="TasaEURUSD">Tasa Euro/Dólar</a>: Contiene el registro diario histórico de la tasa de cambio del Euro a Dólar durante el 2023. Las columnas de la base de datos son las siguientes:</p>
+<ul>
+<li>Date: Fecha de medición (yyyy-mm-dd), desde enero del 2003 hasta enero del 2023.</li>
+<li>Open: tasa de apertura.</li>
+<li>High: tasa más alta alcanzada en el día.</li>
+<li>Low: tasa más baja alcanzada en el día.</li>
+<li>Close: tasa de cierre del día.</li>
+<li>Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).</li>
+</ul>
+<p>El código para cargar la base de datos en R es:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="unidad1.html#cb1-1" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Tasa%2Beuro%2Bdolar%2Bhistorica2023.csv&quot;</span>)</span></code></pre></div></li>
+<li><p><a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2024-1/Belgian%20Electricity%20Prices.csv" id="PreciosElectricidad">Precios de electricidad</a>: Un conjunto de datos históricos que contiene el precio por hora de la electricidad para Bélgica. Las columnas de la base de datos son las siguientes:</p>
+<ul>
+<li>MTU: Hora de inicio (formato fecha y hora) del coste de la electricidad.</li>
+<li>EUR_MWh: Precio por hora (Euros por MWh).</li>
+</ul>
+<p>El código para cargar la base de datos en R es:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="unidad1.html#cb2-1" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2024-1/Belgian%20Electricity%20Prices.csv&quot;</span>)</span></code></pre></div></li>
+<li><p><a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Heart+complete.csv" id="Pacientes">Pacientes</a>: Contiene datos respecto a los ataques al corazón de distintos pacientes hospitalarios. El detalle de algunas de las columnas de la base de datos que utilizaremos son las siguientes:</p>
+<ul>
+<li>age: edad del paciente (en años).</li>
+<li>sex: sexo del paciente (Hombre: 1 y Mujer: 0).</li>
+<li>cp: Tipo de dolor en el pecho, Valor 1: angina típica, Valor 2: angina atípica, Valor 3: dolor no anginoso, Valor 4: asintomático.</li>
+<li>trtbps: presión arterial en reposo (en mm Hg).</li>
+<li>chol: nivel de colestorol (en mg/dl).</li>
+<li>fbs: azúcar en sangre en ayunas <span class="math inline">\(&gt;\)</span> 120 mg/dl (V = 1; F = 0).</li>
+<li>thalachh: frecuencia cardíaca máxima alcanzada (en latidos por minuto).</li>
+<li>oldpeak: tiempo de duración del último ataque al corazón (en minutos).</li>
+</ul>
+<p>El código para cargar la base de datos en R es:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="unidad1.html#cb3-1" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Heart+complete.csv&quot;</span>)</span></code></pre></div></li>
+</ul>
+<div id="topicos-conceptos" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Conceptos<a href="unidad1.html#topicos-conceptos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En esta sección se recordarán algunos conceptos claves de la estadística que están asociados a las ciencias cognitivas. Luego, se ahondará en las técnicas básicas de visualización para el estudio de estos.</p>
+<div id="topicos-conceptos-datos" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Datos<a href="unidad1.html#topicos-conceptos-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El dato es la unidad básica de la estadística, el cual, corresponde a cualquier evento o hecho que no ha sido dotado de significado, es decir, un hecho del cual no se puede dar interpretación alguna <span class="citation">(<a href="#ref-brachman_knowledge_2004">Brachman &amp; Levesque, 2004</a>)</span>.</p>
+<p>Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué al caminar nos detenemos al encontrarnos con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?</p>
+</div>
+<div id="topicos-conceptos-informacion" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Información<a href="unidad1.html#topicos-conceptos-informacion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<center>
+<strong>Información = Datos + Significado</strong>
+</center>
+<p>Por otro lado, los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información <span class="citation">(<a href="#ref-brachman_knowledge_2004">Brachman &amp; Levesque, 2004</a>)</span>. Otra forma de entenderlo es:</p>
+<center>
+<strong>Información = Datos + Reglas para decodificar</strong>
+</center>
+<p>En el ejemplo anterior, el decodificador es la persona que va caminando, y el significado (reglas para decodificar) que le damos al semáforo al estar en rojo viene de las reglas sociales que indican como actuar en determinadas situaciones.</p>
+<p><strong>En estadística, mediante el uso de distintas herramientas (gráficos, tablas, entre otras), dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio.</strong></p>
+</div>
+<div id="topicos-conceptos-tipos-variables" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> Tipos de variables<a href="unidad1.html#topicos-conceptos-tipos-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que los rodea. En este sentido, los datos están asociados a lo que llamamos variable (“naturaleza del dato”, “los tipos de valores que adquiere el dato”), las cuales, se pueden clasificar la siguiente manera <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 7)</span>:</p>
+<ul>
+<li><strong>Cualitativas</strong> (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.</li>
+<li><strong>Cuantitativas</strong> (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.</li>
+</ul>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-1" class="exercise"><strong>Ejercicio 1.1  </strong></span>Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.</p>
+</div>
+</div>
+<div id="topicos-conceptos-poblacion-muestra" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Población y Muestra<a href="unidad1.html#topicos-conceptos-poblacion-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En investigación la recolección de datos constituye una de las tareas iniciales antes de aplicar cualquier tipo de técnica de análisis. La disciplina de estadística proporciona métodos para organizar y resumir datos y de sacar conclusiones basadas en la información obtenida.</p>
+<p>Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una <strong>población</strong> de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un <strong>censo</strong>. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una <strong>muestra</strong>, de manera prescrita <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 2)</span>.</p>
+<ul>
+<li><strong>Población</strong>: La población es el conjunto de todos los sujetos de interés en un estudio.</li>
+<li><strong>Muestra</strong>: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos.</li>
+</ul>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-2" class="exercise"><strong>Ejercicio 1.2  </strong></span>Determine la población y muestra de los siguientes enunciados.</p>
+</div>
+<ul>
+<li>Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.</li>
+<li>La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.</li>
+</ul>
+</div>
+<div id="topicos-conceptos-parametros-estadisticos" class="section level3 hasAnchor" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> Parámetros y Estadísticos<a href="unidad1.html#topicos-conceptos-parametros-estadisticos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ambos conceptos están ligados a los de población y muestra de la siguiente manera <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 83)</span>:</p>
+<ul>
+<li><strong>Parámetros</strong>: corresponde a una característica de resumen de la población.</li>
+<li><strong>Estadísticos</strong>: corresponde a una característica de resumen de la muestra.</li>
+</ul>
+<p>En la figura <a href="unidad1.html#fig:parametro1">1.1</a> se observa un ejemplo de círculos rojos y azules tanto para la población como para una muestra de esta. Dado que la población contiene todos los datos (censo), es posible apreciar todos los círculos con sus colores. Por otro lado, la muestra es solo una pequeña parte de la población, es decir, seleccionan algunos de los círculos al “azar” con sus respectivos colores.</p>
+<p>Un ejemplo de los conceptos explicados es <strong>la proporción de círculos rojos</strong>. En caso de que estuviésemos interesados en dicha característica en la población, se hablaría de un parámetro, mientras que, si se está interesado en la muestra se hablaría de estadístico.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:parametro1"></span>
+<img src="est1+descriptiva_files/figure-html/parametro1-1.png" alt="Parámetro y estadístico" width="768" />
+<p class="caption">
+Figura 1.1: Parámetro y estadístico
+</p>
+</div>
+</div>
+<div id="topicos-conceptos-estimador-estimacion" class="section level3 hasAnchor" number="1.1.6">
+<h3><span class="header-section-number">1.1.6</span> Estimador y Estimación<a href="unidad1.html#topicos-conceptos-estimador-estimacion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una extensión de los conceptos de parámetro y estadístico, son los de estimador y estimación, para los cuales, se hace la siguiente distinción:</p>
+<ul>
+<li><p><strong>Estimador</strong>: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.</p></li>
+<li><p><strong>Estimación</strong>: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la “fórmula”, y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.</p></li>
+</ul>
+<p>Si consideramos un ejemplo similar al anterior (Figura <a href="unidad1.html#fig:parametro2">1.2</a>), y establecemos que el <strong>parámetro</strong> a estudiar es la proporción de círculos rojos, es natural pensar que en la muestra (<strong>estadístico</strong>) el comportamiento debería ser similar. La intención de decir “usaremos la proporción de círculos rojos en la muestra para deducir como es la proporción de círculos rojos en la población” corresponde al <strong>estimador</strong> (otro tema es argumentar si esto es correcto o no), mientras que, el cálculo del estimador (cálculo de la proporción de círculos rojos en la muestra) lleva el nombre de <strong>estimación</strong>.</p>
+<p>Respecto a lo anterior:</p>
+<ul>
+<li>¿Cuál sería la estimación de los círculos rojos?</li>
+<li>Si observamos la muestra de la figura <a href="unidad1.html#fig:parametro1">1.1</a> y <a href="unidad1.html#fig:parametro2">1.2</a>, ¿cuándo diríamos que una estimación es buena?</li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:parametro2"></span>
+<img src="est1+descriptiva_files/figure-html/parametro2-1.png" alt="Estimador y estimación" width="768" />
+<p class="caption">
+Figura 1.2: Estimador y estimación
+</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Ejemplo 1.1  </strong></span>Suponga que está interesado en estudiar el promedio anual del porcentaje de desempleo en Chile en el periodo 2010-2065. Para aproximar este valor, se hará uso de los registros anuales de desempleo de los últimos 16 años, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la diferencia entre el valor máximo y mínimo y, el logaritmo natural de la suma de los registros, dando como resultado un valor de 15%. A continuación, determine la población, muestra, parámetro, estadístico, estimador y estimación.</p>
+<ul>
+<li><p>Población: Todos los registros anuales de desempleo en Chile entre 2010 y 2065.</p></li>
+<li><p>Muestra: Los últimos 16 registros anuales de desempleo en Chile.</p></li>
+<li><p>Parámetro: El promedio anual del porcentaje de desempleo en Chile entre 2010 y 2065.</p></li>
+<li><p>Estadístico: El promedio anual del porcentaje de los últimos 16 registros de desempleo en Chile.</p></li>
+<li><p>Estimador: Sean <span class="math inline">\(V_i\)</span> con <span class="math inline">\(i=1,\ldots,16\)</span> los últimos 16 registros anuales de desempleo en Chile. Luego el estimador es el siguiente:</p>
+<p><span class="math display">\[
+\frac{\max(V_i) - \min(V_i)}{\ln\left(\displaystyle\sum_{i=1}^{16} V_i\right)}
+\]</span></p></li>
+<li><p>Estimación: El valor de 15% obtenido al aplicar el estimador a la muestra.</p></li>
+</ul>
+<p><strong>Algunas consideraciones importantes son:</strong></p>
+<ul>
+<li>El estadístico siempre es la misma característica de la población pero aplicada a la muestra. Sin embargo, puede cambiar la fórmula matemática (estimador) que se utiliza para poder ser calculada (en la muestra). Esto cobra más sentido cuando la característica que se estudia es más compleja, por ejemplo, crecimiento económico, ya que no tiene una forma estándar de ser calculada (depende de las condiciones de la problemática).</li>
+<li>El estimador siempre es la fórmula matemática que se debe ser aplicada para poder cuantificar el estadístico.</li>
+</ul>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Ejercicio 1.3  </strong></span>Para los siguientes enunciados determine: población, muestra, parámetro, estadístico, estimador y estimación.</p>
+<ol style="list-style-type: decimal">
+<li><p>Suponga que esté interesado en determinar el promedio anual de la esperanza de vida de los hombres en el periodo 20025-2027, sin embargo no cuenta con todos los datos. Para aproximar este valor, se hará uso de los registros anuales de esperanza de vida de los hombres en Chile entre 2010 y 2017, para luego calcular el promedio muestral. La fórmula para poder determinar el promedio muestral es obtener el cuociente entre el promedio aritmético de los datos, y la raíz cuadrada de la suma de los datos, dado como resultado 79.12 años</p></li>
+<li><p>Suponga que está interesado en estudiar el promedio histórico del monto de las deudas comerciales (considere la deuda comercial como la suma de la deuda comercial de hombres y mujeres), para ello, usted aproxima este valor mediante el uso de los registros anuales de deuda comercial de hombres y mujeres entre 2010 y 2022, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la diferencia entre la suma de los valores cúbicos de los registros y, el logaritmo natural de la suma de los registros al cuadrado, dando como resultado un valor de 15.12 billones de pesos.</p></li>
+<li><p>Desea determinar la mediana histórica de la edad de los distintas especies de árbol que habitan la región de la Araucanía, para ello, usted aproxima este valor mediante el uso de los registros de edad de los árboles en la región entre 2010 y 2022, para luego calcular la mediana muestral, haciendo uso de la mediana Hodges-Lehmann. La fórmula para calcular dicha medida, es el promedio de todas las medianas de pares de observaciones. El resultado final es un valor de 76.4 años.</p></li>
+</ol>
+</div>
+</div>
+<div id="variabilidad-muestral" class="section level3 hasAnchor" number="1.1.7">
+<h3><span class="header-section-number">1.1.7</span> Variabilidad muestral<a href="unidad1.html#variabilidad-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Efectivamente, la estimación de un parámetro está determinada por la muestra con la que se trabaja. La forma en la que se elige una muestra es azarosa (que no se puede intencionar en su totalidad), por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso.</p>
+<p>El concepto detrás de esto es la <strong>variabilidad muestral</strong>, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación). Para ilustrar esto, observemos la figura <a href="unidad1.html#fig:figura-poblacion1">1.3</a>.</p>
+<center>
+<strong>¿Cuál es la proporción de círculos rojos en la población reflejada en la figura</strong> <strong>?</strong>
+</center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-poblacion1"></span>
+<img src="est1+descriptiva_files/figure-html/figura-poblacion1-1.png" alt="Población" width="240" />
+<p class="caption">
+Figura 1.3: Población
+</p>
+</div>
+<p>Luego,</p>
+<center>
+<strong>¿qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura</strong> <a href="unidad1.html#fig:figura-muestra1">1.4</a><strong>?</strong>
+</center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-muestra1"></span>
+<img src="est1+descriptiva_files/figure-html/figura-muestra1-1.png" alt="Muestra 1" width="240" />
+<p class="caption">
+Figura 1.4: Muestra 1
+</p>
+</div>
+<center>
+<strong>¿Y ahora? (Figura</strong> <a href="unidad1.html#fig:figura-muestra2">1.5</a><strong>)</strong>
+</center>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figura-muestra2"></span>
+<img src="est1+descriptiva_files/figure-html/figura-muestra2-1.png" alt="Muestra 2" width="240" />
+<p class="caption">
+Figura 1.5: Muestra 2
+</p>
+</div>
+<p>Efectivamente, diferentes muestras se comportan de manera diferente, es decir, la estimación depende de la selección de la muestra. Esto se denomina como <strong>variabilidad muestral</strong>.</p>
+</div>
+<div id="topicos-conceptos-representatividad-sesgo" class="section level3 hasAnchor" number="1.1.8">
+<h3><span class="header-section-number">1.1.8</span> Representatividad y sesgo de la muestra<a href="unidad1.html#topicos-conceptos-representatividad-sesgo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><strong>Representatividad</strong></p>
+<p>Comúnmente se escucha hablar de que una muestra debe ser representativa respecto de la población, algo muy similar a lo presentado en la sección <a href="unidad1.html#variabilidad-muestral">1.1.7</a>. Sin embargo, este concepto no tiene sustento matemático, ya que, para poder verificar que una muestra es representativa se debe conocer a toda la población (la característica de estudio), lo cual en la práctica no ocurre. Y en caso de que se conociesen todos los datos de la población, sería absurdo calcular la estimación de un parámetro, ya que podría calcularse directamente el valor del parámetro en cuestión.</p></li>
+<li><p><strong>Sesgo</strong></p>
+<p>Hay personas utilizan la siguiente frase “<em>la muestra está sesgada</em>”, lo cual es incorrecto en su totalidad en estadística. El concepto de sesgo no es únicamente propio de la estadística, sin embargo, en esta área, corresponde a una propiedad de los estimadores. Se dice que un estimador es insesgado cuando el valor esperado de este es igual al parámetro. Y al igual que el concepto anterior, no es posible verificarlo en la práctica, aunque si tiene un sustento matemático por detrás.</p></li>
+</ul>
+</div>
+</div>
+<div id="topicos-medidas-localizacion" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Medidas de localización<a href="unidad1.html#topicos-medidas-localizacion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los resúmenes visuales de datos son herramientas excelentes para obtener impresiones y percepciones preliminares. Un análisis de datos más formal a menudo requiere el cálculo e interpretación de medidas de resumen numéricas. Es decir, de los datos se trata de extraer varios números resumidos, números que podrían servir para caracterizar el conjunto de datos. Las tres medidas de resumen más utilizadas son la media, la mediana y la moda.</p>
+<div id="topicos-medidas-localizacion-media" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Media<a href="unidad1.html#topicos-medidas-localizacion-media" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para un conjunto dado de números <span class="math inline">\(x_1, x_2, x_3, \ldots, x_n\)</span>, la medida más conocida y útil es la <strong>media</strong> o promedio aritmético. Usualmente se asume que los números <span class="math inline">\(x_i\)</span> hace parte de una muestra, por lo que a este promedio se le connota como <strong>media muestral</strong> y se denota con por <span class="math inline">\(\bar{x}\)</span>.</p>
+<p>De lo anterior, la media muestral (<span class="math inline">\(\bar{x}\)</span>) de una conjunto de datos <span class="math inline">\(x_1, x_2, x_3, \ldots, x_n\)</span> está dada por <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 25)</span></p>
+<span class="math display" id="eq:promedio">\[\begin{equation}
+\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\displaystyle\sum_{i=1}^{n}x_i}{n}
+\tag{1.1}
+\end{equation}\]</span>
+<p>En R, para obtener el promedio aritmético de los datos se hace uso de la función <code>mean()</code>. A continuación, un ejemplo.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="unidad1.html#cb4-1" tabindex="-1"></a><span class="co"># Un conjunto de datos cualquiera</span></span>
+<span id="cb4-2"><a href="unidad1.html#cb4-2" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">4</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="sc">-</span><span class="dv">20</span>)</span>
+<span id="cb4-3"><a href="unidad1.html#cb4-3" tabindex="-1"></a><span class="co"># Promedio de los datos</span></span>
+<span id="cb4-4"><a href="unidad1.html#cb4-4" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 0.2727273</code></pre>
+<p>El promedio (<span class="math inline">\(\bar{x}\)</span>) representa el valor central de las observaciones incluidas en una muestra. Sin embargo, esta medida puede llegar a ser inapropiada en algunas circunstancias, específicamente cuando existen valores extremos. Un ejemplo de esto, es el promedio de los ingresos (<a href="https://www.ine.gob.cl/prensa/detalle-prensa/2022/07/21/el-ingreso-laboral-promedio-mensual-en-chile-fue-de-$681.039-en-2021#:~:text=El%20ingreso%20laboral%20promedio%20mensual%20en%20Chile%20fue%20de%20%24681.039%20en%202021,-21%2F07%2F2022&amp;text=El%2050%25%20de%20las%20personas,ingreso%20de%20hasta%20%24457.690%20mensuales.">el caso de Chile</a>), ya que, es común que unos cuantos afortunados ganen cantidades astronómicas, por lo que el uso del ingreso promedio como medida de resumen puede ser engañoso (otro ejemplo, <a href="https://www.google.com/finance/quote/BTC-USD?sa=X&amp;ved=2ahUKEwi3po-_m9n8AhWUL7kGHTNFCfYQ-fUHegQIFhAe&amp;window=MAX">es la valorización de BitCoin al dólar estadounidense</a>).</p>
+<p>A pesar de lo anterior, esta medida sigue siendo ampliamente utilizada, en gran medida porque existen muchas poblaciones para las cuales un valor extremo en la muestra sería altamente improbable (ejemplo: <a href="https://www.google.com/finance/quote/EUR-CLP?window=MAX&amp;comparison=USD-CLP">tipo de cambio del dólar y el euro</a>).</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Ejercicio 1.4  </strong></span>Respecto a la base <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>, utilice el comando <code>colMeans()</code> para obtener la media de todas las variables asociadas a la tasa de conversión (ignore la columna asociada a la variable fecha). Interprete.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Ejercicio 1.5  </strong></span>Obtenga de la media del precio por hora de la electricidad, en la base <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>. Utilice el comando <code>na.omit()</code> para no considerar los valores faltantes. Interprete.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Ejercicio 1.6  </strong></span>Considerando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine la media del nivel de colesterol por sexo. Interprete.</p>
+</div>
+</div>
+<div id="topicos-medidas-localizacion-mediana" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Mediana<a href="unidad1.html#topicos-medidas-localizacion-mediana" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La palabra mediana es sinónimo de “medio” y la mediana muestral es en realidad el valor medio una vez que se ordenan las observaciones de la más pequeña a la más grande <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 26)</span>.</p>
+<p>La mediana muestral se obtiene ordenando primero las observaciones de la más pequeña a la más grande. Por lo tanto,</p>
+<ul>
+<li>Si la cantidad de datos es impar, entonces, la mediana es igual al número en la posición <span class="math inline">\(\frac{n+1}{2}\)</span>.</li>
+<li>Si la cantidad de datos es par, entonces, la mediana es el promedio entre los números ubicados en las posiciones <span class="math inline">\(\frac{n}{2}\)</span> y <span class="math inline">\((\frac{n}{2}+1)\)</span>.</li>
+</ul>
+<p>Para poder calcular la mediana en R, se debe hacer uso del comando <code>median()</code>, tal como se muestra a continuación.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="unidad1.html#cb6-1" tabindex="-1"></a><span class="co"># Conjunto de datos (cantidad impar)</span></span>
+<span id="cb6-2"><a href="unidad1.html#cb6-2" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="fl">5.4</span>,<span class="fl">9.3</span>,<span class="dv">0</span>)</span>
+<span id="cb6-3"><a href="unidad1.html#cb6-3" tabindex="-1"></a><span class="co"># Mediana del conjunto de datos</span></span>
+<span id="cb6-4"><a href="unidad1.html#cb6-4" tabindex="-1"></a><span class="fu">median</span>(x)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="unidad1.html#cb8-1" tabindex="-1"></a><span class="co"># Conjunto de datos (cantidad par)</span></span>
+<span id="cb8-2"><a href="unidad1.html#cb8-2" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="sc">-</span><span class="dv">3</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="fl">5.4</span>,<span class="fl">9.3</span>)</span>
+<span id="cb8-3"><a href="unidad1.html#cb8-3" tabindex="-1"></a><span class="co"># Mediana del conjunto de datos</span></span>
+<span id="cb8-4"><a href="unidad1.html#cb8-4" tabindex="-1"></a><span class="fu">median</span>(x)</span></code></pre></div>
+<pre><code>## [1] 3.5</code></pre>
+<p>En ambos casos, se entiende que, ordenando los datos de menor a mayor (en una recta real), tanto a la derecha como izquierda de la mediana se encuentra la misma cantidad de datos.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-8" class="exercise"><strong>Ejercicio 1.7  </strong></span>Obtenga la mediana de las distintas variables (cuando corresponda) de la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>. Interprete.</p>
+</div>
+</div>
+<div id="topicos-medidas-localizacion-moda" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Moda<a href="unidad1.html#topicos-medidas-localizacion-moda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La moda es la medida más intuitiva de las tres, ya que simplemente corresponde al valor que se presenta con mayor frecuencia <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 85)</span>. Para ilustrar esto, veamos el siguiente código en R:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="unidad1.html#cb10-1" tabindex="-1"></a><span class="co"># El siguiente vector contiene la información de la cantidad </span></span>
+<span id="cb10-2"><a href="unidad1.html#cb10-2" tabindex="-1"></a><span class="co"># de hermanos de un determinado grupo de personas</span></span>
+<span id="cb10-3"><a href="unidad1.html#cb10-3" tabindex="-1"></a>hermanos <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>)</span>
+<span id="cb10-4"><a href="unidad1.html#cb10-4" tabindex="-1"></a><span class="co"># Utilizando el comando table podemos obtener la frecuencia de </span></span>
+<span id="cb10-5"><a href="unidad1.html#cb10-5" tabindex="-1"></a><span class="co"># cada una de las distintas observaciones</span></span>
+<span id="cb10-6"><a href="unidad1.html#cb10-6" tabindex="-1"></a><span class="fu">table</span>(hermanos)</span></code></pre></div>
+<pre><code>## hermanos
+## 0 1 2 3 4 7 
+## 3 5 3 4 1 1</code></pre>
+<p>Como resultado se aprecia que la cantidad de hermanos que más se repita dentro del grupo de personas es de 5.</p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Ejemplo 1.2  </strong></span></p>
+<ol style="list-style-type: decimal">
+<li><p>Cree un objeto que guarde la tabla de frecuencias de la variable Open de la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a> (sin imprimir la tabla).</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="unidad1.html#cb12-1" tabindex="-1"></a>tabla <span class="ot">=</span> <span class="fu">table</span>(datos<span class="sc">$</span>Open)</span></code></pre></div></li>
+<li><p>Ya que es imposible buscar manualmente la frecuencia más alta, utilice el comando <code>which.max()</code> para encontrar la posición en la que se ubica esta, ingresando como argumento la tabla anteriormente guardada. Guarde este valor en un objeto.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="unidad1.html#cb13-1" tabindex="-1"></a>(<span class="at">posicion =</span> <span class="fu">which.max</span>(tabla))</span></code></pre></div>
+<pre><code>## 1.336005 
+##     3067</code></pre></li>
+<li><p>Finalmente, consulte de manera directa en la tabla en valor de la frecuencia en la posición calculada en el paso anterior. Interprete.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="unidad1.html#cb15-1" tabindex="-1"></a>tabla[posicion]</span></code></pre></div>
+<pre><code>## 1.336005 
+##        6</code></pre>
+<p>Esto quiere decir, que el valor de apertura de la tasa EUR/USD que más se repite históricamente es 1.336005 con una frecuencia de 6.</p>
+<p><em>Nota: En caso de que existan dos o más valores con las frecuencias más altas, el programa solo reporta la primera, según el orden lexicográfico de las columnas.</em></p></li>
+</ol>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-10" class="exercise"><strong>Ejercicio 1.8  </strong></span>Considerando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine la moda de las variables cualitativas. Interprete.</p>
+</div>
+<p><strong>Nota</strong>: En el documento se usará simplemente el nombre de la medida de localización (media, moda, mediana) para referirse a la medida de localización muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: media poblacional, media muestral).</p>
+</div>
+</div>
+<div id="topicos-medidas-escala" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Medidas de escala<a href="unidad1.html#topicos-medidas-escala" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Al momento de reportar la media solo se obtiene información parcial sobre el un conjunto de datos. Diferentes muestras o poblaciones pueden tener medidas idénticas de localización y aún diferir entre sí en otras importantes maneras. La tabla <a href="unidad1.html#tab:variabilidad">1.1</a> muestra las notas obtenidas por los alumnos de 2 dos cursos con la misma media, aunque el grado de <strong>dispersión</strong> (variabilidad) en torno a esta es diferente para ambas muestras, es decir, en el Curso 1 las se observan notas más bajas y altas que el Curso 2.</p>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:variabilidad">Tabla 1.1: </span>Notas por curso
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Curso 1
+</th>
+<th style="text-align:center;">
+Curso 2
+</th>
+<th style="text-align:center;">
+Curso 3
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+4.0
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4.5
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+7.0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+6.0
+</td>
+<td style="text-align:center;">
+–
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5.5
+</td>
+<td style="text-align:center;">
+–
+</td>
+<td style="text-align:center;">
+–
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7.0
+</td>
+<td style="text-align:center;">
+–
+</td>
+<td style="text-align:center;">
+–
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topicos-medidas-escala-rango" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Rango<a href="unidad1.html#topicos-medidas-escala-rango" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La medida más simple de variabilidad en una muestra es el <strong>rango</strong>, el cual es la diferencia entre los valores muestrales más grande y más pequeño <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 32)</span>. El rango de las notas del curso 1 en la tabla <a href="unidad1.html#tab:variabilidad">1.1</a> es más grande que el del curso 2, lo que refleja más variabilidad en la primer muestra que en la segunda. Un defecto del rango, no obstante, es que depende de solo las dos observaciones más extremas y hace caso omiso de las posiciones de los valores restantes. Los cursos 1 y 3 tienen rangos idénticos, aunque cuando se toman en cuenta las observaciones entre los dos extremos, existe mucho menos variabilidad o dispersión en la tercera muestra que en la primera.</p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-11" class="example"><strong>Ejemplo 1.3  </strong></span>Obtener el rango de la tasa de apertura histórica del EUR/USD de la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="unidad1.html#cb17-1" tabindex="-1"></a><span class="co"># Utilizando el comando range() se obtienen los valores mínimo y máximo</span></span>
+<span id="cb17-2"><a href="unidad1.html#cb17-2" tabindex="-1"></a><span class="co"># de la variable en cuestión</span></span>
+<span id="cb17-3"><a href="unidad1.html#cb17-3" tabindex="-1"></a>(<span class="at">rango =</span> <span class="fu">range</span>(datos<span class="sc">$</span>Open))</span></code></pre></div>
+<pre><code>## [1] 0.959619 1.598184</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="unidad1.html#cb19-1" tabindex="-1"></a><span class="co"># Luego calculamos la diferencia entre el valor máximo y mínimo</span></span>
+<span id="cb19-2"><a href="unidad1.html#cb19-2" tabindex="-1"></a>rango[<span class="dv">2</span>] <span class="sc">-</span> rango[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## [1] 0.638565</code></pre>
+<p>El valor máximo siempre estará en la segunda posición y le mínimo en la segunda.</p>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-12" class="exercise"><strong>Ejercicio 1.9  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, determine el rango de las variables cuantitativas. Interprete.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-13" class="exercise"><strong>Ejercicio 1.10  </strong></span>Determine el rango de la fechas de medición en los precios de electricidad en la base <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>. Interprete.</p>
+</div>
+</div>
+<div id="topicos-medidas-escala-varianza-desviacion" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Varianza y desviación estándar<a href="unidad1.html#topicos-medidas-escala-varianza-desviacion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las medidas principales de variabilidad implican las <strong>desviaciones de la media</strong>,</p>
+<span class="math display" id="eq:desviaciones">\[\begin{equation}
+x_1 - \bar{x}, x_2 - \bar{x}, x_3 - \bar{x}, \ldots, x_n - \bar{x}.
+\tag{1.2}
+\end{equation}\]</span>
+<p>Es decir, las desviaciones de la media se obtienen restando <span class="math inline">\(\bar{x}\)</span> de cada una de las <span class="math inline">\(n\)</span> observaciones muestrales. Una desviación será positiva si la observación es más grande que la media (a la derecha de la media sobre la recta real) y negativa si la observación es más pequeña que la media (a la izquierda de la media sobre la recta real). Si todas las desviaciones son pequeñas en magnitud, entonces todos los valores de la muestra son cercanos a la media y hay poca variabilidad. Alternativamente, si algunas de las desviaciones son grandes de magnitud, entonces algunos de los de los valores de la muestra están lejos de la media (sobre la recta real) lo que sugiere una mayor variabilidad.</p>
+<p>Una forma de resumir las desviaciones sería sumando todas ellas. Sin embargo, es una mala idea, ya que la suma siempre es igual a cero <a href="unidad1.html#eq:sumadesviaciones">(1.3)</a>, ¿alguna idea del por qué?</p>
+<span class="math display" id="eq:sumadesviaciones">\[\begin{equation}
+\text{Suma de las desviaciones en una muestra} = \sum_{i=1}^{n}(x_i-\bar{x}) = 0
+\tag{1.3}
+\end{equation}\]</span>
+<p>En este sentido, para poder resumir las desviaciones de una muestra evitando el problema mencionado, se elaboran dos expresiones <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 32)</span>:</p>
+<ul>
+<li>Varianza (muestral):</li>
+</ul>
+<span class="math display" id="eq:varianzamuestral">\[\begin{equation}
+S^2= \frac{1}{n-1}\sum_{i=1}^{n}(x_i-\bar{x})^2
+\tag{1.4}
+\end{equation}\]</span>
+<ul>
+<li>Desviación estándar (muestral):</li>
+</ul>
+<span class="math display" id="eq:demuestral">\[\begin{equation}
+S = \sqrt{S^2}
+\tag{1.5}
+\end{equation}\]</span>
+<p>Las unidades correspondientes a la <strong>varianza</strong> suele causar confusión. Como los valores que se suman para calcular la varianza, <span class="math inline">\((x_i-\bar{x})^2\)</span>, están elevados al cuadrado, las unidades correspondientes a la varianza muestral también están elevadas al cuadrado. Las unidades al cuadrado de la varianza dificulta la compresión e interpretación intuitiva de los valores numéricos de la varianzas. Lo recomendable es entender la varianza como una medida útil para comparar la variabilidad de dos o más variables. Al comparar variables, la que tiene la varianza mayor, muestra más variabilidad. Otra interpretación del valor de la varianza suele ser innecesaria <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 94)</span>.</p>
+<p>La <strong>desviación estándar</strong> es la raíz cuadrada de la varianza, pero, ¿qué se gana con esto? Al calcular la desviación estándar, las unidades de esta son iguales a de la variable original, por lo que es más fácil de interpretar. Sin embargo, estas dos medidas tiene ciertas limitantes a la hora de comprar la variabilidad de dos variables:</p>
+<ol style="list-style-type: decimal">
+<li>Es ideal que ambas variable tengan la misma media.</li>
+<li>Las variables deben tener la misma unidad de medida.</li>
+</ol>
+<p>No seguir estas recomendaciones puede generar un falsa sensación en la comunicación de resultados.</p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:EUR-USD-varianza" class="example"><strong>Ejemplo 1.4  </strong></span>Compare la variabilidad entre la tasa de apertura y la tasa de cierre histórica del EUR/USD presentes en la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>, para ello:</p>
+<ol style="list-style-type: decimal">
+<li><p>Verifique la media de ambas variables la misma</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="unidad1.html#cb21-1" tabindex="-1"></a><span class="fu">mean</span>(datos<span class="sc">$</span>Open) <span class="co"># Promedio de la tasa de apertura</span></span></code></pre></div>
+<pre><code>## [1] 1.244338</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="unidad1.html#cb23-1" tabindex="-1"></a><span class="fu">mean</span>(datos<span class="sc">$</span>Close) <span class="co"># Promedio de la tasa de cierre</span></span></code></pre></div>
+<pre><code>## [1] 1.244363</code></pre>
+<p>Las tasas son similares hasta el tercer decimal, se asumirá que las medias son iguales</p></li>
+<li><p>Ya que tienen la misma unidad de medida, calcule la varianza y desviación estándar de cada una. Interprete.</p>
+<p>Al calcular la varianza muestral, se observa que la tasa de cierre es levemente menor variabilidad que la tasa de apertura. Similarmente, se observa que la tasa de cierre tiene menor variabilidad que la tasa de apertura.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="unidad1.html#cb25-1" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">var</span>(datos<span class="sc">$</span>Open), <span class="fu">var</span>(datos<span class="sc">$</span>Close))</span></code></pre></div>
+<pre><code>## [1] 0.01562596 0.01562404</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="unidad1.html#cb27-1" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sd</span>(datos<span class="sc">$</span>Open), <span class="fu">sd</span>(datos<span class="sc">$</span>Close))</span></code></pre></div>
+<pre><code>## [1] 0.1250038 0.1249962</code></pre>
+<p>¿Por qué es más clara la interpretación (primer decimal distinto) al utilizar la desviación estándar?</p></li>
+</ol>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-14" class="exercise"><strong>Ejercicio 1.11  </strong></span>Utilice la varianza directamente para comparar la variabilidad de la variables <em>chol</em>, <em>age</em>, <em>trtbps</em> y <em>oldpeak</em> entre hombres y mujeres, en la base <a href="unidad1.html#Pacientes">Pacientes</a>. Interprete.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-15" class="exercise"><strong>Ejercicio 1.12  </strong></span>Utilice la varianza directamente para comprar la variabilidad de los precios de la electricidad entre las primeras y últimas 1000 mediciones, en la base <a href="unidad1.html#PreciosElectricidad">Precios</a>. Interprete.</p>
+</div>
+</div>
+<div id="topicos-medidas-escala-coeficiente-variacion" class="section level3 hasAnchor" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Coeficiente de variación<a href="unidad1.html#topicos-medidas-escala-coeficiente-variacion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para subsanar el problema de las limitaciones de la varianza y desviación estándar, se encuentra la medida llamada <strong>coeficiente de variación</strong> <a href="unidad1.html#eq:cv">(1.6)</a>.</p>
+<span class="math display" id="eq:cv">\[\begin{equation}
+CV = \left(\frac{S}{|\bar{x}|}\right)\cdot 100\%
+\tag{1.6}
+\end{equation}\]</span>
+<p>Cuando el valor del coeficiente de variación es cercano a 100% se habla de mayor dispersión (heterogéneo), mientras que un valor cercano a 0% indica menor dispersión (homogéneo), además, se debe considerar que el porcentaje calculado corresponde a la variabilidad respecto a la media de los datos. Sin embargo, no es recomendable usar esta medida cuando el valor de la media es cercano a cero, ya que el CV pierde su significado al tomar valores muy grandes, lo que daría una falsa sensación de dispersión de los datos <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 95)</span>.</p>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-16" class="example"><strong>Ejemplo 1.5  </strong></span>En el ejemplo <a href="unidad1.html#exm:EUR-USD-varianza">1.4</a>, se utilizó la varianza para comprar directamente la variabilidad entre la tasa de apertura y la tasa más alta histórica del EUR/USD. Sin embargo, si calculamos las medias de ambas variables se puede verificar que son distintas. Utilice el CV para comprar la variabilidad de ambas variables.</p>
+<p>Claramente la media de la tasa más alta es mayor a la media de la tasa de apertura.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="unidad1.html#cb29-1" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">mean</span>(datos<span class="sc">$</span>Open), <span class="fu">mean</span>(datos<span class="sc">$</span>High))</span></code></pre></div>
+<pre><code>## [1] 1.244338 1.249022</code></pre>
+<p>Al verificarse una de las dos limitantes mencionadas, procedemos a calcular el CV de ambas variables.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="unidad1.html#cb31-1" tabindex="-1"></a>CV_Open <span class="ot">=</span> <span class="fu">sd</span>(datos<span class="sc">$</span>Open)<span class="sc">/</span><span class="fu">abs</span>(<span class="fu">mean</span>(datos<span class="sc">$</span>Open))<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb31-2"><a href="unidad1.html#cb31-2" tabindex="-1"></a>CV_High <span class="ot">=</span> <span class="fu">sd</span>(datos<span class="sc">$</span>High)<span class="sc">/</span><span class="fu">abs</span>(<span class="fu">mean</span>(datos<span class="sc">$</span>High))<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb31-3"><a href="unidad1.html#cb31-3" tabindex="-1"></a><span class="fu">c</span>(CV_Open, CV_High)</span></code></pre></div>
+<pre><code>## [1] 10.04581 10.06323</code></pre>
+<p>Se puede observar que el coeficiente de variabilidad de la tasa más alta (10.06%) es mayor a la de la tasa de apertura (10.04%). Por lo tanto, la variabilidad (dispersión) de los datos es más homogénea para la tasa de apertura. Sin embargo, la diferencia es muy pequeña, por lo que la dispersión en relación a la media es similar entre ambas variables.</p>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-17" class="exercise"><strong>Ejercicio 1.13  </strong></span>Compare la variabilidad de la presión arterial en reposo y el nivel de colesterol de los pacientes registrados en la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>. Repita el estudio diferenciado por sexo. Interprete.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-18" class="exercise"><strong>Ejercicio 1.14  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, compare la variabilidad de la edad de los paciente, según el tipo de dolor de pecho que presentan. Interprete.</p>
+</div>
+<p><strong>Nota</strong>: en el documento se usará simplemente el nombre de la medida de escala (rango, varianza, desviación estándar y CV) para referirse a la medida de escala muestral. En casos determinados se hará la distinción entre el caso muestral y poblacional, según corresponda (ejemplo: varianza poblacional, varianza muestral).</p>
+</div>
+</div>
+<div id="topicos-notacion" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Notación poblacional y muestral<a href="unidad1.html#topicos-notacion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div style="border: 0px; overflow-x: auto; ">
+<table class="table table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:notacion">Tabla 1.2: </span>Notación de parámetros y estadísticos
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Poblacional
+</th>
+<th style="text-align:center;">
+Muestral
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Media
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\mu\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\bar{x}\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Varianza
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\sigma^2\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(S^2\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Desviación estándar
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\sigma\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(S\)</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="topicos-graficos" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Gráficos descriptivos<a href="unidad1.html#topicos-graficos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En este apartado, se considera la representación de un conjunto de datos por medio de técnicas visuales. A continuación, se hará mención de algunas de las técnicas más útiles y pertinentes a la estadística de descriptiva. Los ejemplos presentados en esta sección hacen uso de la base de datos de la unidad (sección <a href="unidad1.html#unidad1">1</a>).</p>
+<div id="topicos-graficos-histograma" class="section level3 hasAnchor" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Histograma<a href="unidad1.html#topicos-graficos-histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Algunos datos numéricos se obtienen contando para determinar el valor de una variable (cuántas veces se repite un hecho), mientras que otro datos se obtienen tomando mediciones (peso, altura, tiempo de reacción). Usualmente, este tipo de gráfico se utiliza con datos continuos (aunque tiene una versión para datos discretos), para lo cual, se debe hacer lo siguiente <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 12)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>Subdividir los datos en <strong>intervalos de clase</strong> o <strong>clases</strong>, de tal manera que cada observación quede contenida en exactamente una clase. Para esto, se hace uso de la regla de Sturges <span class="citation">(<a href="#ref-sturges1926choice">1926</a>)</span>, la cual, consiste en calcular la expresión <span class="math inline">\(1+\log_2(n)\)</span>, aproximando hacia el entero más próximo, dónde <span class="math inline">\(n\)</span> corresponde a la cantidad de datos (existen otra variedad de técnicas).</li>
+<li>Determinar la frecuencia y la frecuencia relativa de cada clase, es decir, cuántas observaciones hay en cada uno de los intervalos.</li>
+<li>Se marcan los límite de clase sobre el eje horizontal del plano cartesiano.</li>
+<li>Se traza un rectángulo cuya altura es la frecuencia absoluta (o relativa) correspondiente a cada intervalo de clase.</li>
+</ol>
+<p>Para generar un histograma en R a partir de un conjunto de datos, se utiliza el siguiente código (se toma como ejemplo la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>):</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="unidad1.html#cb33-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Librería de ggplot2</span></span>
+<span id="cb33-2"><a href="unidad1.html#cb33-2" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb33-3"><a href="unidad1.html#cb33-3" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb33-4"><a href="unidad1.html#cb33-4" tabindex="-1"></a>       <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb33-5"><a href="unidad1.html#cb33-5" tabindex="-1"></a>         <span class="at">x =</span> Close)) <span class="sc">+</span> <span class="co"># Eje X y variable asociada </span></span>
+<span id="cb33-6"><a href="unidad1.html#cb33-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>( <span class="co"># Objeto a graficar: histograma</span></span>
+<span id="cb33-7"><a href="unidad1.html#cb33-7" tabindex="-1"></a>    <span class="at">bins =</span> <span class="fu">round</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">log2</span>(<span class="fu">dim</span>(datos)[<span class="dv">1</span>])), <span class="co"># Cantidad de intervalos del histograma: regla de Sturges</span></span>
+<span id="cb33-8"><a href="unidad1.html#cb33-8" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color del borde de las barras del histograma</span></span>
+<span id="cb33-9"><a href="unidad1.html#cb33-9" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="co"># Color de relleno de las barras</span></span>
+<span id="cb33-10"><a href="unidad1.html#cb33-10" tabindex="-1"></a>    <span class="at">closed =</span> <span class="st">&quot;left&quot;</span>) <span class="sc">+</span> <span class="co"># Tipo de intervalo del histograma</span></span>
+<span id="cb33-11"><a href="unidad1.html#cb33-11" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb33-12"><a href="unidad1.html#cb33-12" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Histograma EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb33-13"><a href="unidad1.html#cb33-13" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa de cierre&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb33-14"><a href="unidad1.html#cb33-14" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-22-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>Para interpretar un histograma, basta con indicar los siguientes aspectos:</p>
+<ul>
+<li>Forma visual de la distribución de las barras (en general).</li>
+<li>Mencionar si existe una concentración fuera del comportamiento general, y en dónde se encuentra.</li>
+</ul>
+<p>En el caso del histograma de la tasa de cierre del EUR/USD, se observa una forma de campana centrada cerca del 1.3, además, se evidencia la presencia de una frecuencia superior al resto que se encuentra la izquierda del gráfico cerca del 1.1.</p>
+<p>Cabe mencionar, que existen otros aspectos que son posibles mencionar, para ello consulte la bibliografía del curso.</p>
+<p>Es útil recordar que el histograma está asociado a una tabla de frecuencia por intervalos. Para obtener la tabla asociada a un histograma se puede utilizar el siguiente código.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="unidad1.html#cb34-1" tabindex="-1"></a><span class="co"># Datos del histograma guardados</span></span>
+<span id="cb34-2"><a href="unidad1.html#cb34-2" tabindex="-1"></a>h <span class="ot">=</span> <span class="fu">hist</span>(datos<span class="sc">$</span>Close, <span class="co"># Datos a graficar en el histograma</span></span>
+<span id="cb34-3"><a href="unidad1.html#cb34-3" tabindex="-1"></a>         <span class="at">breaks =</span> <span class="dv">13</span>, <span class="co"># Cantidad de intervalos: regla de Sturges</span></span>
+<span id="cb34-4"><a href="unidad1.html#cb34-4" tabindex="-1"></a>         <span class="at">right =</span> F, <span class="co"># Cerrado por la izquierda</span></span>
+<span id="cb34-5"><a href="unidad1.html#cb34-5" tabindex="-1"></a>         <span class="at">plot =</span> F) <span class="co"># No desplegar el gráfico en consola</span></span>
+<span id="cb34-6"><a href="unidad1.html#cb34-6" tabindex="-1"></a><span class="fu">library</span>(agricolae) <span class="co"># Librería para generar la tabla de frecuencias</span></span>
+<span id="cb34-7"><a href="unidad1.html#cb34-7" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">table.freq</span>(h)) <span class="co"># Imprime en consola la tabla de frecuencias</span></span></code></pre></div>
+<pre><code>##    Lower Upper  Main Frequency Percentage   CF   CPF
+## 1   0.95  1.00 0.975        46        0.9   46   0.9
+## 2   1.00  1.05 1.025        89        1.8  135   2.7
+## 3   1.05  1.10 1.075       444        8.9  579  11.7
+## 4   1.10  1.15 1.125       839       16.9 1418  28.6
+## 5   1.15  1.20 1.175       591       11.9 2009  40.5
+## 6   1.20  1.25 1.225       634       12.8 2643  53.2
+## 7   1.25  1.30 1.275       614       12.4 3257  65.6
+## 8   1.30  1.35 1.325       654       13.2 3911  78.8
+## 9   1.35  1.40 1.375       510       10.3 4421  89.0
+## 10  1.40  1.45 1.425       257        5.2 4678  94.2
+## 11  1.45  1.50 1.475       166        3.3 4844  97.5
+## 12  1.50  1.55 1.525        38        0.8 4882  98.3
+## 13  1.55  1.60 1.575        84        1.7 4966 100.0</code></pre>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-19" class="exercise"><strong>Ejercicio 1.15  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un histograma de los precios de la electricidad. Interprete.</p>
+</div>
+</div>
+<div id="topicos-graficos-caja" class="section level3 hasAnchor" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Gráfico de Caja<a href="unidad1.html#topicos-graficos-caja" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El gráfico de caja se utiliza para describir las siguiente características de un conjunto de datos <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 35)</span>:</p>
+<ul>
+<li>El centro.</li>
+<li>La dispersión.</li>
+<li>El grado y naturaleza de cualquier alejamiento de la simetría.</li>
+<li>La identificación de las observaciones “extremas” (atípicas) inusualmente alejadas del cuerpo principal de los datos.</li>
+</ul>
+<p>Los pasos para elaborar un gráfico de caja son los siguiente <span class="citation">(<a href="#ref-anderson">Anderson et al., 2008</a>, página 106)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>Se dibuja una caja cuyos extremos se localicen en primer y tercer cuartiles. Esta caja contiene 50% de los datos centrales.</li>
+<li>En el punto donde se localiza la mediana se traza una linea horizontal.</li>
+<li>Usando el rango intercuartílico (<span class="math inline">\(RIC = Q_3-Q_1\)</span>), se localizan los límites. En un gráfico de caja los límites se encuentra a <span class="math inline">\(1.5RIC\)</span> abajo y arriba de <span class="math inline">\(Q_1\)</span> y <span class="math inline">\(Q_3\)</span> respectivamente. Los datos que quedan fuera de estos límites se consideran observaciones atípicas <span class="citation">(<a href="#ref-Tukey">Tukey, 1977</a>)</span>. La razón por la cual se considera 1.5 veces el rango intercuartílico es convencional, no obstante, hay argumento relacionados a la cantidad de datos dentro de los limites inferior y superior, los cuales indican que debe ser de 99.7% <span class="citation">(<a href="#ref-James2013">James et al., 2013</a>)</span>.</li>
+<li>Las lineas que se extienden verticalmente desde la caja se les llama <em>bigotes</em>. Los bigotes van desde los extremos de la caja hasta los valores menor y mayor de los límites calculados en el paso 3.</li>
+<li>Mediante puntos se indica la localización de las observaciones atípicas.</li>
+</ol>
+<p>Para generar un gráfico de caja en R a partir de un conjunto de datos, se utiliza el siguiente código (se toma como ejemplo la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>):</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="unidad1.html#cb36-1" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb36-2"><a href="unidad1.html#cb36-2" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb36-3"><a href="unidad1.html#cb36-3" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb36-4"><a href="unidad1.html#cb36-4" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb36-5"><a href="unidad1.html#cb36-5" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>( <span class="co"># Objeto a graficar: gráfico de caja</span></span>
+<span id="cb36-6"><a href="unidad1.html#cb36-6" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color del borde del gráfico</span></span>
+<span id="cb36-7"><a href="unidad1.html#cb36-7" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb36-8"><a href="unidad1.html#cb36-8" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos </span></span>
+<span id="cb36-9"><a href="unidad1.html#cb36-9" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Caja EUR/USD (opción 1)&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb36-10"><a href="unidad1.html#cb36-10" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb36-11"><a href="unidad1.html#cb36-11" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
+<span id="cb36-12"><a href="unidad1.html#cb36-12" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb36-13"><a href="unidad1.html#cb36-13" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
+<span id="cb36-14"><a href="unidad1.html#cb36-14" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Elimina los números del eje X</span></span>
+<span id="cb36-15"><a href="unidad1.html#cb36-15" tabindex="-1"></a>info <span class="ot">=</span> <span class="fu">unlist</span>(<span class="fu">ggplot_build</span>(g)[[<span class="dv">1</span>]]) <span class="co"># Guardamos los valores del gráfico</span></span>
+<span id="cb36-16"><a href="unidad1.html#cb36-16" tabindex="-1"></a>values <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(info[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]), <span class="dv">3</span>) <span class="co"># Extraemos los valores de construcción</span></span>
+<span id="cb36-17"><a href="unidad1.html#cb36-17" tabindex="-1"></a>g1 <span class="ot">=</span> g <span class="sc">+</span> <span class="co"># Creamos un nuevo gráfico a partir del anterior</span></span>
+<span id="cb36-18"><a href="unidad1.html#cb36-18" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>( <span class="co"># Modificar el eje Y</span></span>
+<span id="cb36-19"><a href="unidad1.html#cb36-19" tabindex="-1"></a>    <span class="at">breaks =</span> values, <span class="co"># Modificamos los puntos a considerar en el eje Y</span></span>
+<span id="cb36-20"><a href="unidad1.html#cb36-20" tabindex="-1"></a>    <span class="at">labels =</span> values) <span class="sc">+</span> <span class="co"># Modificamos los valores mostrados en el eje Y</span></span>
+<span id="cb36-21"><a href="unidad1.html#cb36-21" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb36-22"><a href="unidad1.html#cb36-22" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Caja EUR/USD (opción 2)&quot;</span>) <span class="co"># Título del gráfico</span></span>
+<span id="cb36-23"><a href="unidad1.html#cb36-23" tabindex="-1"></a><span class="fu">library</span>(gridExtra) <span class="co"># Librería para juntar gráficos de ggplot2</span></span>
+<span id="cb36-24"><a href="unidad1.html#cb36-24" tabindex="-1"></a><span class="fu">grid.arrange</span>(g, <span class="co"># Gráfico</span></span>
+<span id="cb36-25"><a href="unidad1.html#cb36-25" tabindex="-1"></a>             g1, <span class="co"># Gráfico</span></span>
+<span id="cb36-26"><a href="unidad1.html#cb36-26" tabindex="-1"></a>             <span class="at">ncol =</span> <span class="dv">2</span>) <span class="co"># Despliegue en a dos columnas </span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-24-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Para interpretar un gráfico de caja es recomendable utilizar la opción 2 mostrada anteriormente, ya que, se debe mencionar uno de los puntos relevantes del gráfico. En el ejemplo recién dado, se observa que, el primer, segundo y tercer cuartil están en 1.135, 1.233 y 1.335 respectivamente, mientras que el valor mínimo y máximo están en 0.96 y 1.559 respectivamente. Adicionalmente, se puede mencionar que los datos superiores en comparación a los inferiores, se encuentran más alejados de la mediana.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-20" class="exercise"><strong>Ejercicio 1.16  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de caja de los precios de la electricidad. Interprete.</p>
+</div>
+</div>
+<div id="topicos-graficos-violin" class="section level3 hasAnchor" number="1.5.3">
+<h3><span class="header-section-number">1.5.3</span> Gráfico de Violín<a href="unidad1.html#topicos-graficos-violin" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El gráfico de violín proporciona una representación más completa y precisa de la distribución de los datos que las técnicas anteriores, ya que muestra tanto la forma de la distribución como su concentración <span class="citation">(<a href="#ref-hintze1998violin">Hintze &amp; Nelson, 1998</a>)</span>. La utilidad de este gráfico recae en la comparación de la distribución de los datos entre distintos grupos y/o categorías.</p>
+<p>El proceso de construcción del gráfico es el siguiente:</p>
+<ol style="list-style-type: decimal">
+<li>Dibujo de la traza de densidad: la traza de densidad se dibuja sobre el eje vertical en el gráfico de violín (“forma suavizada del histograma”).</li>
+<li>Creación de la sección central simétrica: se crea una sección central simétrica que representa la mitad de la traza de densidad.</li>
+</ol>
+<p>Adicionalmente, es común agregar un gráfico de caja junto al de violín con el fin de incorporar la visualización de las medidas de posición.</p>
+<p>Para generar un gráfico de violín en R a partir de un conjunto de datos, se utiliza el siguiente código (se toma como ejemplo la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>):</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="unidad1.html#cb37-1" tabindex="-1"></a><span class="co"># Se guarda el gráfico en una variable para posteriormente</span></span>
+<span id="cb37-2"><a href="unidad1.html#cb37-2" tabindex="-1"></a><span class="co"># integrar otros gráficos dentro de este.</span></span>
+<span id="cb37-3"><a href="unidad1.html#cb37-3" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb37-4"><a href="unidad1.html#cb37-4" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb37-5"><a href="unidad1.html#cb37-5" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb37-6"><a href="unidad1.html#cb37-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">1</span>, <span class="co"># Se fija el valor horizontal del gráfico (a elección)</span></span>
+<span id="cb37-7"><a href="unidad1.html#cb37-7" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb37-8"><a href="unidad1.html#cb37-8" tabindex="-1"></a>  <span class="fu">geom_violin</span>( <span class="co"># Objeto a graficar: violín</span></span>
+<span id="cb37-9"><a href="unidad1.html#cb37-9" tabindex="-1"></a>    <span class="at">trim =</span> F, <span class="co"># Modifica las terminaciones visuales superior e inferior</span></span>
+<span id="cb37-10"><a href="unidad1.html#cb37-10" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb37-11"><a href="unidad1.html#cb37-11" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb37-12"><a href="unidad1.html#cb37-12" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Violín EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb37-13"><a href="unidad1.html#cb37-13" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb37-14"><a href="unidad1.html#cb37-14" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
+<span id="cb37-15"><a href="unidad1.html#cb37-15" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb37-16"><a href="unidad1.html#cb37-16" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
+<span id="cb37-17"><a href="unidad1.html#cb37-17" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Elimina los números del eje X</span></span>
+<span id="cb37-18"><a href="unidad1.html#cb37-18" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico en el visualizador</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-25-1.png" width="384" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="unidad1.html#cb38-1" tabindex="-1"></a><span class="co"># Agregamos otros elementos al gráfico guardado</span></span>
+<span id="cb38-2"><a href="unidad1.html#cb38-2" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_boxplot</span>( <span class="co"># Objeto a graficar: gráfico de caja</span></span>
+<span id="cb38-3"><a href="unidad1.html#cb38-3" tabindex="-1"></a>  <span class="at">width =</span> <span class="fl">0.1</span>, <span class="co"># Anchura proporcional del nuevo gráfico de caja</span></span>
+<span id="cb38-4"><a href="unidad1.html#cb38-4" tabindex="-1"></a>  <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color de borde del gráfico</span></span>
+<span id="cb38-5"><a href="unidad1.html#cb38-5" tabindex="-1"></a>  <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb38-6"><a href="unidad1.html#cb38-6" tabindex="-1"></a>  <span class="fu">stat_summary</span>( <span class="co"># Función para agregar información de resumen</span></span>
+<span id="cb38-7"><a href="unidad1.html#cb38-7" tabindex="-1"></a>    <span class="at">fun =</span> mean, <span class="co"># Tipo de información: promedio</span></span>
+<span id="cb38-8"><a href="unidad1.html#cb38-8" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="co"># Forma visual</span></span>
+<span id="cb38-9"><a href="unidad1.html#cb38-9" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>, <span class="co"># Tamaño</span></span>
+<span id="cb38-10"><a href="unidad1.html#cb38-10" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="co"># Color</span></span>
+<span id="cb38-11"><a href="unidad1.html#cb38-11" tabindex="-1"></a>    <span class="at">orientation =</span> <span class="st">&quot;x&quot;</span>) <span class="co"># Orientación</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-26-1.png" width="384" style="display: block; margin: auto;" /></p>
+<p>Para interpretar un gráfico de violín con caja y promedio se deben mencionar tres aspectos relevantes:</p>
+<ul>
+<li>Ubicación de la(s) mayor(es) concentración(es) de datos, utilizando como referencia los cuartiles.</li>
+<li>Ubicación del promedio respecto a la mediana.</li>
+<li>Posibles razones por las cuales se explica la ubicación anteriormente mencionada del promedio respecto a la mediana.</li>
+</ul>
+<p>En el ejemplo anterior, la principal concentración se encuentra por debajo del primer cuartil, aunque destacan otras dos concentraciones que están por debajo del segundo cuartil y alrededor del tercer cuartil respectivamente. El promedio se encuentra sutilmente por encima de la mediana, esto se puede explicar debido a que los datos superiores del gráfico se encuentra más lejos de la mediana en comparación a los datos inferiores.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Ejercicio 1.17  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de violín con caja y promedio de los precios de la electricidad. Interprete.</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-22" class="example"><strong>Ejemplo 1.6  </strong></span>El siguiente código, crea una nueva columna en la base de datos que identifica el año en el que se realizó la medición de las tasas. A continuación, elabore un gráfico de violín (más gráfico de caja y promedio) de la variable <strong>Close</strong> en el periodo de años 2006-2010, diferenciando por año.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="unidad1.html#cb39-1" tabindex="-1"></a><span class="co"># Extraemos el año de la variable Date, y la guardamos en un nueva columna</span></span>
+<span id="cb39-2"><a href="unidad1.html#cb39-2" tabindex="-1"></a>datos<span class="sc">$</span>Ano <span class="ot">=</span> <span class="fu">substr</span>(datos<span class="sc">$</span>Date, <span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb39-3"><a href="unidad1.html#cb39-3" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb39-4"><a href="unidad1.html#cb39-4" tabindex="-1"></a>  <span class="at">data =</span> datos[datos<span class="sc">$</span>Ano <span class="sc">%in%</span> <span class="dv">2006</span><span class="sc">:</span><span class="dv">2010</span>,], <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb39-5"><a href="unidad1.html#cb39-5" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comandos estéticos</span></span>
+<span id="cb39-6"><a href="unidad1.html#cb39-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">1</span>, <span class="co"># Se fija el valor horizontal del gráfico (a elección)</span></span>
+<span id="cb39-7"><a href="unidad1.html#cb39-7" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb39-8"><a href="unidad1.html#cb39-8" tabindex="-1"></a>  <span class="fu">geom_violin</span>( <span class="co"># Objeto a graficar: violín</span></span>
+<span id="cb39-9"><a href="unidad1.html#cb39-9" tabindex="-1"></a>    <span class="at">trim =</span> F, <span class="co"># Modifica las terminaciones visuales superior e inferior</span></span>
+<span id="cb39-10"><a href="unidad1.html#cb39-10" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb39-11"><a href="unidad1.html#cb39-11" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>( <span class="co"># Objeto a graficar: gráfico de caja</span></span>
+<span id="cb39-12"><a href="unidad1.html#cb39-12" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.1</span>, <span class="co"># Anchura proporcional del nuevo gráfico de caja</span></span>
+<span id="cb39-13"><a href="unidad1.html#cb39-13" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color de borde del gráfico</span></span>
+<span id="cb39-14"><a href="unidad1.html#cb39-14" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span> <span class="co"># Color de relleno del gráfico</span></span>
+<span id="cb39-15"><a href="unidad1.html#cb39-15" tabindex="-1"></a>  <span class="fu">stat_summary</span>( <span class="co"># Función para agregar información de resumen</span></span>
+<span id="cb39-16"><a href="unidad1.html#cb39-16" tabindex="-1"></a>    <span class="at">fun =</span> mean, <span class="co"># Tipo de información: promedio</span></span>
+<span id="cb39-17"><a href="unidad1.html#cb39-17" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="co"># Forma visual</span></span>
+<span id="cb39-18"><a href="unidad1.html#cb39-18" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">1</span>, <span class="co"># Tamaño</span></span>
+<span id="cb39-19"><a href="unidad1.html#cb39-19" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="co"># Color</span></span>
+<span id="cb39-20"><a href="unidad1.html#cb39-20" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb39-21"><a href="unidad1.html#cb39-21" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Violín EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb39-22"><a href="unidad1.html#cb39-22" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb39-23"><a href="unidad1.html#cb39-23" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
+<span id="cb39-24"><a href="unidad1.html#cb39-24" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb39-25"><a href="unidad1.html#cb39-25" tabindex="-1"></a>    <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(), <span class="co"># Elimina las regletas del eje X</span></span>
+<span id="cb39-26"><a href="unidad1.html#cb39-26" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="co"># Elimina los números del eje X</span></span>
+<span id="cb39-27"><a href="unidad1.html#cb39-27" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="co"># Segregación del gráfico</span></span>
+<span id="cb39-28"><a href="unidad1.html#cb39-28" tabindex="-1"></a>    <span class="fu">vars</span>(Ano), <span class="co"># Variable que se utiliza para segregar el gráfico</span></span>
+<span id="cb39-29"><a href="unidad1.html#cb39-29" tabindex="-1"></a>    <span class="at">nrow =</span> <span class="dv">1</span>) <span class="co"># Disposición visual: una fila</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-27-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Para interpretar este tipo de gráficos, se debe realizar un interpretación uno a uno, siguiendo la recomendación antes dada. También, es posible comprar los gráficos a través de la media y coeficiente de variabilidad. Para este ejemplo, queda como trabajo del estudiante realizar esta comparación.</p>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:violin-colesterol-azucar" class="exercise"><strong>Ejercicio 1.18  </strong></span>Utilizando la base de datos de <a href="unidad1.html#Pacientes">Paciente</a> Realice un gráfico de violín con caja y promedio del nivel de colesterol de los paciente, diferenciando por el nivel de azúcar en sangre en ayunas. Interprete.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Ejercicio 1.19  </strong></span>Agregue una diferenciación por sexo a lo realizado en el ejercicio <a href="unidad1.html#exr:violin-colesterol-azucar">1.18</a>. Entienda que para cada nivel de azúcar en sangre se debe ver un desglose por sexo. Interprete.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Ejercicio 1.20  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, realice un gráfico de violín con caja y promedio para el precio de la electricidad, diferenciado por año. Interprete.</p>
+</div>
+<!-- ### Gráfico de Barras -->
+<!-- Una gráfico de barras, es una gráfica para representar los datos cualitativos de una distribución de frecuencia. El procedimiento de construcción es el siguiente [@anderson, página 29]. -->
+<!-- 1.  En uno de los ejes de la gráfica (por lo general en el horizontal), se especifican las etiquetas empleadas para las clases (categorías). -->
+<!-- 3.  Para el otro eje de la gráfica (el vertical) se usa una escala para frecuencia, frecuencia relativa o frecuencia porcentual. -->
+<!-- 4.  Finalmente, se emplea un ancho de barra fijo y se dibuja sobre cada etiqueta de las clases una barra que se extiende hasta la frecuencia de la clase (a diferencia del histograma, las barras deben estar separadas notoriamente). -->
+<!-- Para generar un gráfico de barras en R a partir de un conjunto de datos, se utiliza el siguiente código (se toma como ejemplo la base de datos [Tasa Euro/Dólar](#TasaEURUSD)): -->
+<!-- ```{r fig.align="center", fig.width=4, fig.height=2} -->
+<!-- # Nueva variable para dicotomizar la tasa de cierre del EUR/USD -->
+<!-- datos$Close2 = ifelse(datos$Close > 1.1, # Criterio -->
+<!--                       "Mayor a 1.1", # Valor asignado si se cumple el criterio -->
+<!--                       "Menor a  1.1") # Valor asignado si no se cumple el criterio -->
+<!-- ggplot( # Ambiente gráfico -->
+<!--   data = datos, # Base de datos a utilizar -->
+<!--   aes( # Comandos estéticos -->
+<!--     x = Close2)) + # Eje Y y variable asociada -->
+<!--   geom_bar( # Objeto a graficar: gráfico de barras -->
+<!--     fill = "white", color = "black") + # Color de relleno y borde -->
+<!--   labs( # Títulos -->
+<!--     title = "Barras EUR/USD", # Título del gráfico -->
+<!--     x = "Tasa de cierre", # Título del eje X -->
+<!--     y = "Frecuencia") # Título del eje Y -->
+<!-- ``` -->
+<!-- La interpretación de este tipo de gráfico (gráfico de barras no apiladas) es bastante intuitiva, ya que consiste en mencionar cuál categoría tiene un mayor frecuencia. En caso de graficar una variable con más de 2 categorías, se debe mencionar a que altura del eje vertical se encuentra la altura de cada una de las barras. Para obtener mayor detalles respecto a las frecuencias por categoría, suele apoyarse con un tabla de frecuencias absolutas o relativas porcentuales. -->
+<!-- En el ejemplo, la frecuencia de la cantidad de tasas de cierre que se encuentran por sobre 1.1 es mayor a las que se encuentran por debajo, con una frecuencia sobre 4000 y menor a 1000 respectivamente. -->
+<!-- ::: {.exercise} -->
+<!-- Utilizando la base de datos [Pacientes](#Pacientes), elabore un gráfico de barras de la variable *fbs*. Interprete, apoyado de una tabla de frecuencias absolutas. -->
+<!-- ::: -->
+<!-- ::: {.exercise} -->
+<!-- Utilizando la base de datos [Pacientes](#Pacientes), elabore un gráfico de barras (no apiladas) de la variable *cp*, diferenciado por sexo. Interprete, apoyado de una tabla de frecuencias relativas porcentuales. Haga el contraste visual con el gráfico de barras apiladas. -->
+<!-- ::: -->
+</div>
+<div id="topicos-graficos-dispersion" class="section level3 hasAnchor" number="1.5.4">
+<h3><span class="header-section-number">1.5.4</span> Gráfico de Dispersión<a href="unidad1.html#topicos-graficos-dispersion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El gráfico de dispersión es útil para estudiar la relación entre dos variables continuas. Muestra cómo varía un variable en función de la otra y puede ayudar a identificar patrones y tendencias <span class="citation">(<a href="#ref-rowlingson2016data">Rowlingson, 2016</a>)</span>.</p>
+<p>Los pasos para elaborar un gráfico de caja son los siguiente <span class="citation">(<a href="#ref-healy2019data">Healy, 2019</a>)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>Elegir dos variables continuas de la base de datos a trabajar. Cada fila corresponde a una observación, por lo cual, hay una correspondencia entre los valores de una misma fila.</li>
+<li>Elegir la variable estará en el eje X y Y.</li>
+<li>Representar cada par ordenado con un punto.</li>
+</ol>
+<p>Para generar un gráfico de dispersión en R a partir de un conjunto de datos, se utiliza el siguiente código (se toma como ejemplo la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>):</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="unidad1.html#cb40-1" tabindex="-1"></a><span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb40-2"><a href="unidad1.html#cb40-2" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb40-3"><a href="unidad1.html#cb40-3" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comando estéticos</span></span>
+<span id="cb40-4"><a href="unidad1.html#cb40-4" tabindex="-1"></a>    <span class="at">x =</span> Open, <span class="co"># Eje X y variable asociada</span></span>
+<span id="cb40-5"><a href="unidad1.html#cb40-5" tabindex="-1"></a>    <span class="at">y =</span> Close)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb40-6"><a href="unidad1.html#cb40-6" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar: Gráfico de dispersión</span></span>
+<span id="cb40-7"><a href="unidad1.html#cb40-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="co"># Color</span></span>
+<span id="cb40-8"><a href="unidad1.html#cb40-8" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span> <span class="co"># Opacidad</span></span>
+<span id="cb40-9"><a href="unidad1.html#cb40-9" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb40-10"><a href="unidad1.html#cb40-10" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Tasa de apertura y cierre del EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb40-11"><a href="unidad1.html#cb40-11" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa de apertura&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb40-12"><a href="unidad1.html#cb40-12" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de cierre&quot;</span>) <span class="co"># Título del eje Y</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-28-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Tal como se menciona al inicio, la interpretación de este tipo de gráficos radica en describir la tendencia de los puntos. En el ejemplo anterior, el gráfico muestra una tendencia al alza, es decir, que cuando la tasa de apertura del EUR/USD aumenta, entonces, la tasa de cierre tiende a aumentar.</p>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Ejercicio 1.21  </strong></span>Utilizando la base de datos <a href="unidad1.html#Pacientes">Pacientes</a>, realice un gráfico de dispersión entre la variable <em>age</em> (eje X) y la variable <em>thalachh</em> (eje Y). Interprete.</p>
+</div>
+<div class="blackbox">
+<div class="example">
+<p><span id="exm:unlabeled-div-26" class="example"><strong>Ejemplo 1.7  </strong></span>En los siguiente gráficos se toma como ejemplo la base de datos <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Es posible utilizar el gráfico de dispersión con variables que en su naturaleza son discretas. En este sentido, elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de apertura del EUR/USD (guarde el gráfico en una variable).</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="unidad1.html#cb41-1" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb41-2"><a href="unidad1.html#cb41-2" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb41-3"><a href="unidad1.html#cb41-3" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comando estéticos</span></span>
+<span id="cb41-4"><a href="unidad1.html#cb41-4" tabindex="-1"></a><span class="at">x =</span> Ano, <span class="co"># Eje X y variable asociada</span></span>
+<span id="cb41-5"><a href="unidad1.html#cb41-5" tabindex="-1"></a><span class="at">y =</span> Open, <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb41-6"><a href="unidad1.html#cb41-6" tabindex="-1"></a><span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span> <span class="co"># Comando únicamente necesario para la pregunta 2</span></span>
+<span id="cb41-7"><a href="unidad1.html#cb41-7" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar</span></span>
+<span id="cb41-8"><a href="unidad1.html#cb41-8" tabindex="-1"></a><span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="co"># Tipo de información a graficar: resumen</span></span>
+<span id="cb41-9"><a href="unidad1.html#cb41-9" tabindex="-1"></a><span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>) <span class="sc">+</span> <span class="co"># Tipo de resumen: promedio de la variable Y</span></span>
+<span id="cb41-10"><a href="unidad1.html#cb41-10" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb41-11"><a href="unidad1.html#cb41-11" tabindex="-1"></a><span class="at">title =</span> <span class="st">&quot;Tasa de apertura promedio del EUR/USD por año&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb41-12"><a href="unidad1.html#cb41-12" tabindex="-1"></a><span class="at">x =</span> <span class="st">&quot;Año&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb41-13"><a href="unidad1.html#cb41-13" tabindex="-1"></a><span class="at">y =</span> <span class="st">&quot;Tasa de apertura&quot;</span>) <span class="co"># Título del eje Y</span></span>
+<span id="cb41-14"><a href="unidad1.html#cb41-14" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-29-1.png" width="768" style="display: block; margin: auto;" /></p></li>
+<li><p>Añadir al gráfico un formato de líneas entre los puntos. Interprete.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="unidad1.html#cb42-1" tabindex="-1"></a>g <span class="ot">=</span> g <span class="sc">+</span> <span class="co"># Añadimos otro gráfico</span></span>
+<span id="cb42-2"><a href="unidad1.html#cb42-2" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="co"># Objeto a graficar: lineas</span></span>
+<span id="cb42-3"><a href="unidad1.html#cb42-3" tabindex="-1"></a><span class="at">stat =</span> <span class="st">&quot;summary&quot;</span>, <span class="co"># Tipo de información a graficar: resumen</span></span>
+<span id="cb42-4"><a href="unidad1.html#cb42-4" tabindex="-1"></a><span class="at">fun =</span> <span class="st">&quot;mean&quot;</span>) <span class="co"># Tipo de resumen: promedio de la variable Y</span></span>
+<span id="cb42-5"><a href="unidad1.html#cb42-5" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-30-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Hasta el 2008 la tasa promedio de apertura estuvo en alza, posteriormente, la tasa decayó a un valor inferior a 1.1.</p></li>
+<li><p>Grafique el valor de la tasa de apertura del EUR/USD desde el 2020 hasta el 2022 separadamente. Interprete.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="unidad1.html#cb43-1" tabindex="-1"></a>datos<span class="sc">$</span>Date <span class="ot">=</span> <span class="fu">as.Date</span>(datos<span class="sc">$</span>Date) <span class="co"># Fechas en formato fecha de R</span></span>
+<span id="cb43-2"><a href="unidad1.html#cb43-2" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb43-3"><a href="unidad1.html#cb43-3" tabindex="-1"></a>  <span class="at">data =</span> datos[datos<span class="sc">$</span>Ano <span class="sc">%in%</span> <span class="dv">2020</span><span class="sc">:</span><span class="dv">2022</span>,], <span class="co"># Datos de los años 2020 al 2022</span></span>
+<span id="cb43-4"><a href="unidad1.html#cb43-4" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comando estéticos</span></span>
+<span id="cb43-5"><a href="unidad1.html#cb43-5" tabindex="-1"></a><span class="at">x =</span> Date, <span class="co"># Comandos estéticos: Eje X y variable asociada</span></span>
+<span id="cb43-6"><a href="unidad1.html#cb43-6" tabindex="-1"></a><span class="at">y =</span> Open)) <span class="sc">+</span> <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb43-7"><a href="unidad1.html#cb43-7" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar</span></span>
+<span id="cb43-8"><a href="unidad1.html#cb43-8" tabindex="-1"></a><span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="co"># Opacidad</span></span>
+<span id="cb43-9"><a href="unidad1.html#cb43-9" tabindex="-1"></a><span class="at">size =</span> <span class="fl">0.6</span>) <span class="sc">+</span> <span class="co"># Tamaño</span></span>
+<span id="cb43-10"><a href="unidad1.html#cb43-10" tabindex="-1"></a>  <span class="fu">theme</span>( <span class="co"># Aspectos visuales del gráfico</span></span>
+<span id="cb43-11"><a href="unidad1.html#cb43-11" tabindex="-1"></a><span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="co"># Eliminamos el texto del eje X</span></span>
+<span id="cb43-12"><a href="unidad1.html#cb43-12" tabindex="-1"></a>  <span class="fu">facet_wrap</span>( <span class="co"># Segregación del gráfico</span></span>
+<span id="cb43-13"><a href="unidad1.html#cb43-13" tabindex="-1"></a><span class="fu">vars</span>(Ano), <span class="co"># Variable que se utiliza para segregar el gráfico</span></span>
+<span id="cb43-14"><a href="unidad1.html#cb43-14" tabindex="-1"></a><span class="at">nrow =</span> <span class="dv">1</span>, <span class="co"># Disposición visual: una fila</span></span>
+<span id="cb43-15"><a href="unidad1.html#cb43-15" tabindex="-1"></a><span class="at">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="sc">+</span> <span class="co"># La escala del eje X es independiente para gráfico</span></span>
+<span id="cb43-16"><a href="unidad1.html#cb43-16" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb43-17"><a href="unidad1.html#cb43-17" tabindex="-1"></a><span class="at">title =</span> <span class="st">&quot;Tasa de apertura del EUR/USD desde el 2020 hasta el 2022&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb43-18"><a href="unidad1.html#cb43-18" tabindex="-1"></a><span class="at">x =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb43-19"><a href="unidad1.html#cb43-19" tabindex="-1"></a><span class="at">y =</span> <span class="st">&quot;Tasa de apertura&quot;</span>) <span class="co"># Título del eje Y</span></span>
+<span id="cb43-20"><a href="unidad1.html#cb43-20" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-31-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Durante los 3 años consecutivos, se observa que únicamente en el 2020 la tendencia de la tasa de apertura es al alza, mientra que para los otros dos años hubo un decaimiento en el valor de esta.</p></li>
+<li><p>Grafique el valor de la tasa de apertura del EUR/USD diferenciando por año. Interprete.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="unidad1.html#cb44-1" tabindex="-1"></a>g <span class="ot">=</span> <span class="fu">ggplot</span>( <span class="co"># Ambiente gráfico</span></span>
+<span id="cb44-2"><a href="unidad1.html#cb44-2" tabindex="-1"></a>  <span class="at">data =</span> datos, <span class="co"># Base de datos a utilizar</span></span>
+<span id="cb44-3"><a href="unidad1.html#cb44-3" tabindex="-1"></a>  <span class="fu">aes</span>( <span class="co"># Comando estéticos</span></span>
+<span id="cb44-4"><a href="unidad1.html#cb44-4" tabindex="-1"></a><span class="at">x =</span> Date, <span class="co"># Comandos estéticos: Eje X y variable asociada</span></span>
+<span id="cb44-5"><a href="unidad1.html#cb44-5" tabindex="-1"></a><span class="at">y =</span> Open, <span class="co"># Eje Y y variable asociada</span></span>
+<span id="cb44-6"><a href="unidad1.html#cb44-6" tabindex="-1"></a><span class="at">color =</span> Ano)) <span class="sc">+</span> <span class="co"># Color según el año</span></span>
+<span id="cb44-7"><a href="unidad1.html#cb44-7" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="co"># Objeto a graficar</span></span>
+<span id="cb44-8"><a href="unidad1.html#cb44-8" tabindex="-1"></a><span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="co"># Opacidad</span></span>
+<span id="cb44-9"><a href="unidad1.html#cb44-9" tabindex="-1"></a><span class="at">size =</span> <span class="fl">0.7</span>) <span class="sc">+</span> <span class="co"># Tamaño</span></span>
+<span id="cb44-10"><a href="unidad1.html#cb44-10" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="co"># Títulos</span></span>
+<span id="cb44-11"><a href="unidad1.html#cb44-11" tabindex="-1"></a><span class="at">color =</span> <span class="st">&quot;Año&quot;</span>, <span class="co"># Título de la leyenda</span></span>
+<span id="cb44-12"><a href="unidad1.html#cb44-12" tabindex="-1"></a><span class="at">title =</span> <span class="st">&quot;Tasa de apertura del EUR/USD&quot;</span>, <span class="co"># Título del gráfico</span></span>
+<span id="cb44-13"><a href="unidad1.html#cb44-13" tabindex="-1"></a><span class="at">x =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="co"># Título del eje X</span></span>
+<span id="cb44-14"><a href="unidad1.html#cb44-14" tabindex="-1"></a><span class="at">y =</span> <span class="st">&quot;Tasa de apertura&quot;</span>) <span class="sc">+</span> <span class="co"># Título del eje Y</span></span>
+<span id="cb44-15"><a href="unidad1.html#cb44-15" tabindex="-1"></a>  <span class="fu">guides</span>( <span class="co"># Edición de escalas</span></span>
+<span id="cb44-16"><a href="unidad1.html#cb44-16" tabindex="-1"></a><span class="at">color =</span> <span class="fu">guide_legend</span>( <span class="co"># Escala de color de la leyenda</span></span>
+<span id="cb44-17"><a href="unidad1.html#cb44-17" tabindex="-1"></a>  <span class="at">override.aes =</span> <span class="fu">list</span>( <span class="co"># Comando estéticos asociados</span></span>
+<span id="cb44-18"><a href="unidad1.html#cb44-18" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="dv">1</span>, <span class="co"># Opacidad de los puntos</span></span>
+<span id="cb44-19"><a href="unidad1.html#cb44-19" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>))) <span class="co"># Tamaño de los puntos</span></span>
+<span id="cb44-20"><a href="unidad1.html#cb44-20" tabindex="-1"></a>g <span class="co"># Desplegamos el gráfico guardado</span></span></code></pre></div>
+<p><img src="est1+descriptiva_files/figure-html/unnamed-chunk-32-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p>Al observar la evolución histórica de la tasa de apertura diferenciada por año, se aprecia que el periodo 2008 - 2010 es aquel con predominancia de valores más altos. Por otro lado, desde el 2016, se registraron pro primera vez valores menores a 1.1. En años posteriores, no ha observado que la tasa supere los 1.3 puntos.</p></li>
+</ol>
+</div>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-27" class="exercise"><strong>Ejercicio 1.22  </strong></span>Utilizando la base de datos de la <a href="unidad1.html#TasaEURUSD">Tasa Euro/Dólar</a>:</p>
+<ol style="list-style-type: decimal">
+<li>Elabore un gráfico de dispersión entre el año de medición y el valor promedio de tasa de cierre del EUR/USD (guarde el gráfico en una variable).</li>
+<li>Añadir al gráfico un formato de líneas entre los puntos. Interprete.</li>
+<li>Grafique el valor de la tasa de cierre del EUR/USD desde el 2010 hasta el 2013 separadamente. Interprete.</li>
+<li>Grafique el valor de la tasa de cierre del EUR/USD diferenciando por año. Interprete.</li>
+</ol>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-28" class="exercise"><strong>Ejercicio 1.23  </strong></span>Utilizando la base de datos de <a href="unidad1.html#PreciosElectricidad">Precios de electricidad</a>, elabore un gráfico de dispersión del precio de la electricidad a través del tiempo (considere año, mes y día). Interprete.</p>
+</div>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-29" class="exercise"><strong>Ejercicio 1.24  </strong></span>Utilizando la base de datos de <a href="unidad1.html#Pacientes">Pacientes</a>:</p>
+<ol style="list-style-type: decimal">
+<li>Elabore un histograma del nivel de colesterol de los pacientes. Interprete.</li>
+<li>Elabore un gráfico de caja del nivel de colesterol de los pacientes, diferenciando por sexo. Interprete y compare.</li>
+<li>Elabore un gráfico de violín (más caja y promedio) del nivel de colesterol de los pacientes, diferenciado por tipo de dolor en el pecho. Interprete y compare.</li>
+<li>Elabore un gráfico de dispersión entre la edad (eje X) y el nivel de colesterol (eje Y) de los pacientes, coloreando por sexo. Interprete.</li>
+</ol>
+</div>
+
+</div>
+</div>
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div id="ref-anderson" class="csl-entry">
+Anderson, D. R., Sweeney, D. J., &amp; Williams, T. A. (2008). <em>Estadística para administración y economía</em> (10a ed). Cengage Learning.
+</div>
+<div id="ref-brachman_knowledge_2004" class="csl-entry">
+Brachman, R. J., &amp; Levesque, H. J. (2004). <em>Knowledge representation and reasoning</em>. Morgan Kaufmann.
+</div>
+<div id="ref-Devore" class="csl-entry">
+Devore, J. L. (2008). <em>Probability and statistics for engineering and the sciences</em> (7th ed). Thomson/Brooks/Cole.
+</div>
+<div id="ref-healy2019data" class="csl-entry">
+Healy, K. (2019). <em>Data <span>Visualization</span>: <span>A</span> <span>Practical</span> <span>Introduction</span></em>. Princeton University Press.
+</div>
+<div id="ref-hintze1998violin" class="csl-entry">
+Hintze, J. L., &amp; Nelson, R. D. (1998). Violin <span>Plots</span>: <span>A</span> <span>Box</span> <span>Plot</span>-<span>Density</span> <span>Trace</span> <span>Synergism</span>. <em>The American Statistician</em>, <em>52</em>(2), 181–184.<div class="csl-block">Publisher: Taylor &amp; Francis</div>
+</div>
+<div id="ref-James2013" class="csl-entry">
+James, G., Witten, D., Hastie, T., &amp; Tibshirani, R. (2013). <em>An <span>Introduction</span> to <span>Statistical</span> <span>Learning</span>: With <span>Applications</span> in <span>R</span></em>. Springer.
+</div>
+<div id="ref-rowlingson2016data" class="csl-entry">
+Rowlingson, B. (2016). <em>Data <span>Analysis</span> with <span>R</span></em>. Springer.
+</div>
+<div id="ref-sturges1926choice" class="csl-entry">
+Sturges, H. A. (1926). The choice of a class interval. <em>Journal of the American Statistical Association</em>, <em>21</em>(153), 65–66.<div class="csl-block">Publisher: New York</div>
+</div>
+<div id="ref-Tukey" class="csl-entry">
+Tukey, J. W. (1977). <em>Exploratory <span>Data</span> <span>Analysis</span></em>. Addison-Wesley.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="talleres.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probabilidad-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": true,
+    "facebook": false,
+    "twitter": true,
+    "linkedin": true,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": true,
+    "all": false
+  },
+  "fontsettings": false,
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["est1+descriptiva.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": null
+  },
+  "info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

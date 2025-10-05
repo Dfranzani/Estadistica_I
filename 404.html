@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Página no encontrada | Estadística I &amp; Estadística Descriptiva</title>
+  <meta name="description" content="Curso básico de Estadística para ingeniería." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Página no encontrada | Estadística I &amp; Estadística Descriptiva" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Curso básico de Estadística para ingeniería." />
+  <meta name="github-repo" content="Dfranzani/Estadistica_I" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Página no encontrada | Estadística I &amp; Estadística Descriptiva" />
+  
+  <meta name="twitter:description" content="Curso básico de Estadística para ingeniería." />
+  
+
+<meta name="author" content="Daniel Franzani" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introducción a la Estadística</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="chapter" data-level="" data-path="talleres.html"><a href="talleres.html"><i class="fa fa-check"></i>Talleres de práctica</a></li>
+<li class="chapter" data-level="1" data-path="unidad1.html"><a href="unidad1.html"><i class="fa fa-check"></i><b>1</b> Tópicos básicos de estadística</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos"><i class="fa fa-check"></i><b>1.1</b> Conceptos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-datos"><i class="fa fa-check"></i><b>1.1.1</b> Datos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-informacion"><i class="fa fa-check"></i><b>1.1.2</b> Información</a></li>
+<li class="chapter" data-level="1.1.3" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-tipos-variables"><i class="fa fa-check"></i><b>1.1.3</b> Tipos de variables</a></li>
+<li class="chapter" data-level="1.1.4" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-poblacion-muestra"><i class="fa fa-check"></i><b>1.1.4</b> Población y Muestra</a></li>
+<li class="chapter" data-level="1.1.5" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-parametros-estadisticos"><i class="fa fa-check"></i><b>1.1.5</b> Parámetros y Estadísticos</a></li>
+<li class="chapter" data-level="1.1.6" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-estimador-estimacion"><i class="fa fa-check"></i><b>1.1.6</b> Estimador y Estimación</a></li>
+<li class="chapter" data-level="1.1.7" data-path="unidad1.html"><a href="unidad1.html#variabilidad-muestral"><i class="fa fa-check"></i><b>1.1.7</b> Variabilidad muestral</a></li>
+<li class="chapter" data-level="1.1.8" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos-representatividad-sesgo"><i class="fa fa-check"></i><b>1.1.8</b> Representatividad y sesgo de la muestra</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion"><i class="fa fa-check"></i><b>1.2</b> Medidas de localización</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-media"><i class="fa fa-check"></i><b>1.2.1</b> Media</a></li>
+<li class="chapter" data-level="1.2.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-mediana"><i class="fa fa-check"></i><b>1.2.2</b> Mediana</a></li>
+<li class="chapter" data-level="1.2.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-localizacion-moda"><i class="fa fa-check"></i><b>1.2.3</b> Moda</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala"><i class="fa fa-check"></i><b>1.3</b> Medidas de escala</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-rango"><i class="fa fa-check"></i><b>1.3.1</b> Rango</a></li>
+<li class="chapter" data-level="1.3.2" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-varianza-desviacion"><i class="fa fa-check"></i><b>1.3.2</b> Varianza y desviación estándar</a></li>
+<li class="chapter" data-level="1.3.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-coeficiente-variacion"><i class="fa fa-check"></i><b>1.3.3</b> Coeficiente de variación</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="unidad1.html"><a href="unidad1.html#topicos-notacion"><i class="fa fa-check"></i><b>1.4</b> Notación poblacional y muestral</a></li>
+<li class="chapter" data-level="1.5" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos"><i class="fa fa-check"></i><b>1.5</b> Gráficos descriptivos</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-histograma"><i class="fa fa-check"></i><b>1.5.1</b> Histograma</a></li>
+<li class="chapter" data-level="1.5.2" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-caja"><i class="fa fa-check"></i><b>1.5.2</b> Gráfico de Caja</a></li>
+<li class="chapter" data-level="1.5.3" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-violin"><i class="fa fa-check"></i><b>1.5.3</b> Gráfico de Violín</a></li>
+<li class="chapter" data-level="1.5.4" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-dispersion"><i class="fa fa-check"></i><b>1.5.4</b> Gráfico de Dispersión</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html"><i class="fa fa-check"></i><b>2</b> Probabilidad y variables aleatorias</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos"><i class="fa fa-check"></i><b>2.1</b> Elementos de probabilidad</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-experimento"><i class="fa fa-check"></i><b>2.1.1</b> Experimento y Espacio muestral</a></li>
+<li class="chapter" data-level="2.1.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-eventos"><i class="fa fa-check"></i><b>2.1.2</b> Eventos aleatorios</a></li>
+<li class="chapter" data-level="2.1.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-evento"><i class="fa fa-check"></i><b>2.1.3</b> Probabilidad de un evento</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria"><i class="fa fa-check"></i><b>2.2</b> Variable aleatoria</a></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.3</b> Variables aleatorias discretas (v.a.d)</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fmp"><i class="fa fa-check"></i><b>2.3.1</b> Función de masa de probabilidad</a></li>
+<li class="chapter" data-level="2.3.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fda"><i class="fa fa-check"></i><b>2.3.2</b> Función de distribución acumulada</a></li>
+<li class="chapter" data-level="2.3.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-distribuciones"><i class="fa fa-check"></i><b>2.3.3</b> Distribuciones</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua"><i class="fa fa-check"></i><b>2.4</b> Variables aleatorias continuas (v.a.c)</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fdp"><i class="fa fa-check"></i><b>2.4.1</b> Función de densidad de probabilidad</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fda"><i class="fa fa-check"></i><b>2.4.2</b> Función de distribución acumulada</a></li>
+<li class="chapter" data-level="2.4.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-distribuciones"><i class="fa fa-check"></i><b>2.4.3</b> Distribuciones</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-esperanza"><i class="fa fa-check"></i><b>2.5</b> Esperanza</a></li>
+<li class="chapter" data-level="2.6" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-varianza"><i class="fa fa-check"></i><b>2.6</b> Varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html"><i class="fa fa-check"></i><b>3</b> Distribuciones muestrales</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media"><i class="fa fa-check"></i><b>3.1</b> Distribución de muestreo de la media</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-estandarizacion"><i class="fa fa-check"></i><b>3.1.1</b> Estandarización</a></li>
+<li class="chapter" data-level="3.1.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-distribucionmedia"><i class="fa fa-check"></i><b>3.1.2</b> Distribución de la media</a></li>
+<li class="chapter" data-level="3.1.3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-tlc"><i class="fa fa-check"></i><b>3.1.3</b> Teorema del Límite Central</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-varianza"><i class="fa fa-check"></i><b>3.2</b> Distribución de muestreo de la varianza</a></li>
+<li class="chapter" data-level="3.3" data-path="_404.html"><a href="#la-distribuci%C3%B3n-t-student"><i class="fa fa-check"></i><b>3.3</b> La distribución T-Student</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/rmarkdown-cookbook" target="blank">Published with Bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística I &amp; Estadística Descriptiva</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+
+
+
+<div id="página-no-encontrada" class="section level1">
+<h1>Página no encontrada</h1>
+<p>La página que buscas, o no existe o no se encuentra disponible.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": true,
+    "facebook": false,
+    "twitter": true,
+    "linkedin": true,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": true,
+    "all": false
+  },
+  "fontsettings": false,
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["est1+descriptiva.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": null
+  },
+  "info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
