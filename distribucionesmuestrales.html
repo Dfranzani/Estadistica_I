@@ -4,23 +4,23 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Unidad 3 Distribuciones muestrales | Estadística I &amp; Estadística Descriptiva</title>
+  <title>Unidad 4 Distribuciones muestrales | Estadística I &amp; Estadística Descriptiva</title>
   <meta name="description" content="Curso básico de Estadística para ingeniería." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Unidad 3 Distribuciones muestrales | Estadística I &amp; Estadística Descriptiva" />
+  <meta property="og:title" content="Unidad 4 Distribuciones muestrales | Estadística I &amp; Estadística Descriptiva" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Curso básico de Estadística para ingeniería." />
   <meta name="github-repo" content="Dfranzani/Estadistica_I" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Unidad 3 Distribuciones muestrales | Estadística I &amp; Estadística Descriptiva" />
+  <meta name="twitter:title" content="Unidad 4 Distribuciones muestrales | Estadística I &amp; Estadística Descriptiva" />
   
   <meta name="twitter:description" content="Curso básico de Estadística para ingeniería." />
   
 
-<meta name="author" content="Daniel Franzani" />
+<meta name="author" content="Prof. Daniel Franzani" />
 
 
 
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="probabilidad-variables.html"/>
-<link rel="next" href="referencias.html"/>
+<link rel="prev" href="probabilidad-variable-aleatoria.html"/>
+<link rel="next" href="bases-de-datos-utilizadas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -167,7 +167,6 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
-<li class="chapter" data-level="" data-path="talleres.html"><a href="talleres.html"><i class="fa fa-check"></i>Talleres de práctica</a></li>
 <li class="chapter" data-level="1" data-path="unidad1.html"><a href="unidad1.html"><i class="fa fa-check"></i><b>1</b> Tópicos básicos de estadística</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="unidad1.html"><a href="unidad1.html#topicos-conceptos"><i class="fa fa-check"></i><b>1.1</b> Conceptos</a>
@@ -194,49 +193,62 @@ div.csl-indent {
 <li class="chapter" data-level="1.3.3" data-path="unidad1.html"><a href="unidad1.html#topicos-medidas-escala-coeficiente-variacion"><i class="fa fa-check"></i><b>1.3.3</b> Coeficiente de variación</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="unidad1.html"><a href="unidad1.html#topicos-notacion"><i class="fa fa-check"></i><b>1.4</b> Notación poblacional y muestral</a></li>
-<li class="chapter" data-level="1.5" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos"><i class="fa fa-check"></i><b>1.5</b> Gráficos descriptivos</a>
+</ul></li>
+<li class="chapter" data-level="2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html"><i class="fa fa-check"></i><b>2</b> Probabilidad</a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-histograma"><i class="fa fa-check"></i><b>1.5.1</b> Histograma</a></li>
-<li class="chapter" data-level="1.5.2" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-caja"><i class="fa fa-check"></i><b>1.5.2</b> Gráfico de Caja</a></li>
-<li class="chapter" data-level="1.5.3" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-violin"><i class="fa fa-check"></i><b>1.5.3</b> Gráfico de Violín</a></li>
-<li class="chapter" data-level="1.5.4" data-path="unidad1.html"><a href="unidad1.html#topicos-graficos-dispersion"><i class="fa fa-check"></i><b>1.5.4</b> Gráfico de Dispersión</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html"><i class="fa fa-check"></i><b>2</b> Probabilidad y variables aleatorias</a>
+<li class="chapter" data-level="2.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-experimento"><i class="fa fa-check"></i><b>2.1</b> Experimento y Espacio muestral</a></li>
+<li class="chapter" data-level="2.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-eventos"><i class="fa fa-check"></i><b>2.2</b> Eventos aleatorios</a></li>
+<li class="chapter" data-level="2.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-axiomas"><i class="fa fa-check"></i><b>2.3</b> Axiomas y propiedades</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos"><i class="fa fa-check"></i><b>2.1</b> Elementos de probabilidad</a>
+<li class="chapter" data-level="2.3.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-resultados-igualmente-probables"><i class="fa fa-check"></i><b>2.3.1</b> Resultados igualmente probables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-tecnicas-conteo"><i class="fa fa-check"></i><b>2.4</b> Técnicas de conteo</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-experimento"><i class="fa fa-check"></i><b>2.1.1</b> Experimento y Espacio muestral</a></li>
-<li class="chapter" data-level="2.1.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variables-elementos-eventos"><i class="fa fa-check"></i><b>2.1.2</b> Eventos aleatorios</a></li>
-<li class="chapter" data-level="2.1.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-evento"><i class="fa fa-check"></i><b>2.1.3</b> Probabilidad de un evento</a></li>
+<li class="chapter" data-level="2.4.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#regla-del-producto-para-pares-ordenados"><i class="fa fa-check"></i><b>2.4.1</b> Regla del producto para pares ordenados</a></li>
+<li class="chapter" data-level="2.4.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#permutaciones-y-combinaciones"><i class="fa fa-check"></i><b>2.4.2</b> Permutaciones y combinaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria"><i class="fa fa-check"></i><b>2.2</b> Variable aleatoria</a></li>
-<li class="chapter" data-level="2.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta"><i class="fa fa-check"></i><b>2.3</b> Variables aleatorias discretas (v.a.d)</a>
+<li class="chapter" data-level="2.5" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-probabilidad-condicional"><i class="fa fa-check"></i><b>2.5</b> Probabilidad condicional</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fmp"><i class="fa fa-check"></i><b>2.3.1</b> Función de masa de probabilidad</a></li>
-<li class="chapter" data-level="2.3.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-fda"><i class="fa fa-check"></i><b>2.3.2</b> Función de distribución acumulada</a></li>
-<li class="chapter" data-level="2.3.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-discreta-distribuciones"><i class="fa fa-check"></i><b>2.3.3</b> Distribuciones</a></li>
+<li class="chapter" data-level="2.5.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#definici%C3%B3n-de-probabilidad-condicional"><i class="fa fa-check"></i><b>2.5.1</b> Definición de probabilidad condicional</a></li>
+<li class="chapter" data-level="2.5.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#regla-de-la-multiplicaci%C3%B3n-para-pa-cap-b"><i class="fa fa-check"></i><b>2.5.2</b> Regla de la multiplicación para <span class="math inline">\(P(A \cap B)\)</span></a></li>
+<li class="chapter" data-level="2.5.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#teorema-de-bayes"><i class="fa fa-check"></i><b>2.5.3</b> Teorema de Bayes</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua"><i class="fa fa-check"></i><b>2.4</b> Variables aleatorias continuas (v.a.c)</a>
+<li class="chapter" data-level="2.6" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-independencia"><i class="fa fa-check"></i><b>2.6</b> Independencia</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fdp"><i class="fa fa-check"></i><b>2.4.1</b> Función de densidad de probabilidad</a></li>
-<li class="chapter" data-level="2.4.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-fda"><i class="fa fa-check"></i><b>2.4.2</b> Función de distribución acumulada</a></li>
-<li class="chapter" data-level="2.4.3" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-variable-aleatoria-continua-distribuciones"><i class="fa fa-check"></i><b>2.4.3</b> Distribuciones</a></li>
+<li class="chapter" data-level="2.6.1" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#regla-de-la-multiplicaci%C3%B3n-para-pa-cap-b-1"><i class="fa fa-check"></i><b>2.6.1</b> Regla de la multiplicación para <span class="math inline">\(P(A \cap B)\)</span></a></li>
+<li class="chapter" data-level="2.6.2" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#independencia-de-m%C3%A1s-de-dos-eventos"><i class="fa fa-check"></i><b>2.6.2</b> Independencia de más de dos eventos</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-esperanza"><i class="fa fa-check"></i><b>2.5</b> Esperanza</a></li>
-<li class="chapter" data-level="2.6" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#probabilidad-varianza"><i class="fa fa-check"></i><b>2.6</b> Varianza</a></li>
+<li class="chapter" data-level="2.7" data-path="probabilidad-variables.html"><a href="probabilidad-variables.html#ejercicios"><i class="fa fa-check"></i><b>2.7</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html"><i class="fa fa-check"></i><b>3</b> Distribuciones muestrales</a>
+<li class="chapter" data-level="3" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html"><i class="fa fa-check"></i><b>3</b> Variable aleatoria</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media"><i class="fa fa-check"></i><b>3.1</b> Distribución de muestreo de la media</a>
+<li class="chapter" data-level="3.1" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-variable-aleatoria-discreta"><i class="fa fa-check"></i><b>3.1</b> Variables aleatorias discretas (v.a.d)</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-estandarizacion"><i class="fa fa-check"></i><b>3.1.1</b> Estandarización</a></li>
-<li class="chapter" data-level="3.1.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-distribucionmedia"><i class="fa fa-check"></i><b>3.1.2</b> Distribución de la media</a></li>
-<li class="chapter" data-level="3.1.3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-tlc"><i class="fa fa-check"></i><b>3.1.3</b> Teorema del Límite Central</a></li>
+<li class="chapter" data-level="3.1.1" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-variable-aleatoria-discreta-fmp"><i class="fa fa-check"></i><b>3.1.1</b> Función de masa de probabilidad</a></li>
+<li class="chapter" data-level="3.1.2" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-variable-aleatoria-discreta-fda"><i class="fa fa-check"></i><b>3.1.2</b> Función de distribución acumulada</a></li>
+<li class="chapter" data-level="3.1.3" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-variable-aleatoria-discreta-distribuciones"><i class="fa fa-check"></i><b>3.1.3</b> Distribuciones</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-varianza"><i class="fa fa-check"></i><b>3.2</b> Distribución de muestreo de la varianza</a></li>
-<li class="chapter" data-level="3.3" data-path="03-unidad3.html"><a href="#la-distribuci%C3%B3n-t-student"><i class="fa fa-check"></i><b>3.3</b> La distribución T-Student</a></li>
+<li class="chapter" data-level="3.2" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-variable-aleatoria-continua"><i class="fa fa-check"></i><b>3.2</b> Variables aleatorias continuas (v.a.c)</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-variable-aleatoria-continua-fdp"><i class="fa fa-check"></i><b>3.2.1</b> Función de densidad de probabilidad</a></li>
+<li class="chapter" data-level="3.2.2" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-variable-aleatoria-continua-fda"><i class="fa fa-check"></i><b>3.2.2</b> Función de distribución acumulada</a></li>
+<li class="chapter" data-level="3.2.3" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-variable-aleatoria-continua-distribuciones"><i class="fa fa-check"></i><b>3.2.3</b> Distribuciones</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-esperanza"><i class="fa fa-check"></i><b>3.3</b> Esperanza</a></li>
+<li class="chapter" data-level="3.4" data-path="probabilidad-variable-aleatoria.html"><a href="probabilidad-variable-aleatoria.html#probabilidad-varianza"><i class="fa fa-check"></i><b>3.4</b> Varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html"><i class="fa fa-check"></i><b>4</b> Distribuciones muestrales</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media"><i class="fa fa-check"></i><b>4.1</b> Distribución de muestreo de la media</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-estandarizacion"><i class="fa fa-check"></i><b>4.1.1</b> Estandarización</a></li>
+<li class="chapter" data-level="4.1.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-distribucionmedia"><i class="fa fa-check"></i><b>4.1.2</b> Distribución de la media</a></li>
+<li class="chapter" data-level="4.1.3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-media-tlc"><i class="fa fa-check"></i><b>4.1.3</b> Teorema del Límite Central</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#distribucionesmuestrales-varianza"><i class="fa fa-check"></i><b>4.2</b> Distribución de muestreo de la varianza</a></li>
+<li class="chapter" data-level="4.3" data-path="distribucionesmuestrales.html"><a href="distribucionesmuestrales.html#la-distribuci%C3%B3n-t-student"><i class="fa fa-check"></i><b>4.3</b> La distribución T-Student</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bases-de-datos-utilizadas.html"><a href="bases-de-datos-utilizadas.html"><i class="fa fa-check"></i>Bases de datos utilizadas</a></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/rmarkdown-cookbook" target="blank">Published with Bookdown</a></li>
@@ -258,29 +270,29 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="distribucionesmuestrales" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Unidad 3</span> Distribuciones muestrales<a href="distribucionesmuestrales.html#distribucionesmuestrales" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="distribucionesmuestrales" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Unidad 4</span> Distribuciones muestrales<a href="distribucionesmuestrales.html#distribucionesmuestrales" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Antes de iniciar esta sección es necesario aclarar el concepto de independencia. Para ello, consideremos dos variable aleatorias, y un evento de cada una, podemos entender la independencia como “la probabilidad de que ocurran los dos eventos al mismo tiempo es igual a la multiplicación de las probabilidades de cada evento por separado”. Además, si las variables (que definen los eventos) tienen la misma función de distribución, se dice que las variables aleatorias son <strong>independientes idénticamente distribuidas</strong> (iid).</p>
-<div id="distribucionesmuestrales-media" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Distribución de muestreo de la media<a href="distribucionesmuestrales.html#distribucionesmuestrales-media" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="distribucionesmuestrales-media-estandarizacion" class="section level3 hasAnchor" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Estandarización<a href="distribucionesmuestrales.html#distribucionesmuestrales-media-estandarizacion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="distribucionesmuestrales-media" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Distribución de muestreo de la media<a href="distribucionesmuestrales.html#distribucionesmuestrales-media" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="distribucionesmuestrales-media-estandarizacion" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Estandarización<a href="distribucionesmuestrales.html#distribucionesmuestrales-media-estandarizacion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La estandarización, es un proceso mediante el cual los datos originales de una variable se transforman en una nueva escala que tiene una media de cero y una desviación estándar de uno. Esto permite eliminar las diferencias de escala entre las variables y facilita la comparación y el análisis estadístico <span class="citation">(<a href="#ref-hair2013multivariate">Hair et al., 2013</a>)</span>.</p>
 <p>Consideremos <span class="math inline">\(X\)</span> una variable aleatoria normalmente distribuida con media <span class="math inline">\(E(X) = \mu\)</span> y varianza <span class="math inline">\(Var(X) = \sigma^2\)</span>. El proceso de estandarización de la variable aleatoria es:</p>
 <span class="math display" id="eq:estandarizacion">\[\begin{equation}
 \frac{X-\mu}{\sigma} \sim N(0,1)
-\tag{3.1}
+\tag{4.1}
 \end{equation}\]</span>
-<p>En el gráfico <a href="distribucionesmuestrales.html#fig:ejestand">3.1</a> se observa una ejemplificación de la estandarización. Al estandarizar el punto más alto de la curva se centra al rededor del 0, a su vez que la curva se angosta.</p>
+<p>En el gráfico <a href="distribucionesmuestrales.html#fig:ejestand">4.1</a> se observa una ejemplificación de la estandarización. Al estandarizar el punto más alto de la curva se centra al rededor del 0, a su vez que la curva se angosta.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:ejestand"></span>
-<img src="est1+descriptiva_files/figure-html/ejestand-1.png" alt="Estandarización de una variable con distribución Normal" width="576" />
+<img src="EstadisticaI_files/figure-html/ejestand-1.png" alt="Estandarización de una variable con distribución Normal" width="576" />
 <p class="caption">
-Figura 3.1: Estandarización de una variable con distribución Normal
+Figura 4.1: Estandarización de una variable con distribución Normal
 </p>
 </div>
 </div>
-<div id="distribucionesmuestrales-media-distribucionmedia" class="section level3 hasAnchor" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Distribución de la media<a href="distribucionesmuestrales.html#distribucionesmuestrales-media-distribucionmedia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="distribucionesmuestrales-media-distribucionmedia" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Distribución de la media<a href="distribucionesmuestrales.html#distribucionesmuestrales-media-distribucionmedia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Una de las medidas de resumen más importantes es la media (o promedio) de un conjunto de variables aleatorias independientes e idénticamente distribuidas.</p>
 <p>Consideremos <span class="math inline">\(X_1, \ldots , X_n\)</span> un conjunto de <span class="math inline">\(n\)</span> variables aleatorias (<em>iid</em>), tales que, <span class="math inline">\(E(X_i) = \mu\)</span> y <span class="math inline">\(Var(X_i) = \sigma^2\)</span>.</p>
 <p>Entonces el estadístico</p>
@@ -300,12 +312,12 @@ Var(\bar{X}) &amp;= \sigma^2/n
 <p>Sea <span class="math inline">\(X_1, \ldots , X_n\)</span> una conjunto de <span class="math inline">\(n\)</span> variables aleatorias independientes normalmente distribuidas con medias <span class="math inline">\(E(X_i) = \mu_i\)</span> y varianzas <span class="math inline">\(Var(X_i) = \sigma_i^2\)</span> para <span class="math inline">\(i=1,\ldots,n\)</span>. Entonces la distribución de la media muestral es</p>
 <span class="math display" id="eq:distMedia">\[\begin{equation}
 \bar{X}\sim N(\mu,\sigma^2/n)
-\tag{3.2}
+\tag{4.2}
 \end{equation}\]</span>
 <p>Con las propiedades mencionadas, es posible determinar la probabilidad de que ocurran determinados eventos que estén asociados al promedio, siempre y cuando las variables aleatorias tengan una distribución normal.</p>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:media1" class="example"><strong>Ejemplo 3.1  </strong></span>El tipo de cambio del dólar a peso chileno cambia diariamente. Supóngase que este valor es una variable aleatoria distribuida normalmente con media $720 y desviación estándar de $10.</p>
+<p><span id="exm:media1" class="example"><strong>Ejemplo 4.1  </strong></span>El tipo de cambio del dólar a peso chileno cambia diariamente. Supóngase que este valor es una variable aleatoria distribuida normalmente con media $720 y desviación estándar de $10.</p>
 <p>El gerente de finanzas de una empresa de <em>retail</em> a decidido reajustar mensualmente al alza todos los precios de sus productos, cuando el valor promedio del tipo de cambio del dólar sea superior a $724. Considerando, que se ha tomado una muestra aleatoria de 22 mediciones del dólar del mes anterior, determine la probabilidad de que el gerente aplique un alza en los precios en el próximo mes.</p>
 <p>En primer lugar, corresponde plantear la probabilidad que se desea calcular con relación a la aplicación en el alza de precios. En este caso, la variable de estudio tiene distribución normal, por lo cual, la estandarización del promedio de la variable tiene distribución <span class="math inline">\(N(\mu = 0, \sigma^2=1)\)</span>.</p>
 <span class="math display">\[\begin{equation}
@@ -317,21 +329,21 @@ P(\bar{X} &gt; 724) &amp;= P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &gt; \frac
 \end{split}
 \end{equation}\]</span>
 <p>Luego, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="distribucionesmuestrales.html#cb89-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.876</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="distribucionesmuestrales.html#cb74-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.876</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.03032764</code></pre>
 <p>Finalmente, la probabilidad de que el gerente aplique un alza en los precios en el próximo mes es de 0.03.</p>
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-96" class="exercise"><strong>Ejercicio 3.1  </strong></span>La cantidad de operaciones bancarias que ocurren durante un día distribuye normal con media 75 (millones) y varianza 144 (millones). Considerando una muestra de tamaño 22 (días), ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 77.3 millones?</p>
+<p><span id="exr:unlabeled-div-153" class="exercise"><strong>Ejercicio 4.1  </strong></span>La cantidad de operaciones bancarias que ocurren durante un día distribuye normal con media 75 (millones) y varianza 144 (millones). Considerando una muestra de tamaño 22 (días), ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 77.3 millones?</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-97" class="exercise"><strong>Ejercicio 3.2  </strong></span>El tiempo que demoran en hacerse efectivas las transferencias bancarias internacionales, distribuye normal con media 15 (segundos) y desviación estándar de 4 (segundos). Considerando una muestra de tamaño 29, ¿cuál es la probabilidad de que la media muestral de los tiempos de demora de transacción sea menor a 14.1 segundos? Mencione con rigurosidad todos los pasos de su solución.</p>
+<p><span id="exr:unlabeled-div-154" class="exercise"><strong>Ejercicio 4.2  </strong></span>El tiempo que demoran en hacerse efectivas las transferencias bancarias internacionales, distribuye normal con media 15 (segundos) y desviación estándar de 4 (segundos). Considerando una muestra de tamaño 29, ¿cuál es la probabilidad de que la media muestral de los tiempos de demora de transacción sea menor a 14.1 segundos? Mencione con rigurosidad todos los pasos de su solución.</p>
 </div>
 </div>
-<div id="distribucionesmuestrales-media-tlc" class="section level3 hasAnchor" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> Teorema del Límite Central<a href="distribucionesmuestrales.html#distribucionesmuestrales-media-tlc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Considerando el ejemplo <a href="distribucionesmuestrales.html#exm:media1">3.1</a>, <strong>¿qué sucede cuándo la variable aleatoria del experimento no sigue una distribución normal?</strong> Para estos casos se utiliza el Teorema del Límite Central (TLC) <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 215)</span>.</p>
+<div id="distribucionesmuestrales-media-tlc" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Teorema del Límite Central<a href="distribucionesmuestrales.html#distribucionesmuestrales-media-tlc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Considerando el ejemplo <a href="distribucionesmuestrales.html#exm:media1">4.1</a>, <strong>¿qué sucede cuándo la variable aleatoria del experimento no sigue una distribución normal?</strong> Para estos casos se utiliza el Teorema del Límite Central (TLC) <span class="citation">(<a href="#ref-Devore">Devore, 2008</a>, página 215)</span>.</p>
 <ul>
 <li><strong>Anteriormente:</strong>
 <ul>
@@ -348,7 +360,7 @@ P(\bar{X} &gt; 724) &amp;= P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &gt; \frac
 <p>Consulte el <a href="https://dfranzani.github.io/App_Estadistica/">siguiente enlace</a> para acceder a una aplicación interactiva que permite visualizar el TLC.</p>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-98" class="example"><strong>Ejemplo 3.2  </strong></span>Un accionista piensa comprar acciones de una determinada empresa chilena de tecnología. Dado los valores del mercado, se observa que el valor promedio de las acciones (iid) es de $4000 con una desviación estándar de $700. El accionista comprará acciones solo si una muestra aleatoria de 100 valores de acciones resulta en un valor promedio mayor a $4100. ¿Cuál es la probabilidad de que el accionista invierta en la empresa chilena?</p>
+<p><span id="exm:unlabeled-div-155" class="example"><strong>Ejemplo 4.2  </strong></span>Un accionista piensa comprar acciones de una determinada empresa chilena de tecnología. Dado los valores del mercado, se observa que el valor promedio de las acciones (iid) es de $4000 con una desviación estándar de $700. El accionista comprará acciones solo si una muestra aleatoria de 100 valores de acciones resulta en un valor promedio mayor a $4100. ¿Cuál es la probabilidad de que el accionista invierta en la empresa chilena?</p>
 <p>Si bien no se especifica que los valores de la acciones distribuyen normal, es posible usar el TLC para determinar la probabilidad.</p>
 <p>El planteamiento de la probabilidad es el siguiente:</p>
 <span class="math display">\[\begin{equation}
@@ -360,24 +372,24 @@ P(\bar{X} &gt; 4100) &amp;= P\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &gt; \fra
 \end{split}
 \end{equation}\]</span>
 <p>El cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="distribucionesmuestrales.html#cb91-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.428</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="distribucionesmuestrales.html#cb76-1" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="at">q =</span> <span class="fl">1.428</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.07664593</code></pre>
 <p>La probabilidad de que el accionista invierta en la empresa chilena es de 0.07</p>
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-99" class="exercise"><strong>Ejercicio 3.3  </strong></span>La cantidad de operaciones bancarias que ocurren durante un día tienen una media de 75 (millones) y varianza 144 (millones). Considerando una muestra de tamaño 71 (días), y que se desconoce la distribución de los datos, ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 73.16 millones? Mencione con rigurosidad todos los pasos de su solución.</p>
+<p><span id="exr:unlabeled-div-156" class="exercise"><strong>Ejercicio 4.3  </strong></span>La cantidad de operaciones bancarias que ocurren durante un día tienen una media de 75 (millones) y varianza 144 (millones). Considerando una muestra de tamaño 71 (días), y que se desconoce la distribución de los datos, ¿cuál es la probabilidad de que la media muestral de la cantidad de transacciones sea menor a 73.16 millones? Mencione con rigurosidad todos los pasos de su solución.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-100" class="exercise"><strong>Ejercicio 3.4  </strong></span>El tiempo que demoran en hacerse efectivas las transferencias bancarias internacionales tienen una media de 15 (segundos) y desviación estándar de 4 (segundos). Considerando una muestra de tamaño 56, y que se desconoce la distribución de los datos, ¿cuál es la probabilidad de que la media muestral de los tiempos de demora de transacción sea menor a 15.8 segundos? Mencione con rigurosidad todos los pasos de su solución.</p>
+<p><span id="exr:unlabeled-div-157" class="exercise"><strong>Ejercicio 4.4  </strong></span>El tiempo que demoran en hacerse efectivas las transferencias bancarias internacionales tienen una media de 15 (segundos) y desviación estándar de 4 (segundos). Considerando una muestra de tamaño 56, y que se desconoce la distribución de los datos, ¿cuál es la probabilidad de que la media muestral de los tiempos de demora de transacción sea menor a 15.8 segundos? Mencione con rigurosidad todos los pasos de su solución.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-101" class="exercise"><strong>Ejercicio 3.5  </strong></span>Supóngase que el número de barriles de petróleo crudo que son importados diariamente es una variable aleatoria con una distribución no especificada. Si se observa la cantidad de barriles importados en 64 días, seleccionados en forma aleatoria , y si se sabe que la desviación estándar del número de barriles por día es <span class="math inline">\(\sigma = 60\)</span>, determínese la probabilidad de que la media muestral se encuentre a no más de 700 barriles del verdadero valor de barriles importados.</p>
+<p><span id="exr:unlabeled-div-158" class="exercise"><strong>Ejercicio 4.5  </strong></span>Supóngase que el número de barriles de petróleo crudo que son importados diariamente es una variable aleatoria con una distribución no especificada. Si se observa la cantidad de barriles importados en 64 días, seleccionados en forma aleatoria , y si se sabe que la desviación estándar del número de barriles por día es <span class="math inline">\(\sigma = 60\)</span>, determínese la probabilidad de que la media muestral se encuentre a no más de 700 barriles del verdadero valor de barriles importados.</p>
 </div>
 </div>
 </div>
-<div id="distribucionesmuestrales-varianza" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Distribución de muestreo de la varianza<a href="distribucionesmuestrales.html#distribucionesmuestrales-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="distribucionesmuestrales-varianza" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Distribución de muestreo de la varianza<a href="distribucionesmuestrales.html#distribucionesmuestrales-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Si la media es una de las medidas de localización más usadas, entonces, la varianza sería aquella con más uso dentro de las medidas de escala. Y al igual que la media, también existe una distribución de muestreo asociada a la varianza muestral.</p>
 <p>Consideremos la expresión utilizada para calcular la varianza de un conjunto de datos (muestra):</p>
 <span class="math display">\[\begin{equation}
@@ -387,11 +399,11 @@ S^2 = \sum_{i=1}^n\frac{(X_i-\mu)^2}{n-1}
 <p>Se obtiene la siguiente propiedad. Sean <span class="math inline">\(X_1,\ldots,X_n\)</span> una muestra aleatoria de una distribución normal con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>. Entonces,</p>
 <span class="math display" id="eq:distVar">\[\begin{equation}
 Y=\sum_{i=1}^n\frac{(X_i-\mu)^2}{\sigma^2} = \frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}
-\tag{3.3}
+\tag{4.3}
 \end{equation}\]</span>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-102" class="example"><strong>Ejemplo 3.3  </strong></span>Considere una medición del índice de pobreza (porcentual) proporcionada por un instrumento computacional, en donde el interés recae en la variabilidad de la lectura. Supóngase que, con base en la experiencia, la medición es una variable aleatoria normalmente distribuida con media 14.7 y desviación estándar igual a 1.2 unidades. Si se toma una muestra aleatoria procedente del proceso de medición computacional de tamaño 25, ¿cuál es la probabilidad de que el valor de la varianza muestral del índice de pobreza sea mayor a <span class="math inline">\(1.1\)</span> unidades?</p>
+<p><span id="exm:unlabeled-div-159" class="example"><strong>Ejemplo 4.3  </strong></span>Considere una medición del índice de pobreza (porcentual) proporcionada por un instrumento computacional, en donde el interés recae en la variabilidad de la lectura. Supóngase que, con base en la experiencia, la medición es una variable aleatoria normalmente distribuida con media 14.7 y desviación estándar igual a 1.2 unidades. Si se toma una muestra aleatoria procedente del proceso de medición computacional de tamaño 25, ¿cuál es la probabilidad de que el valor de la varianza muestral del índice de pobreza sea mayor a <span class="math inline">\(1.1\)</span> unidades?</p>
 <p>El planteamiento de la probabilidad es el siguiente.</p>
 <span class="math display">\[\begin{equation}
 \notag
@@ -402,16 +414,16 @@ P(S^2 &gt; 1.1) &amp;= P\left(\frac{(n-1)S^2}{\sigma^2} &gt; \frac{(n-1)\cdot 1.
 \end{split}
 \end{equation}\]</span>
 <p>Considerando que esta nueva variable tiene distribución <span class="math inline">\(\chi^2_{n-1} = \chi^2_{25-1} = \chi^2_{24}\)</span>, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="distribucionesmuestrales.html#cb93-1" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">18.333</span>, <span class="at">df =</span> <span class="dv">24</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="distribucionesmuestrales.html#cb78-1" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="at">q =</span> <span class="fl">18.333</span>, <span class="at">df =</span> <span class="dv">24</span>, <span class="at">lower.tail =</span> F)</span></code></pre></div>
 <pre><code>## [1] 0.7865623</code></pre>
 <p>Finalmente, la probabilidad de que el valor de la varianza muestral del índice de pobreza sea mayor a <span class="math inline">\(1.1\)</span> unidades cuadradas es de 0.7865.</p>
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-103" class="exercise"><strong>Ejercicio 3.6  </strong></span>Se toma una muestra aleatoria de tamaño 67 proveniente de una población normal con desviación estándar <span class="math inline">\(\sigma =3.05\)</span>. Calcular la probabilidad de que la varianza muestral <span class="math inline">\(s^{2}\)</span> sea como mínimo 8.21? Utilice solo una de las siguiente tablas.</p>
+<p><span id="exr:unlabeled-div-160" class="exercise"><strong>Ejercicio 4.6  </strong></span>Se toma una muestra aleatoria de tamaño 67 proveniente de una población normal con desviación estándar <span class="math inline">\(\sigma =3.05\)</span>. Calcular la probabilidad de que la varianza muestral <span class="math inline">\(s^{2}\)</span> sea como mínimo 8.21? Utilice solo una de las siguiente tablas.</p>
 <table class="table table-condensed table" style="width: auto !important; margin-left: auto; margin-right: auto; float: left; margin-right: 10px;">
 <caption>
-<span id="tab:unnamed-chunk-71">Tabla 3.1: </span>Distribución Ji-Cuadrado, df = 66
+<span id="tab:unnamed-chunk-66">Tabla 4.1: </span>Distribución Ji-Cuadrado, df = 66
 </caption>
 <thead>
 <tr>
@@ -468,7 +480,7 @@ Probabilidad
 </table>
 <table class="table table-condensed table" style="width: auto !important; margin-left: auto; margin-right: auto; margin-right: 0; margin-left: auto">
 <caption>
-<span id="tab:unnamed-chunk-72">Tabla 3.2: </span>Distribución Ji-Cuadrado, df = 65
+<span id="tab:unnamed-chunk-67">Tabla 4.2: </span>Distribución Ji-Cuadrado, df = 65
 </caption>
 <thead>
 <tr>
@@ -525,8 +537,8 @@ Probabilidad
 </table>
 </div>
 </div>
-<div id="la-distribución-t-student" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> La distribución T-Student<a href="#la-distribuci%C3%B3n-t-student" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="la-distribución-t-student" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> La distribución T-Student<a href="distribucionesmuestrales.html#la-distribuci%C3%B3n-t-student" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hasta el momento sabemos que:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(\displaystyle\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)\)</span></p></li>
@@ -536,12 +548,12 @@ Probabilidad
 <p>Para poder trabajar sobre la distribución de la media, reemplazamos la varianza poblacional por la muestral, dando origen a un nuevo estadístico:</p>
 <span class="math display" id="eq:distMedia2">\[\begin{equation}
 T = \frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t_{n-1},
-\tag{3.4}
+\tag{4.4}
 \end{equation}\]</span>
 <p>el cual, es un estadístico <em>t</em>-Student con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
 <div class="blackbox">
 <div class="example">
-<p><span id="exm:unlabeled-div-104" class="example"><strong>Ejemplo 3.4  </strong></span>El Departamento de Protección al Medio Ambiente (DPMA) asegura que, para un automóvil compacto en particular, el consumo promedio de gasolina en carretera es de 45 kilómetros por litro. Una organización independiente de consumidores adquiere uno de estos autos y lo somete a prueba con el propósito de verificar la cifra proporcionada por el DPMA. El auto recorrió una distancia de 100 kilómetros en 25 ocasiones. En cada recorrido se anotó el número de litros necesarios para realizar el viaje. Para los 25 ensayos, la desviación estándar tuvo un valor de 2.5 kilómetros por litro. Si se supone que el número de kilómetros que se recorre por litro es una variable aleatoria distribuida normalmente, ¿cuál es la probabilidad de que el promedio de kilómetros recorridos por litro sea menor al 45.2?</p>
+<p><span id="exm:unlabeled-div-161" class="example"><strong>Ejemplo 4.4  </strong></span>El Departamento de Protección al Medio Ambiente (DPMA) asegura que, para un automóvil compacto en particular, el consumo promedio de gasolina en carretera es de 45 kilómetros por litro. Una organización independiente de consumidores adquiere uno de estos autos y lo somete a prueba con el propósito de verificar la cifra proporcionada por el DPMA. El auto recorrió una distancia de 100 kilómetros en 25 ocasiones. En cada recorrido se anotó el número de litros necesarios para realizar el viaje. Para los 25 ensayos, la desviación estándar tuvo un valor de 2.5 kilómetros por litro. Si se supone que el número de kilómetros que se recorre por litro es una variable aleatoria distribuida normalmente, ¿cuál es la probabilidad de que el promedio de kilómetros recorridos por litro sea menor al 45.2?</p>
 <p>A diferencia de los expuesto anteriormente, no se conoce la varianza poblacional de la variable de estudio (los kilómetros por litro que rinde el automóvil), por lo tanto, corresponde utilizar el estadístico <em>t</em>-Student, el cual hace uso de la varianza muestral. El planteamiento de la probabilidad es el siguiente:</p>
 <span class="math display">\[\begin{equation}
 \notag
@@ -552,13 +564,13 @@ P(\bar{X} &lt; 45.2) &amp;= P\left(\frac{\bar{X}-\mu}{S/\sqrt{n}} &lt; \frac{45.
 \end{split}
 \end{equation}\]</span>
 <p>Recordando que esta nueva variable distribuye <span class="math inline">\(t_{n-1}=t_{25-1}=t_{24}\)</span>, el cálculo en R es el siguiente:</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="distribucionesmuestrales.html#cb95-1" tabindex="-1"></a><span class="fu">pt</span>(<span class="at">q =</span> <span class="fl">0.4</span>, <span class="at">df =</span> <span class="dv">24</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="distribucionesmuestrales.html#cb80-1" tabindex="-1"></a><span class="fu">pt</span>(<span class="at">q =</span> <span class="fl">0.4</span>, <span class="at">df =</span> <span class="dv">24</span>)</span></code></pre></div>
 <pre><code>## [1] 0.6536528</code></pre>
 <p>la probabilidad de que el promedio de kilómetros recorridos por litro sea menor al 45.2 es de 0.6536.</p>
 </div>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-105" class="exercise"><strong>Ejercicio 3.7  </strong></span>La base de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv"><em>dolar.csv</em></a> contiene el valor del dólar observado de algunos de los días de los meses de junio y julio, tomados por el el SII. A continuación:</p>
+<p><span id="exr:unlabeled-div-162" class="exercise"><strong>Ejercicio 4.7  </strong></span>La base de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv"><em>dolar.csv</em></a> contiene el valor del dólar observado de algunos de los días de los meses de junio y julio, tomados por el el SII. A continuación:</p>
 <ol style="list-style-type: decimal">
 <li>Suponga que el valor del dólar distribuye <span class="math inline">\(N(\mu = 880,\sigma^2 = 50^2)\)</span>. Determine probabilidad de que el valor promedio del dólar muestral supere los $900.</li>
 <li>Considerando los supuestos de la pregunta 2, ¿cuál es la probabilidad de que la varianza muestral no supere los <span class="math inline">\(\$43^2\)</span>? Obtenga el valor de la varianza muestral en R y comente los resultados.</li>
@@ -567,7 +579,7 @@ P(\bar{X} &lt; 45.2) &amp;= P\left(\frac{\bar{X}-\mu}{S/\sqrt{n}} &lt; \frac{45.
 </ol>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-106" class="exercise"><strong>Ejercicio 3.8  </strong></span>El conjunto de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv"><em>diabetes.csv</em></a> proviene originalmente del Instituto Nacional de Diabetes y Enfermedades Digestivas y Renales. El objetivo del conjunto de datos es estudiar de forma diagnóstica si un paciente tiene diabetes, en función de ciertas medidas de diagnóstico incluidas en el conjunto de datos. Se impusieron varias restricciones a la selección de estas instancias de una base de datos más grande. En particular, todos los pacientes aquí son mujeres de al menos 21 años de ascendencia indígena Pima. Las columnas de la base de datos con las siguientes:</p>
+<p><span id="exr:unlabeled-div-163" class="exercise"><strong>Ejercicio 4.8  </strong></span>El conjunto de datos <a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv"><em>diabetes.csv</em></a> proviene originalmente del Instituto Nacional de Diabetes y Enfermedades Digestivas y Renales. El objetivo del conjunto de datos es estudiar de forma diagnóstica si un paciente tiene diabetes, en función de ciertas medidas de diagnóstico incluidas en el conjunto de datos. Se impusieron varias restricciones a la selección de estas instancias de una base de datos más grande. En particular, todos los pacientes aquí son mujeres de al menos 21 años de ascendencia indígena Pima. Las columnas de la base de datos con las siguientes:</p>
 <ul>
 <li>Pregnancies: Para expresar el número de embarazos.</li>
 <li>Glucose: Para expresar el nivel de Glucosa en sangre (mg/dL).</li>
@@ -608,8 +620,8 @@ Johnson, R. A., Kotz, S., &amp; Balakrishnan, N. (1994). <em>Sample <span>Size</
           </div>
         </div>
       </div>
-<a href="probabilidad-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probabilidad-variable-aleatoria.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bases-de-datos-utilizadas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -647,7 +659,7 @@ gitbook.start({
     "link": null,
     "text": null
   },
-  "download": ["est1+descriptiva.pdf"],
+  "download": ["EstadisticaI.pdf"],
   "search": {
     "engine": "fuse",
     "options": null

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Página no encontrada | Estadística I &amp; Estadística Descriptiva</title>
+  <title>Bases de datos utilizadas | Estadística I &amp; Estadística Descriptiva</title>
   <meta name="description" content="Curso básico de Estadística para ingeniería." />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Página no encontrada | Estadística I &amp; Estadística Descriptiva" />
+  <meta property="og:title" content="Bases de datos utilizadas | Estadística I &amp; Estadística Descriptiva" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Curso básico de Estadística para ingeniería." />
   <meta name="github-repo" content="Dfranzani/Estadistica_I" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Página no encontrada | Estadística I &amp; Estadística Descriptiva" />
+  <meta name="twitter:title" content="Bases de datos utilizadas | Estadística I &amp; Estadística Descriptiva" />
   
   <meta name="twitter:description" content="Curso básico de Estadística para ingeniería." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="distribucionesmuestrales.html"/>
+<link rel="next" href="referencias.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -270,20 +270,73 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<div id="bases-de-datos-utilizadas" class="section level1 unnumbered hasAnchor">
+<h1>Bases de datos utilizadas<a href="bases-de-datos-utilizadas.html#bases-de-datos-utilizadas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A continuación se describen algunas las bases de datos que se utilizarán a lo largo del curso (el resto se explican en los ejemplos o ejercicios en las que son utilizadas). En cada caso, se incluye un enlace para descargar la base de datos en formato CSV.</p>
+<ul>
+<li><p><a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Tasa%2Beuro%2Bdolar%2Bhistorica2023.csv" id="TasaEURUSD">Tasa Euro/Dólar</a>: Contiene el registro diario histórico de la tasa de cambio del Euro a Dólar durante el 2023. Las columnas de la base de datos son las siguientes:</p>
+<ul>
+<li>Date: Fecha de medición (yyyy-mm-dd), desde enero del 2003 hasta enero del 2023.</li>
+<li>Open: tasa de apertura.</li>
+<li>High: tasa más alta alcanzada en el día.</li>
+<li>Low: tasa más baja alcanzada en el día.</li>
+<li>Close: tasa de cierre del día.</li>
+<li>Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).</li>
+</ul>
+<p>El código para cargar la base de datos en R es:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="bases-de-datos-utilizadas.html#cb82-1" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Tasa%2Beuro%2Bdolar%2Bhistorica2023.csv&quot;</span>)</span></code></pre></div></li>
+<li><p><a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2024-1/Belgian%20Electricity%20Prices.csv" id="PreciosElectricidad">Precios de electricidad</a>: Un conjunto de datos históricos que contiene el precio por hora de la electricidad para Bélgica. Las columnas de la base de datos son las siguientes:</p>
+<ul>
+<li>MTU: Hora de inicio (formato fecha y hora) del coste de la electricidad.</li>
+<li>EUR_MWh: Precio por hora (Euros por MWh).</li>
+</ul>
+<p>El código para cargar la base de datos en R es:</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="bases-de-datos-utilizadas.html#cb83-1" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2024-1/Belgian%20Electricity%20Prices.csv&quot;</span>)</span></code></pre></div></li>
+<li><p><a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Heart+complete.csv" id="Pacientes">Pacientes</a>: Contiene datos respecto a los ataques al corazón de distintos pacientes hospitalarios. El detalle de algunas de las columnas de la base de datos que utilizaremos son las siguientes:</p>
+<ul>
+<li>age: edad del paciente (en años).</li>
+<li>sex: sexo del paciente (Hombre: 1 y Mujer: 0).</li>
+<li>cp: Tipo de dolor en el pecho, Valor 1: angina típica, Valor 2: angina atípica, Valor 3: dolor no anginoso, Valor 4: asintomático.</li>
+<li>trtbps: presión arterial en reposo (en mm Hg).</li>
+<li>chol: nivel de colestorol (en mg/dl).</li>
+<li>fbs: azúcar en sangre en ayunas <span class="math inline">\(&gt;\)</span> 120 mg/dl (V = 1; F = 0).</li>
+<li>thalachh: frecuencia cardíaca máxima alcanzada (en latidos por minuto).</li>
+<li>oldpeak: tiempo de duración del último ataque al corazón (en minutos).</li>
+</ul>
+<p>El código para cargar la base de datos en R es:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="bases-de-datos-utilizadas.html#cb84-1" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Heart+complete.csv&quot;</span>)</span></code></pre></div></li>
+<li><p><a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv">Dólar</a>: La base de datos contiene el valor del dólar observado de algunos de los días de los meses de junio y julio, tomados por el el SII:</p>
+<ul>
+<li>Mes: Mes del año (“Junio”, “Julio”).</li>
+<li>Dia: Día del mes.</li>
+<li>Valor: Valor del dólar observado en pesos chilenos.</li>
+</ul>
+<p>El código para cargar la base de datos en R es:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="bases-de-datos-utilizadas.html#cb85-1" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/dolar.csv&quot;</span>)</span></code></pre></div></li>
+<li><p><a href="https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv">Diabetes</a>: El connjunto de datos proviene originalmente del Instituto Nacional de Diabetes y Enfermedades Digestivas y Renales. El objetivo del conjunto de datos es estudiar de forma diagnóstica si un paciente tiene diabetes, en función de ciertas medidas de diagnóstico incluidas en el conjunto de datos. Se impusieron varias restricciones a la selección de estas instancias de una base de datos más grande. En particular, todos los pacientes aquí son mujeres de al menos 21 años de ascendencia indígena Pima. Las columnas de la base de datos son las siguientes:</p>
+<ul>
+<li>Pregnancies: Para expresar el número de embarazos.</li>
+<li>Glucose: Para expresar el nivel de Glucosa en sangre (mg/dL).</li>
+<li>BloodPressure: para expresar la medida de la presión arterial distólica (mm Hg).</li>
+<li>SkinThickness: Para expresar el grosor de la piel (mm).</li>
+<li>Insulin: para expresar el nivel de insulina en sangre (mg/dL).</li>
+<li>BMI: Para expresar el índice de masa corporal.</li>
+<li>DiabetesPedigreeFunction: Para expresar el porcentaje de Diabetes.</li>
+<li>Age: Para expresar la edad en años.</li>
+<li>Outcome: Para expresar el resultado final de tener diabetes, 1 es Sí y 0 es No.</li>
+</ul>
+<p>El código para cargar la base de datos en R es:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="bases-de-datos-utilizadas.html#cb86-1" tabindex="-1"></a>datos <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2022-2/Estad%C3%ADstica%201/diabetes.csv&quot;</span>)</span></code></pre></div></li>
+</ul>
 
-
-
-<div id="página-no-encontrada" class="section level1">
-<h1>Página no encontrada</h1>
-<p>La página que buscas, o no existe o no se encuentra disponible.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="distribucionesmuestrales.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="referencias.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -150,7 +150,7 @@ especifica los parámetro de las imágenes dentro de este.*/
   overflow: visible !important;
   text-overflow: unset !important;
   word-wrap: break-word;
-  line-height: 1em; /*edición de interlineado*/
+  line-height: 1.5em; /*edición de interlineado*/
 }
 
 .summary a:hover {
