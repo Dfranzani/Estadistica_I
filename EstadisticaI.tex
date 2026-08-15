@@ -79,6 +79,7 @@
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -120,29 +121,70 @@
 \newcommand{\gt}{>}
 \newcommand{\lt}{<}
 
-% Este bloque es un intento de establecer en latexpdf los cuadros que encierran los ejemplos en Gitbook 
-% El error se genera con el el paquete minted, que parece no ser compatible.
-% Estado: a la fecha no he encontrado solución.
+% Cargar paquetes necesarios
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+\usepackage{xcolor}
 
-% \usepackage{tcolorbox}
-% \usepackage{tikz}
-% \tcbuselibrary{skins, breakable}
-% 
-% \newtcolorbox{blackbox}{
-%   empty,
-%   before=\par\medskip\noindent,parbox=false,boxsep=0pt,left=0pt,right=3mm,top=4pt,
-%   breakable,pad at break*=0mm,vfill before first,
-%   overlay unbroken={\draw[black,line width=1pt]
-%     ([yshift=-1pt]frame.north west)--([xshift=-0.5pt,yshift=-1pt]frame.north-|frame.east)
-%     --([xshift=-0.5pt]frame.south east)--(frame.south west); },
-%   overlay first={\draw[black,line width=1pt]
-%     ([yshift=-1pt]frame.north west)--([xshift=-0.5pt,yshift=-1pt]frame.north-|frame.east)
-%     --([xshift=-0.5pt]frame.south east); },
-%   overlay middle={\draw[black,line width=1pt] ([xshift=-0.5pt]frame.north east)
-%     --([xshift=-0.5pt]frame.south east); },
-%   overlay last={\draw[black,line width=1pt] ([xshift=-0.5pt]frame.north east)
-%     --([xshift=-0.5pt]frame.south east)--(frame.south west);}
-% }
+% Definir los colores (LaTeX requiere los códigos HEX en mayúsculas)
+\definecolor{bgExample}{HTML}{F8F9FA}
+\definecolor{brExample}{HTML}{2C3E50}
+
+\definecolor{bgDef}{HTML}{EEF6FC}
+\definecolor{brDef}{HTML}{2980B9}
+
+\definecolor{bgExercise}{HTML}{FFFDF5}
+\definecolor{brExercise}{HTML}{D35400}
+
+% ---------------------------------------------------
+% 1. Configuración para el entorno "example"
+% ---------------------------------------------------
+\tcolorboxenvironment{example}{
+  enhanced,                % Permite estilos avanzados
+  breakable,               % Permite que la caja se divida si salta de página
+  boxrule=0pt,             % Quita el borde general
+  frame hidden,            % Oculta el marco exterior por defecto
+  borderline west={4pt}{0pt}{brExample}, % Añade el borde izquierdo grueso (4pt)
+  colback=bgExample,       % Color de fondo
+  sharp corners=west,      % Esquinas rectas a la izquierda (para el borde)
+  arc=6pt,                 % Esquinas redondeadas a la derecha (6px)
+  left=10pt, right=10pt,   % Padding interno
+  top=10pt, bottom=10pt,
+  before skip=15pt,        % Margen superior (equivalente al margin-top)
+  after skip=15pt          % Margen inferior (equivalente al margin-bottom)
+}
+
+% ---------------------------------------------------
+% 2. Configuración para el entorno "definition"
+% ---------------------------------------------------
+\tcolorboxenvironment{definition}{
+  enhanced,
+  breakable,
+  boxrule=0pt,
+  frame hidden,
+  borderline west={4pt}{0pt}{brDef},
+  colback=bgDef,
+  sharp corners=west,
+  arc=6pt,
+  left=10pt, right=10pt, top=10pt, bottom=10pt,
+  before skip=15pt, after skip=15pt
+}
+
+% ---------------------------------------------------
+% 3. Configuración para el entorno "exercise"
+% ---------------------------------------------------
+\tcolorboxenvironment{exercise}{
+  enhanced,
+  breakable,
+  boxrule=0pt,
+  frame hidden,
+  borderline west={4pt}{0pt}{brExercise},
+  colback=bgExercise,
+  sharp corners=west,
+  arc=6pt,
+  left=10pt, right=10pt, top=10pt, bottom=10pt,
+  before skip=15pt, after skip=15pt
+}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -151,7 +193,8 @@
 \usepackage{float}
 \usepackage{colortbl}
 \usepackage{pdflscape}
-\usepackage{tabu}
+\usepackage{tabularx}
+\usepackage{xltabular}
 \usepackage{threeparttable}
 \usepackage{threeparttablex}
 \usepackage[normalem]{ulem}
@@ -160,11 +203,15 @@
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
 \hypersetup{
   pdftitle={Estadística I \& Estadística Descriptiva},
   pdfauthor={Prof.~Daniel Franzani},
   colorlinks=true,
-  linkcolor={purple},
+  linkcolor={black},
   filecolor={Maroon},
   citecolor={purple},
   urlcolor={purple},
@@ -172,7 +219,7 @@
 
 \title{Estadística I \& Estadística Descriptiva}
 \author{Prof.~Daniel Franzani}
-\date{Actualizado al 12-03-2026}
+\date{Actualizado al 14-08-2026}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Teorema}[chapter]
@@ -195,7 +242,6 @@
 \maketitle
 
 {
-\hypersetup{linkcolor=}
 \setcounter{tocdepth}{3}
 \tableofcontents
 }
@@ -210,229 +256,223 @@ Este PDF es solo un borrador. Lea la versión HTML.
 
 En esta sección se recordarán algunos conceptos claves de la estadística que están asociados a las ciencias cognitivas. Luego, se ahondará en las técnicas básicas de visualización para el estudio de estos.
 
-\subsection{Datos}\label{topicos-conceptos-datos}
-
-El dato es la unidad básica de la estadística, el cual, corresponde a cualquier evento o hecho que no ha sido dotado de significado, es decir, un hecho del cual no se puede dar interpretación alguna \citep{brachman_knowledge_2004}.
-
-Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué al caminar nos detenemos al encontrarnos con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
-
-\subsection{Información}\label{topicos-conceptos-informacion}
-
-\textbf{Información = Datos + Significado}
-
-Por otro lado, los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información \citep{brachman_knowledge_2004}. Otra forma de entenderlo es:
-
-\textbf{Información = Datos + Reglas para decodificar}
-
-En el ejemplo anterior, el decodificador es la persona que va caminando, y el significado (reglas para decodificar) que le damos al semáforo al estar en rojo viene de las reglas sociales que indican como actuar en determinadas situaciones.
-
-\textbf{En estadística, mediante el uso de distintas herramientas (gráficos, tablas, entre otras), dotaremos de significado a los datos, para así generar información de utilidad en distintos fenómenos de estudio.}
-
-\subsection{Tipos de variables}\label{topicos-conceptos-tipos-variables}
-
-El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que los rodea. En este sentido, los datos están asociados a lo que llamamos variable (``naturaleza del dato'', ``los tipos de valores que adquiere el dato''), las cuales, se pueden clasificar la siguiente manera \citep[página 7]{anderson}:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Cualitativas} (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
-\item
-  \textbf{Cuantitativas} (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
-\end{itemize}
-
-\begin{exercise}
-Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
-\end{exercise}
-
-\subsection{Población y Muestra}\label{topicos-conceptos-poblacion-muestra}
-
-En investigación la recolección de datos constituye una de las tareas iniciales antes de aplicar cualquier tipo de técnica de análisis. La disciplina de estadística proporciona métodos para organizar y resumir datos y de sacar conclusiones basadas en la información obtenida.
-
-Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una \textbf{población} de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un \textbf{censo}. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una \textbf{muestra}, de manera prescrita \citep[página 2]{Devore}.
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Población}: La población es el conjunto de todos los sujetos de interés en un estudio.
-\item
-  \textbf{Muestra}: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos.
-\end{itemize}
-
-\begin{exercise}
-Determine la población y muestra de los siguientes enunciados.
-\end{exercise}
-
-\begin{itemize}
-\tightlist
-\item
-  Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.
-\item
-  La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.
-\end{itemize}
-
-\subsection{Parámetros y Estadísticos}\label{topicos-conceptos-parametros-estadisticos}
-
-Ambos conceptos están ligados a los de población y muestra de la siguiente manera \citep[página 83]{anderson}:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Parámetros}: corresponde a una característica de resumen de la población.
-\item
-  \textbf{Estadísticos}: corresponde a una característica de resumen de la muestra.
-\end{itemize}
-
-En la figura \ref{fig:parametro1} se observa un ejemplo de círculos rojos y azules tanto para la población como para una muestra de esta. Dado que la población contiene todos los datos (censo), es posible apreciar todos los círculos con sus colores. Por otro lado, la muestra es solo una pequeña parte de la población, es decir, seleccionan algunos de los círculos al ``azar'' con sus respectivos colores.
-
-Un ejemplo de los conceptos explicados es \textbf{la proporción de círculos rojos}. En caso de que estuviésemos interesados en dicha característica en la población, se hablaría de un parámetro, mientras que, si se está interesado en la muestra se hablaría de estadístico.
-
-\begin{figure}
-
-{\centering \includegraphics[width=\linewidth]{EstadisticaI_files/figure-latex/parametro1-1} 
-
-}
-
-\caption{Parámetro y estadístico}\label{fig:parametro1}
-\end{figure}
-
-\subsection{Estimador y Estimación}\label{topicos-conceptos-estimador-estimacion}
-
-Una extensión de los conceptos de parámetro y estadístico, son los de estimador y estimación, para los cuales, se hace la siguiente distinción:
-
-\begin{itemize}
-\item
-  \textbf{Estimador}: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
-\item
-  \textbf{Estimación}: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la ``fórmula'', y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
-\end{itemize}
-
-Si consideramos un ejemplo similar al anterior (Figura \ref{fig:parametro2}), y establecemos que el \textbf{parámetro} a estudiar es la proporción de círculos rojos, es natural pensar que en la muestra (\textbf{estadístico}) el comportamiento debería ser similar. La intención de decir ``usaremos la proporción de círculos rojos en la muestra para deducir como es la proporción de círculos rojos en la población'' corresponde al \textbf{estimador} (otro tema es argumentar si esto es correcto o no), mientras que, el cálculo del estimador (cálculo de la proporción de círculos rojos en la muestra) lleva el nombre de \textbf{estimación}.
-
-Respecto a lo anterior:
-
-\begin{itemize}
-\tightlist
-\item
-  ¿Cuál sería la estimación de los círculos rojos?
-\item
-  Si observamos la muestra de la figura \ref{fig:parametro1} y \ref{fig:parametro2}, ¿cuándo diríamos que una estimación es buena?
-\end{itemize}
-
-\begin{figure}
-
-{\centering \includegraphics[width=\linewidth]{EstadisticaI_files/figure-latex/parametro2-1} 
-
-}
-
-\caption{Estimador y estimación}\label{fig:parametro2}
-\end{figure}
-
-\begin{example}
-
-Suponga que está interesado en estudiar el promedio del porcentaje de desempleo anual en Chile en el periodo 2010-2065. Para aproximar este valor, se hará uso de los registros de desempleo anual de los últimos 16 años, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la diferencia entre el valor máximo y mínimo y, el logaritmo natural de la suma de los registros, dando como resultado un valor de 15\%. A continuación, determine la población, muestra, parámetro, estadístico, estimador y estimación.
-
-\begin{itemize}
-\item
-  Población: Todos los registros de desempleo anual en Chile entre 2010 y 2065.
-\item
-  Muestra: Los últimos 16 registros de desempleo anual en Chile.
-\item
-  Parámetro: El promedio anual del porcentaje de desempleo en Chile entre 2010 y 2065.
-\item
-  Estadístico: El promedio anual del porcentaje de los últimos 16 registros de desempleo en Chile.
-\item
-  Estimador: Sean \(V_i\) con \(i=1,\ldots,16\) los últimos 16 registros de desempleo anual en Chile. Luego el estimador es el siguiente:
-
-  \[
-  \frac{\max(V_i) - \min(V_i)}{\ln\left(\displaystyle\sum_{i=1}^{16} V_i\right)}
-  \]
-\item
-  Estimación: El valor de 15\% obtenido al aplicar el estimador a la muestra.
-\end{itemize}
-
-\textbf{Algunas consideraciones importantes son:}
-
-\begin{itemize}
-\tightlist
-\item
-  El estadístico siempre es la misma característica de la población pero aplicada a la muestra. Sin embargo, puede cambiar la fórmula matemática (estimador) que se utiliza para poder ser calculada (en la muestra). Esto cobra más sentido cuando la característica que se estudia es más compleja, por ejemplo, crecimiento económico, ya que no tiene una forma estándar de ser calculada (depende de las condiciones de la problemática).
-\item
-  El estimador siempre es la fórmula matemática que debe ser aplicada para poder cuantificar el estadístico.
-\end{itemize}
-
-\end{example}
-
-\begin{exercise}
-
-Para los siguientes enunciados determine: población, muestra, parámetro, estadístico, estimador y estimación.
-
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Suponga que esté interesado en determinar el promedio anual de la esperanza de vida de los hombres en el periodo 2002-2027, sin embargo no cuenta con todos los datos. Para aproximar este valor, se hará uso de los registros anuales de esperanza de vida de los hombres en Chile entre 2010 y 2017, para luego calcular el promedio muestral. La fórmula para poder determinar el promedio muestral es obtener el cuociente entre el promedio aritmético de los datos y, la raíz cuadrada de la suma de los datos, dado como resultado 79.12 años
+  \textbf{Dato}: El dato es la unidad básica de la estadística, el cual, corresponde a cualquier evento o hecho que no ha sido dotado de significado, es decir, un hecho del cual no se puede dar interpretación alguna \citep{brachman_knowledge_2004}.
+
+  Un ejemplo de este concepto, es cuando tratamos de responder la pregunta ¿por qué al caminar nos detenemos al encontrarnos con un semáforo en rojo? ¿Cuál es el dato? ¿Cuál es el significado?
 \item
-  Suponga que está interesado en estudiar el promedio histórico del monto de las deudas comerciales (considere la deuda comercial como la suma de la deuda comercial de hombres y mujeres), para ello, usted aproxima este valor mediante el uso de los registros anuales de deuda comercial de hombres y mujeres entre 2010 y 2022, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la suma de los valores cúbicos de los registros y, el logaritmo natural de la suma de los registros al cuadrado, dando como resultado un valor de 15.12 billones de pesos.
+  \textbf{Información}:
+
+  \textbf{Información = Datos + Significado}
+
+  Por otro lado, los datos existen independiente de quien observa, y cuando una persona adquiere datos y los dota de significado, estos se convierten en información \citep{brachman_knowledge_2004}. Otra forma de entenderlo es:
+
+  \textbf{Información = Datos + Reglas para decodificar}
+
+  En el ejemplo anterior, el decodificador es la persona que va caminando, y el significado (reglas para decodificar) que le damos al semáforo al estar en rojo viene de las reglas sociales que indican como actuar en determinadas situaciones.
 \item
-  Desea determinar la mediana histórica de la edad de los distintas especies de árbol que habitan la región de la Araucanía, para ello, usted aproxima este valor mediante el uso de los registros de edad de los árboles en la región entre 2010 y 2022, para luego calcular la mediana muestral, haciendo uso de la mediana Hodges-Lehmann. La fórmula para calcular dicha medida, es el promedio de todas las medianas de pares de observaciones. El resultado final es un valor de 76.4 años.
+  \textbf{Tipos de variables}:
+  El concepto de datos está fuertemente ligado a su naturaleza, es decir, el contexto de estudio que los rodea. En este sentido, los datos están asociados a lo que llamamos variable (``naturaleza del dato'', ``los tipos de valores que adquiere el dato''), las cuales, se pueden clasificar la siguiente manera \citep[página 7]{anderson}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Cualitativas} (Nominales y Ordinales): variables no numéricas que pueden o no llevar un orden, respectivamente.
+  \item
+    \textbf{Cuantitativas} (Discretas y Continuas): variables numéricas que pueden o no ser enumeradas, respectivamente.
+  \end{itemize}
+
+  \begin{exercise}
+  Determinar la clasificación de las siguientes variables: tiempo, dinero, altura, cantidad de vecinos en el lugar donde vivo, grado de conformidad (conforme, medianamente conforme, nada conforme) respecto a un servicio, color de pelo de un grupo de personas.
+  \end{exercise}
+\item
+  \textbf{Población y Muestra}:
+  En investigación la recolección de datos constituye una de las tareas iniciales antes de aplicar cualquier tipo de técnica de análisis. La disciplina de estadística proporciona métodos para organizar y resumir datos y de sacar conclusiones basadas en la información obtenida.
+
+  Una investigación típicamente se enfocará en una colección bien definida de objetos que constituyen una \textbf{población} de interés. Cuando la información deseada está disponible para todos lo objetos de la población, se tienen lo que se llama un \textbf{censo}. Las restricciones de tiempo, dinero y otros recursos escasos casi siempre hacen que un censo sea infactible. En su lugar, se selecciona un subconjunto de la población, una \textbf{muestra}, de manera prescrita \citep[página 2]{Devore}.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Población}: La población es el conjunto de todos los sujetos de interés en un estudio.
+  \item
+    \textbf{Muestra}: La muestra es un subconjunto de la población a través de los cuales el estudio recoge los datos.
+  \end{itemize}
+
+  \begin{exercise}
+
+  Determine la población y muestra de los siguientes enunciados.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \tightlist
+  \item
+    Se realiza un sondeo para determinar los rubros con mayor inflación de venta de mercado en Santiago, para ello se estudia el rubro con mayor ingreso líquido de ventas, en algunas de las comunas de Santiago.
+  \item
+    La encuesta ENUSC elabora anualmente un informe respecto a la seguridad ciudadana, para ello, se contacta a una cantidad de personas determinadas de cada región del país, dando así, resultados a nivel nacional y regional.
+  \end{enumerate}
+
+  \end{exercise}
+\item
+  \textbf{Parámetro y Estadístico}:
+  Ambos conceptos están ligados a los de población y muestra de la siguiente manera \citep[página 83]{anderson}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Parámetros}: corresponde a una característica de resumen de la población.
+  \item
+    \textbf{Estadísticos}: corresponde a una característica de resumen de la muestra.
+  \end{itemize}
+
+  En la figura \ref{fig:parametro1} se observa un ejemplo de círculos rojos y azules tanto para la población como para una muestra de esta. Dado que la población contiene todos los datos (censo), es posible apreciar todos los círculos con sus colores. Por otro lado, la muestra es solo una pequeña parte de la población, es decir, seleccionan algunos de los círculos al ``azar'' con sus respectivos colores.
+
+  Un ejemplo de los conceptos definidos es \textbf{la proporción de círculos rojos}. En caso de que estuviésemos interesados en dicha característica en la población, se hablaría de un parámetro, mientras que, si se está interesado en la muestra se hablaría de estadístico.
+
+  \begin{figure}
+
+  {\centering \includegraphics[width=\linewidth]{EstadisticaI_files/figure-latex/parametro1-1} 
+
+  }
+
+  \caption{Parámetro y estadístico}\label{fig:parametro1}
+  \end{figure}
+\item
+  \textbf{Estimador y Estimación}:
+  Una extensión de los conceptos de parámetro y estadístico, son los de estimador y estimación, para los cuales, se hace la siguiente distinción:
+
+  \begin{itemize}
+  \item
+    \textbf{Estimador}: Un estimador es un estadístico usado para aproximar (incertidumbre) el valor de un parámetro. Usualmente no cambia la técnica entre la población y la muestra, por ejemplo, si deseo aproximar la proporción de bolitas rojas en la población, se usaría la proporción de bolitas rojas en la muestra.
+  \item
+    \textbf{Estimación}: Una estimación es el número que resulta de aplicar el estimador a una muestra particular. Esto difiera levemente de la definición anterior, ya que en términos estrictos, el estimador solo es la ``fórmula'', y la estimación es el valor resultante al aplicar la fórmula. Sin embargo, hoy en día es muy común encontrar textos en donde el estimador se considera tanto para la fórmula como para el valor obtenido.
+  \end{itemize}
+
+  Considerando un ejemplo similar al de la figura \ref{fig:parametro2}) y, estableciendo que el \textbf{parámetro} a estudiar es la proporción de círculos rojos, es natural pensar que en la muestra (\textbf{estadístico}) el comportamiento debería ser un reflejo al de la población. La intención de decir ``usaremos la proporción de círculos rojos en la muestra para deducir como es la proporción de círculos rojos en la población'' corresponde al \textbf{estimador} (otro tema es argumentar si esto es correcto o no), mientras que, el cálculo del estimador (cálculo de la proporción de círculos rojos en la muestra) lleva el nombre de \textbf{estimación}.
+
+  Respecto a lo anterior:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ¿Cuál sería la estimación de los círculos rojos?
+  \item
+    Si observamos la muestra de la figura \ref{fig:parametro1} y \ref{fig:parametro2}, ¿cuándo diríamos que una estimación es buena?
+  \end{itemize}
+
+  \begin{figure}
+
+  {\centering \includegraphics[width=\linewidth]{EstadisticaI_files/figure-latex/parametro2-1} 
+
+  }
+
+  \caption{Estimador y estimación}\label{fig:parametro2}
+  \end{figure}
+
+  \begin{example}
+
+  Suponga que está interesado en estudiar el promedio del porcentaje de desempleo anual en Chile en el periodo 2010-2065. Para aproximar este valor, se hará uso de los registros de desempleo anual de los últimos 16 años, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la diferencia entre el valor máximo y mínimo y, el logaritmo natural de la suma de los registros, dando como resultado un valor de 15\%. A continuación, determine la población, muestra, parámetro, estadístico, estimador y estimación.
+
+  \begin{itemize}
+  \item
+    Población: Todos los registros de desempleo anual en Chile entre 2010 y 2065.
+  \item
+    Muestra: Los últimos 16 registros de desempleo anual en Chile.
+  \item
+    Parámetro: El promedio anual del porcentaje de desempleo en Chile entre 2010 y 2065.
+  \item
+    Estadístico: El promedio anual del porcentaje de los últimos 16 registros de desempleo en Chile.
+  \item
+    Estimador: Sean \(V_i\) con \(i=1,\ldots,16\) los últimos 16 registros de desempleo anual en Chile. Luego, el estimador es el siguiente:
+
+    \[
+    \frac{\max(V_i) - \min(V_i)}{\ln\left(\displaystyle\sum_{i=1}^{16} V_i\right)}
+    \]
+  \item
+    Estimación: El valor de 15\% obtenido al aplicar el estimador a la muestra.
+  \end{itemize}
+
+  \textbf{Algunas consideraciones importantes son:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    El estadístico siempre es la misma característica de la población pero aplicada a la muestra. Sin embargo, puede cambiar la fórmula matemática (estimador) que se utiliza para poder ser calculada (en la muestra). Esto cobra más sentido cuando la característica que se estudia es más compleja, por ejemplo, crecimiento económico, ya que no tiene una forma estándar de ser calculada (depende de las condiciones de la problemática).
+  \item
+    El estimador siempre es la fórmula matemática que debe ser aplicada para poder cuantificar el estadístico.
+  \end{itemize}
+
+  \end{example}
+
+  \begin{exercise}
+
+  Para los siguientes enunciados determine: población, muestra, parámetro, estadístico, estimador y estimación.
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Suponga que esté interesado en determinar el promedio anual de la esperanza de vida de los hombres en el periodo 2002-2027, sin embargo no cuenta con todos los datos. Para aproximar este valor, se hará uso de los registros anuales de esperanza de vida de los hombres en Chile entre 2010 y 2017, para luego calcular el promedio muestral. La fórmula para poder determinar el promedio muestral es obtener el cuociente entre el promedio aritmético de los datos y, la raíz cuadrada de la suma de los datos, dado como resultado 79.12 años
+  \item
+    Suponga que está interesado en estudiar el promedio histórico del monto de las deudas comerciales (considere la deuda comercial como la suma de la deuda comercial de hombres y mujeres), para ello, usted aproxima este valor mediante el uso de los registros anuales de deuda comercial de hombres y mujeres entre 2010 y 2022, para luego calcular el promedio muestral. La fórmula para calcular el promedio muestral en este caso, es el cuociente entre la suma de los valores cúbicos de los registros y, el logaritmo natural de la suma de los registros al cuadrado, dando como resultado un valor de 15.12 billones de pesos.
+  \item
+    Desea determinar la mediana histórica de la edad de los distintas especies de árbol que habitan la región de la Araucanía, para ello, usted aproxima este valor mediante el uso de los registros de edad de los árboles en la región entre 2010 y 2022, para luego calcular la mediana muestral, haciendo uso de la mediana Hodges-Lehmann. La fórmula para calcular dicha medida, es el promedio de todas las medianas de pares de observaciones. El resultado final es un valor de 76.4 años.
+  \end{enumerate}
+
+  \end{exercise}
+\item
+  \textbf{Variabilidad muestral}:
+  Efectivamente, la estimación de un parámetro está determinada por la muestra con la que se trabaja. La forma en la que se elige una muestra es azarosa (que no se puede intencionar en su totalidad), por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso.
+
+  El concepto detrás de esto es la \textbf{variabilidad muestral}, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación). Para ilustrar esto, observemos la figura \ref{fig:figura-poblacion1}.
+
+  \textbf{¿Cuál es la proporción de círculos rojos en la población reflejada en la figura} \textbf{?}
+
+  \begin{figure}
+
+  {\centering \includegraphics{EstadisticaI_files/figure-latex/figura-poblacion1-1} 
+
+  }
+
+  \caption{Población}\label{fig:figura-poblacion1}
+  \end{figure}
+
+  Luego,
+
+  \textbf{¿qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura} \ref{fig:figura-muestra1}\textbf{?}
+
+  \begin{figure}
+
+  {\centering \includegraphics{EstadisticaI_files/figure-latex/figura-muestra1-1} 
+
+  }
+
+  \caption{Muestra 1}\label{fig:figura-muestra1}
+  \end{figure}
+
+  \textbf{¿Y ahora? (Figura} \ref{fig:figura-muestra2}\textbf{)}
+
+  \begin{figure}
+
+  {\centering \includegraphics{EstadisticaI_files/figure-latex/figura-muestra2-1} 
+
+  }
+
+  \caption{Muestra 2}\label{fig:figura-muestra2}
+  \end{figure}
+
+  Efectivamente, diferentes muestras se comportan de manera diferente, es decir, la estimación depende de la selección de la muestra. Esto se denomina como \textbf{variabilidad muestral}.
+\item
+  \textbf{Representatividad y sesgo de la muestra}:
+
+  \begin{itemize}
+  \item
+    \textbf{Representatividad}: Comúnmente se escucha hablar de que una muestra debe ser representativa respecto de la población, algo muy similar a lo presentado en el punto anterior. Sin embargo, este concepto no tiene sustento matemático, ya que, para poder verificar que una muestra es representativa se debe conocer a toda la población (la característica de estudio), lo cual en la práctica no ocurre. Y en caso de que se conociesen todos los datos de la población, sería absurdo calcular la estimación de un parámetro, ya que podría calcularse directamente el valor del parámetro en cuestión.
+  \item
+    \textbf{Sesgo}: Algunas personas utilizan la siguiente frase: ``\emph{la muestra está sesgada}'', lo cual es incorrecto en estadística. El concepto de sesgo no es únicamente propio de la estadística, sin embargo, en esta área, corresponde a una propiedad de los estimadores. Se dice que un estimador es insesgado cuando el valor esperado de este es igual al parámetro. Y al igual que el concepto anterior, no es posible verificarlo en la práctica, aunque si tiene un sustento matemático por detrás.
+  \end{itemize}
 \end{enumerate}
-
-\end{exercise}
-
-\subsection{Variabilidad muestral}\label{variabilidad-muestral}
-
-Efectivamente, la estimación de un parámetro está determinada por la muestra con la que se trabaja. La forma en la que se elige una muestra es azarosa (que no se puede intencionar en su totalidad), por lo que es imposible saber de antemano si la estimación será buena o mala respecto al parámetro (error de estimación). En estadística, la forma en la que se elige o genera una muestra puede llegar a ser muy compleja, siendo un tema que está fuera del alcance de este curso.
-
-El concepto detrás de esto es la \textbf{variabilidad muestral}, el cual, indica que dependiendo de la muestra que se obtenga de la población, esta se comportará distinto en relación al estadístico (igualmente para el valor del estimador: estimación). Para ilustrar esto, observemos la figura \ref{fig:figura-poblacion1}.
-
-\textbf{¿Cuál es la proporción de círculos rojos en la población reflejada en la figura} \textbf{?}
-
-\begin{figure}
-
-{\centering \includegraphics{EstadisticaI_files/figure-latex/figura-poblacion1-1} 
-
-}
-
-\caption{Población}\label{fig:figura-poblacion1}
-\end{figure}
-
-Luego,
-
-\textbf{¿qué podríamos inferir sobre el color predominante en la población en base a la muestra de la figura} \ref{fig:figura-muestra1}\textbf{?}
-
-\begin{figure}
-
-{\centering \includegraphics{EstadisticaI_files/figure-latex/figura-muestra1-1} 
-
-}
-
-\caption{Muestra 1}\label{fig:figura-muestra1}
-\end{figure}
-
-\textbf{¿Y ahora? (Figura} \ref{fig:figura-muestra2}\textbf{)}
-
-\begin{figure}
-
-{\centering \includegraphics{EstadisticaI_files/figure-latex/figura-muestra2-1} 
-
-}
-
-\caption{Muestra 2}\label{fig:figura-muestra2}
-\end{figure}
-
-Efectivamente, diferentes muestras se comportan de manera diferente, es decir, la estimación depende de la selección de la muestra. Esto se denomina como \textbf{variabilidad muestral}.
-
-\subsection{Representatividad y sesgo de la muestra}\label{topicos-conceptos-representatividad-sesgo}
-
-\begin{itemize}
-\item
-  \textbf{Representatividad}
-
-  Comúnmente se escucha hablar de que una muestra debe ser representativa respecto de la población, algo muy similar a lo presentado en la sección \ref{variabilidad-muestral}. Sin embargo, este concepto no tiene sustento matemático, ya que, para poder verificar que una muestra es representativa se debe conocer a toda la población (la característica de estudio), lo cual en la práctica no ocurre. Y en caso de que se conociesen todos los datos de la población, sería absurdo calcular la estimación de un parámetro, ya que podría calcularse directamente el valor del parámetro en cuestión.
-\item
-  \textbf{Sesgo}
-
-  Hay personas utilizan la siguiente frase ``\emph{la muestra está sesgada}'', lo cual es incorrecto en su totalidad en estadística. El concepto de sesgo no es únicamente propio de la estadística, sin embargo, en esta área, corresponde a una propiedad de los estimadores. Se dice que un estimador es insesgado cuando el valor esperado de este es igual al parámetro. Y al igual que el concepto anterior, no es posible verificarlo en la práctica, aunque si tiene un sustento matemático por detrás.
-\end{itemize}
 
 \section{Medidas de localización}\label{topicos-medidas-localizacion}
 
@@ -836,6 +876,27 @@ Se puede observar que el coeficiente de variabilidad de la tasa más alta (10.06
 \end{example}
 
 \begin{exercise}
+
+Un docente de la Facultad de Administración y Economía tabuló los puntajes de un test corto de 12 estudiantes. El archivo de Excel se corrompió, perdiendo el puntaje del estudiante número 12. Los puntajes de los primeros 11 estudiantes son:
+
+\[20, 22, 19, 21, 18, 20, 15, 25, 20, 17, 23\]
+
+Afortunadamente, en un informe previo se dejó constancia que el promedio del curso en este test fue de exactamente \(20\) puntos.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calcule cuál fue el puntaje del duodécimo estudiante.
+\item
+  Calcule la varianza para los primeros 6 estudiantes y para los estudiantes del 7 al 12. Interprete los resultados para comparar la variabilidad de ambos grupos, justificando por qué el uso de la varianza es adecuado.
+\item
+  Vuelva a comparar la variabilidad utilizando el coeficiente de variación.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
 Compare la variabilidad de la presión arterial en reposo y el nivel de colesterol de los pacientes registrados en la base de datos \hyperref[Pacientes]{Pacientes}. Repita el estudio diferenciado por sexo. Interprete.
 \end{exercise}
 
@@ -861,6 +922,84 @@ Desviación estándar & $\sigma$ & $S$\\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\section{Ejercicios}\label{ejercicios}
+
+\begin{exercise}
+Suponga que un analista de mercado desea estimar la media del precio de venta (en millones de pesos) de motocicletas de estilo cruiser en Chile durante la década 2020-2030. Debido a la falta de datos futuros, aproxima este valor recopilando los precios de venta mensuales de los últimos 24 meses. La fórmula definida para calcular este promedio muestral consiste en el cuociente entre la suma de la raíz cuadrada de los precios de la muestra y el logaritmo en base 10 del precio máximo registrado, dando como resultado un valor de 5.8 millones de pesos. Determine población, muestra, parámetro, estadístico, estimador y estimación.
+\end{exercise}
+
+\begin{exercise}
+Suponga que está interesado en estudiar el tiempo mediano de procesamiento (en milisegundos) de algoritmos analíticos construidos en Python por un equipo de científicos de datos durante todo el año en curso. Para aproximar este valor, hace uso de una muestra aleatoria de 50 ejecuciones registradas en el último mes. La fórmula matemática para cuantificar esta mediana muestral es el promedio entre el primer y tercer cuartil de la muestra, multiplicado por la exponencial de la diferencia entre el tiempo máximo y mínimo. El valor estimado tras aplicar el estimador fue de 12.4 milisegundos. Determine población, muestra, parámetro, estadístico, estimador y estimación.
+\end{exercise}
+
+\begin{exercise}
+Desea determinar la proporción histórica de victorias utilizando mazos de estrategia de ``control'' o ``bloqueo de mano'' en torneos de un juego de cartas coleccionables entre los años 2024 y 2028. Para aproximar este parámetro, utiliza los registros de las últimas 80 partidas jugadas en el formato estándar posterior a la rotación. La fórmula aplicada para obtener la proporción muestral es el seno del número total de victorias en la muestra, dividido por la varianza de la cantidad de cartas descartadas por el oponente en dichas partidas. El resultado obtenido es de 0.54. Determine población, muestra, parámetro, estadístico, estimador y estimación.
+\end{exercise}
+
+\begin{exercise}
+Suponga que la Facultad de Administración y Economía quiere conocer la varianza histórica del puntaje final en la asignatura de Estadística I para todas las cohortes desde el año 2020 hasta el 2035. Como aproximación, se toma una muestra con las calificaciones finales de 150 estudiantes de los últimos dos semestres. La fórmula institucional para estimar esta variabilidad muestral consiste en sumar los cuadrados de las diferencias entre cada nota y la media muestral, y dividir este resultado por el logaritmo natural de la suma de las tres mejores notas de la muestra. El valor final obtenido es de 1.8 puntos al cuadrado. Determine población, muestra, parámetro, estadístico, estimador y estimación.
+\end{exercise}
+
+\begin{exercise}
+Un investigador está estudiando la tasa promedio de crecimiento mensual del ecosistema de desarrollo de paquetes en R a nivel global en el periodo 2020-2030. Para estimar este indicador, toma una muestra con el crecimiento de descargas de los 40 paquetes estadísticos más populares en los últimos 6 meses. La fórmula matemática para el cálculo del promedio muestral en este estudio se define como el logaritmo natural del producto de todas las tasas de crecimiento de la muestra, dividido por la raíz cúbica de la suma total de las tasas. El indicador arrojó un valor estimado de 8.2\%. Determine población, muestra, parámetro, estadístico, estimador y estimación.
+\end{exercise}
+
+\begin{exercise}
+
+Un analista de datos está evaluando el tiempo de respuesta (en milisegundos) de una API construida en Python. Debido a un fallo temporal en el entorno virtual, el registro de la décima consulta se borró. Los tiempos de respuesta de las primeras nueve consultas (en milisegundos) son los siguientes:
+
+\[10, 12, 15, 11, 14, 13, 13, 16, 9\]
+
+El analista logró respaldar en sus notas que la media del tiempo de respuesta de las 10 consultas es de \(12.4\) milisegundos.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Calcule cuál fue el tiempo de respuesta de la décima consulta cuyo dato se perdió.
+\item
+  Calcule el rango para las primeras 5 consultas y para las consultas de la 6 a la 10. Interprete los resultados obtenidos, considerando que se están comparando la variabilidad de ambas muestras.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+Un taller especializado en motocicletas estilo cruiser está calibrando la presión de los neumáticos (en psi) de 8 ruedas seleccionadas al azar. Al registrar los datos, la presión de la octava rueda no quedó guardada en el sistema. Los valores de las primeras siete ruedas son:
+
+\[50, 52, 48, 50, 45, 55, 49\]
+
+El jefe de taller recuerda claramente que el promedio de presión de las 8 ruedas revisadas es exactamente \(50\) psi.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calcule cuál fue la presión de la octava rueda cuyo dato se perdió en el sistema.
+\item
+  Calcule la varianza para las primeras 4 ruedas y para las ruedas del 5 al 8. Interprete los resultados obtenidos para comparar la variabilidad de ambas muestras, verificando primero que las medias sean adecuadas para esta comparación.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{exercise}
+
+Un jugador de un juego de cartas coleccionables está analizando los puntos de daño infligidos por turno de un mazo enfocado en el ``control'' de la mano del rival. Selecciona 10 turnos de prueba, pero olvida anotar el décimo. Los primeros nueve registros de daño son:
+
+\[100, 105, 98, 102, 95, 200, 210, 195, 205\]
+
+El jugador calculó de antemano que la media de daño de los 10 turnos completos fue de \(150\) puntos.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calcule cuál fue el puntaje de daño del décimo turno.
+\item
+  Calcule el coeficiente de variación para los primeros 5 turnos y para los turnos del 6 al 10. Interprete los resultados para comparar la variabilidad relativa de ambas muestras.
+\end{enumerate}
+
+\end{exercise}
 
 \chapter{Probabilidad}\label{probabilidad-variables}
 
@@ -1837,7 +1976,7 @@ Una compañía de exploración petrolera en la actualidad tiene dos proyectos ac
 
 \end{exercise}
 
-\section{Ejercicios}\label{ejercicios}
+\section{Ejercicios}\label{ejercicios-1}
 
 \begin{exercise}
 
@@ -4718,7 +4857,7 @@ A continuación se describen algunas las bases de datos que se utilizarán a lo 
 
 \begin{itemize}
 \item
-  \phantomsection\label{TasaEURUSD}\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Tasa\%2Beuro\%2Bdolar\%2Bhistorica2023.csv}{Tasa Euro/Dólar}: Contiene el registro diario histórico de la tasa de cambio del Euro a Dólar durante el 2023. Las columnas de la base de datos son las siguientes:
+  \protect\phantomsection\label{TasaEURUSD}\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Tasa\%2Beuro\%2Bdolar\%2Bhistorica2023.csv}{Tasa Euro/Dólar}: Contiene el registro diario histórico de la tasa de cambio del Euro a Dólar durante el 2023. Las columnas de la base de datos son las siguientes:
 
   \begin{itemize}
   \tightlist
@@ -4736,7 +4875,7 @@ A continuación se describen algunas las bases de datos que se utilizarán a lo 
     Adj Close: tasa de cierre ajustada del día (precio de cierre sin dividendos).
   \end{itemize}
 \item
-  \phantomsection\label{PreciosElectricidad}\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2024-1/Belgian\%20Electricity\%20Prices.csv}{Precios de electricidad}: Un conjunto de datos históricos que contiene el precio por hora de la electricidad para Bélgica. Las columnas de la base de datos son las siguientes:
+  \protect\phantomsection\label{PreciosElectricidad}\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2024-1/Belgian\%20Electricity\%20Prices.csv}{Precios de electricidad}: Un conjunto de datos históricos que contiene el precio por hora de la electricidad para Bélgica. Las columnas de la base de datos son las siguientes:
 
   \begin{itemize}
   \tightlist
@@ -4746,7 +4885,7 @@ A continuación se describen algunas las bases de datos que se utilizarán a lo 
     EUR\_MWh: Precio por hora (Euros por MWh).
   \end{itemize}
 \item
-  \phantomsection\label{Pacientes}\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Heart+complete.csv}{Pacientes}: Contiene datos respecto a los ataques al corazón de distintos pacientes hospitalarios. El detalle de algunas de las columnas de la base de datos que utilizaremos son las siguientes:
+  \protect\phantomsection\label{Pacientes}\href{https://raw.githubusercontent.com/Dfranzani/Bases-de-datos-para-cursos/main/2023-1/Heart+complete.csv}{Pacientes}: Contiene datos respecto a los ataques al corazón de distintos pacientes hospitalarios. El detalle de algunas de las columnas de la base de datos que utilizaremos son las siguientes:
 
   \begin{itemize}
   \tightlist

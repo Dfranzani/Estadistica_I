@@ -153,16 +153,22 @@ especifica los parámetro de las imágenes dentro de este.*/
   line-height: 1.5em; /*edición de interlineado*/
 }
 
+/*
 .summary a:hover {
     color: #19757F !important;
 }
+*/
 
-.book .book-summary ul.summary li.active>a { /*active TOC links*/
+/*active TOC links*/
+
+/*
+.book .book-summary ul.summary li.active>a { 
     color: #6E044B !important;
     border-left: solid 4px;
     border-color: #6E044B;
     padding-left: 11px !important;
 }
+*/
 
 /* Aquí termina la edición del menú de contenidos */
 
@@ -183,13 +189,31 @@ declarada la versión de pandoc a utilizar */
 /*-----------------------------------------------------------------*/
 /* Cuadro de color negro para los ejemplos */
 /* Eliminamos la opcion color: black;, lo que permite que texto dentro del marco cambie de color según el tema */
-.blackbox {
-  padding: 1em;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  background: rgba(240, 240, 240, 0);
-  border: 2px solid black;
-  border-radius: 5px;
+div.example {
+  background-color: #f8f9fa;
+  border-left: 4px solid #2C3E50;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 6px;
+}
+
+div.definition {
+  background-color: #eef6fc;
+  border-left: 4px solid #2980b9;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 6px;
+}
+
+div.exercise {
+  background-color: #fffdf5;
+  border-left: 4px solid #d35400;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 6px;
 }
 
 /*-----------------------------------------------------------------*/
